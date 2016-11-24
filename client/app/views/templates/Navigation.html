@@ -1,0 +1,128 @@
+<div class="header">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6">
+        <h3 ng-show="isUndefinedProject()"><a href="#" title="to main page"><i class="fa fa-home"></i></a></h3>
+        <h3 ng-show="isCloudGazer()"><a href="#"><img src="./images/cloudgazer-logo.svg" width="48" height="30" style="width:auto;height:30px;" />&nbsp;CloudGazer</a></h3>
+        <h3 ng-show="isThermalPlot()"><a href="#"><img src="./images/thermalplot-logo.svg" width="37" height="30" style="width:auto;height:30px;" />&nbsp;ThermalPlot</a></h3>
+      </div>
+      <div class="col-xs-6">
+        <div class="pull-right">
+          <div class="btn-group" ng-show="useCases.length > 1">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" title="Select dataset">
+              <i class="fa fa-database"></i><span class="sr-only">&nbsp; Dataset&nbsp;<span class="caret"></span></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+              <li role="presentation" ng-repeat="case in useCases"><a role="menuitem" tabindex="-1" href="#/uc/{{case.name}}">{{case.title}}</a></li>
+            </ul>
+          </div>
+
+          <pvd-connection-status ng-hide="isUndefinedProject()"></pvd-connection-status>
+
+          <div class="btn-group" ng-hide="isUndefinedProject()">
+            <button ng-click="optionsDialog.isVisible = !optionsDialog.isVisible" class="btn btn-default" ng-class="{'active': optionsDialog.isVisible}" title="Open option dialog">
+              <i class="fa fa-wrench"></i><span class="sr-only">&nbsp; Options</span>
+            </button>
+          </div>
+
+          <!-- Modal -->
+          <div id="options" class="modal-dialog" ng-show="optionsDialog.isVisible && !isUndefinedProject()">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" ng-click="optionsDialog.isVisible = !optionsDialog.isVisible"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="optionsLabel">Options</h4>
+              </div>
+              <div class="modal-body">
+                <!-- All VAST options -->
+                <tabset ng-show="isCloudGazer()">
+                  <tab ng-repeat="c in configs" heading="{{c.infra.name}}" active="c.active" deselect="deselectTab(c)" select="selectTab(c)">
+                    <form role="form" style="margin-top: 10px;">
+                      <div class="form-group">
+                        <label for="layout-{{c.infra.id}}">Layout</label>
+                        <select class="form-control" id="layout-{{c.infra.id}}" ng-model="c.layoutId"
+                                ng-options="item.ID as item.NAME for item in layouts"
+                                ng-change="updateLayout(c)">
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <p><b>Sort children</b></p>
+                        <label class="radio-inline">
+                          <input type="radio" name="sortBy-{{c.infra.id}}-alphabet" id="sortBy-{{c.infra.id}}-0" value="alphabet" ng-checked="c.sortBy==='alphabet'" ng-model="c.sortBy" ng-change="updateNodes(c)"> A-Z
+                        </label>
+                        <label class="radio-inline">
+                          <input type="radio" name="sortBy-{{c.infra.id}}-activity" id="sortBy-{{c.infra.id}}-1" value="activity" ng-checked="c.sortBy==='activity'" ng-model="c.sortBy" ng-change="updateNodes(c)"> Activity
+                        </label>
+                      </div>
+                      <div class="form-group">
+                        <label class="checkbox">
+                          <input type="checkbox" name="autoShrink-{{c.infra.id}}" id="autoShrink-{{c.infra.id}}" value="true" ng-model="c.autoShrink" ng-checked="c.autoShrink" ng-change="updateNodes(c)"> Shrink children with low activity
+                        </label>
+                      </div>
+                    </form>
+                  </tab>
+                </tabset>
+                <!-- Thermal Layout options -->
+                <div ng-show="isThermalPlot()">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <form role="form">
+                        <!--<div class="checkbox">
+                          <label>
+                            <input type="checkbox" name="show-trajectories" id="show-trajectories" value="true" ng-model="configs[0].showTrajectories" ng-change="updateLayout(configs[0])"> Show trajectory on item selection
+                          </label>
+                        </div>-->
+                        <!--<div class="form-group">
+                          <label class="checkbox">
+                            <input type="checkbox" name="show-physics-bodies" id="show-physics-bodies" value="true" ng-model="configs[0].showPhysicsBodies" ng-change="updateLayout(configs[0])"> Show physics simulations bodies
+                          </label>
+                        </div>-->
+                        <div class="form-group">
+                          <pvd-animation-control></pvd-animation-control> Animation
+                        </div>
+                        <div class="form-group">
+                          <div class="btn-group">
+                            <button class="btn btn-default" ng-click="toggleDataStream()">
+                              <i ng-class="{true: 'fa fa-pause', false: 'fa fa-play'}[isStreaming]"></i>
+                            </button>
+                          </div>
+                          Data stream is {{(isStreaming == true) ? 'running' : 'paused'}} <i>(experimental feature)</i>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="btn-group">
+            <button ng-click="aboutDialog.isVisible = !aboutDialog.isVisible" class="btn btn-default" ng-class="{'active': aboutDialog.isVisible}" title="Open about dialog">
+              <i class="fa fa-question-circle"></i><span class="sr-only">&nbsp; About</span>
+            </button>
+          </div>
+
+          <!-- Modal -->
+          <div id="about" class="modal-dialog" ng-show="aboutDialog.isVisible">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" ng-click="aboutDialog.isVisible = !aboutDialog.isVisible"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="aboutLabel">About</h4>
+              </div>
+              <div class="modal-body">
+                <p>This visualization is part of the <a href="http://pipes-vs-dams.at" target="_blank">PIPES-VS-DAMS</a> research project and
+                  is developed from the <a href="http://www.jku.at/cg/content" target="_blank">Institute of Computer Graphics at Johannes Kepler University Linz</a>
+                  in cooperation with <a href="http://risc-software.at" target="_blank">RISC Software GmbH</a>.
+                  The work was funded by the Austrian Research Promotion Agency (840232).</p>
+                <p>For more information visit <a href="http://pipes-vs-dams.at" target="_blank">pipes-vs-dams.at</a></p>
+
+                <p><b>Version</b></p>
+                <pre ng-bind="getVersion()"></pre>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

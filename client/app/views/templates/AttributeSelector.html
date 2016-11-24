@@ -1,0 +1,14 @@
+
+<div style="margin:0;padding:0;display:inline">
+    <div class="form-group">
+        <select ng-model="mpath" ng-options="n.name group by groupOf(n) for n in mpaths" ng-change="onPathChange(mpath)" class="form-control path-selector">
+
+        </select>
+    </div>
+    <div class="form-group">
+        <select ng-model="mattr" ng-change="onAttrChange(mattr)" ng-options="a.name for a in mattrs" class="form-control attr-selector">
+
+        </select>
+    </div>
+</div>
+

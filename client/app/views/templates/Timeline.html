@@ -1,0 +1,31 @@
+<div>
+    <div>
+        <span>Timeline {{ attr.fqname }}</span>
+        <div class="btn-group">
+            <a ng-if="!reduce" class="btn" data-toggle="collapse" data-target="{{ '#editcollapse_'+id }}"><i
+                    class="fa fa-edit"></i></a>
+            <a class="btn dropdown-toggle">
+                <i class="fa fa-bars"></i><span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li ng-click="switchMode('BARPLOT')"><a>Bar Plot</a></li>
+                <li ng-click="switchMode('HORIZONPLOT')"><a>Horizon Plot</a></li>
+                <li ng-click="switchMode('HEATMAP')"><a>Heat Map</a></li>
+            </ul>
+            <a ng-if="reduce" class="btn" ng-click="toggleCollapse()"><i
+                    class="{{ 'fa fa-' + (collapsed ? 'plus-square' : 'minus-square')}}"></i></a>
+        </div>
+    </div>
+
+    <div ng-if="!reduce" class="collapse" ng-attr-id="{{ 'editcollapse_'+id }}">
+        <pvd-attribute-selector value="{{ path }}" on-attr-selected="selectAttr(attr)"
+                                with-edges="true"></pvd-attribute-selector>
+    </div>
+
+    <svg ng-attr-width="{{ width }}" ng-attr-height="{{ height }}" class="timeline-chart">
+        <svg class="timeline" width="100%" ng-attr-height="{{ height }}" fill="white">
+
+        </svg>
+    </svg>
+</div>
+

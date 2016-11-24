@@ -1,0 +1,8 @@
+<div class="container" ng-hide="loading.visible === false">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="alert" style="margin-top:20px;" ng-class="{'alert-danger': loading.error}" role="alert" ng-bind-html="loading.text">...</div>
+    </div>
+  </div>
+</div>
+<div ng-controller="controller" ng-include src="templateUrl"></div>

@@ -1,0 +1,22 @@
+{
+  "name": "Mowis test infrastructure graph",
+  "version": 0.1,
+  "infrastructure": {
+    "mowis": {
+      "gateway": {
+        "eth0": 123
+      },
+      "vhost1": {
+        "vbridge": 123
+      },
+      "ws1": {
+        "eth0": 123,
+        "apache": 123,
+        "apache-*": 123
+      },
+      "vhost2": {
+        "vbridge": 123
+      }
+    }
+  }
+}

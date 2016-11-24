@@ -1,0 +1,20 @@
+<pvd-navigation project="thermalplot"></pvd-navigation>
+<div class="container">
+    <pvd-browser-notification></pvd-browser-notification>
+    <div class="hg-hidden">
+        <!--
+            It's necessary to initialize the plot directives to initialize the variables,
+            even though we don't show the directive content.
+            Note: The ThermalLayout has an extra flag to avoid rendering the content
+        -->
+        <!--
+        <pvd-treemap is-standalone="true" infra-id="ts" vis-config="thermal_small"></pvd-treemap>-->
+        <pvd-stock-timeline disable-drawing="true" csv-file="thermal_ftse250/csv/^FTMC/2015-01-01/2016-12-31/desc" parse-date="%Y-%m-%d" default-date-range="2m" show="close" use-parent-width="true"></pvd-stock-timeline>
+        <pvd-thermal-layout infra-id="ts" vis-config="thermal_small" init-directive-only="true"></pvd-thermal-layout>
+    </div>
+    <div id="detailedview">
+        <pvd-doi-editor></pvd-doi-editor>
+        <pvd-stock-detail-view is-standalone="true" vis-config="detailView"></pvd-stock-detail-view>
+        <pvd-loading-overlay></pvd-loading-overlay>
+    </div>
+</div>

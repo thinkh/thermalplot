@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="504.7005"
+   height="313.01935"
+   id="svg2987">
+  <title
+     id="title3868">CloudGazer logo</title>
+  <metadata
+     id="metadata2993">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>CloudGazer logo</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs2991" />
+  <g
+     id="layer1"
+     style="display:none">
+    <rect
+       width="506.3038"
+       height="312.11584"
+       x="0"
+       y="0.90350342"
+       id="rect3756"
+       style="fill:#333333;fill-opacity:1;stroke:none" />
+  </g>
+  <g
+     transform="translate(-4.5723995,-100.35307)"
+     id="layer2">
+    <path
+       d="m 91.170467,401.37242 c 0,0 331.326823,0.0478 331.326823,0 82.33932,0 112.13565,-128.24078 8.83758,-158.1262 C 431.31817,84.856517 243.42783,78.328236 216.80782,180.11726 169.73284,160.15757 117.94257,195.612 117.29859,242.93594 -21.626058,228.47063 -3.6001957,401.37242 91.170467,401.37242 z"
+       id="path3789"
+       style="fill:#ffffff;fill-opacity:1;stroke:#3333ff;stroke-width:24;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0;stroke-dasharray:none" />
+  </g>
+  <g
+     transform="translate(-4.5723995,-100.35307)"
+     id="layer4">
+    <path
+       d="m 141.81029,323.97575 15.63797,19.42135 c 0,0 2.11021,3.06524 4.70047,0.99621 l 10.33749,-7.99838 c 3.12112,-1.78349 -0.84322,-5.43442 -0.84322,-5.43442 l 35.74586,-29.68504 c 0,0 5.43923,6.91456 11.86726,1.27379 l 64.05255,-49.70104 c 0,0 4.54019,5.53109 9.33233,1.26112 l 51.9584,-40.60827 c 0,0 3.90053,5.92358 9.33234,0.50446 l 15.38574,-12.61127 c 0,0 5.68403,-3.02671 -0.25223,-9.58457 l -31.02371,-39.34713 c 0,0 -2.96549,-4.46618 -9.0801,0 l -15.63797,13.11572 c 0,0 -4.1562,3.56875 -0.25222,7.81898 l -51.45396,42.12162 c 0,0 -5.81912,3.35279 -1.26113,8.32343 l -65.07412,49.9406 c 0,0 -4.27515,4.57066 0.20894,10.13228 l -36.51671,27.56644 c 0,0 -1.85211,-3.86994 -5.44448,-1.24319 l -11.46729,8.94501 c 0,0 -2.52224,1.51336 -0.25221,4.7923 z"
+       id="path3864"
+       style="fill:#333333;fill-opacity:1;stroke:none" />
+    <path
+       d="m 249.7113,309.8677 -31.94684,74.89303 c -1.52634,3.81585 6.15625,6.0036 7.52995,2.23863 l 33.1679,-77.33517 6.51238,0 37.2157,77.3898 c 1.42457,3.00181 8.64924,1.01755 6.71588,-2.54389 l -35.38409,-75.04942 c 0,0 5.80009,-0.50795 5.49483,-5.29131 l 0,-37.03915 c 0,0 0.12655,-5.63239 -6.7159,-0.20351 l -26.96531,22.99684 c -2.5439,2.34037 -1.72985,15.16162 -1.72985,15.16162 0,0 -0.15293,4.98137 6.10535,4.78253 z"
+       id="path3866"
+       style="fill:#333333;fill-opacity:1;stroke:none" />
+  </g>
+</svg>

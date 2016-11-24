@@ -1,0 +1,96 @@
+<p class="title">Degree-of-Interest (DoI)</p>
+<form ng-submit="onSubmit($event)" class="form-horizontal">
+  <button class="btn btn-default btn-sm toggle" ng-click="toggleDetail()"><i class="fa fa-caret-right" style="width:7px;"></i></button>
+  <div class="stacked_bar">
+
+  </div>
+  <div class="doi_details" style="display: none">
+    <div class="form-group">
+      <div class="col-sm-12">
+      <table>
+        <thead>
+        <tr>
+          <th style="width:30%">Component</th>
+          <th><abbr title="Use the inverted value (= value * -1)">Invert</abbr></th>
+          <th>Weight in %</th>
+          <th>Min</th>
+          <th>Max</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tfoot>
+        <tr>
+          <td colspan="2" style="padding: 7px 0;">
+            <select class="form-control input-sm" ng-model="toadd" ng-options="attr as (getAttrAlias(attr) | striphtml) for attr in attrs">
+            </select>
+          </td>
+          <td colspan="4" style="padding: 7px 0;text-align:right">
+            <button type="submit" class="btn btn-default btn-sm" ng-class="{'btn-primary' : dirtyFlag}"><i class="fa fa-refresh"></i>&nbsp;Apply Changes</button>
+          </td>
+        </tr>
+        </tfoot>
+        <tbody>
+        <tr ng-repeat="c in components">
+          <td><span ng-bind-html="c.alias"></span></td>
+          <td style="text-align:center;padding-left:0;" class="checkbox"><input style="float:none;margin-left:0;" name="invert" type="checkbox" ng-model="c.invert" ng-change="setDirty(true)"></td>
+          <td><input class="form-control input-sm" name="weight" type="text" step="any" ng-model="c.percentage" input-currency ng-change="setDirty(true)"></td>
+          <td><input class="form-control input-sm" name="min" type="text" step="any" ng-model="c.min" ng-change="setDirty(true)"></td>
+          <td><input class="form-control input-sm" name="max" type="text" step="any" ng-model="c.max" ng-change="setDirty(true)"></td>
+          <td>
+            <button class="btn btn-default btn-sm" ng-click="onRemove($index)" title="Remove Attribute"><i class="fa fa-remove"></i></button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-12">
+      <table>
+        <tr>
+          <td style="width: 32%;text-align:left;">Exponential Smoothing</td>
+          <td style="width: 55px;text-align:right;"><label for="doi-alpha" class="control-label" style="text-align:left;padding-top:0;font-weight:normal;"><abbr title="This factor determines how many previous time steps inﬂuence the current DoI value">Alpha</abbr>:</label>&nbsp;</td>
+          <td><input id="doi-alpha" type="text" step="0.1" required="required" ng-model="alpha" class="form-control input-sm" ng-change="setDirty(true)"></td>
+          <td style="width: 50px;text-align:right;"><label for="doi-beta" class="control-label" style="text-align:left;padding-top:0;font-weight:normal;"><abbr title="This factor determines how many previous time steps inﬂuence the trend computation">Beta</abbr>:</label>&nbsp;</td>
+          <td><input id="doi-beta" type="text" step="0.1" required="required" ng-model="beta" class="form-control input-sm" ng-change="setDirty(true)"></td>
+          <!--<th style="width: 8%"><label for="doi-beta" class="control-label" style="text-align:left;padding-top:0;"><abbr title="test">K</abbr>:</label></th>
+          <td style="width: 24%"><input id="doi-k" type="number" step="1" required="required" ng-model="k" class="form-control input-sm" ng-change="setDirty(true)"></td>-->
+          <!--<td style="width: 32%;text-align:right;"><button type="submit" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i>&nbsp;Apply Changes</button></td>-->
+        </tr>
+      </table>
+      </div>
+    </div>
+    <!--<div class="form-group" style="display:none">
+      <div class="col-sm-12">
+        <table>
+          <thead>
+          <tr>
+            <th><label for="doi-alpha" class="col-sm-2 control-label">Alpha</label></th>
+            <th><label for="doi-beta" class="col-sm-2 control-label">Beta</label></th>
+            <th style="display:none"><label for="doi-k" class="col-sm-2 control-label">K</label></th>
+            <th style="display:none"><label for="doi-drange" class="col-sm-2 control-label"><abbr title="Sets the min and max values for selected time window dynamically">DynRange</abbr></label></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><input id="doi-alpha" type="number" step="0.1" required="required" ng-model="alpha" class="form-control input-sm"></td>
+            <td><input id="doi-beta" type="number" step="0.1" required="required" ng-model="beta" class="form-control input-sm"></td>
+            <td style="display:none"><input id="doi-k" type="number" step="1" required="required" ng-model="k" class="form-control input-sm"></td>
+            <td style="text-align:center; display:none"><button class="btn btn-default btn-sm" ng-click="updateDynRange()">Retrieve</button></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>-->
+    <!--<div class="form-group" style="display:none">
+      <label for="deltaMethod">Delta Method</label>
+      <select class="form-control input-sm" id="deltaMethod" ng-model="deltaMethod" ng-options="o as o for o in deltaMethods">
+      </select>
+    </div>
+    <div class="form-group" style="display:none">
+      <label for="loadingPercentage">Min Data Loaded Percentage</label>
+      <input class="form-control input-sm" id="loadingPercentage" ng-model="loadingPercentage" tpye="number" step="0.05">
+    </div>-->
+  </div>
+</form>

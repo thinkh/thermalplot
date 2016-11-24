@@ -1,0 +1,48 @@
+<!doctype html>
+<html ng-app="clientIndexApp"> 
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Select a project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
+</head>
+<body ng-controller="ClientIndexCtrl">
+	<div class="container">
+    <div class="header">
+      <h3 class="text-muted">Available projects</h3>
+    </div>
+    <table class="table table-striped table-bordered table-hover table-condensed">
+      <thead>
+        <tr>
+          <th width="18%">Project</th>
+          <th width="38%">Development</th>
+          <th width="38%">Production</th>
+          <th width="6%">Provisioned</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="client in clients">
+          <td>{{client.name}}</td>
+          <td><a href="/{{client.name}}/app/">/{{client.name}}/app/</a></td>
+          <td><a href="/{{client.name}}/dist/">/{{client.name}}/dist/</a></td>
+          <td ng-class="{success: client.isprovisioned, danger: !client.isprovisioned}">{{client.isprovisioned}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script>
+    angular.module('clientIndexApp', [])
+    .controller('ClientIndexCtrl', ['$scope', '$http', function ($scope, $http) {
+      $http({method: 'GET', url: 'all_clients'}). // see python backend
+        success(function(data) {
+          $scope.clients = data;
+        }).
+        error(function(data, status, headers, config) {
+          window.alert('An error occured while retrieving a list with all clients!')
+        });
+    }]);
+  </script>
+</body>
+</html>

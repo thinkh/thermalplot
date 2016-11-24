@@ -1,0 +1,18 @@
+<div class="btn-group" ng-class="{'hg-hidden': (bookmarks.length === 0)}">
+    <button data-toggle="dropdown" class="btn btn-default dropdown-toggle" title="Jump to bookmark">
+      <i class="fa fa-star"></i><span class="sr-only">&nbsp; Jump To <span class="caret"></span></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li ng-repeat="bookmark in bookmarks"><a ng-click="jumpTo(bookmark.ts)">{{bookmark.title}}</a></li>
+    </ul>
+</div>
+<div class="btn-group">
+  <button data-toggle="dropdown" id="navigator" class="btn btn-default dropdown-toggle" ng-click="preJumpTo()" title="Jump to date and time">
+    <i class="fa fa-clock-o"></i><span class="sr-only">&nbsp; Jump To Date <span class="caret"></span></span>
+  </button>
+
+  <ul class="dropdown-menu">
+    <datetimepicker startView="minute" data-ng-model="date" data-on-set-time="jumpTo"
+                    data-datetimepicker-config="{ dropdownSelector: '#navigator' }"></datetimepicker>
+  </ul>
+</div>

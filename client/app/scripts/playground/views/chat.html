@@ -1,0 +1,26 @@
+<div class="header">
+  <ul class="nav nav-pills pull-right">
+    <li><a ng-href="#infra">Infra</a></li>
+    <li><a ng-href="#heb">HEB</a></li>
+    <li><a ng-href="#random">Random</a></li>
+    <li class="active"><a ng-href="#chat">Chat</a></li>
+  </ul>
+  <h3 class="text-muted">pipes-vs-dams</h3>
+</div>
+<div class="row">
+  <div id="chat" class="col-xs-12 col-sm-10 col-md-9 col-lg-8">
+    <ul id="inbox">
+      <li ng-repeat="message in messages track by $index">{{message}}</li>
+    </ul>
+
+    <form ng-submit="send()" class="form-inline" role="form" id="messageform">
+      <div class="col-xs-10 col-sm-10 col-md-10 col-lg-9">
+        <label class="sr-only" for="message">Message</label>
+        <input type="text" name="body" id="message" class="form-control" placeholder="Enter your message here..." ng-model="currentMessage">
+      </div>
+      <button type="submit" class="btn btn-primary">Post</button>
+    </form>
+
+    <!--<pre>{{ messages }}</pre>-->
+  </div>
+</div>

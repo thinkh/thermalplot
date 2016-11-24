@@ -1,0 +1,43 @@
+<!doctype html>
+<html ng-app="clientIndexApp">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Select a use case</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
+</head>
+<body ng-controller="ClientIndexCtrl">
+	<div class="container">
+    <div class="header">
+      <h3 class="text-muted">Available use cases</h3>
+    </div>
+    <table class="table table-striped table-bordered table-hover" style="margin-top: 20px;" ng-hide="loading.visible === true" ng-show="loading.visible === false">
+      <thead>
+      <tr>
+        <th width="100%">Use Case</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="case in usecases">
+        <td><a href="/#/uc/{{case.name}}">{{case.title}}</a></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <script>
+    angular.module('clientIndexApp', [])
+    .controller('ClientIndexCtrl', ['$scope', '$http', function ($scope, $http) {
+      $http({method: 'GET', url: 'all_use_cases', params: {'all': 1}}). // see python backend
+        success(function(data) {
+        console.log(data);
+          $scope.usecases = data;
+        }).
+        error(function(data, status, headers, config) {
+          window.alert('An error occured while retrieving a list with all clients!')
+        });
+    }]);
+  </script>
+</body>
+</html>

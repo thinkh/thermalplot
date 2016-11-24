@@ -1,0 +1,38 @@
+<div class="header">
+    <ul class="nav nav-pills pull-right">
+        <li><a ng-href="#infra">Infra</a></li>
+        <li class="active"><a ng-href="#heb">HEB</a></li>
+        <li><a ng-href="#random">Random</a></li>
+        <li><a ng-href="#chat">Chat</a></li>
+    </ul>
+    <h3 class="text-muted">pipes-vs-dams</h3>
+</div>
+
+<form role="form">
+    <div style="float: left;">
+        <label>
+            <input type="checkbox" class="sr-only" ng-model="heb.tensionLink" ng-value="heb.tensionLink"> <i class="sr fa"  ng-class="{'fa-link': heb.tensionLink, 'fa-unlink': !heb.tensionLink}" style="cursor: pointer;" tooltip="Link tension sliders"></i><span class="sr-only">Link tension sliders</span>
+        </label>
+    </div>
+    <div style="margin-left: 1.5em;border-left: 1px solid #000000; padding-left: 1em;">
+        <div class="form-group">
+            <label for="tensionNonSelected">Tension for non-selected</label> (<span ng-bind="heb.tensionNonSelected"></span>%)
+            <input id="tensionNonSelected" class="form-control" type="range" min="0" max="100" ng-model="heb.tensionNonSelected" ng-value="heb.tensionNonSelected" ng-change="updateTensionSelected()" value="85">
+        </div>
+        <div class="form-group">
+            <label for="tensionSelected">Tension for selected</label> (<span ng-bind="heb.tensionSelected"></span>%)
+            <input id="tensionSelected" class="form-control" type="range" min="0" max="100" ng-model="heb.tensionSelected" ng-value="heb.tensionSelected" ng-change="updateTensionNonSelected()" value="0">
+        </div>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" ng-model="heb.uncolorEdges" ng-value="heb.uncolorEdges"> Uncolor unselected edges on selection
+        </label>
+    </div>
+    <!-- <div class="form-group">
+        <button id="addData" class="btn btn-success" ng-click="addData()">+ Add data</button>
+        <button id="removeData" class="btn btn-danger" ng-click="removeData()">- Remove data</button>
+    </div> -->
+</form>
+
+<pvd-heb data="heb.data" tension-selected="heb.tensionSelected" tension-non-selected="heb.tensionNonSelected" uncolor-edges="heb.uncolorEdges"></pvd-heb>

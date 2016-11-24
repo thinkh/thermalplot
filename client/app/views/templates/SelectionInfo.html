@@ -1,0 +1,19 @@
+<div ng-if="hasSelection">
+  {{selection}}
+  <a class="btn btn-default btn-xs" ng-click="togglePinning()">{{pinned}}</a>
+  <a class="btn btn-default btn-xs" ng-click="reset()">reset</a>
+</div>
+<!--<div ng-if="!hasSelection">
+    No Selection
+</div><div ng-if="sinfra">
+    {{sinfra}}
+</div>
+<div ng-if="!sinfra">
+    No Infrastructure Selection
+</div>
+<div ng-repeat="s in selected">
+    {{s}}
+</div>
+<div ng-if="selected.length == 0">
+    No Graph Selection
+</div>-->

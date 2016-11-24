@@ -1,0 +1,123 @@
+{
+  "name": "Mowis test infrastructure graph",
+  "version": "0.0.1",
+  "traits": {
+    "displayname": {
+      "attributes": {
+        "displayname": "string"
+      }
+    },
+    "cpuload": {
+      "attributes": {
+        "cpuload": {
+          "type": "float",
+          "range": [0, 1]
+        }
+      }
+    },
+    "ip": {
+      "attributes": {
+        "macaddress": "string",
+        "ipaddress": "string"
+      }
+    },
+    "accesslog": {
+      "attributes": {
+        "id": "string",
+        "name": "string",
+        "res": "string",
+        "hm": {
+          "type": "categorical",
+          "categories" : ["GET","POST"]
+        },
+        "p": "string",
+        "sc": "natural_int",
+        "os": "natural_int"
+      }
+    }
+  },
+  "root": {
+    "name": "mowis",
+    "traits": ["displayname"],
+    "children": {
+      "gateway": {
+        "alias": "10.10.0.1",
+        "traits": ["displayname", "cpuload"],
+        "children": {
+          "eth0": {
+            "traits": ["displayname", "ip"]
+          }
+        }
+      },
+      "vhost1": {
+        "traits": ["displayname", "cpuload"],
+        "children": {
+          "vbridge": {
+            "traits": ["displayname"]
+          },
+          "ws1": {
+            "traits": ["displayname"],
+            "children": {
+              "eth0": {
+                "traits": ["displayname", "ip"],
+                "attributes": {
+                  "type": {
+                    "type": "categorical",
+                    "categories": ["computer", "router", "switch", "application", "interface"]
+                  }
+                }
+              },
+              "apache": {
+                "alias": "10.10.0.3",
+                "traits": ["displayname"]
+              }
+            }
+          }
+        }
+      },
+      "vhost2": {
+        "traits": ["displayname", "cpuload"],
+        "children": {
+          "vbridge": {
+            "traits": ["displayname"]
+          },
+          "ws2": {
+            "traits": ["displayname"],
+            "children": {
+              "eth0": {
+                "traits": ["displayname", "ip"],
+                "attributes": {
+                  "type": {
+                    "type": "categorical",
+                    "categories": ["computer", "router", "switch", "application", "interface"]
+                  }
+                }
+              },
+              "apache": {
+                "alias": "10.10.0.8",
+                "traits": ["displayname"]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "external": {
+    "aliases": ".*"
+  },
+  "edges": [
+    {
+      "src": "apache\\..*",
+      "dst": "gateway\\..*",
+      "bidirectional": true,
+      "traits": ["accesslog"]
+    },
+    {
+      "src": "external",
+      "dst": "gateway\\..*",
+      "bidirectional": true,
+      "traits": ["accesslog"]
+    }
+  ]
+}

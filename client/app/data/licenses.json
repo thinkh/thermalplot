@@ -1,0 +1,145 @@
+{
+    "d3-lasso-plugin@0.1": {
+        "licenses": "UNKNOWN"
+    },
+    "jquery@undefined": {
+        "licenses": [
+            "MIT"
+        ]
+    },
+    "json3@3.3.2": {
+        "licenses": [
+            "MIT"
+        ],
+        "repository": {
+            "type": "git",
+            "url": "git://github.com/bestiejs/json3.git"
+        },
+        "homepage": "https://github.com/bestiejs/json3"
+    },
+    "d3@undefined": {
+        "licenses": [
+            "BSD-3-Clause",
+            "MIT*"
+        ]
+    },
+    "font-awesome@undefined": {
+        "licenses": [
+            "OFL-1.1",
+            "MIT",
+            "CC-BY-3.0"
+        ],
+        "homepage": "http://fontawesome.io"
+    },
+    "moment@undefined": {
+        "licenses": [
+            "MIT*"
+        ]
+    },
+    "topojson@undefined": {
+        "licenses": [
+            "BSD-3-Clause",
+            "MIT*"
+        ]
+    },
+    "PhysicsJS@0.7.0": {
+        "licenses": [
+            "MIT"
+        ],
+        "homepage": "http://wellcaffeinated.net/PhysicsJS"
+    },
+    "underscore@1.8.3": {
+        "licenses": [
+            "MIT*"
+        ]
+    },
+    "angular-mocks@1.4.9": {
+        "licenses": [
+            "MIT"
+        ],
+        "repository": "git+https://github.com/angular/angular.js"
+    },
+    "angular@1.4.9": {
+        "licenses": [
+            "MIT"
+        ],
+        "repository": "git+https://github.com/angular/angular.js"
+    },
+    "angular-bootstrap@1.2.5": {
+        "licenses": [
+            "MIT"
+        ],
+        "repository": "git+https://github.com/angular-ui/bootstrap"
+    },
+    "angular-resource@1.4.9": {
+        "licenses": [
+            "MIT"
+        ],
+        "repository": "git+https://github.com/angular/angular.js"
+    },
+    "angular-scenario@1.4.9": {
+        "licenses": [
+            "MIT"
+        ],
+        "repository": "git+https://github.com/angular/angular.js"
+    },
+    "angular-cookies@1.4.9": {
+        "licenses": [
+            "MIT"
+        ],
+        "repository": "git+https://github.com/angular/angular.js"
+    },
+    "angular-route@1.4.9": {
+        "licenses": [
+            "MIT"
+        ],
+        "repository": "git+https://github.com/angular/angular.js"
+    },
+    "angular-sanitize@1.4.9": {
+        "licenses": [
+            "MIT"
+        ],
+        "repository": "git+https://github.com/angular/angular.js"
+    },
+    "bootstrap@undefined": {
+        "licenses": [
+            "MIT"
+        ],
+        "homepage": "http://getbootstrap.com",
+        "repository": "git+https://github.com/twbs/bootstrap"
+    },
+    "es5-shim@undefined": {
+        "licenses": [
+            "MIT"
+        ],
+        "repository": "git+ssh://git@github.com/es-shims/es5-shim",
+        "homepage": "https://github.com/es-shims/es5-shim"
+    },
+    "datamaps@0.3.4": {
+        "licenses": [
+            "MIT"
+        ],
+        "homepage": "https://github.com/markmarkoh/datamaps"
+    },
+    "jquery-ui@1.11.4": {
+        "licenses": [
+            "MIT"
+        ],
+        "repository": "https://github.com/jquery/jquery-ui"
+    },
+    "lineupjs@0.5.3": {
+        "licenses": [
+            "BSD-3-Clause",
+            "MIT*"
+        ],
+        "repository": "git+https://github.com/Caleydo/lineup.js",
+        "homepage": "https://github.com/Caleydo/lineup.js"
+    },
+    "angular-bootstrap-datetimepicker@0.4.0": {
+        "licenses": [
+            "MIT"
+        ],
+        "homepage": "https://github.com/dalelotts/angular-bootstrap-datetimepicker",
+        "repository": "git+https://github.com/dalelotts/angular-bootstrap-datetimepicker"
+    }
+}

@@ -1,0 +1,1740 @@
+{
+	"name": "FTSE 250",
+	"id": "ts",
+	"color": "transparent",
+	"version": "0.0.1",
+	"traits": {
+		"s": {
+			"attributes": {
+				"doi": {
+					"alias": "DoI",
+					"type": "doi"
+				},
+				"open": {
+					"alias": "Open",
+					"type": "float",
+					"range": [
+						0,
+						18200
+					]
+				},
+				"open_dip": {
+					"alias": "ΔOpen",
+					"type": "delta_index_percentage",
+					"attr": "open"
+				},
+				"close": {
+					"alias": "Close",
+					"type": "float",
+					"range": [
+						0,
+						18200
+					]
+				},
+				"close_di": {
+					"alias": "Close (di)",
+					"type": "delta_index",
+					"attr": "close"
+				},
+				"close_dip": {
+					"alias": "ΔClose",
+					"type": "delta_index_percentage",
+					"attr": "close"
+				},
+				"low": {
+					"alias": "Low",
+					"type": "float",
+					"range": [
+						0,
+						18200
+					]
+				},
+				"high": {
+					"alias": "High",
+					"type": "float",
+					"range": [
+						0,
+						18200
+					]
+				},
+				"adj_close": {
+					"alias": "Adj Close",
+					"type": "float",
+					"range": [
+						0,
+						18200
+					]
+				},
+				"change": {
+					"alias": "Change",
+					"type": "float",
+					"range": [-4.5,
+						4.5
+					],
+					"realrange": [-70,
+						1141
+					]
+				},
+				"volume": {
+					"alias": "Volume",
+					"type": "int",
+					"range": [
+						0,
+						238772700
+					]
+				},
+				"volume_di": {
+					"alias": "Volume (di)",
+					"type": "delta_index",
+					"attr": "volume"
+				},
+				"volume_dip": {
+					"alias": "ΔVolume",
+					"type": "delta_index_percentage",
+					"attr": "volume"
+				}
+			}
+		}
+	},
+	"root": {
+		"name": "ftse250",
+		"title": "FTSE 250",
+		"children": {
+			"equity_investment_instruments": {
+				"title": "Equity Investment Instruments",
+				"children": {
+					"3IN.L": {
+						"title": "3i Infrastructure PLC",
+						"alias": "3IN.L",
+						"traits": ["s"]
+					},
+					"ASL.L": {
+						"title": "Aberforth Smaller Companies Trust PLC",
+						"alias": "ASL.L",
+						"traits": ["s"]
+					},
+					"ATST.L": {
+						"title": "Alliance Trust PLC",
+						"alias": "ATST.L",
+						"traits": ["s"]
+					},
+					"BHMG.L": {
+						"title": "BH Macro Ltd",
+						"alias": "BHMG.L",
+						"traits": ["s"]
+					},
+					"BNKR.L": {
+						"title": "Bankers Investment Trust PLC",
+						"alias": "BNKR.L",
+						"traits": ["s"]
+					},
+					"BTEM.L": {
+						"title": "British Empire Securities & General Trust PLC",
+						"alias": "BTEM.L",
+						"traits": ["s"]
+					},
+					"CLDN.L": {
+						"title": "Caledonia Investments PLC",
+						"alias": "CLDN.L",
+						"traits": ["s"]
+					},
+					"CTY.L": {
+						"title": "City of London Investment Trust (The) PLC",
+						"alias": "CTY.L",
+						"traits": ["s"]
+					},
+					"EDIN.L": {
+						"title": "Edinburgh Investment Trust (The) PLC",
+						"alias": "EDIN.L",
+						"traits": ["s"]
+					},
+					"ELTA.L": {
+						"title": "Electra Private Equity PLC",
+						"alias": "ELTA.L",
+						"traits": ["s"]
+					},
+					"FCSS.L": {
+						"title": "Fidelity China Special Situations PLC",
+						"alias": "FCSS.L",
+						"traits": ["s"]
+					},
+					"FEV.L": {
+						"title": "Fidelity European Values Ord",
+						"alias": "FEV.L",
+						"traits": ["s"]
+					},
+					"FGT.L": {
+						"title": "Finsbury Growth & Income Trust PLC",
+						"alias": "FGT.L",
+						"traits": ["s"]
+					},
+					"FRCL.L": {
+						"title": "Foreign & Colonial Investment Trust PLC",
+						"alias": "FRCL.L",
+						"traits": ["s"]
+					},
+					"GCP.L": {
+						"title": "GCP Infrastructure Investments Ltd",
+						"alias": "GCP.L",
+						"traits": ["s"]
+					},
+					"GSS.L": {
+						"title": "Genesis Emerging Markets Fund Ltd",
+						"alias": "GSS.L",
+						"traits": ["s"]
+					},
+					"HICL.L": {
+						"title": "HICL Infrastructure Co Ltd",
+						"alias": "HICL.L",
+						"traits": ["s"]
+					},
+					"HMSF.L": {
+						"title": "HIGH MULT STR GBP",
+						"alias": "HMSF.L",
+						"traits": ["s"]
+					},
+					"HVPE.L": {
+						"title": "Harbourvest Global Private Equity Ltd.",
+						"alias": "HVPE.L",
+						"traits": ["s"]
+					},
+					"INPP.L": {
+						"title": "International Public Partnerships Ltd",
+						"alias": "INPP.L",
+						"traits": ["s"]
+					},
+					"JAM.L": {
+						"title": "JPMorgan American Investment Trust PLC",
+						"alias": "JAM.L",
+						"traits": ["s"]
+					},
+					"JLIF.L": {
+						"title": "JOHN LAING INFR GBP",
+						"alias": "JLIF.L",
+						"traits": ["s"]
+					},
+					"JMG.L": {
+						"title": "JPMorgan Emerging Markets Inv Trust PLC",
+						"alias": "JMG.L",
+						"traits": ["s"]
+					},
+					"MNKS.L": {
+						"title": "Monks Investment Trust (The) PLC",
+						"alias": "MNKS.L",
+						"traits": ["s"]
+					},
+					"MRC.L": {
+						"title": "Mercantile Investment Trust (The) PLC",
+						"alias": "MRC.L",
+						"traits": ["s"]
+					},
+					"MYI.L": {
+						"title": "Murray International Trust PLC",
+						"alias": "MYI.L",
+						"traits": ["s"]
+					},
+					"NBLS.L": {
+						"title": "NB GLB FLOTING GBP",
+						"alias": "NBLS.L",
+						"traits": ["s"]
+					},
+					"P2P.L": {
+						"title": "P2P Global Investments PLC",
+						"alias": "P2P.L",
+						"traits": ["s"]
+					},
+					"PCT.L": {
+						"title": "Polar Capital Technology Trust PLC",
+						"alias": "PCT.L",
+						"traits": ["s"]
+					},
+					"PLI.L": {
+						"title": "Perpetual Income & Growth Investment Trust PLC",
+						"alias": "PLI.L",
+						"traits": ["s"]
+					},
+					"PNL.L": {
+						"title": "Personal Assets Trust PLC",
+						"alias": "PNL.L",
+						"traits": ["s"]
+					},
+					"RCP.L": {
+						"title": "RIT Capital Partners PLC",
+						"alias": "RCP.L",
+						"traits": ["s"]
+					},
+					"RSE.L": {
+						"title": "RIVER ENER GBP-ACC",
+						"alias": "RSE.L",
+						"traits": ["s"]
+					},
+					"SCIN.L": {
+						"title": "Scottish Investment Trust (The) PLC",
+						"alias": "SCIN.L",
+						"traits": ["s"]
+					},
+					"SMT.L": {
+						"title": "Scottish Mortgage Investment Trust PLC",
+						"alias": "SMT.L",
+						"traits": ["s"]
+					},
+					"TEM.L": {
+						"title": "Templeton Emerging Markets Inv Tr PLC",
+						"alias": "TEM.L",
+						"traits": ["s"]
+					},
+					"TMPL.L": {
+						"title": "Temple Bar Investment Trust PLC",
+						"alias": "TMPL.L",
+						"traits": ["s"]
+					},
+					"TRIG.L": {
+						"title": "RENEW INF GR GBP",
+						"alias": "TRIG.L",
+						"traits": ["s"]
+					},
+					"TRY.L": {
+						"title": "TR Property Investment Trust PLC",
+						"alias": "TRY.L",
+						"traits": ["s"]
+					},
+					"WPCT.L": {
+						"title": "Woodford Patient Capital Trust",
+						"alias": "WPCT.L",
+						"traits": ["s"]
+					},
+					"WTAN.L": {
+						"title": "Witan Investment Trust PLC",
+						"alias": "WTAN.L",
+						"traits": ["s"]
+					},
+					"WWH.L": {
+						"title": "Worldwide Healthcare Trust PLC",
+						"alias": "WWH.L",
+						"traits": ["s"]
+					}
+				}
+			},
+			"support_services": {
+				"title": "Support Services",
+				"children": {
+					"AA.L": {
+						"title": "AA",
+						"alias": "AA.L",
+						"traits": ["s"]
+					},
+					"AGK.L": {
+						"title": "Aggreko PLC",
+						"alias": "AGK.L",
+						"traits": ["s"]
+					},
+					"ATK.L": {
+						"title": "Atkins (WS) PLC",
+						"alias": "ATK.L",
+						"traits": ["s"]
+					},
+					"BRSN.L": {
+						"title": "Berendsen plc",
+						"alias": "BRSN.L",
+						"traits": ["s"]
+					},
+					"CLLN.L": {
+						"title": "Carillion PLC",
+						"alias": "CLLN.L",
+						"traits": ["s"]
+					},
+					"DPLM.L": {
+						"title": "Diploma PLC",
+						"alias": "DPLM.L",
+						"traits": ["s"]
+					},
+					"ECM.L": {
+						"title": "Electrocomponents PLC",
+						"alias": "ECM.L",
+						"traits": ["s"]
+					},
+					"ESNT.L": {
+						"title": "ESSENTRA",
+						"alias": "ESNT.L",
+						"traits": ["s"]
+					},
+					"GFS.L": {
+						"title": "G4S PLC",
+						"alias": "GFS.L",
+						"traits": ["s"]
+					},
+					"GFTU.L": {
+						"title": "Grafton Group PLC",
+						"alias": "GFTU.L",
+						"traits": ["s"]
+					},
+					"HAS.L": {
+						"title": "Hays PLC",
+						"alias": "HAS.L",
+						"traits": ["s"]
+					},
+					"HSV.L": {
+						"title": "Homeserve PLC",
+						"alias": "HSV.L",
+						"traits": ["s"]
+					},
+					"HWDN.L": {
+						"title": "HOWDEN JOIN GRP",
+						"alias": "HWDN.L",
+						"traits": ["s"]
+					},
+					"IRV.L": {
+						"title": "Interserve PLC",
+						"alias": "IRV.L",
+						"traits": ["s"]
+					},
+					"MPI.L": {
+						"title": "Michael Page International PLC",
+						"alias": "MPI.L",
+						"traits": ["s"]
+					},
+					"MTO.L": {
+						"title": "MITIE Group PLC",
+						"alias": "MTO.L",
+						"traits": ["s"]
+					},
+					"NTG.L": {
+						"title": "Northgate plc",
+						"alias": "NTG.L",
+						"traits": ["s"]
+					},
+					"PAY.L": {
+						"title": "PayPoint PLC",
+						"alias": "PAY.L",
+						"traits": ["s"]
+					},
+					"PAYS.L": {
+						"title": "PAYSAFE GROUP",
+						"alias": "PAYS.L",
+						"traits": ["s"]
+					},
+					"RGU.L": {
+						"title": "Regus PLC",
+						"alias": "RGU.L",
+						"traits": ["s"]
+					},
+					"RTO.L": {
+						"title": "Rentokil Initial PLC",
+						"alias": "RTO.L",
+						"traits": ["s"]
+					},
+					"SHI.L": {
+						"title": "SIG PLC",
+						"alias": "SHI.L",
+						"traits": ["s"]
+					},
+					"SRP.L": {
+						"title": "Serco Group PLC",
+						"alias": "SRP.L",
+						"traits": ["s"]
+					}
+				}
+			},
+			"mining": {
+				"title": "Mining",
+				"children": {
+					"ACA.L": {
+						"title": "ACACIA MINING",
+						"alias": "ACA.L",
+						"traits": ["s"]
+					},
+					"CEY.L": {
+						"title": "Centamin PLC",
+						"alias": "CEY.L",
+						"traits": ["s"]
+					},
+					"KAZ.L": {
+						"title": "KAZ Minerals PLC",
+						"alias": "KAZ.L",
+						"traits": ["s"]
+					},
+					"POLY.L": {
+						"title": "Polymetal International PLC",
+						"alias": "POLY.L",
+						"traits": ["s"]
+					},
+					"VED.L": {
+						"title": "Vedanta Resources PLC",
+						"alias": "VED.L",
+						"traits": ["s"]
+					}
+				}
+			},
+			"financial_services": {
+				"title": "Financial Services",
+				"children": {
+					"ADN.L": {
+						"title": "Aberdeen Asset Management PLC",
+						"alias": "ADN.L",
+						"traits": ["s"]
+					},
+					"ALM.L": {
+						"title": "Allied Minds PLC",
+						"alias": "ALM.L",
+						"traits": ["s"]
+					},
+					"ASHM.L": {
+						"title": "Ashmore Group PLC",
+						"alias": "ASHM.L",
+						"traits": ["s"]
+					},
+					"BRW.L": {
+						"title": "Brewin Dolphin Holdings Plc",
+						"alias": "BRW.L",
+						"traits": ["s"]
+					},
+					"CBG.L": {
+						"title": "Close Brothers Group PLC",
+						"alias": "CBG.L",
+						"traits": ["s"]
+					},
+					"EMG.L": {
+						"title": "Man Group PLC",
+						"alias": "EMG.L",
+						"traits": ["s"]
+					},
+					"HGG.L": {
+						"title": "Henderson Group PLC",
+						"alias": "HGG.L",
+						"traits": ["s"]
+					},
+					"IAP.L": {
+						"title": "ICAP PLC",
+						"alias": "IAP.L",
+						"traits": ["s"]
+					},
+					"ICP.L": {
+						"title": "Intermediate Capital Group PLC",
+						"alias": "ICP.L",
+						"traits": ["s"]
+					},
+					"IGG.L": {
+						"title": "IG Group Holdings PLC",
+						"alias": "IGG.L",
+						"traits": ["s"]
+					},
+					"INVP.L": {
+						"title": "Investec PLC",
+						"alias": "INVP.L",
+						"traits": ["s"]
+					},
+					"IPF.L": {
+						"title": "International Personal Finance PLC",
+						"alias": "IPF.L",
+						"traits": ["s"]
+					},
+					"IPO.L": {
+						"title": "IP Group PLC",
+						"alias": "IPO.L",
+						"traits": ["s"]
+					},
+					"JLG.L": {
+						"title": "John Laing Group plc",
+						"alias": "JLG.L",
+						"traits": ["s"]
+					},
+					"JUP.L": {
+						"title": "Jupiter Fund Management PLC",
+						"alias": "JUP.L",
+						"traits": ["s"]
+					},
+					"OSB.L": {
+						"title": "Onesavings Bank PLC",
+						"alias": "OSB.L",
+						"traits": ["s"]
+					},
+					"PAG.L": {
+						"title": "Paragon Group of Companies (The) PLC",
+						"alias": "PAG.L",
+						"traits": ["s"]
+					},
+					"RAT.L": {
+						"title": "Rathbone Brothers PLC",
+						"alias": "RAT.L",
+						"traits": ["s"]
+					},
+					"SVI.L": {
+						"title": "SVG Capital PLC",
+						"alias": "SVI.L",
+						"traits": ["s"]
+					},
+					"TLPR.L": {
+						"title": "Tullett Prebon PLC",
+						"alias": "TLPR.L",
+						"traits": ["s"]
+					}
+				}
+			},
+			"real_estate_investment_trusts": {
+				"title": "Real Estate Investment Trusts",
+				"children": {
+					"AGR.L": {
+						"title": "Assura Group Ltd",
+						"alias": "AGR.L",
+						"traits": ["s"]
+					},
+					"BBOX.L": {
+						"title": "Tritax Big Box",
+						"alias": "BBOX.L",
+						"traits": ["s"]
+					},
+					"BYG.L": {
+						"title": "Big Yellow Group PLC",
+						"alias": "BYG.L",
+						"traits": ["s"]
+					},
+					"DLN.L": {
+						"title": "Derwent London PLC",
+						"alias": "DLN.L",
+						"traits": ["s"]
+					},
+					"GPOR.L": {
+						"title": "Great Portland Estates PLC",
+						"alias": "GPOR.L",
+						"traits": ["s"]
+					},
+					"HSTN.L": {
+						"title": "Hansteen Holdings PLC",
+						"alias": "HSTN.L",
+						"traits": ["s"]
+					},
+					"LMP.L": {
+						"title": "London & Stamford Property PLC",
+						"alias": "LMP.L",
+						"traits": ["s"]
+					},
+					"RDI.L": {
+						"title": "Redefine International PLC",
+						"alias": "RDI.L",
+						"traits": ["s"]
+					},
+					"SAFE.L": {
+						"title": "Safestore Holdings PLC",
+						"alias": "SAFE.L",
+						"traits": ["s"]
+					},
+					"SGRO.L": {
+						"title": "Segro PLC",
+						"alias": "SGRO.L",
+						"traits": ["s"]
+					},
+					"SHB.L": {
+						"title": "Shaftesbury PLC",
+						"alias": "SHB.L",
+						"traits": ["s"]
+					},
+					"WKP.L": {
+						"title": "Workspace Group PLC",
+						"alias": "WKP.L",
+						"traits": ["s"]
+					}
+				}
+			},
+			"banks": {
+				"title": "Banks",
+				"children": {
+					"ALD.L": {
+						"title": "Aldermore Group PLC",
+						"alias": "ALD.L",
+						"traits": ["s"]
+					},
+					"BGEO.L": {
+						"title": "Bank of Georgia Holdings PLC",
+						"alias": "BGEO.L",
+						"traits": ["s"]
+					},
+					"SHAW.L": {
+						"title": "Shawbrook Group plc",
+						"alias": "SHAW.L",
+						"traits": ["s"]
+					},
+					"VM.L": {
+						"title": "VIRGIN MON HLDG",
+						"alias": "VM.L",
+						"traits": ["s"]
+					}
+				}
+			},
+			"oil_equipment_services": {
+				"title": "Oil Equipment & Services",
+				"children": {
+					"AMFW.L": {
+						"title": "AMEC FOSTER WHEELER",
+						"alias": "AMFW.L",
+						"traits": ["s"]
+					},
+					"PFC.L": {
+						"title": "Petrofac Limited",
+						"alias": "PFC.L",
+						"traits": ["s"]
+					},
+					"WG.L": {
+						"title": "Wood Group (John) PLC",
+						"alias": "WG.L",
+						"traits": ["s"]
+					}
+				}
+			},
+			"general_retailers": {
+				"title": "General Retailers",
+				"children": {
+					"AO.L": {
+						"title": "AO WORLD",
+						"alias": "AO.L",
+						"traits": ["s"]
+					},
+					"BME.L": {
+						"title": "B&M European Value Retail SA",
+						"alias": "BME.L",
+						"traits": ["s"]
+					},
+					"BWNG.L": {
+						"title": "Brown (N) Group PLC",
+						"alias": "BWNG.L",
+						"traits": ["s"]
+					},
+					"CARD.L": {
+						"title": "Card Factory PLC",
+						"alias": "CARD.L",
+						"traits": ["s"]
+					},
+					"DEB.L": {
+						"title": "Debenhams PLC",
+						"alias": "DEB.L",
+						"traits": ["s"]
+					},
+					"DFS.L": {
+						"title": "DFS FURNITURE",
+						"alias": "DFS.L",
+						"traits": ["s"]
+					},
+					"DNLM.L": {
+						"title": "Dunelm Group PLC",
+						"alias": "DNLM.L",
+						"traits": ["s"]
+					},
+					"DTY.L": {
+						"title": "Dignity plc",
+						"alias": "DTY.L",
+						"traits": ["s"]
+					},
+					"HFD.L": {
+						"title": "Halfords Group PLC",
+						"alias": "HFD.L",
+						"traits": ["s"]
+					},
+					"HOME.L": {
+						"title": "Home Retail Group PLC",
+						"alias": "HOME.L",
+						"traits": ["s"]
+					},
+					"INCH.L": {
+						"title": "Inchcape PLC",
+						"alias": "INCH.L",
+						"traits": ["s"]
+					},
+					"JD.L": {
+						"title": "JD Sports Fashion PLC",
+						"alias": "JD.L",
+						"traits": ["s"]
+					},
+					"JE.L": {
+						"title": "JUST EAT",
+						"alias": "JE.L",
+						"traits": ["s"]
+					},
+					"LOOK.L": {
+						"title": "Lookers PLC",
+						"alias": "LOOK.L",
+						"traits": ["s"]
+					},
+					"PDG.L": {
+						"title": "Pendragon PLC",
+						"alias": "PDG.L",
+						"traits": ["s"]
+					},
+					"PETS.L": {
+						"title": "Pets at Home Group PLC",
+						"alias": "PETS.L",
+						"traits": ["s"]
+					},
+					"SAGA.L": {
+						"title": "Saga PLC",
+						"alias": "SAGA.L",
+						"traits": ["s"]
+					},
+					"SMWH.L": {
+						"title": "WH Smith PLC",
+						"alias": "SMWH.L",
+						"traits": ["s"]
+					},
+					"SPD.L": {
+						"title": "Sports Direct International PLC",
+						"alias": "SPD.L",
+						"traits": ["s"]
+					}
+				}
+			},
+			"media": {
+				"title": "Media",
+				"children": {
+					"AUTO.L": {
+						"title": "Auto Trader Group plc",
+						"alias": "AUTO.L",
+						"traits": ["s"]
+					},
+					"ERM.L": {
+						"title": "Euromoney Institutional Investor PLC",
+						"alias": "ERM.L",
+						"traits": ["s"]
+					},
+					"ETO.L": {
+						"title": "Entertainment One Ltd",
+						"alias": "ETO.L",
+						"traits": ["s"]
+					},
+					"MONY.L": {
+						"title": "Moneysupermarket.com Group PLC",
+						"alias": "MONY.L",
+						"traits": ["s"]
+					},
+					"RMV.L": {
+						"title": "Rightmove PLC",
+						"alias": "RMV.L",
+						"traits": ["s"]
+					},
+					"UBM.L": {
+						"title": "UBM PLC",
+						"alias": "UBM.L",
+						"traits": ["s"]
+					},
+					"ZPLA.L": {
+						"title": "Zoopla Property Group PLC",
+						"alias": "ZPLA.L",
+						"traits": ["s"]
+					}
+				}
+			},
+			"software_computer_services": {
+				"title": "Software & Computer Services",
+				"children": {
+					"AVV.L": {
+						"title": "AVEVA Group PLC",
+						"alias": "AVV.L",
+						"traits": ["s"]
+					},
+					"CCC.L": {
+						"title": "Computacenter PLC",
+						"alias": "CCC.L",
+						"traits": ["s"]
+					},
+					"FDSA.L": {
+						"title": "Fidessa Group PLC",
+						"alias": "FDSA.L",
+						"traits": ["s"]
+					},
+					"MCRO.L": {
+						"title": "Micro Focus International PLC",
+						"alias": "MCRO.L",
+						"traits": ["s"]
+					},
+					"NCC.L": {
+						"title": "NCC Group PLC",
+						"alias": "NCC.L",
+						"traits": ["s"]
+					},
+					"SCT.L": {
+						"title": "Softcat Plc",
+						"alias": "SCT.L",
+						"traits": ["s"]
+					},
+					"SOPH.L": {
+						"title": "Sophos Group plc",
+						"alias": "SOPH.L",
+						"traits": ["s"]
+					}
+				}
+			},
+			"beverages": {
+				"title": "Beverages",
+				"children": {
+					"BAG.L": {
+						"title": "Barr (A G) PLC",
+						"alias": "BAG.L",
+						"traits": ["s"]
+					},
+					"BVIC.L": {
+						"title": "Britvic PLC",
+						"alias": "BVIC.L",
+						"traits": ["s"]
+					}
+				}
+			},
+			"industrial_transportation": {
+				"title": "Industrial Transportation",
+				"children": {
+					"BBA.L": {
+						"title": "BBA Aviation PLC",
+						"alias": "BBA.L",
+						"traits": ["s"]
+					},
+					"CKN.L": {
+						"title": "Clarkson PLC",
+						"alias": "CKN.L",
+						"traits": ["s"]
+					}
+				}
+			},
+			"construction_materials": {
+				"title": "Construction & Materials",
+				"children": {
+					"BBY.L": {
+						"title": "Balfour Beatty PLC",
+						"alias": "BBY.L",
+						"traits": ["s"]
+					},
+					"IBST.L": {
+						"title": "Ibstock plc",
+						"alias": "IBST.L",
+						"traits": ["s"]
+					},
+					"KIE.L": {
+						"title": "Kier Group PLC",
+						"alias": "KIE.L",
+						"traits": ["s"]
+					},
+					"KLR.L": {
+						"title": "Keller Group PLC",
+						"alias": "KLR.L",
+						"traits": ["s"]
+					},
+					"MSLH.L": {
+						"title": "Marshalls PLC",
+						"alias": "MSLH.L",
+						"traits": ["s"]
+					},
+					"PLP.L": {
+						"title": "Polypipe Group PLC",
+						"alias": "PLP.L",
+						"traits": ["s"]
+					}
+				}
+			},
+			"nonlife_insurance": {
+				"title": "Nonlife Insurance",
+				"children": {
+					"BEZ.L": {
+						"title": "Beazley PLC",
+						"alias": "BEZ.L",
+						"traits": ["s"]
+					},
+					"ESUR.L": {
+						"title": "Esure Group PLC",
+						"alias": "ESUR.L",
+						"traits": ["s"]
+					},
+					"HSTG.L": {
+						"title": "Hastings Group Holdings plc",
+						"alias": "HSTG.L",
+						"traits": ["s"]
+					},
+					"HSX.L": {
+						"title": "Hiscox Ltd",
+						"alias": "HSX.L",
+						"traits": ["s"]
+					},
+					"JLT.L": {
+						"title": "Jardine Lloyd Thompson Group PLC",
+						"alias": "JLT.L",
+						"traits": ["s"]
+					},
+					"LRE.L": {
+						"title": "Lancashire Holdings Ltd",
+						"alias": "LRE.L",
+						"traits": ["s"]
+					}
+				}
+			},
+			"food_drug_retailers": {
+				"title": "Food & Drug Retailers",
+				"children": {
+					"BOK.L": {
+						"title": "Booker Group PLC",
+						"alias": "BOK.L",
+						"traits": ["s"]
+					},
+					"GRG.L": {
+						"title": "Greggs PLC",
+						"alias": "GRG.L",
+						"traits": ["s"]
+					},
+					"OCDO.L": {
+						"title": "Ocado Group PLC",
+						"alias": "OCDO.L",
+						"traits": ["s"]
+					}
+				}
+			},
+			"industrial_engineering": {
+				"title": "Industrial Engineering",
+				"children": {
+					"BOY.L": {
+						"title": "Bodycote PLC",
+						"alias": "BOY.L",
+						"traits": ["s"]
+					},
+					"IMI.L": {
+						"title": "IMI PLC",
+						"alias": "IMI.L",
+						"traits": ["s"]
+					},
+					"MRO.L": {
+						"title": "Melrose PLC",
+						"alias": "MRO.L",
+						"traits": ["s"]
+					},
+					"ROR.L": {
+						"title": "Rotork PLC",
+						"alias": "ROR.L",
+						"traits": ["s"]
+					},
+					"SPX.L": {
+						"title": "Spirax-Sarco Engineering PLC",
+						"alias": "SPX.L",
+						"traits": ["s"]
+					},
+					"WEIR.L": {
+						"title": "Weir Group PLC",
+						"alias": "WEIR.L",
+						"traits": ["s"]
+					}
+				}
+			},
+			"pharmaceuticals_biotechnology": {
+				"title": "Pharmaceuticals & Biotechnology",
+				"children": {
+					"BTG.L": {
+						"title": "BTG plc",
+						"alias": "BTG.L",
+						"traits": ["s"]
+					},
+					"CIR.L": {
+						"title": "Circassia Pharmaceuticals PLC",
+						"alias": "CIR.L",
+						"traits": ["s"]
+					},
+					"DPH.L": {
+						"title": "Dechra Pharmaceuticals PLC",
+						"alias": "DPH.L",
+						"traits": ["s"]
+					},
+					"GNS.L": {
+						"title": "Genus PLC",
+						"alias": "GNS.L",
+						"traits": ["s"]
+					},
+					"HIK.L": {
+						"title": "Hikma Pharmaceuticals PLC",
+						"alias": "HIK.L",
+						"traits": ["s"]
+					},
+					"INDV.L": {
+						"title": "Indivior PLC",
+						"alias": "INDV.L",
+						"traits": ["s"]
+					},
+					"VEC.L": {
+						"title": "Vectura Group PLC",
+						"alias": "VEC.L",
+						"traits": ["s"]
+					}
+				}
+			},
+			"household_goods_home_construction": {
+				"title": "Household Goods & Home Construction",
+				"children": {
+					"BVS.L": {
+						"title": "Bovis Homes Group PLC",
+						"alias": "BVS.L",
+						"traits": ["s"]
+					},
+					"BWY.L": {
+						"title": "Bellway PLC",
+						"alias": "BWY.L",
+						"traits": ["s"]
+					},
+					"CRST.L": {
+						"title": "CREST NICHOLSON",
+						"alias": "CRST.L",
+						"traits": ["s"]
+					},
+					"GFRD.L": {
+						"title": "Galliford Try PLC",
+						"alias": "GFRD.L",
+						"traits": ["s"]
+					},
+					"MCS.L": {
+						"title": "McCarthy & Stone Plc",
+						"alias": "MCS.L",
+						"traits": ["s"]
+					},
+					"RDW.L": {
+						"title": "Redrow PLC",
+						"alias": "RDW.L",
+						"traits": ["s"]
+					}
+				}
+			},
+			"real_estate_investment_services": {
+				"title": "Real Estate Investment & Services",
+				"children": {
+					"CAPC.L": {
+						"title": "Capital & Counties Properties PLC",
+						"alias": "CAPC.L",
+						"traits": ["s"]
+					},
+					"CLI.L": {
+						"title": "CLS Holdings PLC",
+						"alias": "CLI.L",
+						"traits": ["s"]
+					},
+					"CWD.L": {
+						"title": "Countrywide PLC",
+						"alias": "CWD.L",
+						"traits": ["s"]
+					},
+					"DJAN.L": {
+						"title": "Daejan Holdings PLC",
+						"alias": "DJAN.L",
+						"traits": ["s"]
+					},
+					"FCPT.L": {
+						"title": "F&C Asset Management PLC",
+						"alias": "FCPT.L",
+						"traits": ["s"]
+					},
+					"GRI.L": {
+						"title": "Grainger PLC",
+						"alias": "GRI.L",
+						"traits": ["s"]
+					},
+					"KWE.L": {
+						"title": "Kennedy Wilson Europe Real Estate PLC",
+						"alias": "KWE.L",
+						"traits": ["s"]
+					},
+					"SMP.L": {
+						"title": "St Modwen Properties PLC",
+						"alias": "SMP.L",
+						"traits": ["s"]
+					},
+					"SVS.L": {
+						"title": "Savills PLC",
+						"alias": "SVS.L",
+						"traits": ["s"]
+					},
+					"UKCM.L": {
+						"title": "UK Commercial Property Trust Ltd.",
+						"alias": "UKCM.L",
+						"traits": ["s"]
+					},
+					"UTG.L": {
+						"title": "UNITE Group PLC",
+						"alias": "UTG.L",
+						"traits": ["s"]
+					}
+				}
+			},
+			"personal_goods": {
+				"title": "Personal Goods",
+				"children": {
+					"CHOO.L": {
+						"title": "Jimmy Choo PLC",
+						"alias": "CHOO.L",
+						"traits": ["s"]
+					},
+					"PZC.L": {
+						"title": "PZ Cussons PLC",
+						"alias": "PZC.L",
+						"traits": ["s"]
+					},
+					"SGP.L": {
+						"title": "SuperGroup PLC",
+						"alias": "SGP.L",
+						"traits": ["s"]
+					},
+					"TED.L": {
+						"title": "TED BAKER",
+						"alias": "TED.L",
+						"traits": ["s"]
+					}
+				}
+			},
+			"travel_leisure": {
+				"title": "Travel & Leisure",
+				"children": {
+					"CINE.L": {
+						"title": "Travel & Leisure",
+						"alias": "CINE.L",
+						"traits": ["s"]
+					},
+					"DOM.L": {
+						"title": "Domino's Pizza Group PLC",
+						"alias": "DOM.L",
+						"traits": ["s"]
+					},
+					"FGP.L": {
+						"title": "FirstGroup PLC",
+						"alias": "FGP.L",
+						"traits": ["s"]
+					},
+					"GNK.L": {
+						"title": "Greene King PLC",
+						"alias": "GNK.L",
+						"traits": ["s"]
+					},
+					"GOG.L": {
+						"title": "Go-Ahead Group (The) PLC",
+						"alias": "GOG.L",
+						"traits": ["s"]
+					},
+					"JDW.L": {
+						"title": "Wetherspoon (J D) PLC",
+						"alias": "JDW.L",
+						"traits": ["s"]
+					},
+					"LAD.L": {
+						"title": "Ladbrokes PLC",
+						"alias": "LAD.L",
+						"traits": ["s"]
+					},
+					"MAB.L": {
+						"title": "Mitchells & Butlers PLC",
+						"alias": "MAB.L",
+						"traits": ["s"]
+					},
+					"MARS.L": {
+						"title": "Marston's PLC",
+						"alias": "MARS.L",
+						"traits": ["s"]
+					},
+					"MLC.L": {
+						"title": "Millennium & Copthorne Hotels PLC",
+						"alias": "MLC.L",
+						"traits": ["s"]
+					},
+					"NEX.L": {
+						"title": "National Express Group PLC",
+						"alias": "NEX.L",
+						"traits": ["s"]
+					},
+					"PTEC.L": {
+						"title": "Playtech Ltd.",
+						"alias": "PTEC.L",
+						"traits": ["s"]
+					},
+					"RNK.L": {
+						"title": "Rank Group (The) PLC",
+						"alias": "RNK.L",
+						"traits": ["s"]
+					},
+					"RTN.L": {
+						"title": "Restaurant Group (The) PLC",
+						"alias": "RTN.L",
+						"traits": ["s"]
+					},
+					"SGC.L": {
+						"title": "Stagecoach Group PLC",
+						"alias": "SGC.L",
+						"traits": ["s"]
+					},
+					"SSPG.L": {
+						"title": "SSP Group PLC",
+						"alias": "SSPG.L",
+						"traits": ["s"]
+					},
+					"TCG.L": {
+						"title": "Thomas Cook Group PLC",
+						"alias": "TCG.L",
+						"traits": ["s"]
+					},
+					"WIZZ.L": {
+						"title": "Wizz Air Holdings Plc",
+						"alias": "WIZZ.L",
+						"traits": ["s"]
+					},
+					"WMH.L": {
+						"title": "William Hill PLC",
+						"alias": "WMH.L",
+						"traits": ["s"]
+					}
+				}
+			},
+			"oil_gas_producers": {
+				"title": "Oil & Gas Producers",
+				"children": {
+					"CNE.L": {
+						"title": "Cairn Energy PLC",
+						"alias": "CNE.L",
+						"traits": ["s"]
+					},
+					"OPHR.L": {
+						"title": "Ophir Energy PLC",
+						"alias": "OPHR.L",
+						"traits": ["s"]
+					},
+					"TLW.L": {
+						"title": "Tullow Oil PLC",
+						"alias": "TLW.L",
+						"traits": ["s"]
+					}
+				}
+			},
+			"aerospace_defense": {
+				"title": "Aerospace & Defense",
+				"children": {
+					"COB.L": {
+						"title": "Cobham PLC",
+						"alias": "COB.L",
+						"traits": ["s"]
+					},
+					"MGGT.L": {
+						"title": "Meggitt PLC",
+						"alias": "MGGT.L",
+						"traits": ["s"]
+					},
+					"QQ.L": {
+						"title": "QinetiQ Group PLC",
+						"alias": "QQ.L",
+						"traits": ["s"]
+					},
+					"SNR.L": {
+						"title": "Senior PLC",
+						"alias": "SNR.L",
+						"traits": ["s"]
+					},
+					"ULE.L": {
+						"title": "Ultra Electronics Holdings PLC",
+						"alias": "ULE.L",
+						"traits": ["s"]
+					}
+				}
+			},
+			"chemicals": {
+				"title": "Chemicals",
+				"children": {
+					"CRDA.L": {
+						"title": "Croda International PLC",
+						"alias": "CRDA.L",
+						"traits": ["s"]
+					},
+					"ELM.L": {
+						"title": "Elementis PLC",
+						"alias": "ELM.L",
+						"traits": ["s"]
+					},
+					"SYNT.L": {
+						"title": "SYNTHOMER",
+						"alias": "SYNT.L",
+						"traits": ["s"]
+					},
+					"VCT.L": {
+						"title": "Victrex PLC",
+						"alias": "VCT.L",
+						"traits": ["s"]
+					}
+				}
+			},
+			"fixed_line_telecommunications": {
+				"title": "Fixed Line Telecommunications",
+				"children": {
+					"CWC.L": {
+						"title": "Cable & Wireless Communications PLC",
+						"alias": "CWC.L",
+						"traits": ["s"]
+					},
+					"TALK.L": {
+						"title": "TalkTalk Telecom Group PLC",
+						"alias": "TALK.L",
+						"traits": ["s"]
+					},
+					"TEP.L": {
+						"title": "Telecom plus PLC",
+						"alias": "TEP.L",
+						"traits": ["s"]
+					}
+				}
+			},
+			"food_producers": {
+				"title": "Food Producers",
+				"children": {
+					"CWK.L": {
+						"title": "Cranswick PLC",
+						"alias": "CWK.L",
+						"traits": ["s"]
+					},
+					"DCG.L": {
+						"title": "Dairy Crest Group PLC",
+						"alias": "DCG.L",
+						"traits": ["s"]
+					},
+					"GNC.L": {
+						"title": "Greencore Group PLC",
+						"alias": "GNC.L",
+						"traits": ["s"]
+					},
+					"TATE.L": {
+						"title": "Tate & Lyle PLC",
+						"alias": "TATE.L",
+						"traits": ["s"]
+					}
+				}
+			},
+			"electricity": {
+				"title": "Electricity",
+				"children": {
+					"DRX.L": {
+						"title": "Drax Group PLC",
+						"alias": "DRX.L",
+						"traits": ["s"]
+					}
+				}
+			},
+			"industrial_metals_mining": {
+				"title": "Industrial Metals & Mining",
+				"children": {
+					"EVR.L": {
+						"title": "EVRAZ PLC",
+						"alias": "EVR.L",
+						"traits": ["s"]
+					}
+				}
+			},
+			"electronic_electrical_equipment": {
+				"title": "Electronic & Electrical Equipment",
+				"children": {
+					"HLMA.L": {
+						"title": "Halma PLC",
+						"alias": "HLMA.L",
+						"traits": ["s"]
+					},
+					"MGAM.L": {
+						"title": "MORGAN ADV",
+						"alias": "MGAM.L",
+						"traits": ["s"]
+					},
+					"RSW.L": {
+						"title": "Renishaw plc",
+						"alias": "RSW.L",
+						"traits": ["s"]
+					},
+					"SXS.L": {
+						"title": "Spectris PLC",
+						"alias": "SXS.L",
+						"traits": ["s"]
+					}
+				}
+			},
+			"life_insurance": {
+				"title": "Life Insurance",
+				"children": {
+					"JRG.L": {
+						"title": "Just Retirement Group PLC",
+						"alias": "JRG.L",
+						"traits": ["s"]
+					},
+					"PHNX.L": {
+						"title": "Phoenix Group Holdings",
+						"alias": "PHNX.L",
+						"traits": ["s"]
+					}
+				}
+			},
+			"technology_hardware_equipment": {
+				"title": "Technology Hardware & Equipment",
+				"children": {
+					"LRD.L": {
+						"title": "Laird PLC",
+						"alias": "LRD.L",
+						"traits": ["s"]
+					}
+				}
+			},
+			"health_care_equipment_services": {
+				"title": "Health Care Equipment & Services",
+				"children": {
+					"NMC.L": {
+						"title": "NMC Health PLC",
+						"alias": "NMC.L",
+						"traits": ["s"]
+					},
+					"SPI.L": {
+						"title": "Spice PLC",
+						"alias": "SPI.L",
+						"traits": ["s"]
+					},
+					"UDG.L": {
+						"title": "UDG Healthcare PLC",
+						"alias": "UDG.L",
+						"traits": ["s"]
+					}
+				}
+			},
+			"gas_water_multiutilities": {
+				"title": "Gas, Water & Multiutilities",
+				"children": {
+					"PNN.L": {
+						"title": "Pennon Group PLC",
+						"alias": "PNN.L",
+						"traits": ["s"]
+					}
+				}
+			},
+			"general_industrials": {
+				"title": "General Industrials",
+				"children": {
+					"RPC.L": {
+						"title": "RPC Group PLC",
+						"alias": "RPC.L",
+						"traits": ["s"]
+					},
+					"SMDS.L": {
+						"title": "Smith (DS) PLC",
+						"alias": "SMDS.L",
+						"traits": ["s"]
+					},
+					"SMIN.L": {
+						"title": "Smiths Group PLC",
+						"alias": "SMIN.L",
+						"traits": ["s"]
+					},
+					"VSVS.L": {
+						"title": "Vesuvius PLC",
+						"alias": "VSVS.L",
+						"traits": ["s"]
+					}
+				}
+			}
+		}
+	},
+	"external": {},
+	"edges": [],
+	"visConfig": {
+		"doi": {
+			"components": [{
+				"attr": "close_dip",
+				"weight": 0.75,
+				"range": [-0.6, 0.6]
+			}],
+			"default": 0,
+			"step": 86400000,
+			"alpha": 0.3,
+			"beta": 0.3,
+			"range": [-1, 1],
+			"k" : 21,
+			"fuzzyDays" : 15,
+			"deltaMethod": "localwindow"
+		},
+		"representation": {
+			"overview": {
+				"config": {
+					"nodeChildren": [],
+					"mode": "selection-source",
+					"nodeWidth": 5,
+					"widthDependentDataRange": false,
+					"sliceHeight": 5,
+					"useCustomColor": false
+				}
+			},
+			"mainView": {
+				"config": {
+					"defaultNodeChildren": ["label height:3"],
+					"nodeChildren": [
+						"label height:2",
+						"stockstream_linear close",
+						"stockstream_linear change"
+					],
+					"mode": "selection-target",
+					"nodeWidth": 60,
+					"widthDependentDataRange": false,
+					"sliceHeight": 6,
+					"useCustomColor": false
+				}
+			},
+			"detailView": {
+				"config": {
+					"defaultNodeChildren": ["label height:1.5"],
+					"nodeChildren": [
+						{
+							"type": "label",
+							"config": {
+								"height": 1.4,
+								"template": "{{name}} - {{title}}",
+								"nodeCollapse": false,
+								"nodeSelect": false,
+								"nodeFocus": false,
+								"nodeDrag": false
+							}
+						},
+						{
+							"type": "time-axis",
+							"config": {
+								"height": 0.7,
+								"marginRight": 0,
+								"marginLeft": 80,
+								"ticks": 5
+							}
+						},
+						{
+							"type": "doistream",
+							"attr": "doi",
+							"config": {
+								"label": true,
+								"labelContent": "attrName",
+								"labelSpace": 45,
+								"selectable": false,
+								"marginRight": 0,
+								"yAxis": 30,
+								"missingValues": true,
+								"heightScaleFactor": 4.5,
+								"colorMissingValue": "#444"
+							}
+						},
+						{
+							"type": "stockstream",
+							"attr": "close",
+							"config": {
+								"isAnchorPoint": false,
+								"label": true,
+								"labelContent": "attrName",
+								"labelSpace": 45,
+								"indexPoint": false,
+								"indexLine": true,
+								"chartLine": true,
+								"selectable": false,
+								"marginRight": 0,
+								"yAxis": 30,
+								"missingValues": true,
+								"colorMissingValue": "#444"
+							}
+						}, {
+							"type": "stockstream",
+							"attr": "volume",
+							"config": {
+								"isAnchorPoint": false,
+								"label": true,
+								"labelContent": "attrName",
+								"labelSpace": 45,
+								"indexPoint": false,
+								"indexLine": true,
+								"chartLine": true,
+								"selectable": false,
+								"marginRight": 0,
+								"yAxis": 30,
+								"missingValues": true,
+								"colorMissingValue": "#444"
+							}
+						}
+					],
+					"nodeWidth": 60,
+					"widthDependentDataRange": false,
+					"sliceHeight": 30,
+					"useCustomColor": false,
+					"extras": { "nodeMarginLeft": 79, "nodeMarginRight": 0, "fixedWidth": 1 }
+				}
+			},
+			"treemap": {
+				"config": {
+					"defaultNodeChildren": [],
+					"nodeChildren": [],
+					"nodeWidth": 5,
+					"widthDependentDataRange": false,
+					"sliceHeight": 5,
+					"autoBinWidth": false,
+					"useCustomColor": true
+				}
+			},
+			"thermal_small": {
+				"config": {
+					"defaultNodeChildren": ["label height:4"],
+					"nodeChildren": [{
+						"type": "stockstream",
+						"attr": "close_dip",
+						"config": {
+							"isAnchorPoint": true,
+							"label": false,
+							"labelSpace": 13,
+							"indexPoint": true,
+							"indexNormalized": [-0.6,0.6],
+							"indexLine": false,
+							"chartLine": false,
+							"selectable": true,
+							"marginRight": 0,
+							"marginLeft": 0
+						}
+					}],
+					"mode": "selection-target",
+					"nodeWidth": 55,
+					"widthDependentDataRange": false,
+					"sliceHeight": 5,
+					"autoBinWidth": false,
+					"useCustomColor": false
+				}
+			},
+			"thermal_medium": {
+				"config": {
+					"defaultNodeChildren": ["label height:4"],
+					"nodeChildren": [{
+						"type": "stockstream",
+						"attr": "close_dip",
+						"config": {
+							"isAnchorPoint": true,
+							"label": true,
+							"labelSpace": 40,
+							"indexNormalized": [-0.6,0.6],
+							"indexPoint": true,
+							"indexLine": false,
+							"chartLine": false,
+							"selectable": true
+						}
+					}],
+					"mode": "selection-target",
+					"nodeWidth": 55,
+					"sliceHeight": 5,
+					"autoBinWidth": false,
+					"useCustomColor": false
+				}
+			},
+			"thermal_large": {
+				"config": {
+					"defaultNodeChildren": ["label height:2"],
+					"nodeChildren": [{
+						"type": "stockstream",
+						"attr": "close_dip",
+						"config": {
+							"isAnchorPoint": true,
+							"label": true,
+							"labelSpace": 40,
+							"indexNormalized": [-0.6,0.6],
+							"indexPoint": true,
+							"indexLine": true,
+							"chartLine": true,
+							"selectable": true
+						}
+					}],
+					"mode": "selection-target",
+					"nodeWidth": 105,
+					"widthDependentDataRange": false,
+					"sliceHeight": 35,
+					"autoBinWidth": false,
+					"useCustomColor": false
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,8 @@
+[
+  {"name":"A.A1","size":2815,"imports":["A","A.A2","B.B2"]},
+  {"name":"A.A2","size":8217,"imports":["A","A.A1","B.B1"]},
+  {"name":"B.B1","size":10993,"imports":["B","B.B2","A.A2"]},
+  {"name":"B.B2","size":6557,"imports":["B","B.B1","A.A1"]},
+  {"name":"B","size":652,"imports":["A"]},
+  {"name":"A","size":22026,"imports":["B"]}
+]

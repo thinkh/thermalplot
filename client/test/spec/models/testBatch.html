@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div id="result">
+        <h1>Awaiting result...</h1>
+        <span>If this section doesn't update, check your console for errors!</span>
+    </div>
+    <script src="tsUnit.js"></script>
+    <script src="tsUnitUtils.js"></script>
+    <script src="../../../app/scripts/models/Timed.js"></script>
+    <script src="TimedTest.js"></script>
+    <script src="../../../app/scripts/models/Models.js"></script>
+    <script src="ModelsTest.js"></script>
+    <script src="../../../app/scripts/directives/VisUtils.js"></script>
+    <script src="VisUtilsTest.js"></script>
+    <script>
+        window.onload = function () {
+            var test = new tsUnit.Test();
+            test.addTestClass(new TimedListTest(), 'TimedListTest');
+            test.addTestClass(new InfrastructureTest(), 'InfrastructureTest');
+            test.addTestClass(new VisUtilsTest(), 'VisUtilsTest');
+            test.showResults(document.getElementById('result'), test.run());
+        };
+    </script>
+</body>
+</html>

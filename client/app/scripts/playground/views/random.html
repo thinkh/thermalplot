@@ -1,0 +1,29 @@
+<div class="header">
+  <ul class="nav nav-pills pull-right">
+    <li><a ng-href="#infra">Infra</a></li>
+    <li><a ng-href="#heb">HEB</a></li>
+    <li class="active"><a ng-href="#random">Random</a></li>
+    <li><a ng-href="#chat">Chat</a></li>
+  </ul>
+  <h3 class="text-muted">pipes-vs-dams</h3>
+</div>
+
+<div class="row marketing">
+  <p class="clearfix">
+    <button class="btn pull-right" ng-class="{true: 'btn-success', false: 'btn-danger'}[isConnected]" ng-click="(isConnected == true) ? disconnect() : connect()">{{(isConnected == true) ? 'Connected' : 'Disconnected'}}</button>
+  </p>
+  <form role="form">
+  <div class="form-group">
+    <label for="domainRange">Domain</label>
+    <div range-slider min="minDomain" max="maxDomain" model-min="userMinDomain" model-max="userMaxDomain" step="1"></div>
+  </div>
+  </form>
+
+  <div id="viz"></div>
+  
+  <pre>{{ data }}</pre>
+</div>
+
+<div class="footer">
+  <p>Made at JKU Linz with ♥</p>
+</div>

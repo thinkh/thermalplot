@@ -1,6 +1,6 @@
 __author__ = 'sam'
 
-import yql
+from yql import YRequest
 import csv
 import argparse
 
@@ -12,7 +12,7 @@ import sqlite3
 parser = argparse.ArgumentParser(description='DOT Importer')
 parser.add_argument('--basedir', default='./')
 parser.add_argument('--db', default='yql.db')
-parser.add_argument('--stock', default='ftse250.csv')
+parser.add_argument('--stock', default='sp500.csv')
 parser.add_argument('--lastrun', '-l', default=None, help='path to timestamp file to continue until now')
 parser.add_argument('--just', nargs='+', default=None)
 parser.add_argument('--clear', action='store_true')
@@ -31,8 +31,6 @@ if args.just is None:
   with open(args.basedir + args.stock,'r') as f:
     stocks = [Stock(r) for i,r in enumerate(csv.reader(f,delimiter=';')) if i > 0 and len(r) > 0]
 
-y = yql.Public()
-
 
 with sqlite3.connect(args.basedir + args.db) as db:
   db.execute('CREATE TABLE IF NOT EXISTS stocks(ticker text, date text, volume int, open real, close real, adj_close real, high real, low real, change real, PRIMARY KEY (ticker, date) ON CONFLICT IGNORE )')
@@ -43,30 +41,37 @@ with sqlite3.connect(args.basedir + args.db) as db:
     db.execute('DELETE from stocks')
 
   def load(ticker, start, end):
-    query = 'select * from yahoo.finance.historicaldata where symbol = @stock and startDate = @start and endDate = @end';
+    y = YRequest(table='yahoo.finance.historicaldata')
+    #query = 'select * from yahoo.finance.historicaldata where symbol = @stock and startDate = @start and endDate = @end';
     #print query
-    result = y.execute(query, dict(stock=ticker, start=start,end=end),env='store://datatables.org/alltableswithkeys')
+    #result = y.execute(query, dict(stock=ticker, start=start,end=end),env='store://datatables.org/alltableswithkeys')
+    y.add_filter('symbol',ticker)
+    y.add_filter('startDate',start)
+    y.add_filter('endDate',end)
+    response = y.json()
+    result = response.result.query.results.quote if response.result.query.results else None
+    #print dir(result), type(result)
 
     #stock.history = result.rows
     prev = [0]
     def toRow(row):
-      if 'Volume' not in row:
+      if not hasattr(row,'Volume'):
         pass
-      volume = int(row['Volume'])
-      adj_close = float(row['Adj_Close'])
-      high = float(row['High'])
-      low = float(row['Low'])
-      date = row['Date']
-      open_ = float(row['Open'])
-      close = float(row['Close'])
+      volume = int(row.Volume)
+      adj_close = float(row.Adj_Close)
+      high = float(row.High)
+      low = float(row.Low)
+      date = row.Date
+      open_ = float(row.Open)
+      close = float(row.Close)
       change = close - prev[0]
       prev[0] = close
       return (ticker, date, volume, open_, close, adj_close, high, low, change)
-    if len(result.rows) > 0 and 'Volume' not in result.rows[0]:
-      print '\ninvalid return set: skip ' + str(result.rows[0])
+    if result is None or (result.count > 0 and not hasattr(result[0],'Volume')):
+      print '\ninvalid return set: skip ' + str(result[0] if result else response.result)
     else:
-      print '\b ' + ticker + ' ' + str(len(result.rows))
-      db.executemany('INSERT OR IGNORE INTO stocks values(?, ?, ?, ?, ?, ?, ?, ?, ?)',(toRow(r) for r in result.rows))
+      print '\b ' + ticker + ' ' + str(len(result))
+      db.executemany('INSERT OR IGNORE INTO stocks values(?, ?, ?, ?, ?, ?, ?, ?, ?)',(toRow(r) for r in result))
       db.commit()
 
   def load_stocks(start, end):

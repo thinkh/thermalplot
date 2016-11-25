@@ -1,5 +1,1 @@
-cd ./python-yql-master/
-python setup.py install
-
-cd ../
-python crawl.py --basedir=../sqlite/ --lastrun=lastrun.log
+python crawl.py --basedir=../sqlite/ --lastrun=lastrun.log --stock=ftse250.csv

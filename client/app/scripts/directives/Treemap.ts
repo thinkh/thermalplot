@@ -45,7 +45,7 @@ module PVDVisualizations {
       '#7b4173',
     ]); //d3.scale.category10();
     private headerHeight = 20 * ApplicationConfiguration.zoomFactor;
-    private headerColor = '#222223'; // use 6 digits to calculate idealColor
+    private headerColor = '#cccccc'; // use 6 digits to calculate idealColor
     private transitionDuration = 500;
 
     private data;
@@ -759,8 +759,8 @@ module PVDVisualizations {
       var color = this.headerColor;
 
       if(this.useDoiColoring) {
-        color = (d.children) ? this.headerColor : d.color;
-        //color = d.color;
+        //color = (d.children) ? this.headerColor : d.color;
+        color = d.color;
 
       } else {
         color = (d.node === this.infra.root) ? this.headerColor : this.colorScale(d.name);

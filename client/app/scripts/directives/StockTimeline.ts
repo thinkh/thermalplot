@@ -61,10 +61,10 @@ module PVDVisualizations {
     private noIndexPointColor = '#999';
     private whiteColor = '#fff';
     private loadGradientStops = [
-      {offset: 0, color: '#ccc'},
-      {offset: 0, color: '#ccc'},
+	  {offset: 0, color: '#333'},
       {offset: 0, color: '#333'},
-      {offset: 1.0, color: '#333'}
+      {offset: 0, color: '#ccc'},
+      {offset: 1.0, color: '#ccc'}
     ];
 
     private $svg;
@@ -283,7 +283,7 @@ module PVDVisualizations {
         .data(that.gradientStops)
         .enter().append('stop')
         .attr('offset', (d) => d.offset)
-        .attr('stop-color', (d) => (that.attrs.indexPoint === true) ? that.whiteColor : that.noIndexPointColor);
+        .attr('stop-color', (d) => (that.attrs.indexPoint === true) ? d.color : that.noIndexPointColor);
 
       that.$fillGradientStops = that.$svg.append('linearGradient')
         .attr('id', 'fill_timeline')
@@ -294,7 +294,7 @@ module PVDVisualizations {
         .enter().append('stop')
         .attr('offset', (d) => d.offset)
         .attr('stop-color', (d) => (that.attrs.indexPoint === true) ? d.color : that.noIndexPointColor)
-        .attr('stop-opacity', 0.7);
+        .attr('stop-opacity', 0.3);
 
       that.$extentLoadGradient = that.$svg.append('linearGradient')
         .attr('id', 'fill_extent')

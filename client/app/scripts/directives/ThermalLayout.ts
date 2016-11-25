@@ -1104,7 +1104,7 @@ module PVDVisualizations {
     public currentSelection = [];
 
     protected line;
-    protected color = d3.interpolateLab("#222223", "#ffffff");
+    protected color = d3.interpolateLab("#ffffff", "#333333");
     protected opacity = d3.scale.linear().range([0.1,1]);
 
     constructor(public $root, public config) {
@@ -1255,9 +1255,9 @@ module PVDVisualizations {
     private buffers = { pos: /*WebGLBuffer =*/ null, opacity : /*WebGLBuffer =*/ null };
 
     private static colors = {
-      normal: d3.rgb('#ffffff'),
+      normal: d3.rgb('#333333'),
       hovered: d3.rgb('#feb24c'),
-      selected: d3.rgb('#ffffff')
+      selected: d3.rgb('#333333')
     };
     private static lineWidth = 1;
 

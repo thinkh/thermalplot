@@ -1601,8 +1601,7 @@
 								"marginRight": 0,
 								"yAxis": 30,
 								"missingValues": true,
-								"heightScaleFactor": 4.5,
-								"colorMissingValue": "#444"
+								"heightScaleFactor": 4.5
 							}
 						},
 						{
@@ -1619,8 +1618,7 @@
 								"selectable": false,
 								"marginRight": 0,
 								"yAxis": 30,
-								"missingValues": true,
-								"colorMissingValue": "#444"
+								"missingValues": true
 							}
 						}, {
 							"type": "stockstream",
@@ -1636,8 +1634,7 @@
 								"selectable": false,
 								"marginRight": 0,
 								"yAxis": 30,
-								"missingValues": true,
-								"colorMissingValue": "#444"
+								"missingValues": true
 							}
 						}
 					],

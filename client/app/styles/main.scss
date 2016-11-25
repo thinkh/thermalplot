@@ -1,31 +1,6 @@
 $fa-font-path: "/bower_components/font-awesome/fonts/";
 
-$screen-width-3k: 5760px;
-
-$cloudgazer-blue: #3587bc;//#428bca;
-$cloudgazer-gray: #fff;
-$white: #222223;
-$black: #fff;
-
-$grid-lines: #444;
-
-$transparent: transparent;
-
-$blue-dark: #2F7CB3;
-$blue-light: #9ecae1;
-$blue-light2: #deebf7;
-
-$green-dark: #288544;
-$green-light: #a1d99b;
-$green-light2: #e5f5e0;
-
-$red-dark: #de2d26;
-$red-light: #fc9272;
-$red-light2: #fee0d2;
-
-$orange-highlight: #fea600;
-$highlight-color: #fffa00;
-$highlight-color-dark: #fee090;
+$screen-width-4k: 7680px;
 
 // bower:scss
 @import "../bower_components/font-awesome/scss/font-awesome.scss";
@@ -45,7 +20,7 @@ $highlight-color-dark: #fee090;
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
-  color: $black;
+  color: #000;
   padding: 0.2em 0;
 }
 
@@ -53,20 +28,18 @@ html {
   font-size: 14px;
 }
 
-@media (min-width: $screen-width-3k) {
+@media (min-width: $screen-width-4k) {
   html { font-size: 28px; }
 }
 
 /* Space out content a bit */
 body {
-  background: $white;
-  color: $black;
+  color: #111;
   padding-bottom: 20px;
   font-family: 'Source Sans Pro', 'Helvetica neue', 'Arial', sans-serif;
 
   @media print {
-    background: $white !important;
-    color: $black !important;
+    color: #111 !important;
     -webkit-print-color-adjust: exact;
   }
 }
@@ -85,59 +58,28 @@ b {
   font-weight: 700;
 }
 
-.btn-default {
-    color: $black;
-    background-color: $white;
-    border-color: $grid-lines;
-}
-
-.btn.active {
-    color: $black;
-    background-color: $grid-lines;
-    border-color: $grid-lines;
-}
-
-.btn.active:active,
-.btn.active:hover,
-.btn.active:focus,
-.btn-default:active,
-.btn-default:hover,
-.btn-default:focus {
-    color: $black;
-    background-color: $grid-lines;
-    border-color: $black;
-}
 
 @media print {
   .btn-default {
-    color: $black !important;
-    background-color: $white !important;
+    color: #333 !important;
+    background-color: #fff !important;
     -webkit-print-color-adjust: exact;
   }
 }
 
-.form-control {
-  color: $black;
-  background-color: $white;
-  border-color: $grid-lines;
-}
 
-.form-control:active,
-.form-control:hover,
-.form-control:focus {
-    color: $black;
-    background-color: $grid-lines;
-    border-color: $black;
-}
+$cloudgazer-blue: #3587bc;//#428bca;
+$cloudgazer-gray: #333333;
+$white: #fff;
 
 /* Custom page header */
 .header {
   padding-top: 5px;
-  background-color: #333;
+  background-color: $cloudgazer-gray;
   margin-bottom: 10px;
 
   @media print {
-    background-color: #333 !important;
+    background-color: $cloudgazer-gray !important;
     -webkit-print-color-adjust: exact;
   }
 
@@ -168,11 +110,11 @@ b {
     margin-bottom: 0;
     line-height: 40px;
     padding-bottom: 5px;
-    color: #fff;
+    color: $white;
     whitespace: nowrap;
 
     @media print {
-      color: #fff !important;
+      color: $white !important;
       -webkit-print-color-adjust: exact;
     }
 
@@ -186,10 +128,10 @@ b {
     a:active,
     a:focus,
     a:hover {
-      color: #fff;
+      color: $white;
 
       @media print {
-        color: #fff !important;
+        color: $white !important;
         -webkit-print-color-adjust: exact;
       }
     }
@@ -215,12 +157,6 @@ b {
     right: 0;
   }
 
-  .modal-content {
-    background: $white;
-    color: $black;
-    border: 1px solid $grid-lines;
-  }
-
   .modal-dialog {
     position: absolute;
     padding: 0;
@@ -229,7 +165,7 @@ b {
     z-index: 100;
 
     a {
-      color: $black;
+      color: #555555;
     }
 
     hr {
@@ -244,10 +180,6 @@ b {
 
   .modal-backdrop {
     opacity:0.2 !important;
-  }
-
-  .close {
-    color: $black;
   }
 }
 
@@ -280,7 +212,7 @@ b {
 
 .line {
   fill: none;
-  stroke: $black;
+  stroke: #000;
   stroke-width: 1.5px;
 }
 
@@ -348,7 +280,7 @@ pvd-hierarchy-tree svg {
 }
 
 .ht-node rect {
-  fill: $white;
+  fill: #fff;
   stroke: steelblue;
   stroke-width: 2px;
 }
@@ -364,7 +296,7 @@ pvd-hierarchy-tree svg {
 
 .ht-link {
   fill: none;
-  stroke: $black;
+  stroke: #111;
   stroke-width: 1px;
 }
 
@@ -392,6 +324,25 @@ pvd-hierarchy-node-explanation {
 
 
 }
+
+
+$transparent: transparent;
+
+$blue-dark: #2F7CB3;
+$blue-light: #9ecae1;
+$blue-light2: #deebf7;
+
+$green-dark: #288544;
+$green-light: #a1d99b;
+$green-light2: #e5f5e0;
+
+$red-dark: #de2d26;
+$red-light: #fc9272;
+$red-light2: #fee0d2;
+
+$orange-highlight: #fee090;
+$highlight-color: #fffa00;
+$highlight-color-dark: #fee090;
 
 
 /** Hierarchy Grid **/
@@ -546,11 +497,11 @@ pvd-hierarchy-small-multiple[orientation='vertical'] {
     &:active,
     &:focus,
     &:hover {
-      color: $white;
+      color: #fff;
       background-color: $transparent;
 
       @media print {
-        color: $white !important;
+        color: #fff !important;
         background-color: $transparent !important;
         -webkit-print-color-adjust: exact;
       }
@@ -613,11 +564,11 @@ pvd-hierarchy-small-multiple[orientation='vertical'] {
     &:active,
     &:focus,
     &:hover {
-      color: $white;
+      color: #fff;
       background-color: $blue-dark;
 
       @media print {
-        color: $white !important;
+        color: #fff !important;
         background-color: $blue-dark !important;
         -webkit-print-color-adjust: exact;
       }
@@ -680,11 +631,11 @@ pvd-hierarchy-small-multiple[orientation='vertical'] {
     &:active,
     &:focus,
     &:hover {
-      color: $white;
+      color: #fff;
       background-color: $green-dark;
 
       @media print {
-        color: $white !important;
+        color: #fff !important;
         background-color: $green-dark !important;
         -webkit-print-color-adjust: exact;
       }
@@ -747,11 +698,11 @@ pvd-hierarchy-small-multiple[orientation='vertical'] {
     &:active,
     &:focus,
     &:hover {
-      color: $white;
+      color: #fff;
       background-color: $red-dark;
 
       @media print {
-        color: $white !important;
+        color: #fff !important;
         background-color: $red-dark !important;
         -webkit-print-color-adjust: exact;
       }
@@ -850,7 +801,7 @@ pvd-hierarchy-small-multiple {
 }
 
 .hg-dtext {
-  background-color: $white;
+  background-color: #fff;
   display: block;
   text-align: center;
   overflow: hidden;
@@ -887,11 +838,11 @@ pvd-hierarchy-small-multiple {
 
 .stackedbar {
   border-bottom: 1px solid #bbb;
-  background-color: $white;
+  background-color: #fff;
   position: absolute;
 
   @media print {
-    background-color: $white !important;
+    background-color: #fff !important;
     -webkit-print-color-adjust: exact;
   }
 
@@ -961,11 +912,11 @@ pvd-hierarchy-small-multiple {
     }
   }
   .dist-0 {
-    background-color: $white;
-    border-right: 1px solid $white;
+    background-color: #fff;
+    border-right: 1px solid #fff;
 
     @media print {
-      background-color: $white !important;
+      background-color: #fff !important;
       -webkit-print-color-adjust: exact;
     }
   }
@@ -974,15 +925,15 @@ pvd-hierarchy-small-multiple {
 
 .gradientheatmap {
   border-bottom: 1px solid #bbb;
-  background-color: $white;
+  background-color: #fff;
 }
 
 .heatmap {
   border-bottom: 1px solid #bbb;
-  background-color: $white;
+  background-color: #fff;
 
   @media print {
-    background-color: $white !important;
+    background-color: #fff !important;
     -webkit-print-color-adjust: exact;
   }
 
@@ -997,7 +948,7 @@ pvd-hierarchy-small-multiple {
   }
 
   &.composite {
-    background-color: $white;
+    background-color: #fff;
     color: $cloudgazer-gray;
   }
 }
@@ -1008,10 +959,10 @@ pvd-hierarchy-small-multiple .heatmap > div.hover {
 
 .hbar {
   border-bottom: 1px solid #bbb;
-  background-color: $white;
+  background-color: #fff;
 
   @media print {
-    background-color: $white !important;
+    background-color: #fff !important;
     -webkit-print-color-adjust: exact;
   }
 
@@ -1032,10 +983,10 @@ pvd-hierarchy-small-multiple .heatmap > div.hover {
 }
 
 .streamgraph {
-  background-color: $white;
+  background-color: #fff;
 
   @media print {
-    background-color: $white !important;
+    background-color: #fff !important;
     -webkit-print-color-adjust: exact;
   }
 
@@ -1102,7 +1053,6 @@ pvd-hierarchy-small-multiple .heatmap > div.hover {
       font-weight: normal;
       font-size: 0.8rem;
       text-anchor: end;
-      fill: $black;
     }
 
     .axis text {
@@ -1148,7 +1098,7 @@ pvd-hierarchy-small-multiple .heatmap > div.hover {
 
   &.doi {
     path.doi {
-      stroke: $black;
+      stroke: black;
       stroke-dasharray: 4,4;
       stroke-linejoin: round;
       stroke-width: 2;
@@ -1180,7 +1130,6 @@ pvd-hierarchy-small-multiple .heatmap > div.hover {
   text {
     font-weight: normal;
     font-size: 0.8rem;
-    fill: $black;
   }
 }
 
@@ -1241,14 +1190,14 @@ path.thicker {
 
   path {
     fill: none;
-    stroke: $black;
+    stroke: #000;
     shape-rendering: crispEdges;
   }
 
   line {
     margin: 1px;
     stroke-width: 2;
-    stroke: $black;
+    stroke: black;
   }
 
   .timeline {
@@ -1261,7 +1210,7 @@ path.thicker {
   }
 
   .brush .extent {
-    stroke: $white;
+    stroke: #fff;
     fill-opacity: .125;
     shape-rendering: crispEdges;
   }
@@ -1282,7 +1231,7 @@ path.thicker {
 
     line, path {
       fill: none;
-      stroke: $black;
+      stroke: #000;
       shape-rendering: crispEdges;
     }
 
@@ -1332,19 +1281,19 @@ pvd-timeline {
   .axis path,
   .axis line {
     fill: none;
-    stroke: $black;
+    stroke: #000;
     shape-rendering: crispEdges;
   }
 
   .brush .extent {
-    stroke: $white;
+    stroke: #fff;
     fill-opacity: .125;
     shape-rendering: crispEdges;
   }
 
   text {
     font-size: 85%;
-    fill: $black;
+    fill: #000;
     pointer-events: none;
     user-select: none;
   }
@@ -1433,7 +1382,7 @@ pvd-thermal-layout {
 
     .trajectory {
       fill: none;
-      stroke: $black;
+      stroke: $cloudgazer-gray;
       stroke-width: 2;
       stroke-opacity: 0.5;
       pointer-events: none;
@@ -1554,12 +1503,8 @@ pvd-thermal-line-chart {
   .axis path,
   .axis line {
     fill: none;
-    stroke: $black;
+    stroke: #000;
     shape-rendering: crispEdges;
-  }
-
-  text {
-    fill: $black;
   }
 }
 
@@ -1576,7 +1521,7 @@ pvd-change-border-ruler {
 
   .grid {
     .tick {
-      stroke: $grid-lines;
+      stroke: #ddd;
       stroke-opacity: 0.7;
       shape-rendering: crispEdges;
 
@@ -1602,13 +1547,13 @@ pvd-change-border-ruler {
       path,
       line {
         fill: none;
-        stroke: $black;
+        stroke: #000;
         shape-rendering: crispEdges;
       }
 
       text {
         font-size: 0.9rem;
-        fill: $black;
+        fill: #000;
         pointer-events: none;
         user-select: none;
       }
@@ -1675,7 +1620,7 @@ pvd-change-border-ruler {
         border-color: transparent transparent $cloudgazer-gray;
         cursor: col-resize;
 
-        @media (min-width: $screen-width-3k) {
+        @media (min-width: $screen-width-4k) {
           top: 34px;
         }
 
@@ -1722,7 +1667,7 @@ pvd-change-border-ruler {
       z-index: 4;
       margin-left: 45px;
 
-      @media (min-width: $screen-width-3k) {
+      @media (min-width: $screen-width-4k) {
         margin-left: 100px;
       }
 
@@ -1771,13 +1716,13 @@ pvd-treemap {
 
   svg {
     overflow: hidden;
-    background: $white;
+    background: #fff;
   }
 
   rect {
     pointer-events: all;
     cursor: pointer;
-    stroke: $white;
+    stroke: #eee;
     stroke-width: 1px;
 
     &:active,
@@ -1794,7 +1739,7 @@ pvd-treemap {
   }
 
   .parent .nodelabel {
-    color: $white;
+    color: #fff;
   }
 
   .parent ul {
@@ -1828,9 +1773,6 @@ pvd-treemap {
 
   .root .nodelabel {
     font-weight: 700;
-  }
-
-  .root .nodelabel.ew-draggable {
     cursor: ew-resize;
   }
 
@@ -2018,7 +1960,7 @@ pvd-stock-detail-view {
 
       &>div,
       &>svg {
-        background: $white;
+        background: #fff;
       }
 
       .hg-timehighlight {
@@ -2048,7 +1990,7 @@ pvd-stock-detail-view {
       padding: 5px 0 0 52px;
       border: none;
       font-weight: 700;
-      background-color: $white;
+      background-color: white;
       z-index:3;
     }
   }
@@ -2149,7 +2091,7 @@ pvd-doi-editor {
         right: 0;
         width: 5px;
         height: 100%;
-        background-color: $white;
+        background-color: white;
         cursor: col-resize;
       }
     }
@@ -2197,14 +2139,14 @@ pvd-loading-overlay {
       position: absolute;
       right: 0;
       top: 0;
-      background-color: $white;
+      background-color: #fff;
       opacity: 0.7;
     }
 
     // http://arqex.com/934/4-balls-10-spinners-css3-animations
     .ball {
-      height: 25px;
-      width: 25px;
+      height: 15px;
+      width: 15px;
       position: absolute;
       left: 50%;
       top: 50%;
@@ -2215,7 +2157,7 @@ pvd-loading-overlay {
       position: absolute;
       height: 100%;
       width: 100%;
-      background: transparentize(#ccc, 0.3);
+      background: rgba(100, 100, 100, 0.4); // #333
       border: 2px solid #555;
       border-radius: 50%;
       position: absolute;
@@ -2226,7 +2168,7 @@ pvd-loading-overlay {
     .ball-1:before {
       transform: translateX(-150%);
       animation: 1s ease-out 0s infinite left;
-      background: transparentize(#e51c23, 0.3);
+      background: rgba(229, 28, 35, 0.4); // #e51c23
       border-color: #e51c23;
     }
     .ball-2:before {
@@ -2238,7 +2180,7 @@ pvd-loading-overlay {
     .ball-4:before {
       transform: translateX(150%);
       animation: 1s ease-out 0s infinite right;
-      background: transparentize(#259b24, 0.3);
+      background: rgba(37, 155, 36, 0.4); // #259b24
       border-color: #259b24;
     }
 
@@ -2263,17 +2205,17 @@ pvd-loading-overlay {
   margin: 1px 0 0 1px;
   width: 55px;
   height: 35px;
-  //border-right: 1px solid $black;
-  //border-bottom: 1px solid $black;
+  //border-right: 1px solid #000;
+  //border-bottom: 1px solid #000;
   position: absolute;
   font-size: 0.9rem;
 
-  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><path d='M1 0 L0 1 L99 100 L100 99' fill='white' /></svg>");
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><path d='M1 0 L0 1 L99 100 L100 99' fill='black' /></svg>");
   background-repeat:no-repeat;
   background-position:center center;
   background-size: 100% 100%, auto;
 
-  @media (min-width: $screen-width-3k) {
+  @media (min-width: $screen-width-4k) {
     width: 110px;
     height: 68px;
   }
@@ -2344,7 +2286,7 @@ pvd-map {
   }
 
   div.pvd-map {
-    background-color: $white;
+    background-color: #fff;
   }
 
   &[position='fixed'] div.pvd-map {

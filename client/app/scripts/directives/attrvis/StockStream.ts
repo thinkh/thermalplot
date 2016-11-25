@@ -86,8 +86,8 @@ module PVDVisualizations {
         .data(this.gradientStops)
         .enter().append('stop')
         .attr('offset', (d) => d.offset)
-        .attr('stop-color', '#fff');
-        //.attr('stop-color', (d) => d.color);
+        //.attr('stop-color', '#fff');
+        .attr('stop-color', (d) => d.color);
 
       this.$fillGradientStops = $defs.append('linearGradient')
         .attr('id', 'fill_' + defID)
@@ -98,7 +98,7 @@ module PVDVisualizations {
         .enter().append('stop')
         .attr('offset', (d) => d.offset)
         .attr('stop-color', (d) => d.color)
-        .attr('stop-opacity', 0.7);
+        .attr('stop-opacity', 0.3);
 
       this.$stripePattern = $defs.append('pattern')
         .attr('id', 'pattern_' + defID)
@@ -340,8 +340,8 @@ module PVDVisualizations {
           .attr('stop-color', (d) => d.color);
         this.$strokeGradientStops
           .attr('offset', (d) => d.offset)
-          .attr('stop-color', '#fff');
-          //.attr('stop-color', (d) => d.color);
+          //.attr('stop-color', '#fff');
+          .attr('stop-color', (d) => d.color);
 
         var line = (d) => {
           return 'M' + this.scale(data[0].index) + ',' + y1 +

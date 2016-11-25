@@ -9,3 +9,4 @@ typings
 tsd.gen.d.ts
 *.css
 .tscache
+*.map

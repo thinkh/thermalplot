@@ -24,7 +24,7 @@ clientdir=/var/client/
 if [ -d "$clientdir" ]
 then
 	echo "Install global npm dependencies"
-	npm install -g bower grunt-cli tsd typescript
+	npm install -g bower grunt-cli tsd
 
 	if [ -f "$clientdir/.provisioned" ]
 	then
@@ -69,6 +69,8 @@ then
 	npm install
 
 	npm install graceful-fs delayed-stream # dependency from grunt-imagemin.js
+	
+	npm rebuild # sometimes node-sass and optipng-bin are not compiled properly
 
 	bower install --allow-root
 	

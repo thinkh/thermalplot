@@ -48,7 +48,7 @@ module.exports = function (grunt) {
       //},
       //jsTest: {
       //  files: ['test/spec/{,*/}*.js'],
-      //  tasks: ['newer:jshint:test', 'karma']
+      //  tasks: ['newer:jshint:test']
       //},
       //compass: {
       //  files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
@@ -422,14 +422,6 @@ module.exports = function (grunt) {
     //   dist: {}
     // },
 
-    // Test settings
-    karma: {
-      unit: {
-        configFile: 'karma.conf.js',
-        singleRun: true
-      }
-    },
-
     ts: {
       // A specific target
       build: {
@@ -555,14 +547,6 @@ module.exports = function (grunt) {
     grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
     grunt.task.run(['serve']);
   });
-
-  grunt.registerTask('test', [
-    'clean:server',
-    'concurrent:test',
-    'autoprefixer',
-    'connect:test',
-    'karma'
-  ]);
 
   grunt.registerTask('build', [
     'clean:dist',

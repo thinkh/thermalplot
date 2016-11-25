@@ -94,8 +94,6 @@ python crawl.py --basedir=../sqlite/ --stock=ftse250.csv --start=2016-01-01 --en
 echo "--- Finished provision.sh ---"
 
 echo "Start server"
-cd /var/server
-python main.py -config=env.vagrant_serve.conf
 
 echo "-----------------------------"
 echo "ThermalPlot is ready!"
@@ -103,3 +101,8 @@ echo "Only two steps left:"
 echo "1) Open web browser"
 echo "2) Navigate to http://localhost:8888"
 echo "-----------------------------"
+
+cd /var/server
+python main.py -config=env.vagrant_serve.conf
+
+

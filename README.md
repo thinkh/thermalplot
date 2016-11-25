@@ -18,7 +18,9 @@ Install [VirtualBox](https://www.virtualbox.org/) and [Vagrant](https://www.vagr
 3. Run `cd your_repo_directory/vagrant && vagrant up` to create and boot the VM
 4. After the first part of the installation has been finished, run `vagrant ssh` to connect to the VM
 5. After connected to the VM run `cd /vagrant/`
-6. Provision the VM: On Windows run `sh provision.sh true`. On Mac/Linux run `sh provision.sh false` 
+6. Provision the VM:
+   - On Windows run `sh provision.sh true`
+   - On Mac/Linux run `sh provision.sh false` 
 7. Wait until the initial client-side build has finished 
 8. The setup will switch to the server directory and start the server automatically
 9. Open a web browser and go to http://localhost:8888

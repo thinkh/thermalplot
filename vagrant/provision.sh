@@ -89,7 +89,7 @@ fi
 
 echo "Update FTSE 250 dataset"
 cd /var/server/data/thermal_ftse250/csv
-python crawl.py --basedir=../sqlite/ --stock=ftse250.csv --lastrun=lastrun.log
+python crawl.py --basedir=../sqlite/ --stock=ftse250.csv --start=2016-01-01 --end=2016-12-31
 
 echo "--- Finished provision.sh ---"
 

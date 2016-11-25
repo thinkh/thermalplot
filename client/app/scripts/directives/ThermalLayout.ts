@@ -311,13 +311,15 @@ module PVDVisualizations {
       //    height: this.config.gridHeight + 'px'
       //  });
       //this.trajectories = new Trajectories(trajectories, this.config);
-      var trajectories = this.$root.append('canvas')
+      
+	  // Disabled, because WebGL support is broken in Chrome 54
+	  /*var trajectories = this.$root.append('canvas')
         .attr('id', 'trajectories')
         .attr({
           width: this.config.gridWidth,
           height: this.config.gridHeight
         });
-      this.trajectories = new WebGLTrajectories(trajectories, this.config);
+      this.trajectories = new WebGLTrajectories(trajectories, this.config);*/
 
       // append basic elements
       this.$physics = this.$root.append('div').attr('id', 'physics');
@@ -544,11 +546,11 @@ module PVDVisualizations {
         this.showPhysicsBodies([]);
       }
 
-      if(this.layoutConfig.showTrajectories) {
+      /*if(this.layoutConfig.showTrajectories) {
         this.trajectories.show(this.trajectories.bodies.filter((d) => (d.showTrajectory)));
       } else {
         this.trajectories.show([]);
-      }
+      }*/
     }
 
     private showPhysicsBodies(data) {
@@ -890,7 +892,7 @@ module PVDVisualizations {
       });
 
       // calculate trajectory
-      if(that.layoutConfig.showTrajectories) {
+      /*if(that.layoutConfig.showTrajectories) {
         that.trajectories.bodies = that.bodiesMap.values()
           // NOTE: body.showTrajectory -> in worst case the body trajectory is calculate on the next update() call when the body has already crossed the border
           .filter((body) => (!body.node.hasNodeChildren() && body.showTrajectory))
@@ -898,7 +900,7 @@ module PVDVisualizations {
             body.trajectory = that.computeTrajectoriesActivities(body.node.node, s, that.config.selection.doi);
             return body;
           });
-      }
+      }*/
     }
 
     get layouter() {

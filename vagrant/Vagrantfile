@@ -24,8 +24,8 @@ $userScript = <<SCRIPT
 	wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh
 	export NVM_DIR="/home/vagrant/.nvm"
 	[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"	# This loads nvm
-	nvm install 5.10.1
-	nvm alias default 5.10.1
+	nvm install 6.9.1
+	nvm alias default 6.9.1
 SCRIPT
 
 $infoScript = <<SCRIPT

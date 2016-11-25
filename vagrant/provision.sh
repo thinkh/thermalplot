@@ -86,4 +86,20 @@ else
 	echo "No client dir found!"
 fi
 
+
+echo "Update FTSE 250 dataset"
+cd /var/server/data/thermal_ftse250/csv
+python crawl.py --basedir=../sqlite/ --stock=ftse250.csv --lastrun=lastrun.log
+
 echo "--- Finished provision.sh ---"
+
+echo "Start server"
+cd /var/server
+python main.py -config=env.vagrant_serve.conf
+
+echo "-----------------------------"
+echo "ThermalPlot is ready!"
+echo "Only two steps left:"
+echo "1) Open web browser"
+echo "2) Navigate to http://localhost:8888"
+echo "-----------------------------"

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg height="326.43646" id="svg2987" version="1.1" width="405.89001" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .train {
+      stop-color: #fff;
+    }
+    .cross {
+      fill: #fff;
+      stroke: #fff;
+    }
+    .circle {
+      fill:#fff;
+    }
+  </style>
+  <title id="title3868">ThermalPlot</title>
+  <defs id="defs2991">
+    <linearGradient id="linearGradient3928">
+      <stop class="train" id="stop3930" offset="0" style="stop-opacity:0"/>
+      <stop class="train" id="stop3932" offset="1" style="stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient gradientTransform="translate(54.439638,94.88245)" gradientUnits="userSpaceOnUse" id="linearGradient3934" x1="318.54071" x2="419.16177" xlink:href="#linearGradient3928" y1="54.517719" y2="117.89231"/>
+    <linearGradient gradientTransform="translate(4.5723993,100.35307)" gradientUnits="userSpaceOnUse" id="linearGradient3934-9" x1="253.4381" x2="374.56708" xlink:href="#linearGradient3928-3" y1="156.86559" y2="156.86559"/>
+    <linearGradient id="linearGradient3928-3">
+      <stop class="train" id="stop3930-1" offset="0" style="stop-opacity:1"/>
+      <stop class="train" id="stop3932-9" offset="1" style="stop-opacity:0"/>
+    </linearGradient>
+    <linearGradient gradientTransform="translate(49.867239,-5.47062)" gradientUnits="userSpaceOnUse" id="linearGradient3994" x1="86.84819" x2="203.59087" xlink:href="#linearGradient3928-3" y1="257.15961" y2="365.0076"/>
+  </defs>
+  <g id="layer2" transform="translate(-54.439639,-94.88245)">
+    <path class="cross" d="m 257.38672,102.88245 0,310.43646" id="path2989" style="fill-opacity:1;stroke-width:16;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+    <path class="cross" d="m 452.33382,258.10068 -389.894181,0" id="path2989-4" style="fill-opacity:1;stroke-width:16;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+    <path d="m 271.97412,148.02984 c 27.65569,-0.93203 55.53965,8.52318 76.92444,26.08441 21.38479,17.56123 36.08226,43.07398 40.54642,70.3829 5.29108,32.36746 -4.07966,66.84606 -25.02655,92.08246" id="path3138"
+      style="fill:none;stroke:url(#linearGradient3934);stroke-width:16;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/>
+    <path class="circle" d="m 250.00717,73.429153 a 3.3412907,3.3412907 0 1 1 -6.68258,0 3.3412907,3.3412907 0 1 1 6.68258,0 z" id="path3114-1"
+      style="fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" transform="matrix(8.2303524,0,0,8.4536748,-1677.5537,-266.50383)"/>
+    <path d="m 243.56849,377.0285 c -27.65569,0.93203 -55.53965,-8.52318 -76.92444,-26.08441 -21.38479,-17.56123 -36.08226,-43.07398 -40.54642,-70.3829 -5.29108,-32.36746 4.07966,-66.84606 25.02655,-92.08246" id="path3138-6"
+      style="fill:none;stroke:url(#linearGradient3994);stroke-width:16;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/>
+    <path class="circle" d="m 250.00717,73.429153 a 3.3412907,3.3412907 0 1 1 -6.68258,0 3.3412907,3.3412907 0 1 1 6.68258,0 z" id="path3114-1-5"
+      style="fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" transform="matrix(-8.2303524,0,0,-8.4536748,2193.0963,791.56217)"/>
+  </g>
+</svg>

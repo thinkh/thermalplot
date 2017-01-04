@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="author" content="Holger Stitz, Samuel Gratzl, Wolfgang Aigner and Marc Streit" />
+  <meta name="description" content="ThermalPlot is a visualization technique that summarizes complex combinations of multiple attributes over time using an item’s position.">
+  <meta charset="utf-8">
+  <title>ThermalPlot: Visualizing Multi-Attribute Time-Series Data Using a Thermal Metaphor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Le styles -->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,700">
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+  <!-- Fav and touch icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="icons/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="57x57" href="icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+  <link rel="manifest" href="icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body data-spy="scroll" data-target="navbar-collapse-1">
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">ThermalPlot</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">
+          <img src="images/thermalplot-logo.svg"> ThermalPlot</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#about">About</a></li>
+          <li><a href="#video">Video</a></li>
+          <li><a href="#demo">Demos</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#acknowledgements">Acknowledgements</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <header class="jumbotron subhead" id="overview">
+    <div class="container">
+      <h1>
+        <img src="images/thermalplot-logo_dark.svg" style="width:110px;position:relative; top:-5px;margin-right:15px;">ThermalPlot</h1>
+      <p class="lead" style="margin-left:5px;">Visualizing Multi-Attribute Time-Series Data Using a Thermal Metaphor</p>
+    </div>
+  </header>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <section id="about">
+          <h2 class="page-header">About</h2>
+          <p>
+            ThermalPlot summarizes complex combinations of multi-attribute time-series (e.g., interest rate or gross domestic product (GDP)) in a single degree-of-interest (DoI) value, describing the user-defined interestingness for each item. This is especially
+            useful to provide an overview over a large collection of items, such as the economic development of countries.
+          </p>
+          <p>
+            The interestingness (DoI) is mapped to the x-axis in the plot, whereas the relative change in the DoI value (ΔDoI) within a user-speciﬁed time window (e.g., 3 month or 1 year) is mapped to the y-axis. Consequently each quadrant of the plot has an inherent
+            meaning:
+          </p>
+          <ul>
+            <li>Quadrant I (top-right): items with a constant positive development</li>
+            <li>Quadrant II (top-left): items that had a negative phase in the beginning of the time window, but show a recent positive development</li>
+            <li>Quadrant III (bottom-left): items with a constant negative development</li>
+            <li>Quadrant IV (bottom-right): items that had a positive phase in the beginning of the time window, but show a recent negative development</li>
+          </ul>
+          <p>
+            Based on the interestingness (and therefore position) we adapt the items’ level of detail, to help the user to identify important items and reduce the visual clutter.
+          </p>
+          <p><img src="images/demo-oecd_annotated.png" style="width:100%; height: auto;" alt="ThermalPlot setup" /></p>
+          <p>
+            For the practical use, a couple of support visualizations are required. As illustrated in the Figure, the overall setup consists of four linked components: (a) the ThermalPlot as the core of our system, (b) the timeline showing the full time range for which data is available lets
+            the user set an index point which the DoI value is compared to and a time window that speciﬁes the data which serves as an input to ThermalPlot, (c) the DoI editor as an interface for composing the computation function by means of combining
+            and weighting multiple attributes, and (d) the detail view presenting the development of attributes over time for the selected items.
+          </p>
+        </section>
+
+
+        <section id="video">
+          <h2 class="page-header">Video</h2>
+          <!--<div class="flex-video widescreen">
+            <iframe src="http://www.youtube.com/embed/@YOUTUBE@vq=hd720&amp;origin=http://thermalplot.caleydo.org" frameborder="0" allowfullscreen=""></iframe>
+          </div>-->
+          <video src="video/thermalplot.mp4" controls="controls" poster="video/poster.png" style="width:100%;height:auto;"></video>
+        </section>
+
+        <section id="demo">
+          <h2 class="page-header">Demos</h2>
+          <div class="alert alert-default" role="alert">Please note: The demo is only available for <a href="https://www.google.com/chrome/browser/desktop/index.html"><i class="fa fa-chrome"></i> Google Chrome</a>.</div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="thumbnail">
+                <a href="http://193.170.32.78:8080/#/uc/thermal_gapminder" target="_blank">
+                  <img src="images/demo-gapminder.png" alt="ThermalPlot demo with gapminder dataset">
+                </a>
+                <div class="caption">
+                  <a href="http://193.170.32.78:8080/#/uc/thermal_gapminder" target="_blank">
+                    <h3>Wealth and Livability</h3>
+                  </a>
+                  <p>Singapore increased income per person and reduced the CO<sub>2</sub> emissions per capita within 10 years compared to 2001. Explore how other countries has developed.</p>
+                  <p>Data Source: <a href="http://www.gapminder.org/">Gapminder.org</a></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="thumbnail">
+                <a href="http://193.170.32.78:8080/#/uc/thermal_oecd" target="_blank">
+                  <img src="images/demo-oecd-interest-rate.png" alt="ThermalPlot demo with OECD dataset">
+                </a>
+                <div class="caption">
+                  <a href="http://193.170.32.78:8080/#/uc/thermal_oecd" target="_blank">
+                    <h3>Financial Crisis 2009/2010</h3>
+                  </a>
+                  <p>Explore how Latvia overcame the financial crisis in 2009/2010 compared to the year 2006 and how other European countries developed in that time.</p>
+                  <p>Data Source: <a href="http://stats.oecd.org/">OECD Stats</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact">
+          <h2 class="page-header">Contact</h2>
+          <p>You can contact us, via <a href="mailto:holger.stitz@jku.at">holger.stitz@jku.at</a>. </p>
+        </section>
+
+        <section id="acknowledgements" style="margin-bottom:60px;">
+          <h2 class="page-header"> Acknowledgements</h2>
+          <p>This work was supported by the <a href="http://www.bmvit.gv.at/en/innovation/ict/index.html">ICT of the Future</a> program of the <a href="http://www.bmvit.gv.at/">Austrian Ministry for Transport, Innovation and Technology</a> (BMVIT) via the
+            projects <a href="http://www.pipes-vs-dams.at/">PIPES-VS-DAMES</a> (840232) and <a href="http://mc.fhstp.ac.at/projects/valid">VALiD</a> (845598) as well as the <a href="http://www.fwf.ac.at/">Austrian Science Fund</a> (FWF) via the <a href="http://mc.fhstp.ac.at/projects/kava-time">KAVA-Time</a>            project (P25489).</p>
+        </section>
+      </div>
+
+      <div class="col-md-3">
+        <section id="team">
+          <h2 class="page-header">Team</h2>
+          <div class="row">
+            <div class="col-xs-5 col-sm-4 col-md-8">
+              <a href="http://jku.at" class="thumbnail">
+                <img alt="Johannes Kepler University Linz" src="images/jku.jpg">
+              </a>
+            </div>
+          </div>
+          <ul class="staff">
+            <li>
+              <a href="http://www.jku.at/cg/content/e48314/index_html?team_view=section&emp=e48314/employee_groups_wiss59683/employees204260" class="btn btn-md btn-fa">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-user fa-stack-1x"></i>
+                </span>
+                <span class="text">Holger Stitz</span>
+              </a>
+            </li>
+            <li>
+              <a href="http://www.jku.at/cg/content/e48314/index_html?team_view=section&amp;emp=e48314/employee_groups_wiss59683/employees173094" class="btn btn-md btn-fa">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-user fa-stack-1x"></i>
+                </span>
+                <span class="text">Samuel Gratzl</span>
+              </a>
+            </li>
+            <li>
+              <a href="http://marc-streit.com" class="btn btn-md btn-fa">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-user fa-stack-1x"></i>
+                </span>
+                <span class="text">Marc Streit</span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="row">
+            <div class="col-xs-3 col-sm-2 col-md-5">
+              <a href="https://www.fhstp.ac.at/" class="thumbnail">
+                <img data-src="" alt="FH St. Pölten" src="images/fh-st-poelten.png">
+              </a>
+            </div>
+          </div>
+          <ul class="staff">
+            <li>
+              <a href="https://www.fhstp.ac.at/de/uber-uns/mitarbeiter-innen-a-z/aigner-wolfgang" class="btn btn-md btn-fa">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-user fa-stack-1x"></i>
+                </span>
+                <span class="text">Wolfgang Aigner</span>
+              </a>
+            </li>
+          </ul>
+
+        </section>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <div class="container">&nbsp;
+      <!--<p class="text-muted"></p>-->
+    </div>
+  </footer>
+
+  <!-- Le javascript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  <script>
+    (function($) {
+      $(document).ready(function() {
+        $('body').scrollspy({
+          target: '#navbar-collapse-1'
+        });
+      });
+    })(jQuery)
+  </script>
+  <!--<script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("@TRACKER@");
+            pageTracker._trackPageview();
+        } catch (err) {
+        }
+    </script>-->
+</body>
+
+</html>

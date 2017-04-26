@@ -26,4 +26,5 @@ W*.js
 X*.js
 Y*.js
 Z*.js
+*.map
 !app.js

@@ -77,7 +77,7 @@ class PVDDataService {
 
   private _maxTimestamp = 0;
 
-  private _prevUri = 'ws://' + document.location.host + '/vast/socket';
+  private _prevUri = (location.protocol === 'https:' ? 'wss' : 'ws') + '://' + document.location.host + '/vast/socket';
 
   private callbacks = {};
 

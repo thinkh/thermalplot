@@ -1,3 +1,2 @@
 tornado==4.2
 ujson==1.33
-requests

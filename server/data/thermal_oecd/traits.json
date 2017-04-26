@@ -1,0 +1,57 @@
+{
+  "country": {
+    "attributes": {
+      "doi": {
+        "type": "doi",
+        "alias": "DOI"
+      },
+      "lt_interest_rate": {
+        "type": "float",
+        "alias": "Long-term interest rates",
+        "__alias__": "Long-term interest rates, Per cent per annum",
+        "unit": "percentage",
+        "invert": true,
+        "__range__": [ -0.07, 58.57 ],
+        "range": [ 0, 50 ],
+        "source": "http://stats.oecd.org/index.aspx?r=754741"
+      },
+      "lt_interest_rate_di": {
+        "alias": "<abbr title=\"relative to index point\">Long-term interest rates</abbr>",
+        "type": "delta_index",
+        "attr": "lt_interest_rate",
+        "invert": true
+      },
+      "lt_interest_rate_dip": {
+        "type": "delta_index_percentage",
+        "alias": "<abbr title=\"relative to index point in %\">Long-term interest rates</abbr>",
+        "attr": "lt_interest_rate",
+        "invert": true,
+        "range": [ -1.5, 1.5 ]
+      },
+      "st_interest_rate": {
+        "type": "float",
+        "alias": "Short-term interest rates",
+        "__alias__": "Short-term interest rates, Per cent per annum",
+        "unit": "percentage",
+        "invert": true,
+        "__range__": [ -0.854, 27.83 ],
+        "range": [ 0, 30 ],
+        "source": "http://stats.oecd.org/index.aspx?r=754741"
+      },
+      "st_interest_rate_di": {
+        "alias": "<abbr title=\"relative to index point\">Short-term interest rates</abbr>",
+        "type": "delta_index",
+        "attr": "st_interest_rate",
+        "invert": true
+      },
+      "st_interest_rate_dip": {
+        "type": "delta_index_percentage",
+        "alias": "<abbr title=\"relative to index point in %\">Short-term interest rates</abbr>",
+        "__alias__": "STIR (Δ to index in %)",
+        "attr": "st_interest_rate",
+        "invert": true,
+        "range": [ -1.5, 1.5 ]
+      }
+    }
+  }
+}

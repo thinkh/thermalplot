@@ -1,0 +1,3590 @@
+{
+	"name": "S&P 500",
+	"id": "ts",
+	"color": "transparent",
+	"version": "0.0.1",
+	"traits": {
+		"s": {
+			"attributes": {
+				"doi": {
+					"alias": "DoI",
+					"type": "doi"
+				},
+				"open": {
+					"alias": "Open",
+					"type": "float",
+					"range": [
+						0,
+						1380
+					]
+				},
+				"open_dip": {
+					"alias": "ΔOpen",
+					"type": "delta_index_percentage",
+					"attr": "open"
+				},
+				"close": {
+					"alias": "Close",
+					"type": "float",
+					"range": [
+						0,
+						1380
+					]
+				},
+				"close_di": {
+					"alias": "Close (di)",
+					"type": "delta_index",
+					"attr": "close"
+				},
+				"close_dip": {
+					"alias": "ΔClose",
+					"type": "delta_index_percentage",
+					"attr": "close"
+				},
+				"low": {
+					"alias": "Low",
+					"type": "float",
+					"range": [
+						0,
+						1380
+					]
+				},
+				"high": {
+					"alias": "High",
+					"type": "float",
+					"range": [
+						0,
+						1380
+					]
+				},
+				"adj_close": {
+					"alias": "Adj Close",
+					"type": "float",
+					"range": [
+						0,
+						1380
+					]
+				},
+				"change": {
+					"alias": "Change",
+					"type": "float",
+					"range": [-4.5,
+						4.5
+					],
+					"realrange": [-70,
+						1141
+					]
+				},
+				"volume": {
+					"alias": "Volume",
+					"type": "int",
+					"range": [
+						0,
+						616620500
+					]
+				},
+				"volume_di": {
+					"alias": "Volume (di)",
+					"type": "delta_index",
+					"attr": "volume"
+				},
+				"volume_dip": {
+					"alias": "ΔVolume",
+					"type": "delta_index_percentage",
+					"attr": "volume"
+				},
+				"P_E": {
+					"alias": "P/E",
+					"type": "constant"
+				},
+				"P_Free_Cash_Flow": {
+					"alias": "P Free Cash Flow",
+					"type": "constant"
+				},
+				"Dividend_Yield": {
+					"alias": "Dividend Yield",
+					"type": "constant"
+				},
+				"EPS_growth_this_year": {
+					"alias": "EPS growth this year",
+					"type": "constant"
+				},
+				"Return_on_Equity": {
+					"alias": "Return on Equity",
+					"type": "constant"
+				},
+				"LT_Debt_Equity": {
+					"alias": "LT Debt/Equity",
+					"type": "constant",
+					"invert": true
+				}
+			}
+		}
+	},
+	"root": {
+		"name": "sp500",
+		"title": "S&P 500",
+		"children": {
+			"consumer_discretionary": {
+				"title": "Consumer Discretionary",
+				"children": {
+					"advertising": {
+						"title": "Advertising",
+						"children": {
+							"IPG": {
+								"title": "Interpublic Group",
+								"alias": "IPG",
+								"traits": ["s"]
+							},
+							"OMC": {
+								"title": "Omnicom Group",
+								"alias": "OMC",
+								"traits": ["s"]
+							}
+						}
+					},
+					"apparel_retail": {
+						"title": "Apparel Retail",
+						"children": {
+							"GPS": {
+								"title": "Gap (The)",
+								"alias": "GPS",
+								"traits": ["s"]
+							},
+							"LB": {
+								"title": "L Brands Inc.",
+								"alias": "LB",
+								"traits": ["s"]
+							},
+							"ROST": {
+								"title": "Ross Stores",
+								"alias": "ROST",
+								"traits": ["s"]
+							},
+							"TJX": {
+								"title": "TJX Companies Inc.",
+								"alias": "TJX",
+								"traits": ["s"]
+							},
+							"URBN": {
+								"title": "Urban Outfitters",
+								"alias": "URBN",
+								"traits": ["s"]
+							}
+						}
+					},
+					"apparel_accessories_luxury_goods": {
+						"title": "Apparel, Accessories & Luxury Goods",
+						"children": {
+							"COH": {
+								"title": "Coach Inc.",
+								"alias": "COH",
+								"traits": ["s"]
+							},
+							"FOSL": {
+								"title": "Fossil, Inc.",
+								"alias": "FOSL",
+								"traits": ["s"]
+							},
+							"KORS": {
+								"title": "Michael Kors Holdings",
+								"alias": "KORS",
+								"traits": ["s"]
+							},
+							"NKE": {
+								"title": "Nike",
+								"alias": "NKE",
+								"traits": ["s"]
+							},
+							"RL": {
+								"title": "Polo Ralph Lauren Corp.",
+								"alias": "RL",
+								"traits": ["s"]
+							},
+							"PVH": {
+								"title": "PVH Corp.",
+								"alias": "PVH",
+								"traits": ["s"]
+							},
+							"TIF": {
+								"title": "Tiffany & Co.",
+								"alias": "TIF",
+								"traits": ["s"]
+							},
+							"UA": {
+								"title": "Under Armour",
+								"alias": "UA",
+								"traits": ["s"]
+							},
+							"VFC": {
+								"title": "V.F. Corp.",
+								"alias": "VFC",
+								"traits": ["s"]
+							}
+						}
+					},
+					"auto_parts_equipment": {
+						"title": "Auto Parts & Equipment",
+						"children": {
+							"BWA": {
+								"title": "BorgWarner",
+								"alias": "BWA",
+								"traits": ["s"]
+							},
+							"DLPH": {
+								"title": "Delphi Automotive",
+								"alias": "DLPH",
+								"traits": ["s"]
+							},
+							"JCI": {
+								"title": "Johnson Controls",
+								"alias": "JCI",
+								"traits": ["s"]
+							}
+						}
+					},
+					"automobile_manufacturers": {
+						"title": "Automobile Manufacturers",
+						"children": {
+							"F": {
+								"title": "Ford Motor",
+								"alias": "F",
+								"traits": ["s"]
+							},
+							"GM": {
+								"title": "General Motors",
+								"alias": "GM",
+								"traits": ["s"]
+							}
+						}
+					},
+					"broadcasting_cable_tv": {
+						"title": "Broadcasting & Cable TV",
+						"children": {
+							"CVC": {
+								"title": "Cablevision Systems Corp.",
+								"alias": "CVC",
+								"traits": ["s"]
+							},
+							"CBS": {
+								"title": "CBS Corp.",
+								"alias": "CBS",
+								"traits": ["s"]
+							},
+							"CMCSA": {
+								"title": "Comcast Corp.",
+								"alias": "CMCSA",
+								"traits": ["s"]
+							},
+							"DTV": {
+								"title": "DirecTV",
+								"alias": "DTV",
+								"traits": ["s"]
+							},
+							"DISCA": {
+								"title": "Discovery Communications-A",
+								"alias": "DISCA",
+								"traits": ["s"]
+							},
+							"DISCK": {
+								"title": "Discovery Communications-C",
+								"alias": "DISCK",
+								"traits": ["s"]
+							},
+							"SNI": {
+								"title": "Scripps Networks Interactive Inc.",
+								"alias": "SNI",
+								"traits": ["s"]
+							},
+							"TWX": {
+								"title": "Time Warner Inc.",
+								"alias": "TWX",
+								"traits": ["s"]
+							},
+							"TWC": {
+								"title": "Time Warner Cable Inc.",
+								"alias": "TWC",
+								"traits": ["s"]
+							},
+							"VIAB": {
+								"title": "Viacom Inc.",
+								"alias": "VIAB",
+								"traits": ["s"]
+							},
+							"DIS": {
+								"title": "The Walt Disney Company",
+								"alias": "DIS",
+								"traits": ["s"]
+							}
+						}
+					},
+					"casinos_gaming": {
+						"title": "Casinos & Gaming",
+						"children": {
+							"WYNN": {
+								"title": "Wynn Resorts Ltd",
+								"alias": "WYNN",
+								"traits": ["s"]
+							}
+						}
+					},
+					"computer_electronics_retail": {
+						"title": "Computer & Electronics Retail",
+						"children": {
+							"BBY": {
+								"title": "Best Buy Co. Inc.",
+								"alias": "BBY",
+								"traits": ["s"]
+							}
+						}
+					},
+					"construction": {
+						"title": "Construction",
+						"children": {
+							"DHI": {
+								"title": "D. R. Horton",
+								"alias": "DHI",
+								"traits": ["s"]
+							}
+						}
+					},
+					"consumer_electronics": {
+						"title": "Consumer Electronics",
+						"children": {
+							"GRMN": {
+								"title": "Garmin Ltd.",
+								"alias": "GRMN",
+								"traits": ["s"]
+							},
+							"HAR": {
+								"title": "Harman Int'l Industries",
+								"alias": "HAR",
+								"traits": ["s"]
+							}
+						}
+					},
+					"department_stores": {
+						"title": "Department Stores",
+						"children": {
+							"M": {
+								"title": "Macy's Inc.",
+								"alias": "M",
+								"traits": ["s"]
+							},
+							"JWN": {
+								"title": "Nordstrom",
+								"alias": "JWN",
+								"traits": ["s"]
+							}
+						}
+					},
+					"general_merchandise_stores": {
+						"title": "General Merchandise Stores",
+						"children": {
+							"DG": {
+								"title": "Dollar General",
+								"alias": "DG",
+								"traits": ["s"]
+							},
+							"DLTR": {
+								"title": "Dollar Tree",
+								"alias": "DLTR",
+								"traits": ["s"]
+							},
+							"FDO": {
+								"title": "Family Dollar Stores",
+								"alias": "FDO",
+								"traits": ["s"]
+							},
+							"KSS": {
+								"title": "Kohl's Corp.",
+								"alias": "KSS",
+								"traits": ["s"]
+							},
+							"TGT": {
+								"title": "Target Corp.",
+								"alias": "TGT",
+								"traits": ["s"]
+							}
+						}
+					},
+					"home_furnishings": {
+						"title": "Home Furnishings",
+						"children": {
+							"MHK": {
+								"title": "Mohawk Industries",
+								"alias": "MHK",
+								"traits": ["s"]
+							}
+						}
+					},
+					"home_improvement_retail": {
+						"title": "Home Improvement Retail",
+						"children": {
+							"HD": {
+								"title": "Home Depot",
+								"alias": "HD",
+								"traits": ["s"]
+							},
+							"LOW": {
+								"title": "Lowe's Cos.",
+								"alias": "LOW",
+								"traits": ["s"]
+							}
+						}
+					},
+					"homebuilding": {
+						"title": "Homebuilding",
+						"children": {
+							"LEN": {
+								"title": "Lennar Corp.",
+								"alias": "LEN",
+								"traits": ["s"]
+							},
+							"PHM": {
+								"title": "Pulte Homes Inc.",
+								"alias": "PHM",
+								"traits": ["s"]
+							}
+						}
+					},
+					"hotel_resorts_and_cruise_lines": {
+						"title": "Hotel, Resorts and Cruise Lines",
+						"children": {
+							"RCL": {
+								"title": "Royal Caribbean Cruises Ltd",
+								"alias": "RCL",
+								"traits": ["s"]
+							}
+						}
+					},
+					"hotels_resorts_cruise_lines": {
+						"title": "Hotels, Resorts & Cruise Lines",
+						"children": {
+							"CCL": {
+								"title": "Carnival Corp.",
+								"alias": "CCL",
+								"traits": ["s"]
+							},
+							"EXPE": {
+								"title": "Expedia Inc.",
+								"alias": "EXPE",
+								"traits": ["s"]
+							},
+							"MAR": {
+								"title": "Marriott Int'l.",
+								"alias": "MAR",
+								"traits": ["s"]
+							},
+							"PCLN": {
+								"title": "Priceline.com Inc",
+								"alias": "PCLN",
+								"traits": ["s"]
+							},
+							"HOT": {
+								"title": "Starwood Hotels & Resorts",
+								"alias": "HOT",
+								"traits": ["s"]
+							},
+							"WYN": {
+								"title": "Wyndham Worldwide",
+								"alias": "WYN",
+								"traits": ["s"]
+							}
+						}
+					},
+					"household_appliances": {
+						"title": "Household Appliances",
+						"children": {
+							"SNA": {
+								"title": "Snap-On Inc.",
+								"alias": "SNA",
+								"traits": ["s"]
+							},
+							"SWK": {
+								"title": "Stanley Black & Decker",
+								"alias": "SWK",
+								"traits": ["s"]
+							},
+							"WHR": {
+								"title": "Whirlpool Corp.",
+								"alias": "WHR",
+								"traits": ["s"]
+							}
+						}
+					},
+					"housewares_specialties": {
+						"title": "Housewares & Specialties",
+						"children": {
+							"NWL": {
+								"title": "Newell Rubbermaid Co.",
+								"alias": "NWL",
+								"traits": ["s"]
+							}
+						}
+					},
+					"internet_retail": {
+						"title": "Internet Retail",
+						"children": {
+							"AMZN": {
+								"title": "Amazon.com Inc",
+								"alias": "AMZN",
+								"traits": ["s"]
+							},
+							"TRIP": {
+								"title": "TripAdvisor",
+								"alias": "TRIP",
+								"traits": ["s"]
+							}
+						}
+					},
+					"leisure_products": {
+						"title": "Leisure Products",
+						"children": {
+							"HAS": {
+								"title": "Hasbro Inc.",
+								"alias": "HAS",
+								"traits": ["s"]
+							},
+							"MAT": {
+								"title": "Mattel Inc.",
+								"alias": "MAT",
+								"traits": ["s"]
+							}
+						}
+					},
+					"motorcycle_manufacturers": {
+						"title": "Motorcycle Manufacturers",
+						"children": {
+							"HOG": {
+								"title": "Harley-Davidson",
+								"alias": "HOG",
+								"traits": ["s"]
+							}
+						}
+					},
+					"publishing": {
+						"title": "Publishing",
+						"children": {
+							"GCI": {
+								"title": "Gannett Co.",
+								"alias": "GCI",
+								"traits": ["s"]
+							},
+							"NWSA": {
+								"title": "News Corporation",
+								"alias": "NWSA",
+								"traits": ["s"]
+							},
+							"FOXA": {
+								"title": "Twenty-First Century Fox",
+								"alias": "FOXA",
+								"traits": ["s"]
+							}
+						}
+					},
+					"restaurants": {
+						"title": "Restaurants",
+						"children": {
+							"CMG": {
+								"title": "Chipotle Mexican Grill",
+								"alias": "CMG",
+								"traits": ["s"]
+							},
+							"DRI": {
+								"title": "Darden Restaurants",
+								"alias": "DRI",
+								"traits": ["s"]
+							},
+							"MCD": {
+								"title": "McDonald's Corp.",
+								"alias": "MCD",
+								"traits": ["s"]
+							},
+							"SBUX": {
+								"title": "Starbucks Corp.",
+								"alias": "SBUX",
+								"traits": ["s"]
+							},
+							"YUM": {
+								"title": "Yum! Brands Inc",
+								"alias": "YUM",
+								"traits": ["s"]
+							}
+						}
+					},
+					"specialty_retail": {
+						"title": "Specialty Retail",
+						"children": {
+							"TSCO": {
+								"title": "Tractor Supply Company",
+								"alias": "TSCO",
+								"traits": ["s"]
+							}
+						}
+					},
+					"specialty_stores": {
+						"title": "Specialty Stores",
+						"children": {
+							"AN": {
+								"title": "AutoNation Inc",
+								"alias": "AN",
+								"traits": ["s"]
+							},
+							"AZO": {
+								"title": "AutoZone Inc",
+								"alias": "AZO",
+								"traits": ["s"]
+							},
+							"BBBY": {
+								"title": "Bed Bath & Beyond",
+								"alias": "BBBY",
+								"traits": ["s"]
+							},
+							"KMX": {
+								"title": "Carmax Inc",
+								"alias": "KMX",
+								"traits": ["s"]
+							},
+							"GME": {
+								"title": "GameStop Corp.",
+								"alias": "GME",
+								"traits": ["s"]
+							},
+							"GPC": {
+								"title": "Genuine Parts",
+								"alias": "GPC",
+								"traits": ["s"]
+							},
+							"ORLY": {
+								"title": "O'Reilly Automotive",
+								"alias": "ORLY",
+								"traits": ["s"]
+							},
+							"PETM": {
+								"title": "PetSmart, Inc.",
+								"alias": "PETM",
+								"traits": ["s"]
+							},
+							"SPLS": {
+								"title": "Staples Inc.",
+								"alias": "SPLS",
+								"traits": ["s"]
+							}
+						}
+					},
+					"tires_rubber": {
+						"title": "Tires & Rubber",
+						"children": {
+							"GT": {
+								"title": "Goodyear Tire & Rubber",
+								"alias": "GT",
+								"traits": ["s"]
+							}
+						}
+					}
+				}
+			},
+			"consumer_staples": {
+				"title": "Consumer Staples",
+				"children": {
+					"agricultural_products": {
+						"title": "Agricultural Products",
+						"children": {
+							"ADM": {
+								"title": "Archer-Daniels-Midland Co",
+								"alias": "ADM",
+								"traits": ["s"]
+							}
+						}
+					},
+					"brewers": {
+						"title": "Brewers",
+						"children": {
+							"TAP": {
+								"title": "Molson Coors Brewing Company",
+								"alias": "TAP",
+								"traits": ["s"]
+							}
+						}
+					},
+					"distillers_vintners": {
+						"title": "Distillers & Vintners",
+						"children": {
+							"BF.B": {
+								"title": "Brown-Forman Corporation",
+								"alias": "BF.B",
+								"traits": ["s"]
+							},
+							"STZ": {
+								"title": "Constellation Brands",
+								"alias": "STZ",
+								"traits": ["s"]
+							}
+						}
+					},
+					"drug_retail": {
+						"title": "Drug Retail",
+						"children": {
+							"CVS": {
+								"title": "CVS Caremark Corp.",
+								"alias": "CVS",
+								"traits": ["s"]
+							},
+							"WBA": {
+								"title": "Walgreens Boots Alliance",
+								"alias": "WBA",
+								"traits": ["s"]
+							}
+						}
+					},
+					"food_distributors": {
+						"title": "Food Distributors",
+						"children": {
+							"SYY": {
+								"title": "Sysco Corp.",
+								"alias": "SYY",
+								"traits": ["s"]
+							}
+						}
+					},
+					"food_retail": {
+						"title": "Food Retail",
+						"children": {
+							"KR": {
+								"title": "Kroger Co.",
+								"alias": "KR",
+								"traits": ["s"]
+							},
+							"WFM": {
+								"title": "Whole Foods Market",
+								"alias": "WFM",
+								"traits": ["s"]
+							}
+						}
+					},
+					"household_products": {
+						"title": "Household Products",
+						"children": {
+							"CLX": {
+								"title": "The Clorox Company",
+								"alias": "CLX",
+								"traits": ["s"]
+							},
+							"CL": {
+								"title": "Colgate-Palmolive",
+								"alias": "CL",
+								"traits": ["s"]
+							},
+							"KMB": {
+								"title": "Kimberly-Clark",
+								"alias": "KMB",
+								"traits": ["s"]
+							}
+						}
+					},
+					"hypermarkets_super_centers": {
+						"title": "Hypermarkets & Super Centers",
+						"children": {
+							"COST": {
+								"title": "Costco Co.",
+								"alias": "COST",
+								"traits": ["s"]
+							},
+							"WMT": {
+								"title": "Wal-Mart Stores",
+								"alias": "WMT",
+								"traits": ["s"]
+							}
+						}
+					},
+					"packaged_foods_meats": {
+						"title": "Packaged Foods & Meats",
+						"children": {
+							"CPB": {
+								"title": "Campbell Soup",
+								"alias": "CPB",
+								"traits": ["s"]
+							},
+							"CAG": {
+								"title": "ConAgra Foods Inc.",
+								"alias": "CAG",
+								"traits": ["s"]
+							},
+							"GIS": {
+								"title": "General Mills",
+								"alias": "GIS",
+								"traits": ["s"]
+							},
+							"HRL": {
+								"title": "Hormel Foods Corp.",
+								"alias": "HRL",
+								"traits": ["s"]
+							},
+							"K": {
+								"title": "Kellogg Co.",
+								"alias": "K",
+								"traits": ["s"]
+							},
+							"GMCR": {
+								"title": "Keurig Green Mountain",
+								"alias": "GMCR",
+								"traits": ["s"]
+							},
+							"KRFT": {
+								"title": "Kraft Foods Group",
+								"alias": "KRFT",
+								"traits": ["s"]
+							},
+							"MKC": {
+								"title": "McCormick & Co.",
+								"alias": "MKC",
+								"traits": ["s"]
+							},
+							"MJN": {
+								"title": "Mead Johnson",
+								"alias": "MJN",
+								"traits": ["s"]
+							},
+							"MDLZ": {
+								"title": "Mondelez International",
+								"alias": "MDLZ",
+								"traits": ["s"]
+							},
+							"SJM": {
+								"title": "Smucker (J.M.)",
+								"alias": "SJM",
+								"traits": ["s"]
+							},
+							"HSY": {
+								"title": "The Hershey Company",
+								"alias": "HSY",
+								"traits": ["s"]
+							},
+							"TSN": {
+								"title": "Tyson Foods",
+								"alias": "TSN",
+								"traits": ["s"]
+							}
+						}
+					},
+					"personal_products": {
+						"title": "Personal Products",
+						"children": {
+							"AVP": {
+								"title": "Avon Products",
+								"alias": "AVP",
+								"traits": ["s"]
+							},
+							"EL": {
+								"title": "Estee Lauder Cos.",
+								"alias": "EL",
+								"traits": ["s"]
+							},
+							"PG": {
+								"title": "Procter & Gamble",
+								"alias": "PG",
+								"traits": ["s"]
+							}
+						}
+					},
+					"soft_drinks": {
+						"title": "Soft Drinks",
+						"children": {
+							"KO": {
+								"title": "The Coca Cola Company",
+								"alias": "KO",
+								"traits": ["s"]
+							},
+							"CCE": {
+								"title": "Coca-Cola Enterprises",
+								"alias": "CCE",
+								"traits": ["s"]
+							},
+							"DPS": {
+								"title": "Dr Pepper Snapple Group",
+								"alias": "DPS",
+								"traits": ["s"]
+							},
+							"MNST": {
+								"title": "Monster Beverage",
+								"alias": "MNST",
+								"traits": ["s"]
+							},
+							"PEP": {
+								"title": "PepsiCo Inc.",
+								"alias": "PEP",
+								"traits": ["s"]
+							}
+						}
+					},
+					"tobacco": {
+						"title": "Tobacco",
+						"children": {
+							"MO": {
+								"title": "Altria Group Inc",
+								"alias": "MO",
+								"traits": ["s"]
+							},
+							"LO": {
+								"title": "Lorillard Inc.",
+								"alias": "LO",
+								"traits": ["s"]
+							},
+							"PM": {
+								"title": "Philip Morris International",
+								"alias": "PM",
+								"traits": ["s"]
+							},
+							"RAI": {
+								"title": "Reynolds American Inc.",
+								"alias": "RAI",
+								"traits": ["s"]
+							}
+						}
+					}
+				}
+			},
+			"energy": {
+				"title": "Energy",
+				"children": {
+					"coal_consumable_fuels": {
+						"title": "Coal & Consumable Fuels",
+						"children": {
+							"CNX": {
+								"title": "CONSOL Energy Inc.",
+								"alias": "CNX",
+								"traits": ["s"]
+							}
+						}
+					},
+					"integrated_oil_gas": {
+						"title": "Integrated Oil & Gas",
+						"children": {
+							"CHK": {
+								"title": "Chesapeake Energy",
+								"alias": "CHK",
+								"traits": ["s"]
+							},
+							"CVX": {
+								"title": "Chevron Corp.",
+								"alias": "CVX",
+								"traits": ["s"]
+							},
+							"XOM": {
+								"title": "Exxon Mobil Corp.",
+								"alias": "XOM",
+								"traits": ["s"]
+							},
+							"HES": {
+								"title": "Hess Corporation",
+								"alias": "HES",
+								"traits": ["s"]
+							},
+							"MUR": {
+								"title": "Murphy Oil",
+								"alias": "MUR",
+								"traits": ["s"]
+							}
+						}
+					},
+					"oil_gas_drilling": {
+						"title": "Oil & Gas Drilling",
+						"children": {
+							"DO": {
+								"title": "Diamond Offshore Drilling",
+								"alias": "DO",
+								"traits": ["s"]
+							},
+							"ESV": {
+								"title": "Ensco plc",
+								"alias": "ESV",
+								"traits": ["s"]
+							},
+							"HP": {
+								"title": "Helmerich & Payne",
+								"alias": "HP",
+								"traits": ["s"]
+							},
+							"NBR": {
+								"title": "Nabors Industries Ltd.",
+								"alias": "NBR",
+								"traits": ["s"]
+							},
+							"NE": {
+								"title": "Noble Corp",
+								"alias": "NE",
+								"traits": ["s"]
+							},
+							"RIG": {
+								"title": "Transocean",
+								"alias": "RIG",
+								"traits": ["s"]
+							}
+						}
+					},
+					"oil_gas_equipment__services": {
+						"title": "Oil & Gas Equipment & Services",
+						"children": {
+							"BHI": {
+								"title": "Baker Hughes Inc",
+								"alias": "BHI",
+								"traits": ["s"]
+							},
+							"CAM": {
+								"title": "Cameron International Corp.",
+								"alias": "CAM",
+								"traits": ["s"]
+							},
+							"FTI": {
+								"title": "FMC Technologies Inc.",
+								"alias": "FTI",
+								"traits": ["s"]
+							},
+							"HAL": {
+								"title": "Halliburton Co.",
+								"alias": "HAL",
+								"traits": ["s"]
+							},
+							"NOV": {
+								"title": "National Oilwell Varco Inc.",
+								"alias": "NOV",
+								"traits": ["s"]
+							},
+							"SLB": {
+								"title": "Schlumberger Ltd.",
+								"alias": "SLB",
+								"traits": ["s"]
+							}
+						}
+					},
+					"oil_gas_exploration__production": {
+						"title": "Oil & Gas Exploration & Production",
+						"children": {
+							"APC": {
+								"title": "Anadarko Petroleum Corp",
+								"alias": "APC",
+								"traits": ["s"]
+							},
+							"APA": {
+								"title": "Apache Corporation",
+								"alias": "APA",
+								"traits": ["s"]
+							},
+							"COG": {
+								"title": "Cabot Oil & Gas",
+								"alias": "COG",
+								"traits": ["s"]
+							},
+							"XEC": {
+								"title": "Cimarex Energy",
+								"alias": "XEC",
+								"traits": ["s"]
+							},
+							"COP": {
+								"title": "ConocoPhillips",
+								"alias": "COP",
+								"traits": ["s"]
+							},
+							"DNR": {
+								"title": "Denbury Resources Inc.",
+								"alias": "DNR",
+								"traits": ["s"]
+							},
+							"DVN": {
+								"title": "Devon Energy Corp.",
+								"alias": "DVN",
+								"traits": ["s"]
+							},
+							"EOG": {
+								"title": "EOG Resources",
+								"alias": "EOG",
+								"traits": ["s"]
+							},
+							"EQT": {
+								"title": "EQT Corporation",
+								"alias": "EQT",
+								"traits": ["s"]
+							},
+							"MRO": {
+								"title": "Marathon Oil Corp.",
+								"alias": "MRO",
+								"traits": ["s"]
+							},
+							"NFX": {
+								"title": "Newfield Exploration Co",
+								"alias": "NFX",
+								"traits": ["s"]
+							},
+							"NBL": {
+								"title": "Noble Energy Inc",
+								"alias": "NBL",
+								"traits": ["s"]
+							},
+							"OXY": {
+								"title": "Occidental Petroleum",
+								"alias": "OXY",
+								"traits": ["s"]
+							},
+							"OKE": {
+								"title": "ONEOK",
+								"alias": "OKE",
+								"traits": ["s"]
+							},
+							"PXD": {
+								"title": "Pioneer Natural Resources",
+								"alias": "PXD",
+								"traits": ["s"]
+							},
+							"QEP": {
+								"title": "QEP Resources",
+								"alias": "QEP",
+								"traits": ["s"]
+							},
+							"RRC": {
+								"title": "Range Resources Corp.",
+								"alias": "RRC",
+								"traits": ["s"]
+							},
+							"SWN": {
+								"title": "Southwestern Energy",
+								"alias": "SWN",
+								"traits": ["s"]
+							},
+							"WMB": {
+								"title": "Williams Cos.",
+								"alias": "WMB",
+								"traits": ["s"]
+							}
+						}
+					},
+					"oil_gas_refining__marketing__transportation": {
+						"title": "Oil & Gas Refining & Marketing & Transportation",
+						"children": {
+							"KMI": {
+								"title": "Kinder Morgan",
+								"alias": "KMI",
+								"traits": ["s"]
+							},
+							"MPC": {
+								"title": "Marathon Petroleum",
+								"alias": "MPC",
+								"traits": ["s"]
+							},
+							"PSX": {
+								"title": "Phillips 66",
+								"alias": "PSX",
+								"traits": ["s"]
+							},
+							"SE": {
+								"title": "Spectra Energy Corp.",
+								"alias": "SE",
+								"traits": ["s"]
+							},
+							"TSO": {
+								"title": "Tesoro Petroleum Co.",
+								"alias": "TSO",
+								"traits": ["s"]
+							},
+							"VLO": {
+								"title": "Valero Energy",
+								"alias": "VLO",
+								"traits": ["s"]
+							}
+						}
+					}
+				}
+			},
+			"financials": {
+				"title": "Financials",
+				"children": {
+					"asset_management_custody_banks": {
+						"title": "Asset Management & Custody Banks",
+						"children": {
+							"AMG": {
+								"title": "Affiliated Managers Group Inc",
+								"alias": "AMG",
+								"traits": ["s"]
+							}
+						}
+					},
+					"banks": {
+						"title": "Banks",
+						"children": {
+							"BAC": {
+								"title": "Bank of America Corp",
+								"alias": "BAC",
+								"traits": ["s"]
+							},
+							"BK": {
+								"title": "The Bank of New York Mellon Corp.",
+								"alias": "BK",
+								"traits": ["s"]
+							},
+							"BBT": {
+								"title": "BB&T Corporation",
+								"alias": "BBT",
+								"traits": ["s"]
+							},
+							"C": {
+								"title": "Citigroup Inc.",
+								"alias": "C",
+								"traits": ["s"]
+							},
+							"CMA": {
+								"title": "Comerica Inc.",
+								"alias": "CMA",
+								"traits": ["s"]
+							},
+							"FITB": {
+								"title": "Fifth Third Bancorp",
+								"alias": "FITB",
+								"traits": ["s"]
+							},
+							"HCBK": {
+								"title": "Hudson City Bancorp",
+								"alias": "HCBK",
+								"traits": ["s"]
+							},
+							"HBAN": {
+								"title": "Huntington Bancshares",
+								"alias": "HBAN",
+								"traits": ["s"]
+							},
+							"JPM": {
+								"title": "JPMorgan Chase & Co.",
+								"alias": "JPM",
+								"traits": ["s"]
+							},
+							"KEY": {
+								"title": "KeyCorp",
+								"alias": "KEY",
+								"traits": ["s"]
+							},
+							"MTB": {
+								"title": "M&T Bank Corp.",
+								"alias": "MTB",
+								"traits": ["s"]
+							},
+							"PBCT": {
+								"title": "People's United Bank",
+								"alias": "PBCT",
+								"traits": ["s"]
+							},
+							"PNC": {
+								"title": "PNC Financial Services",
+								"alias": "PNC",
+								"traits": ["s"]
+							},
+							"STI": {
+								"title": "SunTrust Banks",
+								"alias": "STI",
+								"traits": ["s"]
+							},
+							"USB": {
+								"title": "U.S. Bancorp",
+								"alias": "USB",
+								"traits": ["s"]
+							},
+							"WFC": {
+								"title": "Wells Fargo",
+								"alias": "WFC",
+								"traits": ["s"]
+							},
+							"ZION": {
+								"title": "Zions Bancorp",
+								"alias": "ZION",
+								"traits": ["s"]
+							}
+						}
+					},
+					"consumer_finance": {
+						"title": "Consumer Finance",
+						"children": {
+							"AXP": {
+								"title": "American Express Co",
+								"alias": "AXP",
+								"traits": ["s"]
+							},
+							"HRB": {
+								"title": "Block H&R",
+								"alias": "HRB",
+								"traits": ["s"]
+							},
+							"COF": {
+								"title": "Capital One Financial",
+								"alias": "COF",
+								"traits": ["s"]
+							},
+							"DFS": {
+								"title": "Discover Financial Services",
+								"alias": "DFS",
+								"traits": ["s"]
+							},
+							"NAVI": {
+								"title": "Navient",
+								"alias": "NAVI",
+								"traits": ["s"]
+							}
+						}
+					},
+					"diversified_financial_services": {
+						"title": "Diversified Financial Services",
+						"children": {
+							"AMP": {
+								"title": "Ameriprise Financial",
+								"alias": "AMP",
+								"traits": ["s"]
+							},
+							"BLK": {
+								"title": "BlackRock",
+								"alias": "BLK",
+								"traits": ["s"]
+							},
+							"SCHW": {
+								"title": "Charles Schwab Corporation",
+								"alias": "SCHW",
+								"traits": ["s"]
+							},
+							"CME": {
+								"title": "CME Group Inc.",
+								"alias": "CME",
+								"traits": ["s"]
+							},
+							"ETFC": {
+								"title": "E-Trade",
+								"alias": "ETFC",
+								"traits": ["s"]
+							},
+							"EFX": {
+								"title": "Equifax Inc.",
+								"alias": "EFX",
+								"traits": ["s"]
+							},
+							"BEN": {
+								"title": "Franklin Resources",
+								"alias": "BEN",
+								"traits": ["s"]
+							},
+							"GS": {
+								"title": "Goldman Sachs Group",
+								"alias": "GS",
+								"traits": ["s"]
+							},
+							"ICE": {
+								"title": "Intercontinental Exchange",
+								"alias": "ICE",
+								"traits": ["s"]
+							},
+							"IVZ": {
+								"title": "Invesco Ltd.",
+								"alias": "IVZ",
+								"traits": ["s"]
+							},
+							"LM": {
+								"title": "Legg Mason",
+								"alias": "LM",
+								"traits": ["s"]
+							},
+							"MHFI": {
+								"title": "McGraw Hill Financial",
+								"alias": "MHFI",
+								"traits": ["s"]
+							},
+							"MCO": {
+								"title": "Moody's Corp",
+								"alias": "MCO",
+								"traits": ["s"]
+							},
+							"MS": {
+								"title": "Morgan Stanley",
+								"alias": "MS",
+								"traits": ["s"]
+							},
+							"NDAQ": {
+								"title": "NASDAQ OMX Group",
+								"alias": "NDAQ",
+								"traits": ["s"]
+							},
+							"NTRS": {
+								"title": "Northern Trust Corp.",
+								"alias": "NTRS",
+								"traits": ["s"]
+							},
+							"PFG": {
+								"title": "Principal Financial Group",
+								"alias": "PFG",
+								"traits": ["s"]
+							},
+							"PLD": {
+								"title": "Prologis",
+								"alias": "PLD",
+								"traits": ["s"]
+							},
+							"PRU": {
+								"title": "Prudential Financial",
+								"alias": "PRU",
+								"traits": ["s"]
+							},
+							"RF": {
+								"title": "Regions Financial Corp.",
+								"alias": "RF",
+								"traits": ["s"]
+							},
+							"STT": {
+								"title": "State Street Corp.",
+								"alias": "STT",
+								"traits": ["s"]
+							},
+							"TROW": {
+								"title": "T. Rowe Price Group",
+								"alias": "TROW",
+								"traits": ["s"]
+							},
+							"UNM": {
+								"title": "Unum Group",
+								"alias": "UNM",
+								"traits": ["s"]
+							},
+							"VTR": {
+								"title": "Ventas Inc",
+								"alias": "VTR",
+								"traits": ["s"]
+							}
+						}
+					},
+					"insurance_brokers": {
+						"title": "Insurance Brokers",
+						"children": {
+							"AON": {
+								"title": "Aon plc",
+								"alias": "AON",
+								"traits": ["s"]
+							},
+							"MMC": {
+								"title": "Marsh & McLennan",
+								"alias": "MMC",
+								"traits": ["s"]
+							}
+						}
+					},
+					"life_health_insurance": {
+						"title": "Life & Health Insurance",
+						"children": {
+							"AFL": {
+								"title": "AFLAC Inc",
+								"alias": "AFL",
+								"traits": ["s"]
+							},
+							"GNW": {
+								"title": "Genworth Financial Inc.",
+								"alias": "GNW",
+								"traits": ["s"]
+							},
+							"MET": {
+								"title": "MetLife Inc.",
+								"alias": "MET",
+								"traits": ["s"]
+							},
+							"TMK": {
+								"title": "Torchmark Corp.",
+								"alias": "TMK",
+								"traits": ["s"]
+							}
+						}
+					},
+					"multiline_insurance": {
+						"title": "Multi-line Insurance",
+						"children": {
+							"AIZ": {
+								"title": "Assurant Inc",
+								"alias": "AIZ",
+								"traits": ["s"]
+							},
+							"LNC": {
+								"title": "Lincoln National",
+								"alias": "LNC",
+								"traits": ["s"]
+							}
+						}
+					},
+					"multisector_holdings": {
+						"title": "Multi-Sector Holdings",
+						"children": {
+							"BRK.B": {
+								"title": "Berkshire Hathaway",
+								"alias": "BRK.B",
+								"traits": ["s"]
+							},
+							"LUK": {
+								"title": "Leucadia National Corp.",
+								"alias": "LUK",
+								"traits": ["s"]
+							},
+							"L": {
+								"title": "Loews Corp.",
+								"alias": "L",
+								"traits": ["s"]
+							}
+						}
+					},
+					"property_casualty_insurance": {
+						"title": "Property & Casualty Insurance",
+						"children": {
+							"ACE": {
+								"title": "ACE Limited",
+								"alias": "ACE",
+								"traits": ["s"]
+							},
+							"ALL": {
+								"title": "Allstate Corp",
+								"alias": "ALL",
+								"traits": ["s"]
+							},
+							"AIG": {
+								"title": "American International Group, Inc.",
+								"alias": "AIG",
+								"traits": ["s"]
+							},
+							"CB": {
+								"title": "Chubb Corp.",
+								"alias": "CB",
+								"traits": ["s"]
+							},
+							"CINF": {
+								"title": "Cincinnati Financial",
+								"alias": "CINF",
+								"traits": ["s"]
+							},
+							"HIG": {
+								"title": "Hartford Financial Svc.Gp.",
+								"alias": "HIG",
+								"traits": ["s"]
+							},
+							"PGR": {
+								"title": "Progressive Corp.",
+								"alias": "PGR",
+								"traits": ["s"]
+							},
+							"TRV": {
+								"title": "The Travelers Companies Inc.",
+								"alias": "TRV",
+								"traits": ["s"]
+							},
+							"XL": {
+								"title": "XL Capital",
+								"alias": "XL",
+								"traits": ["s"]
+							}
+						}
+					},
+					"real_estate_management_development": {
+						"title": "Real Estate Management & Development",
+						"children": {
+							"CBG": {
+								"title": "CBRE Group",
+								"alias": "CBG",
+								"traits": ["s"]
+							}
+						}
+					},
+					"reits": {
+						"title": "REITs",
+						"children": {
+							"AMT": {
+								"title": "American Tower Corp A",
+								"alias": "AMT",
+								"traits": ["s"]
+							},
+							"AIV": {
+								"title": "Apartment Investment & Mgmt",
+								"alias": "AIV",
+								"traits": ["s"]
+							},
+							"AVB": {
+								"title": "AvalonBay Communities, Inc.",
+								"alias": "AVB",
+								"traits": ["s"]
+							},
+							"BXP": {
+								"title": "Boston Properties",
+								"alias": "BXP",
+								"traits": ["s"]
+							},
+							"CCI": {
+								"title": "Crown Castle International Corp.",
+								"alias": "CCI",
+								"traits": ["s"]
+							},
+							"EQR": {
+								"title": "Equity Residential",
+								"alias": "EQR",
+								"traits": ["s"]
+							},
+							"GGP": {
+								"title": "General Growth Properties Inc.",
+								"alias": "GGP",
+								"traits": ["s"]
+							},
+							"HCP": {
+								"title": "HCP Inc.",
+								"alias": "HCP",
+								"traits": ["s"]
+							},
+							"HCN": {
+								"title": "Health Care REIT, Inc.",
+								"alias": "HCN",
+								"traits": ["s"]
+							},
+							"HST": {
+								"title": "Host Hotels & Resorts",
+								"alias": "HST",
+								"traits": ["s"]
+							},
+							"KIM": {
+								"title": "Kimco Realty",
+								"alias": "KIM",
+								"traits": ["s"]
+							},
+							"PCL": {
+								"title": "Plum Creek Timber Co.",
+								"alias": "PCL",
+								"traits": ["s"]
+							},
+							"PSA": {
+								"title": "Public Storage",
+								"alias": "PSA",
+								"traits": ["s"]
+							},
+							"SPG": {
+								"title": "Simon Property Group Inc",
+								"alias": "SPG",
+								"traits": ["s"]
+							},
+							"VNO": {
+								"title": "Vornado Realty Trust",
+								"alias": "VNO",
+								"traits": ["s"]
+							},
+							"WY": {
+								"title": "Weyerhaeuser Corp.",
+								"alias": "WY",
+								"traits": ["s"]
+							}
+						}
+					},
+					"residential_reits": {
+						"title": "Residential REITs",
+						"children": {
+							"ESS": {
+								"title": "Essex Property Trust Inc",
+								"alias": "ESS",
+								"traits": ["s"]
+							}
+						}
+					},
+					"retail_reits": {
+						"title": "Retail REITs",
+						"children": {
+							"MAC": {
+								"title": "Macerich",
+								"alias": "MAC",
+								"traits": ["s"]
+							}
+						}
+					}
+				}
+			},
+			"health_care": {
+				"title": "Health Care",
+				"children": {
+					"biotechnology": {
+						"title": "Biotechnology",
+						"children": {
+							"ALXN": {
+								"title": "Alexion Pharmaceuticals",
+								"alias": "ALXN",
+								"traits": ["s"]
+							},
+							"AMGN": {
+								"title": "Amgen Inc",
+								"alias": "AMGN",
+								"traits": ["s"]
+							},
+							"BIIB": {
+								"title": "BIOGEN IDEC Inc.",
+								"alias": "BIIB",
+								"traits": ["s"]
+							},
+							"CELG": {
+								"title": "Celgene Corp.",
+								"alias": "CELG",
+								"traits": ["s"]
+							},
+							"GILD": {
+								"title": "Gilead Sciences",
+								"alias": "GILD",
+								"traits": ["s"]
+							},
+							"REGN": {
+								"title": "Regeneron",
+								"alias": "REGN",
+								"traits": ["s"]
+							},
+							"VRTX": {
+								"title": "Vertex Pharmaceuticals Inc",
+								"alias": "VRTX",
+								"traits": ["s"]
+							}
+						}
+					},
+					"health_care_distribution_services": {
+						"title": "Health Care Distribution & Services",
+						"children": {
+							"ABC": {
+								"title": "AmerisourceBergen Corp",
+								"alias": "ABC",
+								"traits": ["s"]
+							}
+						}
+					},
+					"health_care_distributors_services": {
+						"title": "Health Care Distributors & Services",
+						"children": {
+							"BMY": {
+								"title": "Bristol-Myers Squibb",
+								"alias": "BMY",
+								"traits": ["s"]
+							},
+							"CAH": {
+								"title": "Cardinal Health Inc.",
+								"alias": "CAH",
+								"traits": ["s"]
+							},
+							"CERN": {
+								"title": "Cerner",
+								"alias": "CERN",
+								"traits": ["s"]
+							},
+							"ESRX": {
+								"title": "Express Scripts",
+								"alias": "ESRX",
+								"traits": ["s"]
+							},
+							"MCK": {
+								"title": "McKesson Corp.",
+								"alias": "MCK",
+								"traits": ["s"]
+							},
+							"WAT": {
+								"title": "Waters Corporation",
+								"alias": "WAT",
+								"traits": ["s"]
+							}
+						}
+					},
+					"health_care_equipment_services": {
+						"title": "Health Care Equipment & Services",
+						"children": {
+							"ABT": {
+								"title": "Abbott Laboratories",
+								"alias": "ABT",
+								"traits": ["s"]
+							},
+							"A": {
+								"title": "Agilent Technologies Inc",
+								"alias": "A",
+								"traits": ["s"]
+							},
+							"BCR": {
+								"title": "Bard (C.R.) Inc.",
+								"alias": "BCR",
+								"traits": ["s"]
+							},
+							"BAX": {
+								"title": "Baxter International Inc.",
+								"alias": "BAX",
+								"traits": ["s"]
+							},
+							"BDX": {
+								"title": "Becton Dickinson",
+								"alias": "BDX",
+								"traits": ["s"]
+							},
+							"BSX": {
+								"title": "Boston Scientific",
+								"alias": "BSX",
+								"traits": ["s"]
+							},
+							"CFN": {
+								"title": "Carefusion",
+								"alias": "CFN",
+								"traits": ["s"]
+							},
+							"EW": {
+								"title": "Edwards Lifesciences",
+								"alias": "EW",
+								"traits": ["s"]
+							},
+							"HSP": {
+								"title": "Hospira Inc.",
+								"alias": "HSP",
+								"traits": ["s"]
+							},
+							"ISRG": {
+								"title": "Intuitive Surgical Inc.",
+								"alias": "ISRG",
+								"traits": ["s"]
+							},
+							"JNJ": {
+								"title": "Johnson & Johnson",
+								"alias": "JNJ",
+								"traits": ["s"]
+							},
+							"MDT": {
+								"title": "Medtronic Inc.",
+								"alias": "MDT",
+								"traits": ["s"]
+							},
+							"PKI": {
+								"title": "PerkinElmer",
+								"alias": "PKI",
+								"traits": ["s"]
+							},
+							"STJ": {
+								"title": "St Jude Medical",
+								"alias": "STJ",
+								"traits": ["s"]
+							},
+							"SYK": {
+								"title": "Stryker Corp.",
+								"alias": "SYK",
+								"traits": ["s"]
+							},
+							"TMO": {
+								"title": "Thermo Fisher Scientific",
+								"alias": "TMO",
+								"traits": ["s"]
+							},
+							"VAR": {
+								"title": "Varian Medical Systems",
+								"alias": "VAR",
+								"traits": ["s"]
+							},
+							"ZMH": {
+								"title": "Zimmer Holdings",
+								"alias": "ZMH",
+								"traits": ["s"]
+							}
+						}
+					},
+					"health_care_facilities": {
+						"title": "Health Care Facilities",
+						"children": {
+							"DVA": {
+								"title": "DaVita Inc.",
+								"alias": "DVA",
+								"traits": ["s"]
+							},
+							"HCA": {
+								"title": "HCA Holdings",
+								"alias": "HCA",
+								"traits": ["s"]
+							},
+							"LH": {
+								"title": "Laboratory Corp. of America Holding",
+								"alias": "LH",
+								"traits": ["s"]
+							},
+							"DGX": {
+								"title": "Quest Diagnostics",
+								"alias": "DGX",
+								"traits": ["s"]
+							},
+							"THC": {
+								"title": "Tenet Healthcare Corp.",
+								"alias": "THC",
+								"traits": ["s"]
+							},
+							"UHS": {
+								"title": "Universal Health Services, Inc.",
+								"alias": "UHS",
+								"traits": ["s"]
+							}
+						}
+					},
+					"health_care_supplies": {
+						"title": "Health Care Supplies",
+						"children": {
+							"XRAY": {
+								"title": "Dentsply International",
+								"alias": "XRAY",
+								"traits": ["s"]
+							},
+							"PDCO": {
+								"title": "Patterson Companies",
+								"alias": "PDCO",
+								"traits": ["s"]
+							}
+						}
+					},
+					"managed_health_care": {
+						"title": "Managed Health Care",
+						"children": {
+							"AET": {
+								"title": "Aetna Inc",
+								"alias": "AET",
+								"traits": ["s"]
+							},
+							"CI": {
+								"title": "CIGNA Corp.",
+								"alias": "CI",
+								"traits": ["s"]
+							},
+							"HUM": {
+								"title": "Humana Inc.",
+								"alias": "HUM",
+								"traits": ["s"]
+							},
+							"UNH": {
+								"title": "United Health Group Inc.",
+								"alias": "UNH",
+								"traits": ["s"]
+							},
+							"ANTM": {
+								"title": "Anthem Inc.",
+								"alias": "ANTM",
+								"traits": ["s"]
+							}
+						}
+					},
+					"pharmaceuticals": {
+						"title": "Pharmaceuticals",
+						"children": {
+							"ABBV": {
+								"title": "AbbVie",
+								"alias": "ABBV",
+								"traits": ["s"]
+							},
+							"ACT": {
+								"title": "Actavis plc",
+								"alias": "ACT",
+								"traits": ["s"]
+							},
+							"AGN": {
+								"title": "Allergan Inc",
+								"alias": "AGN",
+								"traits": ["s"]
+							},
+							"ENDP": {
+								"title": "Endo International",
+								"alias": "ENDP",
+								"traits": ["s"]
+							},
+							"LLY": {
+								"title": "Lilly (Eli) & Co.",
+								"alias": "LLY",
+								"traits": ["s"]
+							},
+							"MNK": {
+								"title": "Mallinckrodt Plc",
+								"alias": "MNK",
+								"traits": ["s"]
+							},
+							"MRK": {
+								"title": "Merck & Co.",
+								"alias": "MRK",
+								"traits": ["s"]
+							},
+							"MYL": {
+								"title": "Mylan Inc.",
+								"alias": "MYL",
+								"traits": ["s"]
+							},
+							"PRGO": {
+								"title": "Perrigo",
+								"alias": "PRGO",
+								"traits": ["s"]
+							},
+							"PFE": {
+								"title": "Pfizer Inc.",
+								"alias": "PFE",
+								"traits": ["s"]
+							},
+							"ZTS": {
+								"title": "Zoetis",
+								"alias": "ZTS",
+								"traits": ["s"]
+							}
+						}
+					}
+				}
+			},
+			"industrials": {
+				"title": "Industrials",
+				"children": {
+					"aerospace_defense": {
+						"title": "Aerospace & Defense",
+						"children": {
+							"BA": {
+								"title": "Boeing Company",
+								"alias": "BA",
+								"traits": ["s"]
+							},
+							"FLIR": {
+								"title": "FLIR Systems",
+								"alias": "FLIR",
+								"traits": ["s"]
+							},
+							"GD": {
+								"title": "General Dynamics",
+								"alias": "GD",
+								"traits": ["s"]
+							},
+							"LMT": {
+								"title": "Lockheed Martin Corp.",
+								"alias": "LMT",
+								"traits": ["s"]
+							},
+							"NOC": {
+								"title": "Northrop Grumman Corp.",
+								"alias": "NOC",
+								"traits": ["s"]
+							},
+							"RTN": {
+								"title": "Raytheon Co.",
+								"alias": "RTN",
+								"traits": ["s"]
+							}
+						}
+					},
+					"air_freight_logistics": {
+						"title": "Air Freight & Logistics",
+						"children": {
+							"CHRW": {
+								"title": "C. H. Robinson Worldwide",
+								"alias": "CHRW",
+								"traits": ["s"]
+							},
+							"EXPD": {
+								"title": "Expeditors Int'l",
+								"alias": "EXPD",
+								"traits": ["s"]
+							},
+							"FDX": {
+								"title": "FedEx Corporation",
+								"alias": "FDX",
+								"traits": ["s"]
+							},
+							"UPS": {
+								"title": "United Parcel Service",
+								"alias": "UPS",
+								"traits": ["s"]
+							}
+						}
+					},
+					"airlines": {
+						"title": "Airlines",
+						"children": {
+							"DAL": {
+								"title": "Delta Air Lines",
+								"alias": "DAL",
+								"traits": ["s"]
+							},
+							"LUV": {
+								"title": "Southwest Airlines",
+								"alias": "LUV",
+								"traits": ["s"]
+							}
+						}
+					},
+					"building_products": {
+						"title": "Building Products",
+						"children": {
+							"ALLE": {
+								"title": "Allegion",
+								"alias": "ALLE",
+								"traits": ["s"]
+							},
+							"FAST": {
+								"title": "Fastenal Co",
+								"alias": "FAST",
+								"traits": ["s"]
+							},
+							"MAS": {
+								"title": "Masco Corp.",
+								"alias": "MAS",
+								"traits": ["s"]
+							}
+						}
+					},
+					"construction_engineering": {
+						"title": "Construction & Engineering",
+						"children": {
+							"GLW": {
+								"title": "Corning Inc.",
+								"alias": "GLW",
+								"traits": ["s"]
+							}
+						}
+					},
+					"construction_farm_machinery__heavy_trucks": {
+						"title": "Construction & Farm Machinery & Heavy Trucks",
+						"children": {
+							"CAT": {
+								"title": "Caterpillar Inc.",
+								"alias": "CAT",
+								"traits": ["s"]
+							},
+							"DE": {
+								"title": "Deere & Co.",
+								"alias": "DE",
+								"traits": ["s"]
+							},
+							"PCAR": {
+								"title": "PACCAR Inc.",
+								"alias": "PCAR",
+								"traits": ["s"]
+							}
+						}
+					},
+					"data_processing_services": {
+						"title": "Data Processing Services",
+						"children": {
+							"DNB": {
+								"title": "Dun & Bradstreet",
+								"alias": "DNB",
+								"traits": ["s"]
+							},
+							"IRM": {
+								"title": "Iron Mountain Incorporated",
+								"alias": "IRM",
+								"traits": ["s"]
+							}
+						}
+					},
+					"diversified_commercial_services": {
+						"title": "Diversified Commercial Services",
+						"children": {
+							"ADT": {
+								"title": "ADT Corp",
+								"alias": "ADT",
+								"traits": ["s"]
+							},
+							"CTAS": {
+								"title": "Cintas Corporation",
+								"alias": "CTAS",
+								"traits": ["s"]
+							},
+							"FLR": {
+								"title": "Fluor Corp.",
+								"alias": "FLR",
+								"traits": ["s"]
+							}
+						}
+					},
+					"electrical_components_equipment": {
+						"title": "Electrical Components & Equipment",
+						"children": {
+							"APH": {
+								"title": "Amphenol Corp A",
+								"alias": "APH",
+								"traits": ["s"]
+							}
+						}
+					},
+					"electrical_components_and_equipment": {
+						"title": "Electrical Components and Equipment",
+						"children": {
+							"AME": {
+								"title": "Ametek",
+								"alias": "AME",
+								"traits": ["s"]
+							}
+						}
+					},
+					"environmental_services": {
+						"title": "Environmental Services",
+						"children": {
+							"WM": {
+								"title": "Waste Management Inc.",
+								"alias": "WM",
+								"traits": ["s"]
+							}
+						}
+					},
+					"industrial_conglomerates": {
+						"title": "Industrial Conglomerates",
+						"children": {
+							"MMM": {
+								"title": "3M Company",
+								"alias": "MMM",
+								"traits": ["s"]
+							},
+							"ETN": {
+								"title": "Eaton Corporation",
+								"alias": "ETN",
+								"traits": ["s"]
+							},
+							"EMR": {
+								"title": "Emerson Electric",
+								"alias": "EMR",
+								"traits": ["s"]
+							},
+							"GE": {
+								"title": "General Electric",
+								"alias": "GE",
+								"traits": ["s"]
+							},
+							"HON": {
+								"title": "Honeywell Int'l Inc.",
+								"alias": "HON",
+								"traits": ["s"]
+							},
+							"IR": {
+								"title": "Ingersoll-Rand PLC",
+								"alias": "IR",
+								"traits": ["s"]
+							},
+							"JEC": {
+								"title": "Jacobs Engineering Group",
+								"alias": "JEC",
+								"traits": ["s"]
+							},
+							"LLL": {
+								"title": "L-3 Communications Holdings",
+								"alias": "LLL",
+								"traits": ["s"]
+							},
+							"LEG": {
+								"title": "Leggett & Platt",
+								"alias": "LEG",
+								"traits": ["s"]
+							},
+							"PLL": {
+								"title": "Pall Corp.",
+								"alias": "PLL",
+								"traits": ["s"]
+							},
+							"PH": {
+								"title": "Parker-Hannifin",
+								"alias": "PH",
+								"traits": ["s"]
+							},
+							"PNR": {
+								"title": "Pentair Ltd.",
+								"alias": "PNR",
+								"traits": ["s"]
+							},
+							"PCP": {
+								"title": "Precision Castparts",
+								"alias": "PCP",
+								"traits": ["s"]
+							},
+							"PWR": {
+								"title": "Quanta Services Inc.",
+								"alias": "PWR",
+								"traits": ["s"]
+							},
+							"RSG": {
+								"title": "Republic Services Inc",
+								"alias": "RSG",
+								"traits": ["s"]
+							},
+							"RHI": {
+								"title": "Robert Half International",
+								"alias": "RHI",
+								"traits": ["s"]
+							},
+							"ROK": {
+								"title": "Rockwell Automation Inc.",
+								"alias": "ROK",
+								"traits": ["s"]
+							},
+							"COL": {
+								"title": "Rockwell Collins",
+								"alias": "COL",
+								"traits": ["s"]
+							},
+							"ROP": {
+								"title": "Roper Industries",
+								"alias": "ROP",
+								"traits": ["s"]
+							},
+							"R": {
+								"title": "Ryder System",
+								"alias": "R",
+								"traits": ["s"]
+							},
+							"SRCL": {
+								"title": "Stericycle Inc",
+								"alias": "SRCL",
+								"traits": ["s"]
+							},
+							"TXT": {
+								"title": "Textron Inc.",
+								"alias": "TXT",
+								"traits": ["s"]
+							},
+							"TYC": {
+								"title": "Tyco International",
+								"alias": "TYC",
+								"traits": ["s"]
+							},
+							"UTX": {
+								"title": "United Technologies",
+								"alias": "UTX",
+								"traits": ["s"]
+							},
+							"XYL": {
+								"title": "Xylem Inc.",
+								"alias": "XYL",
+								"traits": ["s"]
+							}
+						}
+					},
+					"industrial_machinery": {
+						"title": "Industrial Machinery",
+						"children": {
+							"CMI": {
+								"title": "Cummins Inc.",
+								"alias": "CMI",
+								"traits": ["s"]
+							},
+							"DHR": {
+								"title": "Danaher Corp.",
+								"alias": "DHR",
+								"traits": ["s"]
+							},
+							"DOV": {
+								"title": "Dover Corp.",
+								"alias": "DOV",
+								"traits": ["s"]
+							},
+							"FLS": {
+								"title": "Flowserve Corporation",
+								"alias": "FLS",
+								"traits": ["s"]
+							},
+							"ITW": {
+								"title": "Illinois Tool Works",
+								"alias": "ITW",
+								"traits": ["s"]
+							},
+							"JOY": {
+								"title": "Joy Global Inc.",
+								"alias": "JOY",
+								"traits": ["s"]
+							}
+						}
+					},
+					"industrial_materials": {
+						"title": "Industrial Materials",
+						"children": {
+							"GWW": {
+								"title": "Grainger (W.W.) Inc.",
+								"alias": "GWW",
+								"traits": ["s"]
+							}
+						}
+					},
+					"office_services_supplies": {
+						"title": "Office Services & Supplies",
+						"children": {
+							"PBI": {
+								"title": "Pitney-Bowes",
+								"alias": "PBI",
+								"traits": ["s"]
+							}
+						}
+					},
+					"railroads": {
+						"title": "Railroads",
+						"children": {
+							"CSX": {
+								"title": "CSX Corp.",
+								"alias": "CSX",
+								"traits": ["s"]
+							},
+							"KSU": {
+								"title": "Kansas City Southern",
+								"alias": "KSU",
+								"traits": ["s"]
+							},
+							"NSC": {
+								"title": "Norfolk Southern Corp.",
+								"alias": "NSC",
+								"traits": ["s"]
+							},
+							"UNP": {
+								"title": "Union Pacific",
+								"alias": "UNP",
+								"traits": ["s"]
+							}
+						}
+					},
+					"research_consulting_services": {
+						"title": "Research & Consulting Services",
+						"children": {
+							"NLSN": {
+								"title": "Nielsen Holdings",
+								"alias": "NLSN",
+								"traits": ["s"]
+							}
+						}
+					},
+					"trading_companies_distributors": {
+						"title": "Trading Companies & Distributors",
+						"children": {
+							"URI": {
+								"title": "United Rentals, Inc.",
+								"alias": "URI",
+								"traits": ["s"]
+							}
+						}
+					}
+				}
+			},
+			"information_technology": {
+				"title": "Information Technology",
+				"children": {
+					"application_software": {
+						"title": "Application Software",
+						"children": {
+							"ADBE": {
+								"title": "Adobe Systems Inc",
+								"alias": "ADBE",
+								"traits": ["s"]
+							},
+							"ADSK": {
+								"title": "Autodesk Inc",
+								"alias": "ADSK",
+								"traits": ["s"]
+							},
+							"EA": {
+								"title": "Electronic Arts",
+								"alias": "EA",
+								"traits": ["s"]
+							},
+							"ORCL": {
+								"title": "Oracle Corp.",
+								"alias": "ORCL",
+								"traits": ["s"]
+							},
+							"SYMC": {
+								"title": "Symantec Corp.",
+								"alias": "SYMC",
+								"traits": ["s"]
+							},
+							"TDC": {
+								"title": "Teradata Corp.",
+								"alias": "TDC",
+								"traits": ["s"]
+							}
+						}
+					},
+					"computer_hardware": {
+						"title": "Computer Hardware",
+						"children": {
+							"AAPL": {
+								"title": "Apple Inc.",
+								"alias": "AAPL",
+								"traits": ["s"]
+							},
+							"HPQ": {
+								"title": "Hewlett-Packard",
+								"alias": "HPQ",
+								"traits": ["s"]
+							}
+						}
+					},
+					"computer_storage_peripherals": {
+						"title": "Computer Storage & Peripherals",
+						"children": {
+							"SNDK": {
+								"title": "SanDisk Corporation",
+								"alias": "SNDK",
+								"traits": ["s"]
+							},
+							"STX": {
+								"title": "Seagate Technology",
+								"alias": "STX",
+								"traits": ["s"]
+							},
+							"WDC": {
+								"title": "Western Digital",
+								"alias": "WDC",
+								"traits": ["s"]
+							}
+						}
+					},
+					"data_processing_outsourced_services": {
+						"title": "Data Processing & Outsourced Services",
+						"children": {
+							"ADS": {
+								"title": "Alliance Data Systems",
+								"alias": "ADS",
+								"traits": ["s"]
+							}
+						}
+					},
+					"electronic_equipment_instruments": {
+						"title": "Electronic Equipment & Instruments",
+						"children": {
+							"TEL": {
+								"title": "TE Connectivity Ltd.",
+								"alias": "TEL",
+								"traits": ["s"]
+							}
+						}
+					},
+					"internet_software_services": {
+						"title": "Internet Software & Services",
+						"children": {
+							"AKAM": {
+								"title": "Akamai Technologies Inc",
+								"alias": "AKAM",
+								"traits": ["s"]
+							},
+							"ADP": {
+								"title": "Automatic Data Processing",
+								"alias": "ADP",
+								"traits": ["s"]
+							},
+							"CTXS": {
+								"title": "Citrix Systems",
+								"alias": "CTXS",
+								"traits": ["s"]
+							},
+							"EBAY": {
+								"title": "eBay Inc.",
+								"alias": "EBAY",
+								"traits": ["s"]
+							},
+							"FB": {
+								"title": "Facebook",
+								"alias": "FB",
+								"traits": ["s"]
+							},
+							"FIS": {
+								"title": "Fidelity National Information Services",
+								"alias": "FIS",
+								"traits": ["s"]
+							},
+							"FISV": {
+								"title": "Fiserv Inc",
+								"alias": "FISV",
+								"traits": ["s"]
+							},
+							"GOOGL": {
+								"title": "Google Inc Class A",
+								"alias": "GOOGL",
+								"traits": ["s"]
+							},
+							"GOOG": {
+								"title": "Google Inc Class C",
+								"alias": "GOOG",
+								"traits": ["s"]
+							},
+							"INTU": {
+								"title": "Intuit Inc.",
+								"alias": "INTU",
+								"traits": ["s"]
+							},
+							"MA": {
+								"title": "Mastercard Inc.",
+								"alias": "MA",
+								"traits": ["s"]
+							},
+							"NTAP": {
+								"title": "NetApp",
+								"alias": "NTAP",
+								"traits": ["s"]
+							},
+							"NFLX": {
+								"title": "Netflix Inc.",
+								"alias": "NFLX",
+								"traits": ["s"]
+							},
+							"PAYX": {
+								"title": "Paychex Inc.",
+								"alias": "PAYX",
+								"traits": ["s"]
+							},
+							"CRM": {
+								"title": "Salesforce.com",
+								"alias": "CRM",
+								"traits": ["s"]
+							},
+							"TSS": {
+								"title": "Total System Services",
+								"alias": "TSS",
+								"traits": ["s"]
+							},
+							"VRSN": {
+								"title": "Verisign Inc.",
+								"alias": "VRSN",
+								"traits": ["s"]
+							},
+							"V": {
+								"title": "Visa Inc.",
+								"alias": "V",
+								"traits": ["s"]
+							},
+							"WU": {
+								"title": "Western Union Co",
+								"alias": "WU",
+								"traits": ["s"]
+							},
+							"YHOO": {
+								"title": "Yahoo Inc.",
+								"alias": "YHOO",
+								"traits": ["s"]
+							}
+						}
+					},
+					"it_consulting_services": {
+						"title": "IT Consulting & Services",
+						"children": {
+							"ACN": {
+								"title": "Accenture plc",
+								"alias": "ACN",
+								"traits": ["s"]
+							},
+							"CTSH": {
+								"title": "Cognizant Technology Solutions",
+								"alias": "CTSH",
+								"traits": ["s"]
+							},
+							"CSC": {
+								"title": "Computer Sciences Corp.",
+								"alias": "CSC",
+								"traits": ["s"]
+							},
+							"EMC": {
+								"title": "EMC Corp.",
+								"alias": "EMC",
+								"traits": ["s"]
+							},
+							"IBM": {
+								"title": "International Bus. Machines",
+								"alias": "IBM",
+								"traits": ["s"]
+							},
+							"XRX": {
+								"title": "Xerox Corp.",
+								"alias": "XRX",
+								"traits": ["s"]
+							}
+						}
+					},
+					"networking_equipment": {
+						"title": "Networking Equipment",
+						"children": {
+							"CSCO": {
+								"title": "Cisco Systems",
+								"alias": "CSCO",
+								"traits": ["s"]
+							},
+							"FFIV": {
+								"title": "F5 Networks",
+								"alias": "FFIV",
+								"traits": ["s"]
+							},
+							"JNPR": {
+								"title": "Juniper Networks",
+								"alias": "JNPR",
+								"traits": ["s"]
+							}
+						}
+					},
+					"semiconductor_equipment": {
+						"title": "Semiconductor Equipment",
+						"children": {
+							"AMAT": {
+								"title": "Applied Materials Inc",
+								"alias": "AMAT",
+								"traits": ["s"]
+							},
+							"KLAC": {
+								"title": "KLA-Tencor Corp.",
+								"alias": "KLAC",
+								"traits": ["s"]
+							},
+							"LRCX": {
+								"title": "Lam Research",
+								"alias": "LRCX",
+								"traits": ["s"]
+							}
+						}
+					},
+					"semiconductors": {
+						"title": "Semiconductors",
+						"children": {
+							"ALTR": {
+								"title": "Altera Corp",
+								"alias": "ALTR",
+								"traits": ["s"]
+							},
+							"ADI": {
+								"title": "Analog Devices, Inc.",
+								"alias": "ADI",
+								"traits": ["s"]
+							},
+							"AVGO": {
+								"title": "Avago Technologies",
+								"alias": "AVGO",
+								"traits": ["s"]
+							},
+							"BRCM": {
+								"title": "Broadcom Corporation",
+								"alias": "BRCM",
+								"traits": ["s"]
+							},
+							"FSLR": {
+								"title": "First Solar Inc",
+								"alias": "FSLR",
+								"traits": ["s"]
+							},
+							"INTC": {
+								"title": "Intel Corp.",
+								"alias": "INTC",
+								"traits": ["s"]
+							},
+							"LLTC": {
+								"title": "Linear Technology Corp.",
+								"alias": "LLTC",
+								"traits": ["s"]
+							},
+							"MCHP": {
+								"title": "Microchip Technology",
+								"alias": "MCHP",
+								"traits": ["s"]
+							},
+							"MU": {
+								"title": "Micron Technology",
+								"alias": "MU",
+								"traits": ["s"]
+							},
+							"NVDA": {
+								"title": "Nvidia Corporation",
+								"alias": "NVDA",
+								"traits": ["s"]
+							},
+							"QCOM": {
+								"title": "QUALCOMM Inc.",
+								"alias": "QCOM",
+								"traits": ["s"]
+							},
+							"TXN": {
+								"title": "Texas Instruments",
+								"alias": "TXN",
+								"traits": ["s"]
+							},
+							"XLNX": {
+								"title": "Xilinx Inc",
+								"alias": "XLNX",
+								"traits": ["s"]
+							}
+						}
+					},
+					"systems_software": {
+						"title": "Systems Software",
+						"children": {
+							"CA": {
+								"title": "CA, Inc.",
+								"alias": "CA",
+								"traits": ["s"]
+							},
+							"MSFT": {
+								"title": "Microsoft Corp.",
+								"alias": "MSFT",
+								"traits": ["s"]
+							},
+							"RHT": {
+								"title": "Red Hat Inc.",
+								"alias": "RHT",
+								"traits": ["s"]
+							}
+						}
+					},
+					"telecommunications_equipment": {
+						"title": "Telecommunications Equipment",
+						"children": {
+							"HRS": {
+								"title": "Harris Corporation",
+								"alias": "HRS",
+								"traits": ["s"]
+							},
+							"MSI": {
+								"title": "Motorola Solutions Inc.",
+								"alias": "MSI",
+								"traits": ["s"]
+							}
+						}
+					}
+				}
+			},
+			"materials": {
+				"title": "Materials",
+				"children": {
+					"aluminum": {
+						"title": "Aluminum",
+						"children": {
+							"AA": {
+								"title": "Alcoa Inc",
+								"alias": "AA",
+								"traits": ["s"]
+							}
+						}
+					},
+					"construction_materials": {
+						"title": "Construction Materials",
+						"children": {
+							"MLM": {
+								"title": "Martin Marietta Materials",
+								"alias": "MLM",
+								"traits": ["s"]
+							},
+							"VMC": {
+								"title": "Vulcan Materials",
+								"alias": "VMC",
+								"traits": ["s"]
+							}
+						}
+					},
+					"diversified_chemicals": {
+						"title": "Diversified Chemicals",
+						"children": {
+							"DOW": {
+								"title": "Dow Chemical",
+								"alias": "DOW",
+								"traits": ["s"]
+							},
+							"DD": {
+								"title": "Du Pont (E.I.)",
+								"alias": "DD",
+								"traits": ["s"]
+							},
+							"EMN": {
+								"title": "Eastman Chemical",
+								"alias": "EMN",
+								"traits": ["s"]
+							},
+							"FMC": {
+								"title": "FMC Corporation",
+								"alias": "FMC",
+								"traits": ["s"]
+							},
+							"LYB": {
+								"title": "LyondellBasell",
+								"alias": "LYB",
+								"traits": ["s"]
+							},
+							"PPG": {
+								"title": "PPG Industries",
+								"alias": "PPG",
+								"traits": ["s"]
+							},
+							"SIAL": {
+								"title": "Sigma-Aldrich",
+								"alias": "SIAL",
+								"traits": ["s"]
+							}
+						}
+					},
+					"diversified_metals_mining": {
+						"title": "Diversified Metals & Mining",
+						"children": {
+							"ATI": {
+								"title": "Allegheny Technologies Inc",
+								"alias": "ATI",
+								"traits": ["s"]
+							},
+							"FCX": {
+								"title": "Freeport-McMoran Cp & Gld",
+								"alias": "FCX",
+								"traits": ["s"]
+							}
+						}
+					},
+					"fertilizers_agricultural_chemicals": {
+						"title": "Fertilizers & Agricultural Chemicals",
+						"children": {
+							"CF": {
+								"title": "CF Industries Holdings Inc",
+								"alias": "CF",
+								"traits": ["s"]
+							},
+							"MON": {
+								"title": "Monsanto Co.",
+								"alias": "MON",
+								"traits": ["s"]
+							},
+							"MOS": {
+								"title": "The Mosaic Company",
+								"alias": "MOS",
+								"traits": ["s"]
+							}
+						}
+					},
+					"gold": {
+						"title": "Gold",
+						"children": {
+							"NEM": {
+								"title": "Newmont Mining Corp. (Hldg. Co.)",
+								"alias": "NEM",
+								"traits": ["s"]
+							}
+						}
+					},
+					"industrial_gases": {
+						"title": "Industrial Gases",
+						"children": {
+							"APD": {
+								"title": "Air Products & Chemicals Inc",
+								"alias": "APD",
+								"traits": ["s"]
+							},
+							"ARG": {
+								"title": "Airgas Inc",
+								"alias": "ARG",
+								"traits": ["s"]
+							},
+							"PX": {
+								"title": "Praxair Inc.",
+								"alias": "PX",
+								"traits": ["s"]
+							}
+						}
+					},
+					"metal_glass_containers": {
+						"title": "Metal & Glass Containers",
+						"children": {
+							"BLL": {
+								"title": "Ball Corp",
+								"alias": "BLL",
+								"traits": ["s"]
+							},
+							"OI": {
+								"title": "Owens-Illinois Inc",
+								"alias": "OI",
+								"traits": ["s"]
+							}
+						}
+					},
+					"paper_packaging": {
+						"title": "Paper Packaging",
+						"children": {
+							"AVY": {
+								"title": "Avery Dennison Corp",
+								"alias": "AVY",
+								"traits": ["s"]
+							},
+							"MWV": {
+								"title": "MeadWestvaco Corporation",
+								"alias": "MWV",
+								"traits": ["s"]
+							},
+							"SEE": {
+								"title": "Sealed Air Corp.(New)",
+								"alias": "SEE",
+								"traits": ["s"]
+							}
+						}
+					},
+					"paper_products": {
+						"title": "Paper Products",
+						"children": {
+							"IP": {
+								"title": "International Paper",
+								"alias": "IP",
+								"traits": ["s"]
+							}
+						}
+					},
+					"specialty_chemicals": {
+						"title": "Specialty Chemicals",
+						"children": {
+							"ECL": {
+								"title": "Ecolab Inc.",
+								"alias": "ECL",
+								"traits": ["s"]
+							},
+							"IFF": {
+								"title": "Intl Flavors & Fragrances",
+								"alias": "IFF",
+								"traits": ["s"]
+							},
+							"SHW": {
+								"title": "Sherwin-Williams",
+								"alias": "SHW",
+								"traits": ["s"]
+							}
+						}
+					},
+					"steel": {
+						"title": "Steel",
+						"children": {
+							"NUE": {
+								"title": "Nucor Corp.",
+								"alias": "NUE",
+								"traits": ["s"]
+							}
+						}
+					}
+				}
+			},
+			"telecommunications_services": {
+				"title": "Telecommunications Services",
+				"children": {
+					"alternative_carriers": {
+						"title": "Alternative Carriers",
+						"children": {
+							"LVLT": {
+								"title": "Level 3 Communications",
+								"alias": "LVLT",
+								"traits": ["s"]
+							}
+						}
+					},
+					"integrated_telecommunications_services": {
+						"title": "Integrated Telecommunications Services",
+						"children": {
+							"T": {
+								"title": "AT&T Inc",
+								"alias": "T",
+								"traits": ["s"]
+							},
+							"CTL": {
+								"title": "CenturyLink Inc",
+								"alias": "CTL",
+								"traits": ["s"]
+							},
+							"FTR": {
+								"title": "Frontier Communications",
+								"alias": "FTR",
+								"traits": ["s"]
+							},
+							"VZ": {
+								"title": "Verizon Communications",
+								"alias": "VZ",
+								"traits": ["s"]
+							},
+							"WIN": {
+								"title": "Windstream Communications",
+								"alias": "WIN",
+								"traits": ["s"]
+							}
+						}
+					}
+				}
+			},
+			"utilities": {
+				"title": "Utilities",
+				"children": {
+					"electric_utilities": {
+						"title": "Electric Utilities",
+						"children": {
+							"AES": {
+								"title": "AES Corp",
+								"alias": "AES",
+								"traits": ["s"]
+							},
+							"AEP": {
+								"title": "American Electric Power",
+								"alias": "AEP",
+								"traits": ["s"]
+							},
+							"DUK": {
+								"title": "Duke Energy",
+								"alias": "DUK",
+								"traits": ["s"]
+							},
+							"ETR": {
+								"title": "Entergy Corp.",
+								"alias": "ETR",
+								"traits": ["s"]
+							}
+						}
+					},
+					"gas_utilities": {
+						"title": "Gas Utilities",
+						"children": {
+							"GAS": {
+								"title": "AGL Resources Inc.",
+								"alias": "GAS",
+								"traits": ["s"]
+							},
+							"TEG": {
+								"title": "Integrys Energy Group Inc.",
+								"alias": "TEG",
+								"traits": ["s"]
+							}
+						}
+					},
+					"multiutilities_unregulated_power": {
+						"title": "Multi-Utilities & Unregulated Power",
+						"children": {
+							"AEE": {
+								"title": "Ameren Corp",
+								"alias": "AEE",
+								"traits": ["s"]
+							},
+							"CNP": {
+								"title": "CenterPoint Energy",
+								"alias": "CNP",
+								"traits": ["s"]
+							},
+							"CMS": {
+								"title": "CMS Energy",
+								"alias": "CMS",
+								"traits": ["s"]
+							},
+							"ED": {
+								"title": "Consolidated Edison",
+								"alias": "ED",
+								"traits": ["s"]
+							},
+							"D": {
+								"title": "Dominion Resources",
+								"alias": "D",
+								"traits": ["s"]
+							},
+							"DTE": {
+								"title": "DTE Energy Co.",
+								"alias": "DTE",
+								"traits": ["s"]
+							},
+							"EIX": {
+								"title": "Edison Int'l",
+								"alias": "EIX",
+								"traits": ["s"]
+							},
+							"ES": {
+								"title": "Eversource Energy",
+								"alias": "ES",
+								"traits": ["s"]
+							},
+							"EXC": {
+								"title": "Exelon Corp.",
+								"alias": "EXC",
+								"traits": ["s"]
+							},
+							"FE": {
+								"title": "FirstEnergy Corp",
+								"alias": "FE",
+								"traits": ["s"]
+							},
+							"NEE": {
+								"title": "NextEra Energy",
+								"alias": "NEE",
+								"traits": ["s"]
+							},
+							"NI": {
+								"title": "NiSource Inc.",
+								"alias": "NI",
+								"traits": ["s"]
+							},
+							"NRG": {
+								"title": "NRG Energy",
+								"alias": "NRG",
+								"traits": ["s"]
+							},
+							"PCG": {
+								"title": "P G & E Corp.",
+								"alias": "PCG",
+								"traits": ["s"]
+							},
+							"POM": {
+								"title": "Pepco Holdings Inc.",
+								"alias": "POM",
+								"traits": ["s"]
+							},
+							"PNW": {
+								"title": "Pinnacle West Capital",
+								"alias": "PNW",
+								"traits": ["s"]
+							},
+							"PPL": {
+								"title": "PPL Corp.",
+								"alias": "PPL",
+								"traits": ["s"]
+							},
+							"PEG": {
+								"title": "Public Serv. Enterprise Inc.",
+								"alias": "PEG",
+								"traits": ["s"]
+							},
+							"SCG": {
+								"title": "SCANA Corp",
+								"alias": "SCG",
+								"traits": ["s"]
+							},
+							"SRE": {
+								"title": "Sempra Energy",
+								"alias": "SRE",
+								"traits": ["s"]
+							},
+							"SO": {
+								"title": "Southern Co.",
+								"alias": "SO",
+								"traits": ["s"]
+							},
+							"TE": {
+								"title": "TECO Energy",
+								"alias": "TE",
+								"traits": ["s"]
+							},
+							"WEC": {
+								"title": "Wisconsin Energy Corporation",
+								"alias": "WEC",
+								"traits": ["s"]
+							},
+							"XEL": {
+								"title": "Xcel Energy Inc",
+								"alias": "XEL",
+								"traits": ["s"]
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"external": {},
+	"edges": [],
+	"visConfig": {
+		"doi": {
+			"components": [{
+				"attr": "close_dip",
+				"weight": 0.75,
+				"range": [-0.4, 0.4]
+			},{
+				"attr": "EPS_growth_this_year",
+				"weight": 0.1,
+				"range": [-1, 1]
+			},{
+				"attr": "Return_on_Equity",
+				"weight": 0.1,
+				"range": [-1, 1]
+			},{
+				"attr": "Dividend_Yield",
+				"weight": 0.05,
+				"range": [-1, 1]
+			}],
+			"default": 0,
+			"step": 86400000,
+			"alpha": 0.3,
+			"beta": 0.3,
+			"range": [-1, 1],
+			"k" : 21,
+			"fuzzyDays" : 15,
+			"deltaMethod": "localwindow"
+		},
+		"lineup": {
+			"columns": [{
+				"column": "name",
+				"label": "Ticker",
+				"type": "string"
+			}, {
+				"column": "title",
+				"label": "Company",
+				"type": "string"
+			}, {
+				"column": "p2",
+				"label": "Industry Sector",
+				"type": "categorical",
+				"color": "#999999",
+				"categories": [
+					{ "name": "Consumer Discretionary", "color": "#1f77b4" },
+					{ "name": "Consumer Staples", "color": "#ff7f0e" },
+					{ "name": "Energy", "color": "#9467bd" },
+					{ "name": "Financials", "color": "#8c564b" },
+					{ "name": "Health Care", "color": "#e377c2" },
+					{ "name": "Industrials", "color": "#7f7f7f" },
+					{ "name": "Information Technology", "color": "#bcbd22" },
+					{ "name": "Materials", "color": "#17becf" },
+					{ "name": "Telecommunications Services", "color": "#393b79" },
+					{ "name": "Utilities", "color": "#8c6d31" }
+				]
+			}, {
+				"column": "P_E",
+				"label": "P/E",
+				"type": "number",
+				"color": "#AAAAAA",
+				"domain": [null, 261.0156521706478]
+			}, {
+				"column": "P_Free_Cash_Flow",
+				"label": "P Free Cash Flow",
+				"type": "number",
+				"color": "#CCCCCC",
+				"domain": [null, 336.84992324010165]
+			}, {
+				"column": "LT_Debt_Equity",
+				"label": "LT Debt/Equity",
+				"type": "number",
+				"color": "#AAAAAA"
+			}, {
+				"column": "Return_on_Equity",
+				"label": "Return on Equity",
+				"type": "number",
+				"color": "#CCCCCC"
+			}, {
+				"column": "EPS_growth_this_year",
+				"label": "EPS growth this year",
+				"type": "number",
+				"color": "#AAAAAA"
+			}, {
+				"column": "Dividend_Yield",
+				"label": "Dividend Yield",
+				"type": "number",
+				"color": "#CCCCCC",
+				"domain": [null, 18.05886939349385]
+			}],
+            "sortBy": "Combination",
+            "layout": {
+              "primary": [
+                {
+                  "type": "rank",
+                  "width": 28
+                },
+                {
+                  "column": "p2",
+				  "type": "categoricalcolor",
+                  "width": 24
+                },
+                {
+                  "column": "name",
+                  "width": 34
+                },
+                {
+                  "column": "title",
+                  "width": 130
+                },{
+					"type": "stacked",
+					"label": "Combination",
+					"children": [{
+						"column": "P_E",
+						"width": 27,
+						"domain": [0.16, 339.2723478229155],
+						"range": [1, 0]
+					}, {
+						"column": "P_Free_Cash_Flow",
+						"width": 20,
+						"domain": [0.18, 252.68244243186416],
+						"range": [1, 0]
+					}, {
+						"column": "LT_Debt_Equity",
+						"width": 20,
+						"domain": [0, 16.33691286833394],
+						"range": [1, 0]
+					}, {
+						"column": "Return_on_Equity",
+						"width": 32,
+						"domain": [-52.90044237219797, 238.00956128991209]
+					}, {
+						"column": "EPS_growth_this_year",
+						"width": 20,
+						"domain": [null, 696.5887128490474]
+					}, {
+						"column": "Dividend_Yield",
+						"width": 20,
+						"domain": [null, 18.05886939349385]
+					}]
+				}]
+			}
+		},
+		"representation": {
+			"overview": {
+				"config": {
+					"nodeChildren": [],
+					"mode": "selection-source",
+					"nodeWidth": 5,
+					"widthDependentDataRange": false,
+					"sliceHeight": 5,
+					"useCustomColor": false
+				}
+			},
+			"mainView": {
+				"config": {
+					"defaultNodeChildren": ["label height:3"],
+					"nodeChildren": [
+						"label height:2",
+						"stockstream_linear close",
+						"stockstream_linear change"
+					],
+					"mode": "selection-target",
+					"nodeWidth": 60,
+					"widthDependentDataRange": false,
+					"sliceHeight": 6,
+					"useCustomColor": false
+				}
+			},
+			"detailView": {
+				"config": {
+					"defaultNodeChildren": ["label height:1.5"],
+					"nodeChildren": [
+						{
+							"type": "label",
+							"config": {
+								"height": 1.4,
+								"template": "{{name}} - {{title}}",
+								"nodeCollapse": false,
+								"nodeSelect": false,
+								"nodeFocus": false,
+								"nodeDrag": false
+							}
+						},
+						{
+							"type": "time-axis",
+							"config": {
+								"height": 0.7,
+								"marginRight": 0,
+								"marginLeft": 80,
+								"ticks": 5
+							}
+						},
+						{
+							"type": "doistream",
+							"attr": "doi",
+							"config": {
+								"label": true,
+								"labelContent": "attrName",
+								"labelSpace": 45,
+								"selectable": false,
+								"marginRight": 0,
+								"yAxis": 30,
+								"missingValues": true,
+								"heightScaleFactor": 4.5
+							}
+						},
+						{
+							"type": "stockstream",
+							"attr": "close",
+							"config": {
+								"isAnchorPoint": false,
+								"label": true,
+								"labelContent": "attrName",
+								"labelSpace": 45,
+								"indexPoint": false,
+								"indexLine": true,
+								"chartLine": true,
+								"selectable": false,
+								"marginRight": 0,
+								"yAxis": 30,
+								"missingValues": true
+							}
+						}, {
+							"type": "stockstream",
+							"attr": "volume",
+							"config": {
+								"isAnchorPoint": false,
+								"label": true,
+								"labelContent": "attrName",
+								"labelSpace": 45,
+								"indexPoint": false,
+								"indexLine": true,
+								"chartLine": true,
+								"selectable": false,
+								"marginRight": 0,
+								"yAxis": 30,
+								"missingValues": true
+							}
+						}
+					],
+					"nodeWidth": 60,
+					"widthDependentDataRange": false,
+					"sliceHeight": 30,
+					"useCustomColor": false,
+					"extras": { "nodeMarginLeft": 79, "nodeMarginRight": 0, "fixedWidth": 1 }
+				}
+			},
+			"treemap": {
+				"config": {
+					"defaultNodeChildren": [],
+					"nodeChildren": [],
+					"nodeWidth": 5,
+					"widthDependentDataRange": false,
+					"sliceHeight": 5,
+					"autoBinWidth": false,
+					"useCustomColor": true
+				}
+			},
+			"thermal_small": {
+				"config": {
+					"defaultNodeChildren": ["label height:4"],
+					"nodeChildren": [{
+						"type": "stockstream",
+						"attr": "close_dip",
+						"config": {
+							"isAnchorPoint": true,
+							"label": false,
+							"labelSpace": 8,
+							"indexPoint": true,
+							"indexNormalized": [-0.4,0.4],
+							"indexLine": false,
+							"chartLine": false,
+							"selectable": true,
+							"marginRight": 0,
+							"marginLeft": 0
+						}
+					}],
+					"mode": "selection-target",
+					"nodeWidth": 40,
+					"widthDependentDataRange": false,
+					"sliceHeight": 5,
+					"autoBinWidth": false,
+					"useCustomColor": false
+				}
+			},
+			"thermal_medium": {
+				"config": {
+					"defaultNodeChildren": ["label height:4"],
+					"nodeChildren": [{
+						"type": "stockstream",
+						"attr": "close_dip",
+						"config": {
+							"isAnchorPoint": true,
+							"label": true,
+							"indexNormalized": [-0.4,0.4],
+							"indexPoint": true,
+							"indexLine": false,
+							"chartLine": false,
+							"selectable": true
+						}
+					}],
+					"mode": "selection-target",
+					"nodeWidth": 40,
+					"sliceHeight": 5,
+					"autoBinWidth": false,
+					"useCustomColor": false
+				}
+			},
+			"thermal_large": {
+				"config": {
+					"defaultNodeChildren": ["label height:2"],
+					"nodeChildren": [{
+						"type": "stockstream",
+						"attr": "close_dip",
+						"config": {
+							"isAnchorPoint": true,
+							"label": true,
+							"indexNormalized": [-0.4,0.4],
+							"indexPoint": true,
+							"indexLine": true,
+							"chartLine": true,
+							"selectable": true
+						}
+					}],
+					"mode": "selection-target",
+					"nodeWidth": 100,
+					"widthDependentDataRange": false,
+					"sliceHeight": 35,
+					"autoBinWidth": false,
+					"useCustomColor": false
+				}
+			}
+		}
+	}
+}

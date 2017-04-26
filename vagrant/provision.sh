@@ -90,13 +90,13 @@ fi
 echo "Update FTSE 250 dataset"
 cd /var/server/data/thermal_ftse250/csv
 pip install -r ./requirements.txt
-python crawl.py --basedir=../sqlite/ --stock=ftse250.csv --start=2015-01-01 --end=2017-12-31
+python crawl.py --basedir=../sqlite/ --stock=ftse250.csv --start=2016-01-01 --end=2017-12-31
 
 
 echo "Update S&P 500 dataset"
 cd /var/server/data/thermal_sp500/csv
 pip install -r ./requirements.txt
-python crawl.py --basedir=../sqlite/ --stock=sp500.csv --start=2007-01-01 --end=2017-12-31
+python crawl.py --basedir=../sqlite/ --stock=sp500.csv --start=2015-01-01 --end=2017-12-31
 
 
 echo "--- Finished provision.sh ---"

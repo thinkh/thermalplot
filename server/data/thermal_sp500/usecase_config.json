@@ -1,5 +1,5 @@
 {
-  "title": "Thermal S&P 500 (since 2016)",
+  "title": "Thermal S&P 500 (since 2015)",
   "controller": "InfrastructureCtrl",
   "templateUrl": "uc/thermal_sp500/static_data/thermal_sp500.tpl.html",
   "socketStream": "thermal_sp500/socket",

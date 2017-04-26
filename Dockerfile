@@ -20,5 +20,5 @@ COPY ./vagrant /vagrant
 RUN sh /vagrant/provision.sh false nostart
 
 WORKDIR /var/server
-CMD sh $NVM_DIR/nvm.sh && python main.py -config=env.vagrant_serve.conf
+CMD python main.py -config=env.vagrant_serve.conf
 EXPOSE 8888

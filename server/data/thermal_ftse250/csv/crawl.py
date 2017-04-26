@@ -49,7 +49,7 @@ with sqlite3.connect(args.basedir + args.db) as db:
     y.add_filter('startDate',start)
     y.add_filter('endDate',end)
     response = y.json()
-    result = response.result.query.results.quote if response.result.query.results else None
+    result = hasattr(response.result,'query') and response.result.query.results.quote if response.result.query.results else None
     #print dir(result), type(result)
 
     #stock.history = result.rows

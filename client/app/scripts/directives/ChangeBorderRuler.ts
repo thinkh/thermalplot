@@ -158,13 +158,13 @@ module PVDVisualizations {
 
       if(this.config.orientation === 'horizontal') {
         this.$grid
-          .style('margin-' + this.config.d3AxisOrient, this.changeBorder.horizontal.marginStart + 'px')
-          .attr('transform', 'translate(0,' + that.config.height + ')');
+          .style('margin-' + this.config.d3AxisOrient, this.changeBorder.horizontal.marginStart + 'px');
+          //.attr('transform', 'translate(0,' + that.config.height + ')');
         gridAxis.tickSize(-that.config.height, 0);
       } else {
         this.$grid
-          .style('margin-' + this.config.d3AxisOrient, this.changeBorder.vertical.marginStart + 'px')
-          .attr('transform', 'translate(' + that.config.width + ',0)');
+          .style('margin-' + this.config.d3AxisOrient, this.changeBorder.vertical.marginStart + 'px');
+          //.attr('transform', 'translate(' + that.config.width + ',0)');
         gridAxis.tickSize(-that.config.width, 0);
       }
 

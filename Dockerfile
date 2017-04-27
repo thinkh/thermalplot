@@ -13,5 +13,5 @@ COPY ./vagrant /vagrant
 RUN sh /vagrant/provision.sh false nostart
 
 WORKDIR /var/server
-CMD python main.py -config=env.vagrant_release.conf
+CMD python main.py -config=env.docker.conf
 EXPOSE 8888

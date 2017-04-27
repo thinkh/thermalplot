@@ -15,7 +15,7 @@ Install and run [Docker](https://docker.com/).
 1. Clone this repository
 2. Open your terminal or command line
 3. Run `docker build -t thermalplot:latest .`
-4. Wait until the initial build has finished (this might take up to 30 minutes)
+4. Wait until the initial build has finished (this might take around 30-40 minutes)
 
 
 ## Run ThermalPlot

@@ -32,9 +32,9 @@ Install and run [Docker](https://docker.com/).
 3. Run `docker stop tpc`
 
 
-## Update default finance datasets
+## Update finance datasets
 
 The fincance dataset is importing data of the [FTSE 250](http://www.londonstockexchange.com/exchange/prices-and-markets/stocks/indices/summary/summary-indices.html?index=MCX) and [S&P 500](http://www.spindices.com/indices/equity/sp-500) indices.
 
-1. Run ThermalPlot
+1. [Run ThermalPlot](#run-thermalplot)
 2. Run `docker exec -t tpc /bin/sh update_financial_data.sh`

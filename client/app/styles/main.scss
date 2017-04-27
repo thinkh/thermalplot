@@ -2236,8 +2236,10 @@ pvd-loading-overlay {
 
 
 pvd-color-legend {
+  position: absolute;
+  left: 30px;
+  top: 160px;
   display: block;
-  margin-top: 20px;
   text-align: center;
 
   div {
@@ -2352,7 +2354,7 @@ pvd-map {
 
 
 /* Switch between ThermalPlot and ThermalLineChart */
-#viewselector {
+pvd-view-selector {
   position: absolute;
   left:15px;
   width:42px;

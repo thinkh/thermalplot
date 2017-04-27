@@ -8,17 +8,8 @@
           <pvd-stock-timeline csv-file="thermal_ftse250/csv/^FTMC/2016-01-01/2016-12-31/desc" parse-date="%Y-%m-%d" default-date-range="2m" show="close"></pvd-stock-timeline>
         </div>
       </div>
-      <div id="viewselector">
-        <div class="btn-group-vertical" role="group">
-          <a class="btn btn-default active" href="#thermalplot_tab" ng-click="switchTab($event);activateTab($event)" title="Switch to ThermalPlot" style="padding: 6px 8px;"><img src="./images/thermalplot-logo_dark.svg" width="22" height="18" style="width:auto;height:18px;"><span class="sr-only">&nbsp; ThermalPlot</span></a>
-          <a class="btn btn-default" href="#linechart_tab" ng-click="switchTab($event);activateTab($event)" title="Switch to Line Chart"><i class="fa fa-line-chart"></i><span class="sr-only">&nbsp; Line Chart</span></a>
-        </div>
-        <!--<hr>
-        <div class="btn-group-vertical" role="group">
-          <button class="btn btn-default" data-infra-id="ts" ng-class="{active: showTrajectories === true}" ng-click="toggleTrajectories($event)" title="Toggle trajectory for selected items" style="padding: 6px 6px;"><img src="./images/button-toggle-trajectories.svg" width="22" height="18" style="width:auto;height:22px;"><span class="sr-only">&nbsp; Toggle trajectory for selected items</span></button>
-        </div>-->
-        <pvd-color-legend></pvd-color-legend>
-      </div>
+      <pvd-view-selector></pvd-view-selector>
+      <pvd-color-legend></pvd-color-legend>
       <div class="tab-content" style="margin-left:60px">
         <div class="tab-pane active" id="thermalplot_tab">
           <div class="row" style="position: relative;">

@@ -1,0 +1,26 @@
+
+1. Export data as CSV from http://stats.oecd.org
+	* Short-term interest rate (http://stats.oecd.org//Index.aspx?QueryId=67226)
+	* Long-term interest rate (http://stats.oecd.org//Index.aspx?QueryId=67226 -> customise -> selection -> subject -> Long-term interest rate) 
+
+2. Extract them into @usecase/csv@
+
+3. Open the CMD and run the following commands (one after another):
+	```
+	...\scripts>python oecd_importer.py --file=../csv/MEI_FIN_27072015190447085.csv --column=lt_interest_rate
+	...\scripts>python oecd_importer.py --file=../csv/MEI_FIN_27072015194630069.csv --column=st_interest_rate
+	...
+	```
+
+4. An SQLite oecd.db file is created
+
+5. Open the file on the CMD or SQLite Browser
+
+6. Run the following SQL statement to create the overall average values:
+	```
+	INSERT OR IGNORE INTO oecd(key, ts, lt_interest_rate, st_interest_rate)
+	SELECT 'all_avg' as key, ts, avg(lt_interest_rate) as lt_interest_rate, avg(st_interest_rate) as st_interest_rate FROM oecd
+	GROUP BY ts ORDER BY ts ASC
+	```
+
+7. Copy and rename the oecd.db file to @usecase/sqlite/oecd.db@

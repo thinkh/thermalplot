@@ -226,7 +226,9 @@ module PVDVisualizations {
           nodeEl.$node.classed('hg-selected', isSelected);
         });
         that.currentSelection = allNodes;
-        that.trajectories.currentSelection = allNodes;
+        if(that.trajectories !== undefined) {
+          that.trajectories.currentSelection = allNodes;
+        }
       });
 
       this.config.selection.on('hover'+id, (newNode, oldNode) => {
@@ -241,7 +243,9 @@ module PVDVisualizations {
             that.hoverHalo.fadeOut();
           }
         //}
-        that.trajectories.hover(newNode);
+        if(that.trajectories !== undefined) {
+          that.trajectories.hover(newNode);
+        }
       });
       this.config.selection.on('hoverTime'+id, (newTS) => {
         if(that.layoutConfig.showTrajectories === false) {
@@ -311,7 +315,7 @@ module PVDVisualizations {
       //    height: this.config.gridHeight + 'px'
       //  });
       //this.trajectories = new Trajectories(trajectories, this.config);
-      
+
 	  // Disabled, because WebGL support is broken in Chrome 54
 	  /*var trajectories = this.$root.append('canvas')
         .attr('id', 'trajectories')

@@ -1,0 +1,528 @@
+{
+	"name": "OECD Data",
+	"id": "oecd",
+	"color": "transparent",
+	"version": "0.0.1",
+	"root": {
+	  "children": {
+      "Australia": {
+        "alias": "Australia",
+        "title": "Australia",
+        "traits": [
+          "country"
+        ]
+      },
+      "Austria": {
+        "alias": "Austria",
+        "title": "Austria",
+        "traits": [
+          "country"
+        ]
+      },
+      "Belgium": {
+        "alias": "Belgium",
+        "title": "Belgium",
+        "traits": [
+          "country"
+        ]
+      },
+      "Canada": {
+        "alias": "Canada",
+        "title": "Canada",
+        "traits": [
+          "country"
+        ]
+      },
+      "Chile": {
+        "alias": "Chile",
+        "title": "Chile",
+        "traits": [
+          "country"
+        ]
+      },
+      "China": {
+        "alias": "China (People's Republic of)",
+        "title": "China",
+        "traits": [
+          "country"
+        ]
+      },
+      "Colombia": {
+        "alias": "Colombia",
+        "title": "Colombia",
+        "traits": [
+          "country"
+        ]
+      },
+      "Czech Republic": {
+        "alias": "Czech Republic",
+        "title": "Czech Republic",
+        "traits": [
+          "country"
+        ]
+      },
+      "Denmark": {
+        "alias": "Denmark",
+        "title": "Denmark",
+        "traits": [
+          "country"
+        ]
+      },
+      "Estonia": {
+        "alias": "Estonia",
+        "title": "Estonia",
+        "traits": [
+          "country"
+        ]
+      },
+      "Finland": {
+        "alias": "Finland",
+        "title": "Finland",
+        "traits": [
+          "country"
+        ]
+      },
+      "France": {
+        "alias": "France",
+        "title": "France",
+        "traits": [
+          "country"
+        ]
+      },
+      "Germany": {
+        "alias": "Germany",
+        "title": "Germany",
+        "traits": [
+          "country"
+        ]
+      },
+      "Greece": {
+        "alias": "Greece",
+        "title": "Greece",
+        "traits": [
+          "country"
+        ]
+      },
+      "Hungary": {
+        "alias": "Hungary",
+        "title": "Hungary",
+        "traits": [
+          "country"
+        ]
+      },
+      "Iceland": {
+        "alias": "Iceland",
+        "title": "Iceland",
+        "traits": [
+          "country"
+        ]
+      },
+      "Indonesia": {
+        "alias": "Indonesia",
+        "title": "Indonesia",
+        "traits": [
+          "country"
+        ]
+      },
+      "Ireland": {
+        "alias": "Ireland",
+        "title": "Ireland",
+        "traits": [
+          "country"
+        ]
+      },
+      "Israel": {
+        "alias": "Israel",
+        "title": "Israel",
+        "traits": [
+          "country"
+        ]
+      },
+      "Italy": {
+        "alias": "Italy",
+        "title": "Italy",
+        "traits": [
+          "country"
+        ]
+      },
+      "Japan": {
+        "alias": "Japan",
+        "title": "Japan",
+        "traits": [
+          "country"
+        ]
+      },
+      "Korea": {
+        "alias": "Korea",
+        "title": "Korea",
+        "traits": [
+          "country"
+        ]
+      },
+      "Latvia": {
+        "alias": "Latvia",
+        "title": "Latvia",
+        "traits": [
+          "country"
+        ]
+      },
+      "Luxembourg": {
+        "alias": "Luxembourg",
+        "title": "Luxembourg",
+        "traits": [
+          "country"
+        ]
+      },
+      "Mexico": {
+        "alias": "Mexico",
+        "title": "Mexico",
+        "traits": [
+          "country"
+        ]
+      },
+      "Netherlands": {
+        "alias": "Netherlands",
+        "title": "Netherlands",
+        "traits": [
+          "country"
+        ]
+      },
+      "New Zealand": {
+        "alias": "New Zealand",
+        "title": "New Zealand",
+        "traits": [
+          "country"
+        ]
+      },
+      "Norway": {
+        "alias": "Norway",
+        "title": "Norway",
+        "traits": [
+          "country"
+        ]
+      },
+      "Poland": {
+        "alias": "Poland",
+        "title": "Poland",
+        "traits": [
+          "country"
+        ]
+      },
+      "Portugal": {
+        "alias": "Portugal",
+        "title": "Portugal",
+        "traits": [
+          "country"
+        ]
+      },
+      "Russia": {
+        "alias": "Russia",
+        "title": "Russia",
+        "traits": [
+          "country"
+        ]
+      },
+      "Slovak Republic": {
+        "alias": "Slovak Republic",
+        "title": "Slovak Republic",
+        "traits": [
+          "country"
+        ]
+      },
+      "Slovenia": {
+        "alias": "Slovenia",
+        "title": "Slovenia",
+        "traits": [
+          "country"
+        ]
+      },
+      "South Africa": {
+        "alias": "South Africa",
+        "title": "South Africa",
+        "traits": [
+          "country"
+        ]
+      },
+      "Spain": {
+        "alias": "Spain",
+        "title": "Spain",
+        "traits": [
+          "country"
+        ]
+      },
+      "Sweden": {
+        "alias": "Sweden",
+        "title": "Sweden",
+        "traits": [
+          "country"
+        ]
+      },
+      "Switzerland": {
+        "alias": "Switzerland",
+        "title": "Switzerland",
+        "traits": [
+          "country"
+        ]
+      },
+      "United Kingdom": {
+        "alias": "United Kingdom",
+        "title": "United Kingdom",
+        "traits": [
+          "country"
+        ]
+      },
+      "United States": {
+        "alias": "United States",
+        "title": "United States",
+        "traits": [
+          "country"
+        ]
+	    }
+	  },
+	  "name": "world",
+	  "title": "World"
+	},
+	"external": {},
+	"edges": [],
+	"visConfig": {
+		"doi": {
+			"availableAttrs": ["lt_interest_rate_dip", "st_interest_rate_dip"],
+			"components": [{
+				"attr": "lt_interest_rate_dip",
+				"weight": 0.75,
+				"range": [ -1.5, 1.5 ],
+				"invert": true
+			},{
+				"attr": "st_interest_rate_dip",
+				"weight": 0.25,
+				"range": [ -1.5, 1.5 ],
+				"invert": true
+			}],
+			"default": 0,
+			"step": "month",
+			"alpha": 0.4,
+			"beta": 0.4,
+			"range": [-1, 1],
+			"k" : 12,
+			"fuzzyDays" : 10,
+			"deltaMethod": "localwindow"
+		},
+		"representation": {
+			"overview": {
+				"config": {
+					"nodeChildren": [],
+					"mode": "selection-source",
+					"nodeWidth": 5,
+					"widthDependentDataRange": false,
+					"sliceHeight": 5,
+					"useCustomColor": false
+				}
+			},
+			"mainView": {
+				"config": {
+					"defaultNodeChildren": ["label height:3"],
+					"nodeChildren": [
+						"label height:2",
+						{
+							"type": "stockstream",
+							"attr": "co",
+							"config": {
+								"indexValue": 0,
+								"indexPoint": false,
+								"indexLine": false,
+								"indexNormalized": true
+							}
+						}
+					],
+					"mode": "selection-target",
+					"nodeWidth": 60,
+					"widthDependentDataRange": false,
+					"sliceHeight": 6,
+					"useCustomColor": false
+				}
+			},
+			"detailView": {
+				"config": {
+					"defaultNodeChildren": ["label height:1.4"],
+					"nodeChildren": [
+						{
+							"type": "label",
+							"config": {
+								"height": 1.4,
+								"template": "{{name}}",
+								"nodeCollapse": false,
+								"nodeSelect": false,
+								"nodeFocus": false,
+								"nodeDrag": false
+							}
+						},
+						{
+							"type": "time-axis",
+							"config": {
+								"height": 0.7,
+								"marginRight": 0,
+								"marginLeft": 95
+							}
+						},
+						{
+							"type": "doistream",
+							"attr": "doi",
+							"config": {
+								"label": true,
+								"labelContent": "attrName",
+								"labelSpace": 60,
+								"selectable": false,
+								"marginRight": 0,
+								"yAxis": 30,
+								"missingValues": true
+							}
+						},
+						{
+							"type": "stockstream",
+							"attr": "st_interest_rate_dip",
+							"config": {
+								"isAnchorPoint": false,
+								"label": true,
+								"labelContent": "attrName",
+								"labelSpace": 60,
+								"labelVertPos": "center",
+								"indexNormalized": [-1,1],
+								"indexPoint": false,
+								"indexLine": true,
+								"chartLine": true,
+								"selectable": false,
+								"marginRight": 0,
+								"yAxis": 30,
+								"indexValue": 0,
+								"missingValues": true
+							}
+						},
+						{
+							"type": "stockstream",
+							"attr": "lt_interest_rate_dip",
+							"config": {
+								"isAnchorPoint": false,
+								"label": true,
+								"labelContent": "attrName",
+								"labelSpace": 60,
+								"labelVertPos": "center",
+								"indexNormalized": [-1,1],
+								"indexPoint": false,
+								"indexLine": true,
+								"chartLine": true,
+								"selectable": false,
+								"marginRight": 0,
+								"yAxis": 30,
+								"indexValue": 0,
+								"missingValues": true
+							}
+						}
+					],
+					"nodeWidth": 75,
+					"widthDependentDataRange": false,
+					"sliceHeight": 30,
+					"useCustomColor": false,
+					"extras": { "nodeMarginLeft": 94, "nodeMarginRight": 0, "fixedWidth": 1 }
+				}
+			},
+			"treemap": {
+				"config": {
+					"defaultNodeChildren": [],
+					"nodeChildren": [],
+					"nodeWidth": 5,
+					"widthDependentDataRange": false,
+					"sliceHeight": 5,
+					"autoBinWidth": false,
+					"useCustomColor": true
+				}
+			},
+			"map": {
+				"config": {
+					"defaultNodeChildren": [],
+					"nodeChildren": [],
+					"nodeWidth": 5,
+					"widthDependentDataRange": false,
+					"sliceHeight": 5,
+					"autoBinWidth": false,
+					"useCustomColor": true
+				}
+			},
+			"thermal_small": {
+				"config": {
+					"defaultNodeChildren": ["label height:4"],
+					"nodeChildren": [{
+						"type": "stockstream",
+						"attr": "doi",
+						"config": {
+							"isAnchorPoint": true,
+							"label": false,
+							"labelSpace": 8,
+							"indexNormalized": [-1,1],
+							"indexPoint": true,
+							"indexLine": false,
+							"chartLine": false,
+							"selectable": true,
+							"marginRight": 0,
+							"marginLeft": 0
+						}
+					}],
+					"mode": "selection-target",
+					"nodeWidth": 40,
+					"widthDependentDataRange": false,
+					"sliceHeight": 20,
+					"autoBinWidth": false,
+					"useCustomColor": false
+				}
+			},
+			"thermal_medium": {
+				"config": {
+					"defaultNodeChildren": ["label height:4"],
+					"nodeChildren": [{
+						"type": "stockstream",
+						"attr": "doi",
+						"config": {
+							"isAnchorPoint": true,
+							"label": true,
+							"labelSpace": 90,
+							"indexNormalized": [-1,1],
+							"indexPoint": true,
+							"indexLine": false,
+							"chartLine": false,
+							"selectable": true
+						}
+					}],
+					"mode": "selection-target",
+					"nodeWidth": 100,
+					"sliceHeight": 20,
+					"autoBinWidth": false,
+					"useCustomColor": false
+				}
+			},
+			"thermal_large": {
+				"config": {
+					"defaultNodeChildren": ["label height:2"],
+					"nodeChildren": [{
+						"type": "stockstream",
+						"attr": "doi",
+						"config": {
+							"label": true,
+							"isAnchorPoint": true,
+							"labelSpace": 90,
+							"indexNormalized": [-1,1],
+							"indexPoint": true,
+							"indexLine": true,
+							"chartLine": true,
+							"selectable": true
+						}
+					}],
+					"mode": "selection-target",
+					"nodeWidth": 160,
+					"widthDependentDataRange": false,
+					"sliceHeight": 40,
+					"autoBinWidth": false,
+					"useCustomColor": false
+				}
+			}
+		}
+	}
+}

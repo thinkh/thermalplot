@@ -153,7 +153,7 @@ module PVDController {
             that.pvdDataSelection.infrastructure = that.pvdInfrastructureLoader.getUnchecked(that.defaultInfraId);
 
             // auto connect to data stream on websocket (replace regex: remove possible filneame URL and just use directories)
-            that.pvdDataService.uri = 'ws://' + document.location.host + document.location.pathname.replace(/[^\/]*$/, '') + that.socketStream;
+            that.pvdDataService.uri = (location.protocol === 'https:' ? 'wss' : 'ws') + '://' + document.location.host + document.location.pathname.replace(/[^\/]*$/, '') + that.socketStream;
             that.pvdDataService.connect();
           }
 

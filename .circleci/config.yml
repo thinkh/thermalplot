@@ -8,8 +8,11 @@ jobs:
       - checkout
       - setup_remote_docker
       - run:
-          name: install-aws-cli
-          command: sudo pip install awscli==1.11.113
+          name: install-dependencies
+          command: |
+            apk add --no-cache \
+              py-pip=9.0.0-r1
+            pip install awscli==1.11.113
       - run:
           name: login ecr and docker hub
           command: |

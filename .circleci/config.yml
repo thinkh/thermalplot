@@ -39,7 +39,7 @@ jobs:
             esac
             echo "using tag: --${awsTag}--"
             image="922145058410.dkr.ecr.eu-central-1.amazonaws.com/thermalplot:${awsTag}"
-            docker build ${image}
+            docker build -t ${image} .
             docker push ${image}
       - deploy:
           name: cleanup untagged aws repo

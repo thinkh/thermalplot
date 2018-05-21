@@ -1,0 +1,49 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html ng-app="pipesVsDamsApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html ng-app="pipesVsDamsApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html ng-app="pipesVsDamsApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html ng-app="pipesVsDamsApp" class="no-js">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title ng-bind="$root.title + ' &ndash; CloudGazer'">CloudGazer</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,700" rel="stylesheet">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <link rel="shortcut icon" href="favicon_32x32.png" type="image/png">
+  <link rel="icon" href="favicon_32x32.png" type="image/png">
+</head>
+
+<body>
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+  <div id="navigation_dummy" class="header" ng-show="navigation_dummy.visible === true" ng-cloak>
+    <div style="height:45px;">
+      <!--
+        Dummy div to set the height of the navigation in advanced to calculate the correct full-screen height for ThermalPlot/ThermalLayout.
+        The navigation_dummy.visible is set to "false" in the file Navigation.ts.
+      -->
+    </div>
+  </div>
+
+  <div class="init-splash container" ng-hide="loading.visible === false" ng-cloak>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="alert" style="margin-top:20px;" role="alert">Loading basic files ...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add your site or application content here -->
+  <div ng-view="" ng-cloak></div>
+
+  <script src="bundle.js"></script>
+</body>
+
+</html>

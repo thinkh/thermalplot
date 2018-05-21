@@ -1,13 +1,14 @@
+import { TimedList } from "../../../src/scripts/models/Timed";
+
 /**
  * Created by AK113797 on 17.04.2014.
  */
 /// <reference path="tsUnit.ts" />
 /// <reference path="tsUnitUtils.ts" />
-/// <reference path="../../../app/scripts/models/Timed.ts" />
 
 class TimedListTest extends tsUnit.TestClass {
 
-  private t = new PVDTimed.TimedList<string>();
+  private t = new TimedList<string>();
 
   testLength() {
     this.t.clear();

@@ -17,6 +17,10 @@ Install and run [Docker](https://docker.com/).
 3. Run `docker build -t thermalplot:latest .`
 4. Wait until the initial build has finished (this might take around 30-40 minutes)
 
+**Troubleshooting**
+
+In case the provision.sh is not starting, open the file in your editor and change the end of line sequence for this file from *CRLF* to *LF* (i.e., from Windows to Linux). Save the file and restart the build process again.
+
 
 ## Run ThermalPlot
 

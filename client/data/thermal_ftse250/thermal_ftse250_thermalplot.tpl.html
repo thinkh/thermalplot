@@ -1,0 +1,38 @@
+<pvd-navigation project="thermalplot"></pvd-navigation>
+<div class="container">
+  <pvd-browser-notification></pvd-browser-notification>
+    <div class="hg-hidden">
+        <!--
+            It's necessary to initialize the timeline, DOI editor and treemap directives to initialize the variables,
+            even though we don't show the directive content.
+        -->
+        <pvd-stock-timeline disable-drawing="true" csv-file="thermal_ftse250/csv/^FTMC/2015-01-01/2016-12-31/desc" parse-date="%Y-%m-%d" default-date-range="2m" show="close" use-parent-width="true"></pvd-stock-timeline>
+        <pvd-doi-editor></pvd-doi-editor>
+        <pvd-treemap infra-id="ts" vis-config="thermal_small"></pvd-treemap>
+    </div>
+  <div class="row">
+    <div class="col-md-12" id="maincontainer">
+      <pvd-view-selector></pvd-view-selector>
+      <pvd-color-legend></pvd-color-legend>
+      <div class="tab-content" style="margin-left:60px">
+        <div class="tab-pane active" id="thermalplot_tab">
+          <div class="row" style="position: relative;">
+            <div class="col-md-12" id="mainview" style="z-index:1;">
+              <div id="axisLabel">
+                <span class="doi">DOI</span>
+                <span class="deltaDoi">&#916;DOI</span>
+              </div>
+              <pvd-change-border-ruler orientation="horizontal"></pvd-change-border-ruler>
+              <pvd-change-border-ruler orientation="vertical"></pvd-change-border-ruler>
+              <pvd-thermal-layout is-standalone="true" infra-id="ts" vis-config="thermal_small"></pvd-thermal-layout>
+            </div>
+            <pvd-loading-overlay></pvd-loading-overlay>
+          </div>
+        </div>
+        <div class="tab-pane" id="linechart_tab">
+          <pvd-thermal-line-chart infra-id="ts" vis-config="thermal_small"></pvd-thermal-line-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

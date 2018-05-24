@@ -1,0 +1,170 @@
+{
+  "title": "Thermal S&P 500 (since 2016)",
+  "controller": "InfrastructureCtrl",
+  "templateUrl": "api/uc/thermal_sp500/static_data/thermal_sp500.tpl.html",
+  "socketStream": "api/thermal_sp500/socket",
+  "bookmarksFile": "",
+  "infrastructureFiles": [
+    "api/uc/thermal_sp500/static_data/sp500.json"
+  ],
+  "defaultInfraId": "ts",
+  "mappingFile": "",
+  "mapDynamicNodeAttributes": [],
+  "mapDynamicEdgeAttributes": [],
+  "changeBorders": {
+    "segmentRep": [
+      {
+        "hSeg": "2",
+        "vSeg": "0",
+        "visConfigId": "thermal_medium",
+        "hideIn": [
+          "Treemap"
+        ]
+      },
+      {
+        "hSeg": "2",
+        "vSeg": "1",
+        "visConfigId": "thermal_medium",
+        "hideIn": [
+          "Treemap"
+        ]
+      },
+      {
+        "hSeg": "2",
+        "vSeg": "5",
+        "visConfigId": "thermal_medium",
+        "hideIn": [
+          "Treemap"
+        ]
+      },
+      {
+        "hSeg": "2",
+        "vSeg": "6",
+        "visConfigId": "thermal_medium",
+        "hideIn": [
+          "Treemap"
+        ]
+      },
+      {
+        "hSeg": "*",
+        "vSeg": "0",
+        "visConfigId": "thermal_large",
+        "hideIn": [
+          "Treemap"
+        ]
+      },
+      {
+        "hSeg": "*",
+        "vSeg": "1",
+        "visConfigId": "thermal_large",
+        "hideIn": [
+          "Treemap"
+        ]
+      },
+      {
+        "hSeg": "*",
+        "vSeg": "2",
+        "visConfigId": "thermal_small",
+        "hideIn": [
+          "Treemap"
+        ]
+      },
+      {
+        "hSeg": "*",
+        "vSeg": "3",
+        "visConfigId": "treemap",
+        "hideIn": [
+          "ThermalLayout"
+        ],
+        "behavior": {
+          "treemapCollapse": {
+            "visConfigId": "thermal_small",
+            "hideIn": [
+              "Treemap"
+            ]
+          }
+        }
+      },
+      {
+        "hSeg": "*",
+        "vSeg": "4",
+        "visConfigId": "thermal_small",
+        "hideIn": [
+          "Treemap"
+        ]
+      },
+      {
+        "hSeg": "*",
+        "vSeg": "5",
+        "visConfigId": "thermal_large",
+        "hideIn": [
+          "Treemap"
+        ]
+      },
+      {
+        "hSeg": "*",
+        "vSeg": "6",
+        "visConfigId": "thermal_large",
+        "hideIn": [
+          "Treemap"
+        ]
+      }
+    ],
+    "vertical": {
+      "scale": "linear",
+      "activities": [
+        -1.0,
+        -0.7,
+        -0.4,
+        -0.2,
+        0.2,
+        0.4,
+        0.7,
+        1.0
+      ],
+      "relativePositions": [
+        0,
+        0.15,
+        0.3,
+        0.4,
+        0.6,
+        0.7,
+        0.85,
+        1.0
+      ],
+      "colors": [
+        "#e51c23",
+        "#ccc",
+        "#259b24"
+      ],
+      "marginStart": 55,
+      "marginEnd": 60
+    },
+    "horizontal": {
+      "scale": "linear",
+      "activities": [
+        0.7,
+        0.5,
+        0.3,
+        -0.3,
+        -0.5,
+        -0.7
+      ],
+      "relativePositions": [
+        0.0,
+        0.15,
+        0.3,
+        0.7,
+        0.85,
+        1.0
+      ],
+      "colors": [
+        "#e51c23",
+        "#ccc",
+        "#259b24"
+      ],
+      "marginStart": 35,
+      "marginEnd": 0
+    }
+  }
+}

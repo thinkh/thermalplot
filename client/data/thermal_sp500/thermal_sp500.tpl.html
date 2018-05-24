@@ -1,0 +1,53 @@
+<pvd-navigation project="thermalplot"></pvd-navigation>
+<div class="container">
+  <pvd-browser-notification></pvd-browser-notification>
+  <div class="row">
+    <div class="col-md-9" id="maincontainer">
+      <div class="row">
+        <div class="col-md-12" style="padding-left:75px">
+          <pvd-stock-timeline csv-file="thermal_sp500/csv/^GSPC/2016-01-01/2017-12-31/desc" parse-date="%Y-%m-%d" default-date-range="2m" show="close"></pvd-stock-timeline>
+        </div>
+      </div>
+      <pvd-view-selector></pvd-view-selector>
+      <pvd-color-legend></pvd-color-legend>
+      <div class="tab-content" style="margin-left:60px">
+        <div class="tab-pane active" id="thermalplot_tab">
+          <div class="row" style="position: relative;">
+            <div id="overview" style="position: absolute; z-index:2;">
+              <pvd-treemap infra-id="ts" vis-config="thermal_small"></pvd-treemap>
+            </div>
+            <div class="col-md-12" id="mainview" style="z-index:1;">
+              <div id="axisLabel">
+                <span class="doi">DOI</span>
+                <span class="deltaDoi">&#916;DOI</span>
+              </div>
+              <pvd-change-border-ruler orientation="horizontal"></pvd-change-border-ruler>
+              <pvd-change-border-ruler orientation="vertical"></pvd-change-border-ruler>
+              <pvd-thermal-layout infra-id="ts" vis-config="thermal_small"></pvd-thermal-layout>
+            </div>
+            <pvd-loading-overlay></pvd-loading-overlay>
+          </div>
+        </div>
+        <div class="tab-pane" id="linechart_tab">
+          <pvd-thermal-line-chart infra-id="ts" vis-config="thermal_small"></pvd-thermal-line-chart>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3" id="detailedview">
+      <!--<pvd-animation-control></pvd-animation-control>-->
+      <pvd-doi-editor></pvd-doi-editor>
+      <!--<ul class="nav nav-tabs" style="margin-top: 20px;">
+        <li><a href="#lineup_tab" ng-click="switchTab($event)">LineUp</a></li>
+        <li class="active"><a href="#detail_tab" ng-click="switchTab($event)">Details</a></li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="detail_tab">-->
+          <pvd-stock-detail-view vis-config="detailView"></pvd-stock-detail-view>
+        <!--</div>
+        <div id="lineup_tab" class="tab-pane" style="position: relative">
+          <pvd-line-up></pvd-line-up>
+        </div>
+      </div>-->
+    </div>
+  </div>
+</div>

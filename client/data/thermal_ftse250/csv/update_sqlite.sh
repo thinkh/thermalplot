@@ -1,0 +1,1 @@
+python crawl.py --basedir=../sqlite/ --lastrun=lastrun.log --stock=ftse250.csv

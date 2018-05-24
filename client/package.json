@@ -5,12 +5,13 @@
   "description": "",
   "scripts": {
     "test": "",
-    "__dev__": "webpack --mode development",
-    "__build__": "webpack --mode production",
-    "__start__": "webpack-dev-server --watch --inline --host 0.0.0.0",
     "start": "cross-env NODE_ENV=development nodemon server.js",
     "dev": "cross-env NODE_ENV=development nodemon server.js",
-    "build": "rimraf dist && cross-env NODE_ENV=production webpack --config ./webpack.production.config.js --progress --profile --colors"
+    "build": "rimraf dist && cross-env NODE_ENV=production webpack --config ./webpack.production.config.js --progress --profile --colors",
+    "dev_webpack": "webpack --mode development",
+    "build_webpack": "webpack --mode production",
+    "start_webpack": "webpack-dev-server --watch --inline --host 0.0.0.0",
+    "express": "cross-env NODE_ENV=production PORT=3000 nodemon server.js"
   },
   "keywords": [],
   "author": "",
@@ -60,13 +61,10 @@
     "es5-shim": "~4.5.10",
     "font-awesome": "~4.7.0",
     "jquery": "~2.2.4",
-    "jquery-ui": "~1.12.1",
     "json3": "~3.3.2",
     "lineupjs": "~1.0.0",
-    "moment": "~2.22.1",
     "physicsjs": "~0.7.0",
     "topojson": "1.6.27",
-    "underscore": "~1.8.3",
     "socket.io": "~2.1.1",
     "raw-loader": "~0.5.1"
   },

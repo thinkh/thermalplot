@@ -5,6 +5,7 @@ import * as angular from 'angular';
 import * as d3 from 'd3';
 import { nextID } from '../directives/VisUtils';
 import { Node } from '../models/Infrastructure';
+import { ApplicationConfiguration } from './ApplicationConfiguration';
 
 export class AChangeBorder {
   public marginStart = 20; // margin in the beginning for change border ruler

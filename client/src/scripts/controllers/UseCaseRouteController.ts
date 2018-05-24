@@ -7,6 +7,7 @@ import BroadcastService, { PVDBroadcastService } from '../services/BroadcastServ
 import DataService, { PVDDataService } from '../services/DataService';
 import LayoutManager, { PVDLayoutManager } from '../services/LayoutManager';
 import UseCaseConfig, { PVDUseCaseConfig } from '../services/UseCaseConfig';
+import InfrastructureController from './InfrastructureController';
 
 'use strict';
 
@@ -14,7 +15,8 @@ export default angular.module('controllers.UseCaseRouteCtrl', [
     BroadcastService,
     DataService,
     LayoutManager,
-    UseCaseConfig
+    UseCaseConfig,
+    InfrastructureController
 ]).
     controller('UseCaseRouteCtrl', [
         '$rootScope', '$scope', '$controller', '$http', '$routeParams', 'pvdUseCaseConfig', 'pvdDataService', 'pvdLayoutManager', 'pvdBroadcastService',
@@ -62,7 +64,7 @@ export default angular.module('controllers.UseCaseRouteCtrl', [
                 layoutManager.updateLayout(config);
             };
 
-            $http.get('uc/' + usecase + '/').then(function (response) {
+            $http.get('api/uc/' + usecase + '/').then(function (response) {
                 //console.log('Use case config successfully loaded', response);
                 var data = response.data;
 

@@ -8,6 +8,7 @@ import { Infrastructure } from '../models/Infrastructure';
 import ChangeBorderService, { PVDChangeBorder, AChangeBorder } from '../services/ChangeBorderService';
 import DataSelection, { PVDDataSelection } from '../services/DataSelection';
 import WindowResize, { PVDWindowResize } from '../services/WindowResize';
+import { ApplicationConfiguration } from '../services/ApplicationConfiguration';
 
 /**
  * Creates a vertical or horizontal ruler.

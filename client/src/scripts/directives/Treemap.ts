@@ -15,6 +15,7 @@ import LayoutManager, { PVDLayoutManager } from '../services/LayoutManager';
 import TargetHierarchy, { PVDTargetHierarchy } from '../services/TargetHierarchy';
 import ChangeBorder, { PVDChangeBorder, SegmentRepresentation } from '../services/ChangeBorderService';
 import WindowResize, { PVDWindowResize } from '../services/WindowResize';
+import { ApplicationConfiguration } from '../services/ApplicationConfiguration';
 
 /**
  *

@@ -17,6 +17,7 @@ import LayoutManager, { PVDLayoutManager } from '../services/LayoutManager';
 import TargetHierarchy, { PVDTargetHierarchy } from '../services/TargetHierarchy';
 import ChangeBorder, { PVDChangeBorder } from '../services/ChangeBorderService';
 import DataService, { PVDDataService } from '../services/DataService';
+import { ApplicationConfiguration } from '../services/ApplicationConfiguration';
 
 
 class StockTimeline implements IAnimateable {
@@ -755,65 +756,65 @@ export default angular.module('directives.pvdStockTimeline', [
     'pvdChangeBorder',
     'pvdDataService',
     function (
-    pvdInfrastructureLoader: PVDInfrastructureLoader,
-    pvdWindowResize: PVDWindowResize,
-    $timeout,
-    pvdAnimator: PVDAnimator,
-    pvdDataSelection: PVDDataSelection,
-    pvdInfrastructureMapper: PVDInfrastructureMapper,
-    pvdLayoutManager: PVDLayoutManager,
-    pvdTargetHierarchy: PVDTargetHierarchy,
-    pvdChangeBorder: PVDChangeBorder,
-    pvdDataService: PVDDataService
-  ) {
-    return {
-      compile: function (element, attrs: any) {
-        attrs.width = angular.isDefined(attrs.width) ? +attrs.width : '100%';
-        attrs.height = angular.isDefined(attrs.height) ? +attrs.height : 500;
-        attrs.csvFile = angular.isDefined(attrs.csvFile) ? attrs.csvFile : '';
-        attrs.parseDate = angular.isDefined(attrs.parseDate) ? attrs.parseDate : '%Y-%m-%d';
-        attrs.defaultDateRange = angular.isDefined(attrs.defaultDateRange) ? attrs.defaultDateRange : '1m';
-        attrs.show = angular.isDefined(attrs.show) ? attrs.show : 'close';
-        attrs.indexPoint = angular.isDefined(attrs.indexPoint) ? ((attrs.indexPoint == 'true') ? true : false) : true;
-        attrs.disableDrawing = (angular.isDefined(attrs.disableDrawing) && attrs.disableDrawing === 'true') ? true : false;
+      pvdInfrastructureLoader: PVDInfrastructureLoader,
+      pvdWindowResize: PVDWindowResize,
+      $timeout,
+      pvdAnimator: PVDAnimator,
+      pvdDataSelection: PVDDataSelection,
+      pvdInfrastructureMapper: PVDInfrastructureMapper,
+      pvdLayoutManager: PVDLayoutManager,
+      pvdTargetHierarchy: PVDTargetHierarchy,
+      pvdChangeBorder: PVDChangeBorder,
+      pvdDataService: PVDDataService
+    ) {
+      return {
+        compile: function (element, attrs: any) {
+          attrs.width = angular.isDefined(attrs.width) ? +attrs.width : '100%';
+          attrs.height = angular.isDefined(attrs.height) ? +attrs.height : 500;
+          attrs.csvFile = angular.isDefined(attrs.csvFile) ? attrs.csvFile : '';
+          attrs.parseDate = angular.isDefined(attrs.parseDate) ? attrs.parseDate : '%Y-%m-%d';
+          attrs.defaultDateRange = angular.isDefined(attrs.defaultDateRange) ? attrs.defaultDateRange : '1m';
+          attrs.show = angular.isDefined(attrs.show) ? attrs.show : 'close';
+          attrs.indexPoint = angular.isDefined(attrs.indexPoint) ? ((attrs.indexPoint == 'true') ? true : false) : true;
+          attrs.disableDrawing = (angular.isDefined(attrs.disableDrawing) && attrs.disableDrawing === 'true') ? true : false;
 
-        return function ($scope, element) {
-          pvdInfrastructureLoader.get(attrs.infraId).then((infrastructure: Infrastructure) => {
-            $timeout(() => { //skip one time to ensure that the svg is properly layouted
-              //var path:string = $scope.path;
-              //var attr = infrastructure.findAttr(path);
-              var $base = d3.select(element[0]);
+          return function ($scope, element) {
+            pvdInfrastructureLoader.get(attrs.infraId).then((infrastructure: Infrastructure) => {
+              $timeout(() => { //skip one time to ensure that the svg is properly layouted
+                //var path:string = $scope.path;
+                //var attr = infrastructure.findAttr(path);
+                var $base = d3.select(element[0]);
 
-              var $root: d3.Selection<any> = $base.append('div')
-                .classed('pvd-stock-timeline', true)
-                .attr('data-infra-id', attrs.infraId);
+                var $root: d3.Selection<any> = $base.append('div')
+                  .classed('pvd-stock-timeline', true)
+                  .attr('data-infra-id', attrs.infraId);
 
-              var config = new PVDHierarchyConfig(pvdAnimator, pvdDataSelection, pvdLayoutManager, pvdInfrastructureMapper, pvdTargetHierarchy, pvdChangeBorder, pvdWindowResize);
-              config.visConfigId = attrs.visConfig || '';
+                var config = new PVDHierarchyConfig(pvdAnimator, pvdDataSelection, pvdLayoutManager, pvdInfrastructureMapper, pvdTargetHierarchy, pvdChangeBorder, pvdWindowResize);
+                config.visConfigId = attrs.visConfig || '';
 
-              //modifyConfig(config, infrastructure);
+                //modifyConfig(config, infrastructure);
 
-              new StockTimeline($root, config, attrs, pvdDataService, attrs.disableDrawing);
+                new StockTimeline($root, config, attrs, pvdDataService, attrs.disableDrawing);
+              });
             });
-          });
-        }
-      },
-      scope: {
-        'csv-file': '@?',
-        'parseDate': '@?',
-        'show': '@?',
-        'indexPoint': '@?',
-        'defaultDateRange': '@?',
-        'jumpToIndex': '@?', // jump to a certain index point after data is loaded; date format = parseDate attribute
-        'jumpToRange': '@?', // select a certain time range after data is loaded; date format = parseDate attribute: "2012-01-01|2012-02-01"
-        'infraId': '@?', // id of infrastructure*.json
-        'width': '@?', // svg width
-        'height': '@?', // svg individual height
-        'visConfig': '@?', // modifier for infrastructure.visConfig[...]
-        'useParentWidth': '@?', // use the parent DOM element for width (default: true)
-        'disableDrawing': '@?' // disable drawing the timeline (but keep the loading functionality)? (default: 'false')
-      },
-      restrict: 'E'
-    };
-  }])
+          }
+        },
+        scope: {
+          'csv-file': '@?',
+          'parseDate': '@?',
+          'show': '@?',
+          'indexPoint': '@?',
+          'defaultDateRange': '@?',
+          'jumpToIndex': '@?', // jump to a certain index point after data is loaded; date format = parseDate attribute
+          'jumpToRange': '@?', // select a certain time range after data is loaded; date format = parseDate attribute: "2012-01-01|2012-02-01"
+          'infraId': '@?', // id of infrastructure*.json
+          'width': '@?', // svg width
+          'height': '@?', // svg individual height
+          'visConfig': '@?', // modifier for infrastructure.visConfig[...]
+          'useParentWidth': '@?', // use the parent DOM element for width (default: true)
+          'disableDrawing': '@?' // disable drawing the timeline (but keep the loading functionality)? (default: 'false')
+        },
+        restrict: 'E'
+      };
+    }])
   .name; // name for export default

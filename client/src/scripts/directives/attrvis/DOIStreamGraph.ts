@@ -11,6 +11,7 @@ import { PVDHierarchyConfig } from '../HierarchyConfig';
 import { PVDElementParent } from '../HierarchyNode';
 import { Node } from '../../models/Infrastructure';
 import { ConstantAttribute } from '../../models/Models';
+import { ApplicationConfiguration } from '../../services/ApplicationConfiguration';
 
 'use strict';
 

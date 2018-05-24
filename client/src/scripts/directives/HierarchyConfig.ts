@@ -13,6 +13,7 @@ import { PVDLayoutManager } from '../services/LayoutManager';
 import { PVDTargetHierarchy } from '../services/TargetHierarchy';
 import { PVDChangeBorder } from '../services/ChangeBorderService';
 import { PVDWindowResize } from '../services/WindowResize';
+import { ApplicationConfiguration } from '../services/ApplicationConfiguration';
 
 'use strict';
 

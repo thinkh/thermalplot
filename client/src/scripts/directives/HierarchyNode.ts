@@ -21,6 +21,7 @@ import { PVDMeanMinMax, PVDCategoryStack } from './attrvis/MeanMinMax';
 import { PVDDOIStreamGraph } from './attrvis/DOIStreamGraph';
 import { DOIAttribute } from '../models/DOI';
 import { PVDStackedBar } from './attrvis/StackedBar';
+import { ApplicationConfiguration } from '../services/ApplicationConfiguration';
 
 'use strict';
 

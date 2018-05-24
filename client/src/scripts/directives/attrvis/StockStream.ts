@@ -9,6 +9,7 @@ import { PVDHierarchyConfig } from '../HierarchyConfig';
 import { PVDElementParent } from '../HierarchyNode';
 import { INormalizer, nextID } from '../VisUtils';
 import { PVDADataAttributeVis } from './AAttributeVis';
+import { ApplicationConfiguration } from '../../services/ApplicationConfiguration';
 
 'use strict';
 

@@ -6,6 +6,7 @@ import * as d3 from 'd3';
 import { PVDHierarchyConfig } from '../HierarchyConfig';
 import { PVDElementParent } from '../HierarchyNode';
 import { PVDADataAttributeVis } from './AAttributeVis';
+import { ApplicationConfiguration } from '../../services/ApplicationConfiguration';
 
 'use strict';
 

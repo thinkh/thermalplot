@@ -1,10 +1,4 @@
-$fa-font-path: "/bower_components/font-awesome/fonts/";
-
-$screen-width-4k: 7680px;
-
-// bower:scss
-@import "../bower_components/font-awesome/scss/font-awesome.scss";
-// endbower
+@import 'vars.scss';
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none;
@@ -66,11 +60,6 @@ b {
     -webkit-print-color-adjust: exact;
   }
 }
-
-
-$cloudgazer-blue: #3587bc;//#428bca;
-$cloudgazer-gray: #333333;
-$white: #fff;
 
 /* Custom page header */
 .header {
@@ -324,26 +313,6 @@ pvd-hierarchy-node-explanation {
 
 
 }
-
-
-$transparent: transparent;
-
-$blue-dark: #2F7CB3;
-$blue-light: #9ecae1;
-$blue-light2: #deebf7;
-
-$green-dark: #288544;
-$green-light: #a1d99b;
-$green-light2: #e5f5e0;
-
-$red-dark: #de2d26;
-$red-light: #fc9272;
-$red-light2: #fee0d2;
-
-$orange-highlight: #fee090;
-$highlight-color: #fffa00;
-$highlight-color-dark: #fee090;
-
 
 /** Hierarchy Grid **/
 pvd-hierarchy-grid,

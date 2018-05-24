@@ -34,12 +34,20 @@ if (isDeveloping) {
         res.end();
     });
 
-    app.get('/api/all_use_cases', function response(req, res) {
-        res.sendFile(__dirname + '/src/data/all_use_cases.json');
-    });
-
     app.get('/views/:file', function response(req, res) {
         res.sendFile(__dirname + '/src/views/' + req.params.file);
+    });
+
+    app.get('/api/all_use_cases', function response(req, res) {
+        res.sendFile(__dirname + '/data/all_use_cases.json');
+    });
+
+    app.get('/api/uc/:usecase/$', function response(req, res) {
+        res.sendFile(__dirname + '/data/' + req.params.usecase + '/usecase_config.json');
+    });
+
+    app.get('/api/uc/:usecase/static_data/:file', function response(req, res) {
+        res.sendFile(__dirname + '/data/' + req.params.usecase + '/' + req.params.file);
     });
 
 } else {

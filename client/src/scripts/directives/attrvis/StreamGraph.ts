@@ -1,8 +1,8 @@
 /**
  * Created by Holger Stitz on 18.08.2014.
  */
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 import { Edge, Node, findLeastCommonAncestor } from '../../models/Infrastructure';
 import { IAttribute, compose } from '../../models/Models';
 import { IAnimateable } from '../../services/Animator';
@@ -79,9 +79,9 @@ export interface IAttributeProvider {
 }
 
 export class PVDAStreamGraph implements IAnimateable, PVDElement {
-  $node: d3.Selection;
+  $node: d3.Selection<any>;
   _scaleFactor = [1, 3];
-  private $scaleGroup: d3.Selection;
+  private $scaleGroup: d3.Selection<any>;
   private normalizer: INormalizer<number>;
 
   private attrDistances: IAttribute<number>[];
@@ -103,7 +103,7 @@ export class PVDAStreamGraph implements IAnimateable, PVDElement {
 
   private _defConfig;
 
-  constructor(public $parent: d3.Selection,
+  constructor(public $parent: d3.Selection<any>,
     node: Node,
     attrs: IAttributeProvider,
     protected config: PVDHierarchyConfig,
@@ -174,7 +174,7 @@ export class PVDAStreamGraph implements IAnimateable, PVDElement {
   }
 
   get isVisible() {
-    return this.$node[0][0].className.baseVal.indexOf('hg-hidden') === -1;
+    return (<HTMLElement>this.$node[0][0]).classList.contains('hg-hidden') === false;
   }
 
   get scaleFactor() {
@@ -322,27 +322,27 @@ export class PVDAStreamGraph implements IAnimateable, PVDElement {
     this.draw($r, dt);
   }
 
-  draw($r: d3.UpdateSelection, dt: number) {
+  draw($r: d3.selection.Update<any>, dt: number) {
   }
 }
 
 export class PVDStreamGraph extends PVDAStreamGraph {
   private line = d3.svg.line(); // linear || basis
 
-  constructor($parent: d3.Selection, node: Node, attrs: IAttributeProvider, config: PVDHierarchyConfig, collapsed: boolean, parent: PVDElementParent, public defConfig: any) {
+  constructor($parent: d3.Selection<any>, node: Node, attrs: IAttributeProvider, config: PVDHierarchyConfig, collapsed: boolean, parent: PVDElementParent, public defConfig: any) {
     super($parent, node, attrs, config, collapsed, parent, defConfig);
     this.defConfig.bindtype = 'path';
 
     this.line.interpolate(this.defConfig.interpolate);
-    this.line.x((d) => this.scale(d.i));
+    this.line.x((d: any) => this.scale(d.i));
     if (this.defConfig.incoming) {
-      this.line.y((d) => d.p);
+      this.line.y((d: any) => d.p);
     } else {
-      this.line.y((d) => -d.p);
+      this.line.y((d: any) => -d.p);
     }
   }
 
-  draw($r: d3.UpdateSelection, dt: number) {
+  draw($r: d3.selection.Update<any>, dt: number) {
     super.draw($r, dt);
 
     var line = (d) => {
@@ -363,13 +363,13 @@ export class PVDStreamGraph extends PVDAStreamGraph {
 export class PVDStackedBars extends PVDAStreamGraph {
   private factor: number;
 
-  constructor($parent: d3.Selection, node: Node, attrs: IAttributeProvider, config: PVDHierarchyConfig, collapsed: boolean, parent: PVDElementParent, public defConfig: any) {
+  constructor($parent: d3.Selection<any>, node: Node, attrs: IAttributeProvider, config: PVDHierarchyConfig, collapsed: boolean, parent: PVDElementParent, public defConfig: any) {
     super($parent, node, attrs, config, collapsed, parent, defConfig);
     this.defConfig.bindtype = 'g';
     this.factor = (this.defConfig.incoming) ? 1 : -1;
   }
 
-  draw($r: d3.UpdateSelection, dt: number) {
+  draw($r: d3.selection.Update<any>, dt: number) {
     super.draw($r, dt);
 
     var that = this;
@@ -385,10 +385,10 @@ export class PVDStackedBars extends PVDAStreamGraph {
       var $rects = $this.selectAll('rect').data(d.values);
       $rects.enter().append('rect');
       $rects.attr({
-        x: (d) => that.scale(d.i),
-        y: (d) => ((that.factor < 0) ? -d.p : 0),
+        x: (d: any) => that.scale(d.i),
+        y: (d: any) => ((that.factor < 0) ? -d.p : 0),
         width: binWidth,
-        height: (d) => d.p
+        height: (d: any) => d.p
       });
       $rects.exit().remove();
     });

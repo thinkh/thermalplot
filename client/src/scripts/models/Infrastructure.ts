@@ -1,8 +1,8 @@
 /**
  * Created by Samuel Gratzl on 16.04.2014.
  */
-import * as d3 from '@bower_components/d3/d3';
-import * as $ from '@bower_components/jquery';
+import * as d3 from 'd3';
+import * as $ from 'jquery';
 import { IAttribute, IPathElem, DeltaIndexAttribute, NumberAttribute, NumberCalcAttribute, CategoricalAttribute, IntAttribute, CounterAttribute, StringAttribute, ObjectCompositeAttribute, ConstantAttribute, DeltaIndexPercentageAttribute } from "./Models";
 import { DOIAttribute } from './DOI';
 
@@ -10,7 +10,7 @@ import { DOIAttribute } from './DOI';
  * container for attributes
  */
 export class AttributeContainer {
-  private _attributes = d3.map();
+  private _attributes = d3.map<IAttribute<any>>();
 
   getAttr(attr: string): IAttribute<any> {
     return this._attributes.get(attr);
@@ -788,7 +788,7 @@ export function parseNode(name: string, nodeConfig: any, parent: Node, traits: d
     var vari = {};
     for (var i = range[0]; i <= range[1]; i += step) {
       vari = {};
-      d3.entries(vars).forEach((entry) => {
+      d3.entries(vars).forEach((entry: any) => {
         vari[entry.key] = entry.value + i;
       })
       var bi = replaceTemplate(template, i, vari);
@@ -994,7 +994,7 @@ export class GraphRoute {
    */
   lcancestor: Node = null;
 
-  private partOf: d3.Set<Node> = d3.set();
+  private partOf /*: d3.Set<Node> */ = d3.set();
 
   constructor(public src: Node, public dst: Node) {
     if (src === dst) { //same node
@@ -1014,8 +1014,8 @@ export class GraphRoute {
     if (!this.lcancestor) {
       console.error('cant match to nodes, not even the root');
     }
-    this.srcPath.forEach((n) => this.partOf.add(n));
-    this.dstPath.forEach((n) => this.partOf.add(n));
+    this.srcPath.forEach((n) => this.partOf.add(<any>n));
+    this.dstPath.forEach((n) => this.partOf.add(<any>n));
   }
 
   /**
@@ -1024,7 +1024,7 @@ export class GraphRoute {
    * @returns {boolean}
    */
   filter(cur: Node) {
-    return this.partOf.has(cur);
+    return this.partOf.has(<any>cur);
   }
 }
 

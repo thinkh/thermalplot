@@ -1,5 +1,5 @@
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 
 /**
  * stores the bookmarks for a certain dataset
@@ -39,4 +39,7 @@ export class PVDBookmarkService {
   }
 }
 
-export default angular.module('services.pvdBookmarkService', []).service('pvdBookmarkService', PVDBookmarkService).name;
+export default angular.module('services.pvdBookmarkService', [])
+  .service('pvdBookmarkService', [
+    PVDBookmarkService
+  ]).name;

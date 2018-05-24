@@ -1,8 +1,8 @@
 /**
  * Created by Holger Stitz on 06.03.2015.
  */
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 import Animator, { IAnimateable, PVDAnimator } from '../services/Animator';
 import { PVDHierarchyConfig } from './HierarchyConfig';
 import { nextID, onDelete, tooltip, idealTextColor, modifyConfig } from './VisUtils';
@@ -40,7 +40,7 @@ class PVDTreemap implements IAnimateable {
   private isCollapsed = false;
   private useDoiColoring = true;
 
-  private colorScale = d3.scale.ordinal().range([
+  private colorScale = d3.scale.ordinal<string>().range([
     '#1f77b4',
     '#ff7f0e',
     //'#2ca02c',
@@ -68,7 +68,7 @@ class PVDTreemap implements IAnimateable {
   private parents;
   private children;
 
-  private treemap: d3.Layout.TreeMapLayout;
+  private treemap: d3.layout.Treemap<any>;
 
   private svg;
   private chart;
@@ -252,9 +252,10 @@ class PVDTreemap implements IAnimateable {
     this.treemap = d3.layout.treemap()
       .size([this.chartWidth, this.chartHeight])
       .round(false)
-      .sticky(true)
       .mode('squarify')
       .children(function children(d) { return d.children; });
+
+    this.treemap.sticky(true);
 
     if (this.fullscreen) {
       this.treemap
@@ -462,12 +463,12 @@ class PVDTreemap implements IAnimateable {
     var dragTreemap = d3.behavior.drag()
       .on('dragstart', function () {
         if (that.fullscreen) { return; }
-        offsetX = (<any>d3.event.sourceEvent).offsetX;
+        offsetX = (<any>d3.event).sourceEvent.offsetX;
         that.config.changeBorder.dragStart(that.config.changeBorder.vertical, 'horizontal');
       })
       .on('drag', function () {
         if (that.fullscreen) { return; }
-        that.config.changeBorder.vertical.updateAllPos(d3.event.x - offsetX, that.segmentRep.vSegment);
+        that.config.changeBorder.vertical.updateAllPos((<any>d3.event).x - offsetX, that.segmentRep.vSegment);
         that.config.changeBorder.drag(that.config.changeBorder.vertical, 'horizontal');
       })
       .on('dragend', function () {
@@ -723,7 +724,7 @@ class PVDTreemap implements IAnimateable {
     that.selectedNode = d;
 
     if (d3.event && d3.event.hasOwnProperty('stopPropagation')) {
-      d3.event.stopPropagation();
+      (<Event>d3.event).stopPropagation();
     }
   }
 
@@ -800,7 +801,17 @@ export default angular.module('directives.pvdTreemap', [
   TargetHierarchy,
   ChangeBorder
 ])
-  .directive('pvdTreemap', function (
+  .directive('pvdTreemap', [
+    'pvdInfrastructureLoader',
+    'pvdWindowResize',
+    '$timeout',
+    'pvdAnimator',
+    'pvdDataSelection',
+    'pvdInfrastructureMapper',
+    'pvdLayoutManager',
+    'pvdTargetHierarchy',
+    'pvdChangeBorder',
+    function (
     pvdInfrastructureLoader: PVDInfrastructureLoader,
     pvdWindowResize: PVDWindowResize,
     $timeout,
@@ -825,7 +836,7 @@ export default angular.module('directives.pvdTreemap', [
               //var attr = infrastructure.findAttr(path);
               var $base = d3.select(element[0]);
 
-              /*var $root:d3.Selection = $base.append('div')
+              /*var $root:d3.Selection<any> = $base.append('div')
                 .classed('pvd-treemap', true)
                 .attr('data-infra-id', attrs.infraId);*/
 
@@ -849,5 +860,5 @@ export default angular.module('directives.pvdTreemap', [
       },
       restrict: 'E'
     };
-  })
+  }])
   .name; // name for export default

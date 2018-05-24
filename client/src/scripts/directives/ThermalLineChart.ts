@@ -1,8 +1,8 @@
 /**
  * Created by Holger Stitz on 11.06.2015.
  */
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 import { PVDElementParent, PVDHierarchyNode } from './HierarchyNode';
 import Animator, { IAnimateable, PVDAnimator } from '../services/Animator';
 import { PVDHierarchyConfig } from './HierarchyConfig';
@@ -46,8 +46,8 @@ export class PVDThermalLineChart implements PVDElementParent, IAnimateable {
   private $svg;
   private $trajectories;
   private line;
-  private time: d3.Scale.TimeScale;
-  private doi: d3.Scale.LinearScale;
+  private time: d3.time.Scale<any, any>;
+  private doi: d3.scale.Linear<any, any>;
   private items;
 
   private xAxis;
@@ -164,7 +164,7 @@ export class PVDThermalLineChart implements PVDElementParent, IAnimateable {
       .classed('infra-' + infra.id, true)
       .classed('color-' + infra.color, true)
       .on('click', function () {
-        d3.event.stopPropagation();
+        (<Event>d3.event).stopPropagation();
         that.config.selection.clearSelection();
       });
 
@@ -192,8 +192,8 @@ export class PVDThermalLineChart implements PVDElementParent, IAnimateable {
     that.$trajectories = that.$svg.append('g');
 
     that.line = d3.svg.line()
-      .x((d: DeltaDOI) => this.time(d.ts))
-      .y((d: DeltaDOI) => this.doi(d.doi))
+      .x((d: any /* DeltaDOI */) => this.time(d.ts))
+      .y((d: any /* DeltaDOI */) => this.doi(d.doi))
       .interpolate('linear');
 
     that.time = d3.time.scale();
@@ -233,7 +233,7 @@ export class PVDThermalLineChart implements PVDElementParent, IAnimateable {
         d3.select(this).classed('hg-hover', false);
       })
       .on('click', function (d) {
-        d3.event.stopPropagation();
+        (<Event>d3.event).stopPropagation();
         //multi selection
         var additive = (<any>d3.event).ctrlKey || (<any>d3.event).shiftKey || (<any>d3.event).metaKey;
         var is = that.config.selection.isSelected(d.node);
@@ -389,7 +389,17 @@ export default angular.module('directives.pvdThermalLineChart', [
   TargetHierarchy,
   ChangeBorder
 ])
-  .directive('pvdThermalLineChart', function (
+  .directive('pvdThermalLineChart', [
+    'pvdInfrastructureLoader',
+    'pvdWindowResize',
+    '$timeout',
+    'pvdAnimator',
+    'pvdDataSelection',
+    'pvdInfrastructureMapper',
+    'pvdLayoutManager',
+    'pvdTargetHierarchy',
+    'pvdChangeBorder',
+    function (
     pvdInfrastructureLoader: PVDInfrastructureLoader,
     pvdWindowResize: PVDWindowResize,
     $timeout,
@@ -418,7 +428,7 @@ export default angular.module('directives.pvdThermalLineChart', [
 
               pvdDataSelection.infra = infrastructure;
 
-              var $root: d3.Selection = $base.append('div')
+              var $root: d3.Selection<any> = $base.append('div')
                 .classed('cg-thermal-line-chart', true)
                 .attr('data-infra-id', attrs.infraId);
               //.append('div');
@@ -451,5 +461,5 @@ export default angular.module('directives.pvdThermalLineChart', [
       },
       restrict: 'E'
     };
-  })
+  }])
   .name; // name for export default

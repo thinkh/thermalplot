@@ -2,10 +2,10 @@
  * Created by Samuel Gratzl on 14.03.2015.
  */
 /*
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
-import * as $ from '@bower_components/jquery';
-import * as LineUpJS from '@bower_components/lineupjs/src';
+import * as angular from 'angular';
+import * as d3 from 'd3';
+import * as $ from 'jquery';
+import LineUpJS from 'lineupjs/src';
 import { ExternalNode, Infrastructure } from '../models/Infrastructure';
 import { ConstantAttribute } from '../models/Models';
 import ChangeBorderService, { PVDChangeBorder } from '../services/ChangeBorderService';
@@ -22,7 +22,13 @@ export default angular.module('directives.pvdLineUp', [
   WindowResize,
   ChangeBorderService
 ])
-  .directive('pvdLineUp', function (
+  .directive('pvdLineUp', [
+    'pvdInfrastructureLoaderr'
+    'pvdDataSelectionr'
+    'pvdDataServicer'
+    'pvdWindowResizer'
+    'pvdChangeBorder',
+    function (
     pvdInfrastructureLoader: PVDInfrastructureLoader,
     pvdDataSelection: PVDDataSelection,
     pvdDataService: PVDDataService,
@@ -182,6 +188,6 @@ export default angular.module('directives.pvdLineUp', [
         'infraId': '@?' // id of infrastructure*.json
       }
     }
-  })
+  }])
   .name; // name for export default
 */

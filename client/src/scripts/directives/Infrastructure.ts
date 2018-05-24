@@ -1,5 +1,5 @@
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 import { TimedParentValue } from '../models/Timed';
 import Animator, { createStepper, PVDAnimator, IAnimateable } from '../services/Animator';
 import { valueList, IAttribute } from '../models/Models';
@@ -24,7 +24,7 @@ interface IVisualNode {
   /**
    * Attach the visual representation to this root
    */
-  $root: d3.Selection;
+  $root: d3.Selection<any>;
 
   /**
    * The index of ordered elements per level must be set from outside
@@ -69,7 +69,7 @@ export class ExternalNode implements IVisualNode {
   private _startAngle: number = 0; // in rad
   private _endAngle: number = 2 * Math.PI; // in rad
 
-  constructor(public node: ModelsExternalNode, public parent: IVisualNode, public $root: d3.Selection) {
+  constructor(public node: ModelsExternalNode, public parent: IVisualNode, public $root: d3.Selection<any>) {
     this.update();
   }
 
@@ -127,9 +127,9 @@ class RectangleNode implements IVisualNode {
   private _level = 1;
 
   private _rect: Rect = new Rect();
-  private _d3UpdateSel: d3.UpdateSelection;
+  private _d3UpdateSel: d3.selection.Update<any>;
 
-  constructor(public node: Node, public parent: IVisualNode, public $root: d3.Selection, public colors: d3.Scale.OrdinalScale) {
+  constructor(public node: Node, public parent: IVisualNode, public $root: d3.Selection<any>, public colors: d3.scale.Ordinal<any, any>) {
     this._level = node.level;
     //this.update(); // call manually on object creation
   }
@@ -174,7 +174,7 @@ class RectangleNode implements IVisualNode {
       .attr('class', converToCSSClass(this.node.fqIname))
       .attr('fill', function (d, i) { return that.colors(that.siblingsIndex); })
       .call(d3.behavior.drag().on('drag', function () {
-        that._rect.x += d3.event.dx;
+        that._rect.x += (<any>d3.event).dx;
         //that._rect.y += d3.event.dy;
 
         d3.select(this)
@@ -224,9 +224,9 @@ class ArcNode implements IVisualNode {
 
   //private _d3arc:d3.Svg.Arc = d3.svg.arc();
   private _arc: Arc;
-  private _d3UpdateSel: d3.UpdateSelection;
+  private _d3UpdateSel: d3.selection.Update<any>;
 
-  constructor(public node: Node, public parent: IVisualNode, public $root: d3.Selection, public colors: d3.Scale.OrdinalScale) {
+  constructor(public node: Node, public parent: IVisualNode, public $root: d3.Selection<any>, public colors: d3.scale.Ordinal<any, any>) {
     this._level = node.level;
     this._arc = new Arc(this._level);
     //this.update(); // call manually on object creation
@@ -311,7 +311,7 @@ class ArcNode implements IVisualNode {
       .call(d3.behavior.drag()
         .on('drag', function (d) {
           var rotation = that.radToDeg(that._rotation);
-          rotation += d3.event.dx;
+          rotation += (<any>d3.event).dx;
           if (rotation <= -360 || rotation >= 360) { rotation = 0; }
 
           that._rotation = that.degToRad(rotation);
@@ -368,7 +368,7 @@ class Arc {
   private _startAngle = 0;
   private _endAngle = 2 * Math.PI;
 
-  private _d3arc: d3.Svg.Arc = d3.svg.arc();
+  private _d3arc: d3.svg.Arc<any> = d3.svg.arc();
 
   constructor(public level: number = 1) {
     this._level = level;
@@ -433,7 +433,7 @@ class Arc {
     return this._d3arc.centroid(this._d3arc);
   }
 
-  get d3arc(): d3.Svg.Arc {
+  get d3arc(): d3.svg.Arc<any> {
     return this._d3arc;
   }
 
@@ -456,17 +456,17 @@ export class PVDInfrastructure implements IAnimateable {
   private _visualNodesMap: d3.Map<IVisualNode> = d3.map();
   private _attrList: IAttribute<any>[] = [];
 
-  private _colors: d3.Scale.OrdinalScale = d3.scale.category20();
-  private _edgeScale: d3.Scale.LogScale = d3.scale.log().range([1, 5]);
-  private _lineFunc: d3.Svg.Line;
+  private _colors: d3.scale.Ordinal<any, any> = d3.scale.category20();
+  private _edgeScale: d3.scale.Log<any, any> = d3.scale.log().range([1, 5]);
+  private _lineFunc: d3.svg.Line<any>;
 
-  private $translation: d3.Selection;
-  private $links: d3.Selection;
+  private $translation: d3.Selection<any>;
+  private $links: d3.Selection<any>;
 
-  constructor(private $svg: d3.Selection, private nodes: Node[], private pvdDataSelection: PVDDataSelection) {
+  constructor(private $svg: d3.Selection<any>, private nodes: Node[], private pvdDataSelection: PVDDataSelection) {
     this._lineFunc = d3.svg.line()
-      .x(function (d) { return d.x; })
-      .y(function (d) { return d.y; })
+      .x(function (d: any) { return d.x; })
+      .y(function (d: any) { return d.y; })
       .interpolate('basis'); // basis || linear
 
     // translate for testing RectangleNodes
@@ -486,7 +486,7 @@ export class PVDInfrastructure implements IAnimateable {
 
   private drawBgArcs(): void {
     var that: PVDInfrastructure = this;
-    var $bgArcs: d3.Selection = this.$svg.append('g').attr('id', 'infra-bg-arcs');
+    var $bgArcs: d3.Selection<any> = this.$svg.append('g').attr('id', 'infra-bg-arcs');
     var level: boolean[] = [];
 
     that.nodes.forEach((node) => {
@@ -498,14 +498,14 @@ export class PVDInfrastructure implements IAnimateable {
     });
 
     // external hub
-    var $root: d3.Selection = $bgArcs.append('g').attr('id', 'hub');
+    var $root: d3.Selection<any> = $bgArcs.append('g').attr('id', 'hub');
     var externalNode: ExternalNode = new ExternalNode(<ModelsExternalNode>this.nodes.splice(this.nodes.length - 1, 1)[0], null, $root);
     this._visualNodesMap.set(externalNode.node.fqIname, externalNode);
   }
 
   private drawVisualNodes(): void {
     var that: PVDInfrastructure = this;
-    var $root: d3.Selection = this.$translation.append('g').attr('id', 'infra-visual-nodes');
+    var $root: d3.Selection<any> = this.$translation.append('g').attr('id', 'infra-visual-nodes');
     var currVisualNode: IVisualNode;
     var siblingsCounterByNode: Object = {};
     var fqname: any = '';
@@ -678,13 +678,18 @@ export default angular.module('directives.pvdInfrastructure2', [
   DataSelection,
   InfrastructureLoader
 ])
-  .directive('pvdInfrastructure2', function (
+  .directive('pvdInfrastructure2', [
+    'pvdAnimator',
+    'pvdDataSelection',
+    'pvdInfrastructureLoader',
+    '$timeout',
+    function (
     pvdAnimator: PVDAnimator,
     pvdDataSelection: PVDDataSelection,
     pvdInfrastructureLoader: PVDInfrastructureLoader,
     $timeout
   ) {
-    function initVis($base: d3.Selection, nodes: Node[]) {
+    function initVis($base: d3.Selection<any>, nodes: Node[]) {
       // size of the svg element
       var margin = { top: 10, right: 10, bottom: 10, left: 10 },
         width = angular.element('.container').width() - margin.left - margin.right,
@@ -712,7 +717,7 @@ export default angular.module('directives.pvdInfrastructure2', [
               //var path:string = $scope.path;
               //var attr = infrastructure.findAttr(path);
               var $base = d3.select(element[0]);
-              $scope.$base = $base;
+              (<any>$scope).$base = $base;
               initVis($base, infrastructure.nodes());
             })
           });
@@ -722,6 +727,6 @@ export default angular.module('directives.pvdInfrastructure2', [
       },
       restrict: 'E'
     };
-  })
+  }])
   .name; // name for export default
 

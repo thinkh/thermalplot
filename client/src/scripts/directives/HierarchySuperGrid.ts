@@ -1,9 +1,8 @@
 /**
  * Created by Holger Stitz on 18.08.2014.
  */
-import * as angular from '@bower_components/angular';
-import * as ng from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 import { PVDAHierarchyGrid } from './AHierarchyGrid';
 import { PVDHierarchyConfig } from './HierarchyConfig';
 import { modifyConfig, onDelete } from './VisUtils';
@@ -23,7 +22,7 @@ import ChangeBorderService, { PVDChangeBorder } from '../services/ChangeBorderSe
 // render the nodes according to computed layout
 export class PVDHierarchySuperGrid extends PVDAHierarchyGrid {
 
-  constructor($root: d3.Selection, private infras: Infrastructure[], config: PVDHierarchyConfig, attrs: any) {
+  constructor($root: d3.Selection<any>, private infras: Infrastructure[], config: PVDHierarchyConfig, attrs: any) {
     super($root, config);
     this.attachListener();
     this.layouter = new PVDForceLayout(attrs.mappingLinks, attrs.d3Options);
@@ -126,7 +125,18 @@ export default angular.module('directives.pvdHierarchySuperGrid', [
   TargetHierarchy,
   ChangeBorderService
 ])
-  .directive('pvdHierarchySuperGrid', function (
+  .directive('pvdHierarchySuperGrid', [
+    'pvdInfrastructureLoader',
+    'pvdWindowResize',
+    '$timeout',
+    'pvdAnimator',
+    'pvdDataSelection',
+    'pvdInfrastructureMapper',
+    'pvdLayoutManager',
+    '$q',
+    'pvdTargetHierarchy',
+    'pvdChangeBorder',
+    function (
     pvdInfrastructureLoader: PVDInfrastructureLoader,
     pvdWindowResize: PVDWindowResize,
     $timeout,
@@ -134,7 +144,7 @@ export default angular.module('directives.pvdHierarchySuperGrid', [
     pvdDataSelection: PVDDataSelection,
     pvdInfrastructureMapper: PVDInfrastructureMapper,
     pvdLayoutManager: PVDLayoutManager,
-    $q: ng.IQService,
+    $q: angular.IQService,
     pvdTargetHierarchy: PVDTargetHierarchy,
     pvdChangeBorder: PVDChangeBorder
   ) {
@@ -149,14 +159,14 @@ export default angular.module('directives.pvdHierarchySuperGrid', [
         attrs.d3Options = angular.isDefined(attrs.d3Options) ? eval('(' + attrs.d3Options + ')') : {};
 
         return function ($scope, element) {
-          $q.all(attrs.infraIds.split(',').map((infraId) => pvdInfrastructureLoader.get(infraId))).then((infrastructures: Infrastructure[]) => {
+          $q.all<Infrastructure>(attrs.infraIds.split(',').map((infraId) => pvdInfrastructureLoader.get(infraId))).then((infrastructures: Infrastructure[]) => {
             $timeout(() => { //skip one time to ensure that the svg is properly layouted
               //var path:string = $scope.path;
               //var attr = infrastructure.findAttr(path);
               var $base = d3.select(element[0]);
 
 
-              var $root: d3.Selection = $base.append('div')
+              var $root: d3.Selection<any> = $base.append('div')
                 .classed('hg-grid', true)
                 .classed('hg-mode-selection-target', true)
                 .attr('data-infra-id', infrastructures[0].id)
@@ -195,5 +205,5 @@ export default angular.module('directives.pvdHierarchySuperGrid', [
       },
       restrict: 'E'
     };
-  })
+  }])
   .name; // name for export default

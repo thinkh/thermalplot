@@ -2,8 +2,8 @@
  * Created by Holger Stitz on 18.08.2014.
  */
 
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 import { IAnimateable } from '../services/Animator';
 import { PVDHierarchyUpInlay, PVDHierarchyDownInlay, PVDHierarchyAInlay } from './HierarchyInlay';
 import { PVDElementParent, PVDHierarchyNode } from './HierarchyNode';
@@ -44,7 +44,7 @@ export class PVDAHierarchyGrid implements PVDElementParent, IAnimateable {
     }
   };
 
-  constructor(public $root: d3.Selection, public config: PVDHierarchyConfig, useOverlay = true) {
+  constructor(public $root: d3.Selection<any>, public config: PVDHierarchyConfig, useOverlay = true) {
     if (useOverlay) {
       this.overlay = new PVDHierarchyEdgeOverlay(this.$root, this.config);
     }
@@ -145,7 +145,7 @@ export class PVDAHierarchyGrid implements PVDElementParent, IAnimateable {
     if (this.config.autoSize) {
       this._gridWidth = parseInt(d3.select(this.$root.node().parentNode).style('width'));
     } else {
-      this._gridWidth = this.$root.node().getBoundingClientRect().width;
+      this._gridWidth = (<Element>this.$root.node()).getBoundingClientRect().width;
     }
     return this._gridWidth;
   }
@@ -154,7 +154,7 @@ export class PVDAHierarchyGrid implements PVDElementParent, IAnimateable {
     if (this.config.autoSize) {
       this._gridHeight = parseInt(d3.select(this.$root.node().parentNode).style('height')) || 0;
     } else {
-      this._gridHeight = this.$root.node().getBoundingClientRect().height;
+      this._gridHeight = (<Element>this.$root.node()).getBoundingClientRect().height;
     }
     return this._gridHeight;
   }

@@ -1,7 +1,7 @@
 /**
  * Created by Holger Stitz on 24.10.2014.
  */
-import * as d3 from '@bower_components/d3/d3';
+import * as d3 from 'd3';
 import { PVDALayout, IPVDLayout, PVDLayoutBundle, PVDLayoutDimensions } from './Layout';
 import { DendrogramPVDLayoutEdge, PVDLayoutEdge } from '../HierarchyEdgeOverlay';
 

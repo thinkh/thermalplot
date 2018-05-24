@@ -1,8 +1,8 @@
 /**
  * Created by Holger Stitz on 18.08.2014.
  */
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 import { PVDAHierarchyGrid } from './AHierarchyGrid';
 import { PVDHierarchyConfig } from './HierarchyConfig';
 import { modifyConfig, nextID, onDelete } from './VisUtils';
@@ -190,10 +190,10 @@ export class PVDHierarchySmallMultiple extends PVDAHierarchyGrid {
     if (infra !== this.infra) { return; }
 
     var offset = { top: 0, left: 0, width: 0, height: 0 };
-    offset.top = this.$root[0][0].offsetTop;
-    offset.left = 0; //this.$root[0][0].offsetLeft;
-    offset.width = this.$root[0][0].offsetWidth;
-    offset.height = this.$root[0][0].offsetHeight;
+    offset.top = (<HTMLElement>this.$root[0][0]).offsetTop;
+    offset.left = 0; //(<HTMLElement>this.$root[0][0]).offsetLeft;
+    offset.width = (<HTMLElement>this.$root[0][0]).offsetWidth;
+    offset.height = (<HTMLElement>this.$root[0][0]).offsetHeight;
 
     this.config.changeBorder.replyLayoutCoordinates(infra, isFirstCall, this._positions, offset);
   }
@@ -209,9 +209,9 @@ export class PVDHierarchySmallMultiple extends PVDAHierarchyGrid {
       super.relayout.call(this, arguments);
 
     } else {
-      var $overview = d3.select(this.$root[0][0].parentNode.parentNode),
+      var $overview = d3.select((<HTMLElement>this.$root[0][0]).parentNode.parentNode),
         gridWidth = this.gridWidth,
-        gridHeight = ($overview[0][0].parentNode.getBoundingClientRect().height / $overview[0][0].children.length),
+        gridHeight = ((<any>$overview[0][0]).parentNode.getBoundingClientRect().height / (<HTMLElement>$overview[0][0]).children.length),
         bundle: PVDLayoutBundle;
 
       if (this.config.autoShrink) {
@@ -242,7 +242,17 @@ export default angular.module('directives.pvdHierarchySmallMultiple', [
   TargetHierarchy,
   ChangeBorderService
 ])
-  .directive('pvdHierarchySmallMultiple', function (
+  .directive('pvdHierarchySmallMultiple', [
+    'pvdInfrastructureLoader',
+    'pvdWindowResize',
+    '$timeout',
+    'pvdAnimator',
+    'pvdDataSelection',
+    'pvdInfrastructureMapper',
+    'pvdLayoutManager',
+    'pvdTargetHierarchy',
+    'pvdChangeBorder',
+    function (
     pvdInfrastructureLoader: PVDInfrastructureLoader,
     pvdWindowResize: PVDWindowResize,
     $timeout,
@@ -276,7 +286,7 @@ export default angular.module('directives.pvdHierarchySmallMultiple', [
                   .text(infrastructure.name);
               }
 
-              var $root: d3.Selection = $base.append('div')
+              var $root: d3.Selection<any> = $base.append('div')
                 .classed('hg-grid', true)
                 .attr('data-infra-id', attrs.infraId);
 
@@ -315,5 +325,5 @@ export default angular.module('directives.pvdHierarchySmallMultiple', [
       },
       restrict: 'E'
     };
-  })
+  }])
   .name; // name for export default

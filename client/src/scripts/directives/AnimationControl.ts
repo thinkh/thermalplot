@@ -1,9 +1,9 @@
 /**
  * Created by Samuel Gratzl on 18.04.2014.
  */
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
-import * as $ from '@bower_components/jquery';
+import * as angular from 'angular';
+import * as d3 from 'd3';
+import * as $ from 'jquery';
 import Animator, { PVDAnimator } from '../services/Animator';
 import { nextID, onDelete } from './VisUtils';
 
@@ -11,7 +11,7 @@ import { nextID, onDelete } from './VisUtils';
  * a simple animation control directive for pausing / resuming the animator and showing the current time
  */
 export default angular.module('directives.pvdAnimationControl', [Animator])
-  .directive('pvdAnimationControl', function ($timeout, pvdAnimator: PVDAnimator) {
+  .directive('pvdAnimationControl', ['$timeout', 'pvdAnimator', function ($timeout, pvdAnimator: PVDAnimator) {
     var dateformat = d3.time.format.utc("%Y-%m-%dT%H:%M:%S");
     return {
       template: '<div class="btn-group">' +
@@ -52,5 +52,5 @@ export default angular.module('directives.pvdAnimationControl', [Animator])
         };
       }
     };
-  })
+  }])
   .name; // name for export default

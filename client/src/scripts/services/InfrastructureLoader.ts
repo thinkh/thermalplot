@@ -2,10 +2,9 @@
  * Created by Samuel Gratzl on 24.04.2014.
  */
 
-import * as angular from '@bower_components/angular';
-import * as ng from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
-import * as $ from '@bower_components/jquery';
+import * as angular from 'angular';
+import * as d3 from 'd3';
+import * as $ from 'jquery';
 import { parse, Infrastructure } from '../models/Infrastructure';
 
 /**
@@ -25,7 +24,7 @@ export class PVDInfrastructureLoader {
   //id->infrastructure
   private _infrastructures: d3.Map<Infrastructure> = d3.map();
 
-  constructor(private $q: ng.IQService) {
+  constructor(private $q: angular.IQService) {
 
   }
 
@@ -42,7 +41,7 @@ export class PVDInfrastructureLoader {
    * @param id
    * @returns {IPromise<T>}
    */
-  get(id: string = ''): ng.IPromise<Infrastructure> {
+  get(id: string = ''): angular.IPromise<Infrastructure> {
     var d = this.$q.defer();
     if (this.isLoaded(id)) {
       d.resolve(this._infrastructures.get(id));
@@ -51,7 +50,7 @@ export class PVDInfrastructureLoader {
     } else {
       this.callbacks.push({ c: d, id: id });
     }
-    return d.promise;
+    return <any>d.promise;
   }
 
   /**
@@ -113,4 +112,8 @@ export class PVDInfrastructureLoader {
     }
   }
 }
-export default angular.module('services.pvdInfrastructureLoader', []).service('pvdInfrastructureLoader', PVDInfrastructureLoader).name;
+export default angular.module('services.pvdInfrastructureLoader', [])
+  .service('pvdInfrastructureLoader', [
+    '$q',
+    PVDInfrastructureLoader
+  ]).name;

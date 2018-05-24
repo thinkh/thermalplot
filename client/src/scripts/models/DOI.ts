@@ -1,8 +1,8 @@
 /**
  * Created by Samuel Gratzl on 19.03.2015.
  */
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 import { TimedParentValue, TimedIndexedValue, TimedValue } from './Timed';
 import { IAttribute, ConstantAttribute, Attribute, IPathElem } from './Models';
 import { Node } from './Infrastructure';

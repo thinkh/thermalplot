@@ -1,7 +1,7 @@
 /**
  * Created by Holger Stitz on 18.08.2014.
  */
-import * as d3 from '@bower_components/d3/d3';
+import * as d3 from 'd3';
 import { IAnimateable, IStepper } from '../../services/Animator';
 import { IAttribute } from '../../models/Models';
 import { INormalizer, onDelete } from '../VisUtils';
@@ -11,13 +11,13 @@ import { PVDElementParent, PVDInnerElement, PVDCachableElement } from '../Hierar
 'use strict';
 
 export class PVDAAttributeVis implements IAnimateable {
-  $node: d3.Selection;
+  $node: d3.Selection<any>;
   defConfig: any;
   scaleFactor = [1, 1];
   protected scale = d3.scale.linear();
 
 
-  constructor(public $parent: d3.Selection, public attr: IAttribute<number>,
+  constructor(public $parent: d3.Selection<any>, public attr: IAttribute<number>,
     protected normalizer: INormalizer<number>,
     protected config: PVDHierarchyConfig,
     parent: PVDElementParent,
@@ -135,7 +135,7 @@ export class PVDADataAttributeVis extends PVDAAttributeVis implements IAnimateab
    */
   dataMode = 'discrete'; //continuous
 
-  constructor($parent: d3.Selection, attr: IAttribute<number>,
+  constructor($parent: d3.Selection<any>, attr: IAttribute<number>,
     normalizer: INormalizer<number>,
     protected config: PVDHierarchyConfig,
     parent: PVDElementParent,
@@ -306,7 +306,7 @@ export class PVDADataAttributeVis extends PVDAAttributeVis implements IAnimateab
 
 export class PVDASingleAttribute extends PVDADataAttributeVis {
 
-  constructor($parent: d3.Selection, attr: IAttribute<number>,
+  constructor($parent: d3.Selection<any>, attr: IAttribute<number>,
     normalizer: INormalizer<number>,
     config: PVDHierarchyConfig,
     parent: PVDElementParent,
@@ -319,14 +319,14 @@ export class PVDASingleAttribute extends PVDADataAttributeVis {
     this.drawIt($r, dt);
   }
 
-  drawIt($r: d3.UpdateSelection, dt: number) {
+  drawIt($r: d3.selection.Update<any>, dt: number) {
     var enter = $r.enter().append(this.type);
     this.onEnter(enter);
     $r.exit().remove();
     //update static content
   }
 
-  onEnter($r: d3.Selection) {
+  onEnter($r: d3.Selection<any>) {
 
   }
 }

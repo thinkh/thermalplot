@@ -1,11 +1,9 @@
 /**
  * Created by Samuel Gratzl on 23.04.2014.
  */
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
-import * as JQuery from '@bower_components/jquery';
-import * as jQuery from '@bower_components/jquery';
-import * as $ from '@bower_components/jquery';
+import * as angular from 'angular';
+import * as d3 from 'd3';
+import * as $ from 'jquery';
 import { PVDHierarchyConfig } from './HierarchyConfig';
 import { IAttribute } from '../models/Models';
 import { Infrastructure } from '../models/Infrastructure';
@@ -16,13 +14,13 @@ import { Infrastructure } from '../models/Infrastructure';
  * @param value
  * @returns {*}
  */
-export function defaultColorer(value: any): d3.Color.Color {
+export function defaultColorer(value: any): d3.Color {
   if (isNaN(value)) { //invalid value
     return d3.rgb("gray");
   }
   if (typeof value === "number") { //assume normalized
     //red color changing dark to bright
-    return d3.interpolateHsl('#fff', 'orange')(value);
+    return <any>d3.interpolateHsl('#fff', 'orange')(value);
     //return d3.hcl(0 /*red*/, .5, value);
 
   } else if (typeof value === "string") { //check some standard names
@@ -45,7 +43,7 @@ export function defaultColorer(value: any): d3.Color.Color {
  * convert a given value into a D3 color
  */
 export interface IColorer<T> {
-  (value: T): d3.Color.Color;
+  (value: T): d3.Color;
 }
 
 
@@ -216,7 +214,7 @@ export function createNormalizer<T>(attr: IAttribute<T>, showFrequencies: boolea
  */
 export function getBBox(elem: SVGGraphicsElement);
 export function getBBox($elem: JQuery);
-export function getBBox($elem: d3.Selection);
+export function getBBox($elem: d3.Selection<any>);
 export function getBBox(elem: any) {
   if (elem instanceof jQuery) {
     elem = elem[0];
@@ -242,7 +240,7 @@ export class Dimension {
  */
 export function getDimension(elem: SVGGraphicsElement);
 export function getDimension($elem: JQuery);
-export function getDimension($elem: d3.Selection);
+export function getDimension($elem: d3.Selection<any>);
 export function getDimension(elem: any) {
   if (elem instanceof jQuery) {
     elem = elem[0];
@@ -290,14 +288,14 @@ export function tsNormalizer(start: number, step: number): (ts: number) => numbe
   }
 }
 
-export function onDelete(s: d3.Selection, f: () => void) {
+export function onDelete(s: d3.Selection<any>, f: () => void) {
   var id = 'DOMNodeRemoved.ondelete' + nextID(),
     node: Node = s.node();
   function l() {
     //since this event bubbles check if it the right node
     var n = node;
     while (n) { //check if node or its parent are removed
-      if (d3.event.target === n) {
+      if ((<Event>d3.event).target === n) {
         node = null;
         s.on(id, null);
         d3.select('body').on(id, null);
@@ -313,9 +311,9 @@ export function onDelete(s: d3.Selection, f: () => void) {
 
 var _tooltip = null;
 
-export function tooltip(tooltip: string): (x: d3.Selection) => void;
-export function tooltip(tooltipCallback: (data?: any, index?: number) => string): (x: d3.Selection) => void;
-export function tooltip(tooltip: any): (x: d3.Selection) => void;
+export function tooltip(tooltip: string): (x: d3.Selection<any>) => void;
+export function tooltip(tooltipCallback: (data?: any, index?: number) => string): (x: d3.Selection<any>) => void;
+export function tooltip(tooltip: any): (x: d3.Selection<any>) => void;
 export function tooltip(): Tooltip;
 export function tooltip(tooltip?: any): any {
   if (_tooltip == null) {
@@ -328,8 +326,8 @@ export function tooltip(tooltip?: any): any {
 }
 
 export class Tooltip {
-  private $tooltip: d3.Selection;
-  private $tooltipInner: d3.Selection;
+  private $tooltip: d3.Selection<any>;
+  private $tooltipInner: d3.Selection<any>;
 
   constructor() {
     this.$tooltip = d3.select('body').append('div')
@@ -349,7 +347,7 @@ export class Tooltip {
   }
 
   mousemove(): void {
-    var tooltipDim = this.$tooltip[0][0].getBoundingClientRect(),
+    var tooltipDim = (<Element>this.$tooltip[0][0]).getBoundingClientRect(),
       left = (<any>d3.event).pageX + 10,
       top = (<any>d3.event).pageY - 40;
 
@@ -387,9 +385,9 @@ export class Tooltip {
    * @param selection
    * @param tooltip
    */
-  attach(selection: d3.Selection, tooltip: string): void;
-  attach(selection: d3.Selection, tooltipCallback: (data: any, index: number) => string): void;
-  attach(selection: d3.Selection, tooltip: any): void {
+  attach(selection: d3.Selection<any>, tooltip: string): void;
+  attach(selection: d3.Selection<any>, tooltipCallback: (data: any, index: number) => string): void;
+  attach(selection: d3.Selection<any>, tooltip: any): void {
     var that = this;
     selection.on('mouseover', function () {
       var t = $.isFunction(tooltip) ? tooltip.apply(this, Array.prototype.slice.call(arguments)) : tooltip.toString();
@@ -404,13 +402,13 @@ export class Tooltip {
   /**
    * creates an adapter, function which binds the label callback function
    * @param tooltipCallback
-   * @returns {function(d3.Selection): undefined}
+   * @returns {function(d3.Selection<any>): undefined}
    */
-  adapter(tooltip: string): (x: d3.Selection) => void;
-  adapter(tooltipCallback: (data: any, index: number) => string): (x: d3.Selection) => void;
-  adapter(tooltip: any): (x: d3.Selection) => void {
+  adapter(tooltip: string): (x: d3.Selection<any>) => void;
+  adapter(tooltipCallback: (data: any, index: number) => string): (x: d3.Selection<any>) => void;
+  adapter(tooltip: any): (x: d3.Selection<any>) => void {
     var that = this;
-    return function (selection: d3.Selection) {
+    return function (selection: d3.Selection<any>) {
       that.attach(selection, tooltip);
     }
   }

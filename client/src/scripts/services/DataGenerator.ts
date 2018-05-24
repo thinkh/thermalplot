@@ -1,5 +1,5 @@
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 import { NumberAttribute } from "../models/Models";
 import Animator, { PVDAnimator } from "./Animator";
 import DataService, { PVDDataService } from './DataService';
@@ -9,7 +9,7 @@ import DataService, { PVDDataService } from './DataService';
  */
 export class PVDDataGenerator {
   private listeners = d3.dispatch('generate', 'start', 'stop');
-  private intervalId = -1;
+  private intervalId: any = -1;
   private _animator: PVDAnimator;
   private _dt: number = 2000;
 
@@ -94,4 +94,9 @@ export class PVDDataGenerator {
     this.attrs.forEach((attr) => this.generate(attr, now));
   }
 }
-export default angular.module('services.pvdDataGenerator', [DataService, Animator]).service('pvdDataGenerator', PVDDataGenerator).name;
+export default angular.module('services.pvdDataGenerator', [DataService, Animator])
+  .service('pvdDataGenerator', [
+    'pvdAnimator',
+    'pvdDataService',
+    PVDDataGenerator
+  ]).name;

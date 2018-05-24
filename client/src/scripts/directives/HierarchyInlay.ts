@@ -2,8 +2,8 @@
  * Created by Samuel Gratzl on 02.09.2014.
  */
 
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 import { PVDElementParent, PVDElement, PVDHierarchyNode } from './HierarchyNode';
 import { nextID, onDelete, modifyConfig } from './VisUtils';
 import { PVDHierarchyEdgeOverlay, PVDLayoutEdge } from './HierarchyEdgeOverlay';
@@ -28,7 +28,7 @@ export class PVDHierarchyAInlay implements PVDElementParent, PVDElement {
 
   protected nodesMap: d3.Map<PVDHierarchyNode> = d3.map();
   nodesPositionMap: d3.Map<PVDLayoutDimensions> = d3.map();
-  $node: d3.Selection;
+  $node: d3.Selection<any>;
 
   // selected nodes
   selectedSrc: Node = null;
@@ -54,7 +54,7 @@ export class PVDHierarchyAInlay implements PVDElementParent, PVDElement {
     children: (node) => this.childrenCb(node)
   };
 
-  constructor($parent: d3.Selection, public config: PVDHierarchyConfig, private parent: PVDElementParent) {
+  constructor($parent: d3.Selection<any>, public config: PVDHierarchyConfig, private parent: PVDElementParent) {
     this.$node = $parent.append('div').attr('class', 'hg-inlay hg-grid');
 
     //set default scale factors
@@ -335,7 +335,7 @@ export class PVDHierarchyUpInlay extends PVDHierarchyAInlay {
 
   includeOriginals = true;
 
-  constructor($parent: d3.Selection, config: PVDHierarchyConfig, parent: PVDElementParent) {
+  constructor($parent: d3.Selection<any>, config: PVDHierarchyConfig, parent: PVDElementParent) {
     super($parent, config, parent);
   }
 
@@ -594,7 +594,7 @@ export class PVDHierarchyDownInlay extends PVDHierarchyAInlay {
   private down: DownNode = null;
   private downMap: d3.Map<DownNode> = d3.map();
 
-  constructor($parent: d3.Selection, config: PVDHierarchyConfig, parent: PVDElementParent) {
+  constructor($parent: d3.Selection<any>, config: PVDHierarchyConfig, parent: PVDElementParent) {
     super($parent, config, parent);
   }
 
@@ -713,7 +713,7 @@ export class PVDHierarchyDownInlay extends PVDHierarchyAInlay {
 }
 
 export class PVDHierarchyUpInlayStacked extends PVDHierarchyUpInlay {
-  constructor($parent: d3.Selection, config: PVDHierarchyConfig, parent: PVDElementParent) {
+  constructor($parent: d3.Selection<any>, config: PVDHierarchyConfig, parent: PVDElementParent) {
     super($parent, config, parent);
   }
 
@@ -735,7 +735,7 @@ export class PVDHierarchyUpInlayStacked extends PVDHierarchyUpInlay {
 }
 
 export class PVDHierarchyDownInlayStacked extends PVDHierarchyDownInlay {
-  constructor($parent: d3.Selection, config: PVDHierarchyConfig, parent: PVDElementParent) {
+  constructor($parent: d3.Selection<any>, config: PVDHierarchyConfig, parent: PVDElementParent) {
     super($parent, config, parent);
   }
 

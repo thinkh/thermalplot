@@ -2,8 +2,8 @@
  * Created by Samuel Gratzl on 17.04.2014.
  */
 
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 
 /**
  * interface for an animated object
@@ -139,7 +139,7 @@ export function createStepper(step: number, unit: string = '?') {
  */
 export class PVDAnimator {
   private listeners = d3.dispatch('tick', 'start', 'stop');
-  private intervalId = -1;
+  private intervalId: any = -1;
   private animatables = new Array<IAnimateable>();
   /**
    * delta time between two ticks in milliseconds
@@ -296,7 +296,10 @@ export class PVDAnimator {
     });
   }
 }
-export default angular.module('services.pvdAnimator', []).service('pvdAnimator', PVDAnimator).name;
+export default angular.module('services.pvdAnimator', [])
+  .service('pvdAnimator', [
+    PVDAnimator
+  ]).name;
 
 //register a custom interpolator for percentages
 /*d3.interpolators.push((a: string, b: string) => {

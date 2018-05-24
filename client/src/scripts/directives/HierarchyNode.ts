@@ -2,9 +2,9 @@
  * Created by Holger Stitz on 18.08.2014.
  */
 
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
-import * as $ from '@bower_components/jquery';
+import * as angular from 'angular';
+import * as d3 from 'd3';
+import * as $ from 'jquery';
 import { PVDHierarchyConfig } from './HierarchyConfig';
 import { Node, ExternalNode, Edge } from '../models/Infrastructure';
 import { nextID, onDelete, createNormalizer, idealTextColor, tooltip } from './VisUtils';
@@ -66,7 +66,7 @@ export interface PVDElementParent {
 }
 
 export class PVDHierarchyNode implements PVDElement, PVDElementParent {
-  $node: d3.Selection;
+  $node: d3.Selection<any>;
   _scaleFactor: number[];
   private _width = 0;
   private _height = 0;
@@ -85,11 +85,11 @@ export class PVDHierarchyNode implements PVDElement, PVDElementParent {
 
   private oldActivity = 0;
 
-  private transition: d3.Transition.Transition = null;
+  private transition: d3.Transition<any> = null;
 
   private id = '.hnode' + nextID();
 
-  constructor(public node: Node, public $parent: d3.Selection, private config: PVDHierarchyConfig, private grid: PVDElementParent) {
+  constructor(public node: Node, public $parent: d3.Selection<any>, private config: PVDHierarchyConfig, private grid: PVDElementParent) {
     if ($parent !== undefined) {
       this.$node = $parent.append('div')
         .attr('data-fqname', node.fqIname)
@@ -807,11 +807,11 @@ export class PVDHierarchyNode implements PVDElement, PVDElementParent {
 }
 
 class DynamicTextElement implements IAnimateable, PVDInnerElement {
-  $node: d3.Selection;
-  $text: d3.Selection;
+  $node: d3.Selection<any>;
+  $text: d3.Selection<any>;
   scaleFactor = [1, 4];
 
-  constructor(private $parent: d3.Selection, private attr, private config: PVDHierarchyConfig, private nodeEl: PVDHierarchyNode, public defConfig: any) {
+  constructor(private $parent: d3.Selection<any>, private attr, private config: PVDHierarchyConfig, private nodeEl: PVDHierarchyNode, public defConfig: any) {
     this.$node = $parent.append('div').classed('hg-dtext', true);
     this.$text = this.$node.append('span').text(attr.name);
 
@@ -849,7 +849,7 @@ class DynamicTextElement implements IAnimateable, PVDInnerElement {
   }
 
   get isVisible() {
-    return this.$node[0][0].className.indexOf('hg-hidden') === -1;
+    return (<HTMLElement>this.$node[0][0]).className.indexOf('hg-hidden') === -1;
   }
 
   pos(x: number, y: number) {
@@ -885,12 +885,12 @@ class LabelElement implements PVDInnerElement {
 
   private _defConfig;
 
-  $node: d3.Selection;
-  $text: d3.Selection;
-  $collapse: d3.Selection;
+  $node: d3.Selection<any>;
+  $text: d3.Selection<any>;
+  $collapse: d3.Selection<any>;
   scaleFactor = [1, 2];
 
-  constructor(private node: Node, private $parent: d3.Selection, private config: PVDHierarchyConfig, private nodeEl: PVDHierarchyNode, defConfig: any) {
+  constructor(private node: Node, private $parent: d3.Selection<any>, private config: PVDHierarchyConfig, private nodeEl: PVDHierarchyNode, defConfig: any) {
     this.defConfig = defConfig; // override default config
 
     this.$node = $parent.append('div').classed('hg-label', true);
@@ -958,7 +958,7 @@ class LabelElement implements PVDInnerElement {
         dragStarted = true;
         dragged = false;
         // it's important that we suppress the mouseover event on the node being dragged. Otherwise it will absorb the mouseover event and the underlying node will not detect it d3.select(this).attr('pointer-events', 'none');
-        d3.event.sourceEvent.stopPropagation();
+        (<any>d3.event).sourceEvent.stopPropagation();
         that.config.selection.dragStart(that.node);
       })
       .on('drag', function (d) {
@@ -996,7 +996,7 @@ class LabelElement implements PVDInnerElement {
     if (that.defConfig.nodeSelect === false) { return; }
 
     that.$node.on('click', () => {
-      d3.event.stopPropagation();
+      (<Event>d3.event).stopPropagation();
 
       // exclude external and intermediate nodes
       if (that.node.has() || that.node === that.node.infrastructure.external) { return; }
@@ -1023,7 +1023,7 @@ class LabelElement implements PVDInnerElement {
     if (that.defConfig.nodeFocus === false) { return; }
 
     that.$node.on('dblclick', () => {
-      d3.event.stopPropagation();
+      (<Event>d3.event).stopPropagation();
 
       // exclude external and leaves
       if (!that.node.has() || that.node === that.node.infrastructure.external) { return; }
@@ -1057,7 +1057,7 @@ class LabelElement implements PVDInnerElement {
   }
 
   get isVisible() {
-    return this.$node[0][0].className.indexOf('hg-hidden') === -1;
+    return (<HTMLElement>this.$node[0][0]).className.indexOf('hg-hidden') === -1;
   }
 
   pos(x: number, y: number) {
@@ -1072,14 +1072,14 @@ class LabelElement implements PVDInnerElement {
 }
 
 class TimeHighlight implements IAnimateable {
-  private $node: d3.Selection;
+  private $node: d3.Selection<any>;
   private name: string;
   private lastx: number;
   marginLeft = 0;
   marginRight = 0;
   fixedWidth = -1;
 
-  constructor($parent: d3.Selection, node: Node, private config: PVDHierarchyConfig, private dataFor: (ts: number) => { name: string; value: string }[]) {
+  constructor($parent: d3.Selection<any>, node: Node, private config: PVDHierarchyConfig, private dataFor: (ts: number) => { name: string; value: string }[]) {
     this.$node = $parent.append('div').classed('hg-timehighlight', true);
     this.name = node.name;
     var t = tooltip();
@@ -1090,7 +1090,7 @@ class TimeHighlight implements IAnimateable {
 
     this.$node
       .on('mouseenter', () => {
-        d3.event.stopPropagation();
+        (<Event>d3.event).stopPropagation();
         var ts = this.toTS(this.lastx = (<any>d3.event).pageX);
         this.config.selection.hoverTime = ts ? ts.ts : -1;
         lastTS = null;
@@ -1106,7 +1106,7 @@ class TimeHighlight implements IAnimateable {
         config.animator.push(this);
       })
       .on('mousemove', () => {
-        d3.event.stopPropagation();
+        (<Event>d3.event).stopPropagation();
         var ts = this.toTS(this.lastx = (<any>d3.event).pageX);
         this.config.selection.hoverTime = ts ? ts.ts : -1;
         if (ts) {
@@ -1129,7 +1129,7 @@ class TimeHighlight implements IAnimateable {
         }
       })
       .on('mouseleave', () => {
-        d3.event.stopPropagation();
+        (<Event>d3.event).stopPropagation();
         t.mouseout();
         lastTS = null;
         this.config.selection.hoverTime = -1;

@@ -1,8 +1,8 @@
 /**
  * Created by Holger Stitz on 25.02.2015.
  */
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 import { nextID, onDelete } from './VisUtils';
 import { Infrastructure } from '../models/Infrastructure';
 import ChangeBorderService, { PVDChangeBorder, AChangeBorder } from '../services/ChangeBorderService';
@@ -16,7 +16,7 @@ import WindowResize, { PVDWindowResize } from '../services/WindowResize';
  */
 class ChangeBorderRuler {
 
-  private color = d3.scale.ordinal().domain([0, 1]).range(['#d9d9d9', '#bdbdbd', '#969696', '#636363']);
+  private color = d3.scale.ordinal<number, string>().domain([0, 1]).range(['#d9d9d9', '#bdbdbd', '#969696', '#636363']);
 
   private $popover;
   private $popoverSelect;
@@ -251,7 +251,7 @@ class ChangeBorderRuler {
         var rect = that.$popover.node().getBoundingClientRect();
 
         that.$popover.style({
-          'left': (d3.event.x - rect.width) + 'px',
+          'left': ((<any>d3.event).x - rect.width) + 'px',
           'top': that.config.rulerHeight + 'px'
         });
 
@@ -387,50 +387,55 @@ export default angular.module('directives.pvdChangeBorderRuler', [
   ChangeBorderService,
   DataSelection
 ])
-  .directive('pvdChangeBorderRuler', function (
-    pvdWindowResize: PVDWindowResize,
-    $timeout,
-    pvdChangeBorder: PVDChangeBorder,
-    pvdDataSelection: PVDDataSelection
-  ) {
-    return {
-      controller: function ($scope) {
-      },
-      compile: function (element, attrs: any) {
-        attrs.interactiveSegments = angular.isDefined(attrs.interactiveSegments) ? attrs.interactiveSegments : false;
+  .directive('pvdChangeBorderRuler', [
+    'pvdWindowResize',
+    '$timeout',
+    'pvdChangeBorder',
+    'pvdDataSelection',
+    function (
+      pvdWindowResize: PVDWindowResize,
+      $timeout,
+      pvdChangeBorder: PVDChangeBorder,
+      pvdDataSelection: PVDDataSelection
+    ) {
+      return {
+        controller: function ($scope) {
+        },
+        compile: function (element, attrs: any) {
+          attrs.interactiveSegments = angular.isDefined(attrs.interactiveSegments) ? attrs.interactiveSegments : false;
 
-        return function ($scope, element) {
-          $timeout(() => { //skip one time to ensure that the svg is properly layouted
-            var $base = d3.select(element[0]);
+          return function ($scope, element) {
+            $timeout(() => { //skip one time to ensure that the svg is properly layouted
+              var $base = d3.select(element[0]);
 
-            var $root: d3.Selection = $base.append('div')
-              .classed('change-border-ruler', true)
-              .classed(attrs.orientation, true);
+              var $root: d3.Selection<any> = $base.append('div')
+                .classed('change-border-ruler', true)
+                .classed(attrs.orientation, true);
 
-            var config = new RulerConfiguration();
-            config.orientation = attrs.orientation;
-            config.interactiveSegments = attrs.interactiveSegments;
+              var config = new RulerConfiguration();
+              config.orientation = attrs.orientation;
+              config.interactiveSegments = attrs.interactiveSegments;
 
-            if (config.orientation === 'horizontal') {
-              config.width = parseInt(d3.select($root.node().parentNode).style('width'));
-              config.height = window.innerHeight;
-              config.changeBorder = pvdChangeBorder.vertical;
+              if (config.orientation === 'horizontal') {
+                config.width = parseInt(d3.select($root.node().parentNode).style('width'));
+                config.height = window.innerHeight;
+                config.changeBorder = pvdChangeBorder.vertical;
 
-            } else {
-              config.width = parseInt(d3.select($root.node().parentNode).style('width'));
-              config.height = window.innerHeight;
-              config.changeBorder = pvdChangeBorder.horizontal;
-            }
+              } else {
+                config.width = parseInt(d3.select($root.node().parentNode).style('width'));
+                config.height = window.innerHeight;
+                config.changeBorder = pvdChangeBorder.horizontal;
+              }
 
-            new ChangeBorderRuler($root, config, pvdChangeBorder, pvdWindowResize, pvdDataSelection);
-          });
-        }
-      },
-      scope: {
-        'interactiveSegments': '@?', // true || false (default)
-        'orientation': '@?' // vertical || horizontal
-      },
-      restrict: 'E'
-    };
-  })
+              new ChangeBorderRuler($root, config, pvdChangeBorder, pvdWindowResize, pvdDataSelection);
+            });
+          }
+        },
+        scope: {
+          'interactiveSegments': '@?', // true || false (default)
+          'orientation': '@?' // vertical || horizontal
+        },
+        restrict: 'E'
+      };
+    }])
   .name; // name for export default

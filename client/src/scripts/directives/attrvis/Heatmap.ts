@@ -1,8 +1,8 @@
 /**
  * Created by Holger Stitz on 18.08.2014.
  */
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 import { PVDASingleAttribute, PVDADataAttributeVis, resolveRaw } from './AAttributeVis';
 import { defaultColorer, IColorer, INormalizer, nextID } from '../VisUtils';
 import { IAttribute } from '../../models/Models';
@@ -16,11 +16,11 @@ import { IStepper } from '../../services/Animator';
 export class PVDHeatmap extends PVDASingleAttribute {
   colorer: IColorer<number> = defaultColorer;
 
-  constructor($parent: d3.Selection, attr: IAttribute<number>, normalizer: INormalizer<number>, config: PVDHierarchyConfig, parent: PVDElementParent, public defConfig: any) {
+  constructor($parent: d3.Selection<any>, attr: IAttribute<number>, normalizer: INormalizer<number>, config: PVDHierarchyConfig, parent: PVDElementParent, public defConfig: any) {
     super($parent, attr, normalizer, config, parent, 'heatmap');
   }
 
-  drawIt($r: d3.UpdateSelection, dt: number) {
+  drawIt($r: d3.selection.Update<any>, dt: number) {
     super.drawIt($r, dt);
     //update static content
     var binWidth = this.scale(this.scale.domain()[0] + this.config.binWidth());
@@ -28,7 +28,7 @@ export class PVDHeatmap extends PVDASingleAttribute {
       left: (v) => this.scale(v.index) + 'px',
       width: binWidth + 'px'
     });
-    $r.style('background-color', (v) => this.colorer(v.normalized), 'important');
+    $r.style('background-color', (v) => this.colorer(v.normalized).rgb.toString(), 'important');
     //$r.attr("title",(v) => v.value);
   }
 }
@@ -42,11 +42,11 @@ export class PVDGradientHeatmap extends PVDADataAttributeVis {
   };
   private _defConfig = PVDGradientHeatmap._defaultConfig;
 
-  private time: d3.Scale.LinearScale;
+  private time: d3.scale.Linear<any, any>;
 
-  private $gradient: d3.Selection;
+  private $gradient: d3.Selection<any>;
 
-  constructor($parent: d3.Selection, attr: IAttribute<number>, normalizer: INormalizer<number>, config: PVDHierarchyConfig, parent: PVDElementParent, defConfig: any) {
+  constructor($parent: d3.Selection<any>, attr: IAttribute<number>, normalizer: INormalizer<number>, config: PVDHierarchyConfig, parent: PVDElementParent, defConfig: any) {
     super($parent, attr, normalizer, config, parent, 'gradientheatmap', 'svg');
     this.defConfig = defConfig; // override default config
 
@@ -140,7 +140,7 @@ export class PVDCompositeAttributeHeatmap extends PVDADataAttributeVis {
 
   private _defConfig;
 
-  constructor($parent: d3.Selection, attr: IAttribute<number>,
+  constructor($parent: d3.Selection<any>, attr: IAttribute<number>,
     normalizer: INormalizer<number>,
     config: PVDHierarchyConfig,
     private parent: PVDElementParent,
@@ -214,7 +214,7 @@ export class PVDCompositeAttributeHeatmap extends PVDADataAttributeVis {
           return r;
         }
 
-        var d3nest: d3.Nest = d3.nest();
+        var d3nest: d3.Nest<any> = d3.nest();
         this.defConfig.groupBy.forEach(function (s) {
           d3nest = d3nest.key(function (d) { return d[s.attr]; });
           switch (s.dir.toLowerCase()) {

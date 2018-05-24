@@ -1,7 +1,7 @@
 /**
  * Created by Holger Stitz on 24.10.2014.
  */
-import * as angular from '@bower_components/angular';
+import * as angular from 'angular';
 import { Infrastructure } from "../models/Infrastructure";
 
 export class PVDTargetHierarchy {
@@ -39,4 +39,7 @@ export class PVDTargetHierarchy {
 
 }
 
-export default angular.module('services.pvdTargetHierarchy', []).service('pvdTargetHierarchy', PVDTargetHierarchy).name;
+export default angular.module('services.pvdTargetHierarchy', [])
+  .service('pvdTargetHierarchy', [
+    PVDTargetHierarchy
+  ]).name;

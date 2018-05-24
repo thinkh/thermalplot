@@ -1,9 +1,9 @@
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 import { tooltip } from './VisUtils';
 
 export default angular.module('directives.pvdHierarchyNodeExplanation')
-  .directive('pvdHierarchyNodeExplanation', function () {
+  .directive('pvdHierarchyNodeExplanation', [function () {
     return {
       templateUrl: 'views/templates/HierarchyNodeExplanation.html',
       controller: function ($scope, $element, $attrs, $transclude, $timeout) {
@@ -17,5 +17,5 @@ export default angular.module('directives.pvdHierarchyNodeExplanation')
       },
       restrict: 'EA'
     }
-  })
+  }])
   .name; // name for export default

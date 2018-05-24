@@ -1,8 +1,8 @@
 /**
  * Created by Holger Stitz on 23.09.2014.
  */
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 import { IColorer, defaultColorer, INormalizer, nextID, onDelete, tooltip } from '../VisUtils';
 import { PVDADataAttributeVis } from './AAttributeVis';
 import { IAttribute, NumberAttribute } from '../../models/Models';
@@ -14,7 +14,7 @@ import { Node } from '../../models/Infrastructure';
 
 export class PVDStackedBar implements PVDElement, PVDInnerElement {
 
-  $node: d3.Selection;
+  $node: d3.Selection<any>;
   scaleFactor = [1, 1];
 
   scale = d3.scale.linear();
@@ -22,7 +22,7 @@ export class PVDStackedBar implements PVDElement, PVDInnerElement {
   private valuesByLevel: number[] = [];
   private format = d3.format(".1f");
 
-  constructor($parent: d3.Selection, public attr: IAttribute<number>, private type: string, private config: PVDHierarchyConfig, private parent: PVDElementParent, public defConfig: any) {
+  constructor($parent: d3.Selection<any>, public attr: IAttribute<number>, private type: string, private config: PVDHierarchyConfig, private parent: PVDElementParent, public defConfig: any) {
     this.$node = $parent.append('div').attr('class', name + ' stackedbar');
 
     this.calculateValuesByLevel();

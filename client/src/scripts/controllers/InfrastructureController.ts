@@ -1,8 +1,8 @@
 /**
  * Created by Holger Stitz on 10.10.2014.
  */
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 import DataService from '../services/DataService';
 import Animator from '../services/Animator';
 import InfrastructureLoader from '../services/InfrastructureLoader';

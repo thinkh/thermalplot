@@ -1,8 +1,8 @@
 /**
  * Created by Samuel Gratzl on 23.04.2014.
  */
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 import { IAnimateable, PVDAnimator } from '../../services/Animator';
 import { IColorer, nextID, onDelete, defaultColorer } from '../VisUtils';
 import { IAttribute } from '../../models/Models';
@@ -14,12 +14,12 @@ import { Infrastructure } from '../../models/Infrastructure';
  * idea is to have a grid of cells showing the current value of an attribute, time is encoded in time
  */
 export class PVDBlickingArea<T> implements IAnimateable {
-  private $r: d3.UpdateSelection;
+  private $r: d3.selection.Update<any>;
   colorer: IColorer<T> = defaultColorer;
 
   private _lastTime = NaN;
 
-  constructor(private attrs: IAttribute<T>[], $parent: d3.Selection, private pvdDataSelection: PVDDataSelection, grid: number[] = [10, 10]) {
+  constructor(private attrs: IAttribute<T>[], $parent: d3.Selection<any>, private pvdDataSelection: PVDDataSelection, grid: number[] = [10, 10]) {
     this.$r = $parent.selectAll("rect").data(attrs);
     var wi = 100 / grid[0];
     var hi = 100 / grid[1];
@@ -59,7 +59,7 @@ export class PVDBlickingArea<T> implements IAnimateable {
       var v = attr.floor(time);
       var $this = d3.select(this);
       if (v) {
-        $this.style("fill", that.colorer(v.v));
+        $this.style("fill", that.colorer(v.v).rgb.toString());
         $this.select("title").text(v.v);
       } else {
         $this.style("fill", "gray");
@@ -91,7 +91,7 @@ export default angular.module('directives.pvdBlickingArea', [])
         }
 
         //return the postLink function
-        return function ($scope, element) {
+        return function ($scope: any, element) {
           //lazy get the infrastructure
           pvdInfrastructureLoader.get($scope.infraId).then((infrastructure: Infrastructure) => {
             var paths: string[] = $scope.paths;

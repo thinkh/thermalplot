@@ -1,12 +1,12 @@
 /**
  * Created by Holger Stitz on 11.08.2015.
  */
-import * as angular from '@bower_components/angular';
+import * as angular from 'angular';
 
 'use strict';
 
 export default angular.module('directives.pvdBrowserNotification', [])
-  .directive('pvdBrowserNotification', function () {
+  .directive('pvdBrowserNotification', [function () {
     return {
       templateUrl: 'views/templates/BrowserNotification.html',
       controller: function ($scope) {
@@ -27,5 +27,5 @@ export default angular.module('directives.pvdBrowserNotification', [])
       scope: {},
       restrict: 'EA'
     };
-  })
+  }])
   .name; // name for export default

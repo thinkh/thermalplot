@@ -2,8 +2,8 @@
  * Created by Holger Stitz on 05.09.2014.
  */
 
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 import { nextID } from './VisUtils';
 import { PVDLayoutDimensions } from './layouts/Layout';
 import { PVDElement } from './HierarchyNode';
@@ -128,20 +128,20 @@ export class DendrogramPVDLayoutEdge implements PVDLayoutEdge {
  * SVG overlay to show the edges between nodes
  */
 export class PVDHierarchyEdgeOverlay implements PVDElement {
-  $node: d3.Selection;
+  $node: d3.Selection<any>;
   _scaleFactor: number[];
   isVisible = true;
 
-  constructor($parent: d3.Selection, private config: PVDHierarchyConfig) {
+  constructor($parent: d3.Selection<any>, private config: PVDHierarchyConfig) {
     this.$node = $parent.append('svg').attr('class', 'hg-edge-overlay');
   }
 
   draw(edges: PVDLayoutEdge[]): void {
-    var $edges = this.$node.selectAll('path').data(edges, (d) => d.fqIname);
+    var $edges = this.$node.selectAll('path').data(edges, (d: any) => d.fqIname);
 
     $edges.enter().insert('path')
       .attr('class', (d) => 'hg-edge ' + d.cssClass)
-      .attr('data-fqname', (d) => d.fqIname)
+      .attr('data-fqname', (d: any) => d.fqIname)
       //.attr('d', (d) => { return d.path(); })
       .style('opacity', 0);
 

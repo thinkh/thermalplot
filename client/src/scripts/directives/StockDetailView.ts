@@ -1,8 +1,8 @@
 /**
  * Created by Holger Stitz on 09.03.2015.
  */
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 import { PVDHierarchyNode } from './HierarchyNode';
 import { PVDHierarchyConfig } from './HierarchyConfig';
 import { onDelete, tooltip, nextID, modifyConfig } from './VisUtils';
@@ -137,7 +137,17 @@ export default angular.module('directives.pvdStockDetailView', [
   TargetHierarchy,
   ChangeBorder
 ])
-  .directive('pvdStockDetailView', function (
+  .directive('pvdStockDetailView', [
+    'pvdInfrastructureLoader',
+    'pvdWindowResize',
+    '$timeout',
+    'pvdAnimator',
+    'pvdDataSelection',
+    'pvdInfrastructureMapper',
+    'pvdLayoutManager',
+    'pvdTargetHierarchy',
+    'pvdChangeBorder',
+    function (
     pvdInfrastructureLoader: PVDInfrastructureLoader,
     pvdWindowResize: PVDWindowResize,
     $timeout,
@@ -159,7 +169,7 @@ export default angular.module('directives.pvdStockDetailView', [
           $timeout(() => { //skip one time to ensure that the svg is properly layouted
             var $base = d3.select(element[0]);
 
-            var $root: d3.Selection = $base.append('div')
+            var $root: d3.Selection<any> = $base.append('div')
               .classed('pvd-stock-detail', true);
 
             var config = new PVDHierarchyConfig(pvdAnimator, pvdDataSelection, pvdLayoutManager, pvdInfrastructureMapper, pvdTargetHierarchy, pvdChangeBorder, pvdWindowResize);
@@ -175,6 +185,6 @@ export default angular.module('directives.pvdStockDetailView', [
       },
       restrict: 'EA'
     }
-  })
+  }])
   .name; // name for export default
 

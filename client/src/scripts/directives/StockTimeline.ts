@@ -2,9 +2,9 @@
  * Created by Holger Stitz on 09.03.2015.
  * @see http://arnauddri.github.io/d3-stock/
  */
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
-import * as $ from '@bower_components/jquery';
+import * as angular from 'angular';
+import * as d3 from 'd3';
+import * as $ from 'jquery';
 import Animator, { IAnimateable, PVDAnimator } from '../services/Animator';
 import { PVDHierarchyConfig } from './HierarchyConfig';
 import { nextID, onDelete } from './VisUtils';
@@ -231,13 +231,13 @@ class StockTimeline implements IAnimateable {
 
     that.area = d3.svg.area()
       .interpolate('monotone')
-      .x(function (d) { return that.x2(d.date); })
+      .x(function (d: any) { return that.x2(d.date); })
       .y0(this.config.gridHeight)
-      .y1(function (d) { return that.y(d.value); });
+      .y1(function (d: any) { return that.y(d.value); });
 
     that.line.interpolate('linear')
-      .x((d) => { return that.x2(d.date); })
-      .y((d) => { return that.y2(d.value); });
+      .x((d: any) => { return that.x2(d.date); })
+      .y((d: any) => { return that.y2(d.value); });
 
     that.$svg = this.$root.append('svg')
       .attr('class', 'chart')
@@ -269,7 +269,7 @@ class StockTimeline implements IAnimateable {
       ];
       var t = $('<div style="z-index: 100">');
       console.log('index point', that.config.selection.indexPoint, 'from', that.config.selection.getSelection(0).point, 'past', that.config.selection.past);
-      d3.select(t[0]).selectAll('button').data(dates).enter().append('button').text((d) => d[0]).on('click', (sel, i) => {
+      d3.select(t[0]).selectAll('button').data(dates).enter().append('button').text((d) => d[0]).on('click', (sel: any, i) => {
         if (i === 0) {
           console.log(['name', that.config.selection.indexPoint, that.config.selection.getSelection(0).point, that.config.selection.past]);
         } else {
@@ -285,7 +285,7 @@ class StockTimeline implements IAnimateable {
       (<any>t).dialog({
         position: { my: "left top", at: "left top" }
       });
-      d3.event.preventDefault();
+      (<Event>d3.event).preventDefault();
     });
 
     that.$strokeGradientStops = that.$svg.append('linearGradient')
@@ -337,8 +337,8 @@ class StockTimeline implements IAnimateable {
         cache = that.indexPoint.date.valueOf();
       })
       .on('drag', function () {
-        if (d3.event.x < 0 || d3.event.x > that.config.gridWidth) { return; }
-        var x0: any = that.x2.invert(d3.event.x - 30);
+        if ((<any>d3.event).x < 0 || (<any>d3.event).x > that.config.gridWidth) { return; }
+        var x0: any = that.x2.invert((<any>d3.event).x - 30);
         that.updateIndex(x0);
         that.$range.text('index point @ ' + that.legendFormat(new Date('' + that.indexPoint.date)));
       })
@@ -379,7 +379,7 @@ class StockTimeline implements IAnimateable {
 
     var cache = null;
     that.brush = d3.svg.brush()
-      .x(that.x2)
+      .x(<any>that.x2)
       .on('brushstart', function () {
         that.isBrushing = true;
         cache = [that.x.domain()[0].valueOf(), that.x.domain()[1].valueOf()];
@@ -623,7 +623,7 @@ class StockTimeline implements IAnimateable {
     if (this.reverseData === undefined) {
       this.reverseData = this.data.reverse();
     }
-    var i = d3.bisector(function (d) { return d.date; }).right(this.reverseData, date, 1);
+    var i = d3.bisector(function (d: any) { return d.date; }).right(this.reverseData, date, 1);
     var d0 = this.reverseData[i - 1];
     var d1 = this.reverseData[i];
     var datum: any = date - d0.date > d1.date - date ? d1 : d0;
@@ -743,7 +743,18 @@ export default angular.module('directives.pvdStockTimeline', [
   ChangeBorder,
   DataService
 ])
-  .directive('pvdStockTimeline', function (
+  .directive('pvdStockTimeline', [
+    'pvdInfrastructureLoader',
+    'pvdWindowResize',
+    '$timeout',
+    'pvdAnimator',
+    'pvdDataSelection',
+    'pvdInfrastructureMapper',
+    'pvdLayoutManager',
+    'pvdTargetHierarchy',
+    'pvdChangeBorder',
+    'pvdDataService',
+    function (
     pvdInfrastructureLoader: PVDInfrastructureLoader,
     pvdWindowResize: PVDWindowResize,
     $timeout,
@@ -773,7 +784,7 @@ export default angular.module('directives.pvdStockTimeline', [
               //var attr = infrastructure.findAttr(path);
               var $base = d3.select(element[0]);
 
-              var $root: d3.Selection = $base.append('div')
+              var $root: d3.Selection<any> = $base.append('div')
                 .classed('pvd-stock-timeline', true)
                 .attr('data-infra-id', attrs.infraId);
 
@@ -804,5 +815,5 @@ export default angular.module('directives.pvdStockTimeline', [
       },
       restrict: 'E'
     };
-  })
+  }])
   .name; // name for export default

@@ -1,7 +1,7 @@
 /**
  * Created by Holger Stitz on 18.08.2014.
  */
-import * as d3 from '@bower_components/d3/d3';
+import * as d3 from 'd3';
 import { PVDALayout, IPVDLayout, PVDLayoutBundle, PVDLayoutDimensions } from './Layout';
 import { PVDGridLayout } from './GridLayout';
 import { Node } from '../../models/Infrastructure';

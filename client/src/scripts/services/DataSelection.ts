@@ -1,6 +1,5 @@
-import * as angular from '@bower_components/angular';
-import * as ng from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 import { Node, Infrastructure } from '../models/Infrastructure';
 import InfrastructureMapper, { PVDInfrastructureMapper } from './InfrastructureMapper';
 import Animator, { PVDAnimator } from './Animator';
@@ -65,7 +64,7 @@ export class PVDDataSelection {
   private timeShiftRefTime: number = -1;
   private timeShift: number = 0;
 
-  constructor(private pvdInfrastructureMapper: PVDInfrastructureMapper, private $q: ng.IQService, private pvdAnimator: PVDAnimator) {
+  constructor(private pvdInfrastructureMapper: PVDInfrastructureMapper, private $q: angular.IQService, private pvdAnimator: PVDAnimator) {
     pvdAnimator.on('start', () => {
       this.timeShiftRefTime = -1; //reset
     });
@@ -503,4 +502,9 @@ export default angular.module('services.pvdDataSelection', [
   Animator,
   InfrastructureMapper
 ])
-  .service('pvdDataSelection', PVDDataSelection).name;
+  .service('pvdDataSelection', [
+    'pvdInfrastructureMapper',
+    '$q',
+    'pvdAnimator',
+    PVDDataSelection
+  ]).name;

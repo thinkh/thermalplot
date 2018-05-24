@@ -2,7 +2,7 @@
  * Created by Holger Stitz on 24.03.2015.
  * http://arqex.com/934/4-balls-10-spinners-css3-animations
  */
-import * as angular from '@bower_components/angular';
+import * as angular from 'angular';
 import { Infrastructure } from '../models/Infrastructure';
 import DataSelection, { PVDDataSelection } from '../services/DataSelection';
 import InfrastructureLoader, { PVDInfrastructureLoader } from '../services/InfrastructureLoader';
@@ -12,7 +12,10 @@ export default angular.module('directives.pvdLoadingOverlay', [
   InfrastructureLoader,
   DataSelection
 ])
-  .directive('pvdLoadingOverlay', function (
+  .directive('pvdLoadingOverlay', [
+    'pvdInfrastructureLoader',
+    'pvdDataSelection',
+    function (
     pvdInfrastructureLoader: PVDInfrastructureLoader,
     pvdDataSelection: PVDDataSelection
   ) {
@@ -36,5 +39,5 @@ export default angular.module('directives.pvdLoadingOverlay', [
       },
       restrict: 'EA'
     };
-  })
+  }])
   .name; // name for export default

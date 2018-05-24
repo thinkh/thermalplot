@@ -1,8 +1,8 @@
 /**
  * Created by Samuel Gratzl on 17.04.2014.
  */
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 import { getDimension, nextID, onDelete, IColorer, defaultColorer, createNormalizer, tsNormalizer, INormalizer } from '../VisUtils';
 import { IAnimateable, createStepper, PVDAnimator } from '../../services/Animator';
 import { IAttribute, CompositeAttribute } from '../../models/Models';
@@ -18,15 +18,15 @@ export enum ETimeLineMode {
  * brush used within a timeline, which renders a brush and interacts with the PVDDataSelection service
  */
 export class PVDBrush {
-  private $root: d3.Selection;
-  private brush: d3.Svg.Brush;
+  private $root: d3.Selection<any>;
+  private brush: d3.svg.Brush<any>;
   /**
    * currently manipulating the brush?
    * @type {boolean}
    */
   private interacting: boolean = false;
 
-  constructor($parent: d3.Selection, private pvdDataSelection: PVDDataSelection) {
+  constructor($parent: d3.Selection<any>, private pvdDataSelection: PVDDataSelection) {
     var brushScale = d3.scale.linear().range([0, getDimension($parent).width]);
     this.brush = d3.svg.brush().x(brushScale)
       .on("brush", () => this.onBrushed())
@@ -84,7 +84,7 @@ export class PVDBrush {
     if (b.empty()) {
       this.pvdDataSelection.resetSelection();
     } else {
-      var r: number[] = b.extent();
+      var r: any[] = b.extent();
       if (this.pvdDataSelection.isPinned) {
         this.pvdDataSelection.setPinnedSelection(r[1], r[1] - r[0]);
       } else {
@@ -104,10 +104,10 @@ export class PVDDeprecatedAttrTimeline<T> implements IAnimateable {
   colorer: IColorer<T> = defaultColorer;
   private normalizer: INormalizer<T>;
 
-  private $parent: d3.Selection;
+  private $parent: d3.Selection<any>;
   private brush: PVDBrush;
 
-  constructor(attr: IAttribute<T>, showFrequencies: boolean, $parent: d3.Selection, private pvdDataSelection: PVDDataSelection, private step = createStepper(1000), public nMarkers = 20) {
+  constructor(attr: IAttribute<T>, showFrequencies: boolean, $parent: d3.Selection<any>, private pvdDataSelection: PVDDataSelection, private step = createStepper(1000), public nMarkers = 20) {
     this.$parent = $parent.append("g").attr("class", "chart");
     this.setAttribute(attr, showFrequencies);
 
@@ -171,7 +171,7 @@ export class PVDDeprecatedAttrTimeline<T> implements IAnimateable {
     });
     //console.log(start,d2.map(d => d.n));
     //key is the normalized time
-    return this.$parent.selectAll("rect").data(d2, (d) => "" + d.n);
+    return this.$parent.selectAll("rect").data(d2, (d: any) => "" + d.n);
   }
 
   layout(dt: number, now: number): any {
@@ -190,7 +190,7 @@ export class PVDDeprecatedAttrTimeline<T> implements IAnimateable {
     this.draw($r, 0);
   }
 
-  private drawBarplot($elem: d3.Transition.Transition) {
+  private drawBarplot($elem: d3.Transition<any>) {
     $elem.style("fill", null).attr("y", (v) => {
       return (100 - v.p) + "%";
     }).attr("height", (v) => {
@@ -198,15 +198,15 @@ export class PVDDeprecatedAttrTimeline<T> implements IAnimateable {
     });
   }
 
-  private drawHorizonPlot($elem: d3.Transition.Transition) {
+  private drawHorizonPlot($elem: d3.Transition<any>) {
     $elem.style("fill", null).attr("y", (v) => (100 - v.p) + "%").attr("height", (v) => v.p + "%");
   }
 
-  private drawHeatmap($elem: d3.Transition.Transition) {
-    $elem.style("fill", (v) => this.colorer(v.p)).attr("y", "0%").attr("height", "100%");
+  private drawHeatmap($elem: d3.Transition<any>) {
+    $elem.style("fill", (v) => this.colorer(v.p).rgb.toString()).attr("y", "0%").attr("height", "100%");
   }
 
-  private draw($r: d3.UpdateSelection, dt: number) {
+  private draw($r: d3.selection.Update<any>, dt: number) {
     var drawIt;
     switch (this.mode) {
       case ETimeLineMode.HEATMAP:
@@ -370,7 +370,7 @@ angular.module('pipesVsDamsApp').directive('pvdDeprecatedAttrTimeline', function
         return r;
       }
 
-      return function ($scope, element) {
+      return function ($scope: any, element) {
         pvdInfrastructureLoader.get($scope.infraId).then((infrastructure: Infrastructure) => {
           $timeout(() => { //skip one time to ensure that the svg is properly layouted
             var path: string = $scope.path, attr = null, $base;

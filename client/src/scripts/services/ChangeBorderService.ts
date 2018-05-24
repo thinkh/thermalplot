@@ -1,8 +1,8 @@
 /**
  * Created by Holger Stitz on 09.01.2015.
  */
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 import { nextID } from '../directives/VisUtils';
 import { Node } from '../models/Infrastructure';
 
@@ -18,9 +18,9 @@ export class AChangeBorder {
   private _maxSize = 0; // gridWidth || gridHeight in px
 
   // domain (input) = activity, range (output) = position in percent!
-  protected _activityToPosition: d3.Scale.LinearScale; // can be also d3.Scale.LogScale
+  protected _activityToPosition: d3.scale.Linear<any, any>; // can be also d3.scale.Log<any, any>
 
-  private _color = d3.scale.linear().domain([0, 0.5, 1]).range(['red', 'white', 'green']).clamp(true);
+  private _color = d3.scale.linear<string, number>().domain([0, 0.5, 1]).range(['red', 'white', 'green']).clamp(true);
 
   private _relPosFactor = []; // factors between the each position (for updating all pos via segment)
 
@@ -67,7 +67,7 @@ export class AChangeBorder {
     this._scale = value;
   }
 
-  get d3scaleAbsPos(): d3.Scale.LinearScale {
+  get d3scaleAbsPos(): d3.scale.Linear<any, any> {
     var scale = this._activityToPosition.copy();
     scale.range(this.absPositions);
     return scale;
@@ -659,4 +659,7 @@ export class PVDChangeBorder {
 
 }
 
-export default angular.module('services.pvdDataGenerator', []).service('pvdChangeBorder', PVDChangeBorder).name;
+export default angular.module('services.pvdDataGenerator', [])
+  .service('pvdChangeBorder', [
+    PVDChangeBorder
+  ]).name;

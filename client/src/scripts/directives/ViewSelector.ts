@@ -2,19 +2,21 @@
  * Created by Samuel Gratzl on 14.03.2015.
  */
 
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
-import * as $ from '@bower_components/jquery';
+import * as angular from 'angular';
+import * as d3 from 'd3';
+import * as $ from 'jquery';
 import LayoutManager, { PVDLayoutManager } from '../services/LayoutManager';
 
 export default angular.module('services.pvdViewSelector', [LayoutManager])
-	.directive('pvdViewSelector', function (pvdLayoutManager: PVDLayoutManager) {
+	.directive('pvdViewSelector', [
+		'pvdLayoutManager',
+		function (pvdLayoutManager: PVDLayoutManager) {
 		return {
 			templateUrl: 'views/templates/ViewSelector.html',
 			link: function ($scope: any, $element) {
 				$scope.switchTab = function ($event) {
 					$event.preventDefault();
-					$($event.currentTarget).tab('show');
+					(<any>$($event.currentTarget)).tab('show');
 				};
 				$scope.activateTab = function ($event) {
 					$($event.currentTarget).siblings().removeClass('active');
@@ -32,5 +34,5 @@ export default angular.module('services.pvdViewSelector', [LayoutManager])
 			restrict: 'EA',
 			scope: {}
 		}
-	})
+	}])
 	.name;

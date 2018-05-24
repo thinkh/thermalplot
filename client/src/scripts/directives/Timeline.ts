@@ -2,8 +2,8 @@
  * Created by Holger Stitz on 18.09.2015.
  * Inspired by http://bl.ocks.org/mbostock/1667367
  */
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 import Animator, { IAnimateable, PVDAnimator } from '../services/Animator';
 import { PVDHierarchyConfig } from './HierarchyConfig';
 import { nextID, onDelete } from './VisUtils';
@@ -61,13 +61,13 @@ class PVDTimeline implements IAnimateable {
   private focusAxis = d3.svg.axis().scale(this.focusScale).orient('bottom').ticks(20).tickFormat(this.focusTimeFormat);
 
   // d3 brushes
-  private contextBrush = d3.svg.brush();
-  private focusBrush = d3.svg.brush();
+  private contextBrush = d3.svg.brush<any>();
+  private focusBrush = d3.svg.brush<any>();
 
   // caching the brushed extent and now
   private contextExtCache = [0, 0];
   private focusExtCache = [0, 0];
-  private cachedNow = 0;
+  private cachedNow: number = 0;
 
   // flags to change behavior
   private initAvailableTimeRange = false;
@@ -151,8 +151,8 @@ class PVDTimeline implements IAnimateable {
     that.$focus.select('.x.axis').call(that.focusAxis);
 
     // update position of now marker
-    that.$contextNowMarker.attr('x', that.contextScale(that.cachedNow));
-    that.$focusNowMarker.attr('x', that.focusScale(that.cachedNow));
+    that.$contextNowMarker.attr('x', that.contextScale(<any>that.cachedNow));
+    that.$focusNowMarker.attr('x', that.focusScale(<any>that.cachedNow));
   }
 
   /**
@@ -164,16 +164,16 @@ class PVDTimeline implements IAnimateable {
     that.$svg = that.$root.append('svg');
 
     that.contextBrush
-      .x(that.contextScale)
+      .x(<any>that.contextScale)
       .on('brushstart', () => {
-        that.contextExtCache = that.contextBrush.extent().splice(0);
+        that.contextExtCache = <any>that.contextBrush.extent().splice(0);
       })
       .on('brush', () => {
         that.selectedNowInContext = false;
         // update focus scale, brush and now marker with context brush extent
         that.setFocusAxisTo(that.contextBrush.empty() ? that.contextScale.domain() : that.contextBrush.extent());
         that.setFocusBrushTo(that.focusExtCache);
-        that.$focusNowMarker.attr('x', that.focusScale(that.cachedNow));
+        that.$focusNowMarker.attr('x', that.focusScale(<any>that.cachedNow));
       })
       .on('brushend', () => {
         // reset selection on empty brush
@@ -185,14 +185,14 @@ class PVDTimeline implements IAnimateable {
           // brushed selection
         } else {
           console.log('context brush', that.contextBrush.extent());
-          that.contextExtCache = that.contextBrush.extent().splice(0);
+          that.contextExtCache = <any>that.contextBrush.extent().splice(0);
         }
       });
 
     that.focusBrush
-      .x(that.focusScale)
+      .x(<any>that.focusScale)
       .on('brushstart', () => {
-        that.focusExtCache = that.focusBrush.extent().splice(0);
+        that.focusExtCache = <any>that.focusBrush.extent().splice(0);
       })
       //.on('brush', () => {})
       .on('brushend', () => {
@@ -203,9 +203,9 @@ class PVDTimeline implements IAnimateable {
           // load a pinned time range and stop the stream afterwards
         } else {
           console.log('focus brush', that.focusBrush.extent());
-          that.focusExtCache = that.focusBrush.extent().splice(0);
-          var from = that.focusBrush.extent()[0].getTime(),
-            to = that.focusBrush.extent()[1].getTime();
+          that.focusExtCache = <any>that.focusBrush.extent().splice(0);
+          var from = (<any>that.focusBrush.extent()[0]).getTime(),
+            to = (<any>that.focusBrush.extent()[1]).getTime();
           that.setPinnedAndStopStream(from, to);
         }
       });
@@ -277,7 +277,7 @@ class PVDTimeline implements IAnimateable {
   /**
    * Set the brush extent to a certain time range.
    * `from` can be also an extent array.
-   * @param $elem (d3.Selection)
+   * @param $elem (d3.Selection<any>)
    * @param brush (d3.Brush)
    * @param extCache (Date[]) Extent cache
    * @param from|extent (number|Date|number[]|Date[])
@@ -511,8 +511,8 @@ class PVDTimeline implements IAnimateable {
     // update position of focus brush and now marker every time
     that.setFocusBrushTo(sel.start, sel.end);
 
-    that.$contextNowMarker.attr('x', that.contextScale(now));
-    that.$focusNowMarker.attr('x', that.focusScale(now));
+    that.$contextNowMarker.attr('x', that.contextScale(<any>now));
+    that.$focusNowMarker.attr('x', that.focusScale(<any>now));
 
     // assume that relative position is always at now point
     if (that.selectedNowInContext) {
@@ -537,7 +537,18 @@ export default angular.module('directives.pvdTimeline', [
   WindowResize,
   DataSelection
 ])
-  .directive('pvdTimeline', function (
+  .directive('pvdTimeline', [
+    'pvdInfrastructureLoader',
+    'pvdWindowResize',
+    '$timeout',
+    'pvdAnimator',
+    'pvdDataSelection',
+    'pvdInfrastructureMapper',
+    'pvdLayoutManager',
+    'pvdTargetHierarchy',
+    'pvdChangeBorder',
+    'pvdDataService',
+    function (
     pvdInfrastructureLoader: PVDInfrastructureLoader,
     pvdWindowResize: PVDWindowResize,
     $timeout,
@@ -558,7 +569,7 @@ export default angular.module('directives.pvdTimeline', [
             $timeout(() => { //skip one time to ensure that the svg is properly layouted
               var $base = d3.select(element[0]);
 
-              var $root: d3.Selection = $base.append('div').classed('pvd-timeline', true);
+              var $root: d3.Selection<any> = $base.append('div').classed('pvd-timeline', true);
 
               // create configuration
               var config = new PVDHierarchyConfig(pvdAnimator, pvdDataSelection, pvdLayoutManager, pvdInfrastructureMapper, pvdTargetHierarchy, pvdChangeBorder, pvdWindowResize);
@@ -575,6 +586,6 @@ export default angular.module('directives.pvdTimeline', [
       },
       restrict: 'E'
     };
-  })
+  }])
   .name; // name for export default
 

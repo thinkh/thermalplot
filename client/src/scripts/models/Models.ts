@@ -1,7 +1,7 @@
 /**
  * Created by Samuel Gratzl on 16.04.2014.
  */
-import * as d3 from '@bower_components/d3/d3';
+import * as d3 from 'd3';
 import { TimedParentValue, TimedIndexedValue, TimedValue, TimedList, IBinner } from "./Timed";
 import { IStepper } from "../services/Animator";
 import { Node, AttributeContainer, findLeastCommonAncestor, Edge, Infrastructure } from './Infrastructure';
@@ -725,7 +725,7 @@ export class ACompositeAttribute<T> implements IAttribute<T> {
       a = this._attrs();
     a.forEach((a) => a.valueList(from, to, step, tmp));
     //group by ts
-    var nest = d3.nest().key((d) => d.ts).entries(tmp);
+    var nest = d3.nest().key((d: any) => d.ts).entries(tmp);
     var val;
     nest.forEach((group) => {
       var tmp2 = group.values.map((ti) => ti.v); //map to value
@@ -1231,7 +1231,7 @@ export function valueList<T>(attrs: IAttribute<T>[], from: number, to: number, s
  * @returns {aTimedParentValue<T,IAttribute<T>>}
  */
 export function intermediateRoutes<T>(list: TimedParentValue<T, IAttribute<T>>[]): TimedParentValue<T, IAttribute<T>>[] {
-  var m = d3.map();
+  var m = d3.map<TimedParentValue<T, IAttribute<T>>>();
   //create the chain entries
   function createChain(chain: Node[], v: TimedParentValue<T, IAttribute<T>>) {
     for (var i = 0; i < chain.length - 1; ++i) {
@@ -1244,7 +1244,7 @@ export function intermediateRoutes<T>(list: TimedParentValue<T, IAttribute<T>>[]
       }
       var key = attr.fqIname + '@' + v.ts;
       if (m.has(key)) {
-        m.get(key).v += v.v; //TODO hard coded sum
+        (<any>m.get(key)).v += v.v; //TODO hard coded sum
       } else {
         m.set(key, new TimedParentValue<T, IAttribute<T>>(attr, v.ts, v.v, v.duration));
       }

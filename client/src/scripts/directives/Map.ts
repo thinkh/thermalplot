@@ -2,9 +2,9 @@
  * Created by Holger Stitz on 26.06.2015.
  */
 
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
-import * as Datamap from '@bower_components/datamaps/src/js/datamaps';
+import * as angular from 'angular';
+import * as d3 from 'd3';
+import Datamap from 'datamaps/src/js/datamaps';
 import { PVDHierarchyConfig } from './HierarchyConfig';
 import { compute } from '../models/DOI';
 import InfrastructureLoader, { PVDInfrastructureLoader } from '../services/InfrastructureLoader';
@@ -246,7 +246,7 @@ class PVDMap implements IAnimateable {
         //.style('color', idealTextColor(that.headerColor))
         .text((that.useDoiColoring) ? 'Color: DOI' : 'Color: State')
         .on('click', function () {
-          d3.event.stopPropagation();
+          (<Event>d3.event).stopPropagation();
           that.useDoiColoring = !that.useDoiColoring;
           d3.select(this).text((that.useDoiColoring) ? 'Color: DOI' : 'Color: State');
         });
@@ -256,7 +256,7 @@ class PVDMap implements IAnimateable {
       //.style('color', idealTextColor(that.headerColor))
       .text((that.isCollapsed) ? 'Expand' : 'Collapse')
       .on('click', function () {
-        d3.event.stopPropagation();
+        (<Event>d3.event).stopPropagation();
         that.isCollapsed = !that.isCollapsed;
         that.$root.classed('collapsed', that.isCollapsed);
 
@@ -334,7 +334,7 @@ class PVDMap implements IAnimateable {
         d3.select(this).style('fill', color).style('stroke-width', 1 / scale);
       })
       .on('click', function (d) {
-        d3.event.stopPropagation();
+        (<Event>d3.event).stopPropagation();
         if (that.attrs.nodesAre === 'countries') {
           var country = that.nodesMapByName.get(that.getCountryName(d.properties.name));
           if (country !== undefined) {
@@ -376,7 +376,7 @@ class PVDMap implements IAnimateable {
 
     d3.select(that.$root.node().parentNode.parentNode)
       .on('click', function () {
-        d3.event.stopPropagation();
+        (<Event>d3.event).stopPropagation();
         that.selectedState = undefined;
         that.config.selection.clearSelection();
       });
@@ -398,8 +398,8 @@ class PVDMap implements IAnimateable {
         .scale(initScale)
         .translate(initTranslate.split(','))
         .on('zoom', function move() {
-          var t = d3.event.translate;
-          var s = d3.event.scale;
+          var t = (<any>d3.event).translate;
+          var s = (<any>d3.event).scale;
           that.$svg.attr('data-scale', s);
           // constrain the map
           //var h = that.height / 3;
@@ -490,7 +490,7 @@ class PVDMap implements IAnimateable {
       } else {
         that.$svg.selectAll('.datamaps-bubble')
           .on('click', function (d) {
-            d3.event.stopPropagation();
+            (<Event>d3.event).stopPropagation();
             //multi selection
             var additive = (<any>d3.event).ctrlKey || (<any>d3.event).shiftKey || (<any>d3.event).metaKey;
             var is = that.config.selection.isSelected(that.nodesMap.get(d.id).node);
@@ -602,7 +602,18 @@ export default angular.module('directives.pvdMap', [
   ChangeBorder,
   DataService
 ])
-  .directive('pvdMap', function (
+  .directive('pvdMap', [
+    'pvdInfrastructureLoader',
+    'pvdWindowResize',
+    '$timeout',
+    'pvdAnimator',
+    'pvdDataSelection',
+    'pvdInfrastructureMapper',
+    'pvdLayoutManager',
+    'pvdTargetHierarchy',
+    'pvdChangeBorder',
+    'pvdDataService',
+    function (
     pvdInfrastructureLoader: PVDInfrastructureLoader,
     pvdWindowResize: PVDWindowResize,
     $timeout,
@@ -626,7 +637,7 @@ export default angular.module('directives.pvdMap', [
               //var attr = infrastructure.findAttr(path);
               var $base = d3.select(element[0]);
 
-              var $root: d3.Selection = $base.append('div')
+              var $root: d3.Selection<any> = $base.append('div')
                 .classed('pvd-map', true)
                 .attr('data-infra-id', attrs.infraId)
                 .style({
@@ -660,6 +671,6 @@ export default angular.module('directives.pvdMap', [
       },
       restrict: 'E'
     };
-  })
+  }])
   .name; // name for export default
 

@@ -1,8 +1,8 @@
 /**
  * Created by Holger Stitz on 03.02.2015.
  */
-import angular from '@bower_components/angular';
-import * as $ from '@bower_components/jquery';
+import * as angular from 'angular';
+import * as $ from 'jquery';
 import BroadcastService, { PVDBroadcastService } from '../services/BroadcastService';
 import DataService, { PVDDataService } from '../services/DataService';
 import LayoutManager, { PVDLayoutManager } from '../services/LayoutManager';
@@ -46,7 +46,7 @@ export default angular.module('controllers.UseCaseRouteCtrl', [
 
             $scope.switchTab = function ($event) {
                 $event.preventDefault();
-                $($event.currentTarget).tab('show');
+                (<any>$($event.currentTarget)).tab('show');
             };
             $scope.activateTab = function ($event) {
                 $($event.currentTarget).siblings().removeClass('active');

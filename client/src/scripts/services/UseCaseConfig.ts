@@ -1,8 +1,8 @@
 /**
  * Created by Holger Stitz on 03.02.2015.
  */
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 
 export class PVDUseCaseConfig {
 
@@ -36,4 +36,7 @@ export class PVDUseCaseConfig {
   }
 }
 
-export default angular.module('services.pvdUseCaseConfig', []).service('pvdUseCaseConfig', PVDUseCaseConfig).name;
+export default angular.module('services.pvdUseCaseConfig', [])
+  .service('pvdUseCaseConfig', [
+    PVDUseCaseConfig
+  ]).name;

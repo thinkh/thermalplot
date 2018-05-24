@@ -2,8 +2,8 @@
  * Created by Samuel Gratzl on 24.04.2014.
  */
 
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 import { nextID, onDelete } from './VisUtils';
 import Animator, { PVDAnimator } from '../services/Animator';
 import { Node, Infrastructure } from '../models/Infrastructure';
@@ -16,7 +16,7 @@ export default angular.module('directives.pvdSelectionInfo', [
   Animator,
   DataSelection
 ])
-  .directive('pvdSelectionInfo', function () {
+  .directive('pvdSelectionInfo', [function () {
     return {
       templateUrl: 'views/templates/SelectionInfo.html',
       controller: function (
@@ -102,5 +102,5 @@ export default angular.module('directives.pvdSelectionInfo', [
       },
       restrict: 'EA'
     }
-  })
+  }])
   .name; // name for export default

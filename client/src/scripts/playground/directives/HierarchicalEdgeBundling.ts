@@ -1,5 +1,5 @@
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 
 'use strict';
 
@@ -15,19 +15,19 @@ angular.module('pipesVsDamsApp')
             data: []
         };
 
-        d3.selection.prototype.appendTo = function (newParent) {
+        (<any>d3.selection.prototype).appendTo = function (newParent) {
             return this.each(function () {
                 newParent.appendChild(this);
             });
         };
 
-        d3.selection.prototype.moveToFront = function () {
+        (<any>d3.selection.prototype).moveToFront = function () {
             return this.each(function () {
                 this.parentNode.appendChild(this);
             });
         };
 
-        d3.selection.prototype.moveToBack = function () {
+        (<any>d3.selection.prototype).moveToBack = function () {
             return this.each(function () {
                 var firstChild = this.parentNode.firstChild;
                 if (firstChild) {

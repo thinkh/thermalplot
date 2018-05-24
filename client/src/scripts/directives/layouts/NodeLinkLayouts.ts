@@ -1,7 +1,7 @@
 /**
  * Created by Holger Stitz on 18.08.2014.
  */
-import * as d3 from '@bower_components/d3/d3';
+import * as d3 from 'd3';
 import { PVDALayout, PVDLayoutBundle, PVDLayoutNode, PVDLayoutDimensions, IPVDLayout, DiagonalPVDLayoutEdge } from './Layout';
 import { PVDLayoutEdge, edgeBetween } from '../HierarchyEdgeOverlay';
 
@@ -44,7 +44,7 @@ export class PVDANodeLinkLayout extends PVDALayout {
   }
 
   byLevel(flat: any[]) {
-    var bylevel = d3.nest().key((f) => f.level).entries(flat.filter((f) => !f.node.master));
+    var bylevel = d3.nest().key((f: any) => f.level).entries(flat.filter((f) => !f.node.master));
     var bybetterlevel = bylevel.map((entry) => {
       var r = {
         level: +entry.key,

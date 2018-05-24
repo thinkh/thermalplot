@@ -1,9 +1,8 @@
 /**
  * Created by Samuel Gratzl on 24.07.2014.
  */
-import * as angular from '@bower_components/angular';
-import * as ng from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 import { IPathElem, IAttribute, redirect, compose, composeF } from '../models/Models';
 import InfrastructureLoader, { PVDInfrastructureLoader } from './InfrastructureLoader';
 import { Edge, Node, splitInfrastructure, AttributeContainer, Infrastructure } from '../models/Infrastructure';
@@ -20,10 +19,10 @@ export class PVDInfrastructureMapper {
   /**
    * a deferred interface for having the mapping loaded
    */
-  private ready: ng.IDeferred<PVDInfrastructureMapper>;
+  private ready: angular.IDeferred<PVDInfrastructureMapper>;
   private isReady = false;
 
-  constructor(private pvdInfrastructureLoader: PVDInfrastructureLoader, private $q: ng.IQService, private $log: ng.ILogService) {
+  constructor(private pvdInfrastructureLoader: PVDInfrastructureLoader, private $q: angular.IQService, private $log: angular.ILogService) {
     this.ready = $q.defer();
   }
 
@@ -100,7 +99,7 @@ export class PVDInfrastructureMapper {
    * @param target
    * @returns {any}
    */
-  mapTo<T extends IPathElem>(node: T, target: string): ng.IPromise<T[]> {
+  mapTo<T extends IPathElem>(node: T, target: string): angular.IPromise<T[]> {
     return this.loaded.then(() => this.$q.when(this.mapImpl(node, target)));
   }
 
@@ -122,9 +121,9 @@ export class PVDInfrastructureMapper {
    * maps a given path to a given target id
    * @param path
    * @param targetID
-   * @returns {IPromise<TResult>|IPromise<ng.IPromise<Node[]>>}
+   * @returns {IPromise<TResult>|IPromise<angular.IPromise<Node[]>>}
    */
-  mapPath<T extends IPathElem>(path: string, targetID: string): ng.IPromise<T[]> {
+  mapPath<T extends IPathElem>(path: string, targetID: string): angular.IPromise<T[]> {
     return this.loaded.then(() => this.resolve(path)).then((r: IResolvedMapping<T>) => {
       return this.$q.when(this.mapImpl(r.node, targetID));
     });
@@ -154,7 +153,7 @@ export class PVDInfrastructureMapper {
    * @param excluded
    * @param target
    */
-  private mapAll(r: Node[], act: Node, excluded: d3.Set<any>, target: string) {
+  private mapAll(r: Node[], act: Node, excluded: d3.Set, target: string) {
     var that = this;
     var m = act.getAllMappings();
     if (m.has(target)) {//found mapping
@@ -193,7 +192,7 @@ export class PVDInfrastructureMapper {
     }
 
     //resolve both
-    return this.$q.all([this.resolve(a), this.resolve(b)]).then((mappings) => {
+    return this.$q.all([this.resolve<Node>(a), this.resolve<Node>(b)]).then((mappings) => {
       var ar: IResolvedMapping<Node> = mappings[0];
       var br: IResolvedMapping<Node> = mappings[1];
       if (!ar.node) {
@@ -240,7 +239,7 @@ export class PVDInfrastructureMapper {
    * @param a
    * @returns {IPromise<IResolvedMapping>}
    */
-  private resolve<T extends IPathElem>(m: string): ng.IPromise<IResolvedMapping<T>> {
+  private resolve<T extends IPathElem>(m: string): angular.IPromise<IResolvedMapping<T>> {
     var split = splitInfrastructure(m);
     return this.pvdInfrastructureLoader.get(split.id).then((infrastructure) => {
       return this.$q.when({
@@ -339,4 +338,10 @@ export class PVDInfrastructureMapper {
 }
 
 
-export default angular.module('services.pvdInfrastructureMapper', [InfrastructureLoader]).service('pvdInfrastructureMapper', PVDInfrastructureMapper).name;
+export default angular.module('services.pvdInfrastructureMapper', [InfrastructureLoader])
+  .service('pvdInfrastructureMapper', [
+    'pvdInfrastructureLoader',
+    '$q',
+    '$log',
+    PVDInfrastructureMapper
+  ]).name;

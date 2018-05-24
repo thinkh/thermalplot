@@ -2,8 +2,8 @@
  * Created by Holger Stitz on 18.08.2014.
  */
 
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 import { PVDAHierarchyGrid } from './AHierarchyGrid';
 import { PVDHierarchyConfig } from './HierarchyConfig';
 import { Node, Infrastructure } from '../models/Infrastructure';
@@ -25,7 +25,7 @@ import ChangeBorderService, { PVDChangeBorder } from '../services/ChangeBorderSe
 export class PVDHierarchyGrid extends PVDAHierarchyGrid {
   private roots: Node[] = [];
 
-  private $dragNode: d3.Selection = null;
+  private $dragNode: d3.Selection<any> = null;
 
   private id = '.grid' + nextID();
 
@@ -191,7 +191,7 @@ export class PVDHierarchyGrid extends PVDAHierarchyGrid {
       return c.sort((a, b) => {
         if (a.master === b.master) {
           //
-          return d3.descending<number>(d3.round(this.nodesMap.get(a.fqIname).activity, 1), d3.round(this.nodesMap.get(b.fqIname).activity, 1));
+          return d3.descending(d3.round(this.nodesMap.get(a.fqIname).activity, 1), d3.round(this.nodesMap.get(b.fqIname).activity, 1));
         }
         return a.master ? -1 : +1;
       });
@@ -306,8 +306,8 @@ export class PVDHierarchyGrid extends PVDAHierarchyGrid {
             .attr('class', 'hg-node hg-drag-node infra-' + node.infrastructure.id + ' color-' + node.infrastructure.color)
             .style({
               'display': 'none',
-              'left': d3.event.sourceEvent.clientX + 'px',
-              'top': d3.event.sourceEvent.clientY + 'px'
+              'left': (<any>d3.event).sourceEvent.clientX + 'px',
+              'top': (<any>d3.event).sourceEvent.clientY + 'px'
             });
         }
       );
@@ -317,8 +317,8 @@ export class PVDHierarchyGrid extends PVDAHierarchyGrid {
 
         this.$dragNode.style({
           'display': 'block',
-          'left': d3.event.sourceEvent.clientX + 'px',
-          'top': d3.event.sourceEvent.clientY + 'px'
+          'left': (<any>d3.event).sourceEvent.clientX + 'px',
+          'top': (<any>d3.event).sourceEvent.clientY + 'px'
         });
       }
       );
@@ -345,7 +345,7 @@ export class PVDHierarchyGrid extends PVDAHierarchyGrid {
               console.warn('can\'t drop ' + node.fqIname + ' on intermediate node ' + dropped.fqIname);
               return; //can't map to intermediate node
             }
-            console.log('dropped', node.fqIname, 'on', this.config.selection.hover.fqIname, 'at', d3.event.sourceEvent.clientX, d3.event.sourceEvent.clientY);
+            console.log('dropped', node.fqIname, 'on', this.config.selection.hover.fqIname, 'at', (<any>d3.event).sourceEvent.clientX, (<any>d3.event).sourceEvent.clientY);
             var sourcem = node.getMappings(targetinf);
             var old = sourcem[0]; //assuming just one in the upper hierarchy
             old.removeMapping(sourceinf, node);
@@ -414,76 +414,86 @@ export default angular.module('pipesVsDamsApp', [
   TargetHierarchy,
   ChangeBorderService
 ])
-  .directive('pvdHierarchyGrid', function (
-    pvdInfrastructureLoader: PVDInfrastructureLoader,
-    pvdWindowResize: PVDWindowResize,
-    $timeout,
-    pvdAnimator: PVDAnimator,
-    pvdDataSelection: PVDDataSelection,
-    pvdInfrastructureMapper: PVDInfrastructureMapper,
-    pvdLayoutManager: PVDLayoutManager,
-    pvdTargetHierarchy: PVDTargetHierarchy,
-    pvdChangeBorder: PVDChangeBorder
-  ) {
-    return {
-      controller: function ($scope) {
-      },
-      compile: function (element, attrs: any) {
-        attrs.datatype = angular.isDefined(attrs.datatype) ? attrs.datatype : 'stream';
-        attrs.autoSize = (!angular.isDefined(attrs.width) && !angular.isDefined(attrs.height));
-        attrs.width = angular.isDefined(attrs.width) ? +attrs.width : '100%';
-        attrs.height = angular.isDefined(attrs.height) ? +attrs.height : 500;
-        attrs.sliceWidth = angular.isDefined(attrs.sliceWidth) ? +attrs.sliceWidth : 20;
-        attrs.sliceHeight = angular.isDefined(attrs.sliceHeight) ? +attrs.sliceHeight : 20;
-        attrs.hierarchiesDown = angular.isDefined(attrs.hierarchiesDown) ? +attrs.hierarchiesDown : 0;
+  .directive('pvdHierarchyGrid', [
+    'pvdInfrastructureLoader',
+    'pvdWindowResize',
+    '$timeout',
+    'pvdAnimator',
+    'pvdDataSelection',
+    'pvdInfrastructureMapper',
+    'pvdLayoutManager',
+    'pvdTargetHierarchy',
+    'pvdChangeBorder',
+    function (
+      pvdInfrastructureLoader: PVDInfrastructureLoader,
+      pvdWindowResize: PVDWindowResize,
+      $timeout,
+      pvdAnimator: PVDAnimator,
+      pvdDataSelection: PVDDataSelection,
+      pvdInfrastructureMapper: PVDInfrastructureMapper,
+      pvdLayoutManager: PVDLayoutManager,
+      pvdTargetHierarchy: PVDTargetHierarchy,
+      pvdChangeBorder: PVDChangeBorder
+    ) {
+      return {
+        controller: function ($scope) {
+        },
+        compile: function (element, attrs: any) {
+          attrs.datatype = angular.isDefined(attrs.datatype) ? attrs.datatype : 'stream';
+          attrs.autoSize = (!angular.isDefined(attrs.width) && !angular.isDefined(attrs.height));
+          attrs.width = angular.isDefined(attrs.width) ? +attrs.width : '100%';
+          attrs.height = angular.isDefined(attrs.height) ? +attrs.height : 500;
+          attrs.sliceWidth = angular.isDefined(attrs.sliceWidth) ? +attrs.sliceWidth : 20;
+          attrs.sliceHeight = angular.isDefined(attrs.sliceHeight) ? +attrs.sliceHeight : 20;
+          attrs.hierarchiesDown = angular.isDefined(attrs.hierarchiesDown) ? +attrs.hierarchiesDown : 0;
 
-        return function ($scope, element) {
-          pvdInfrastructureLoader.get(attrs.infraId).then((infrastructure: Infrastructure) => {
-            $timeout(() => { //skip one time to ensure that the svg is properly layouted
+          return function ($scope, element) {
+            pvdInfrastructureLoader.get(attrs.infraId).then((infrastructure: Infrastructure) => {
+              $timeout(() => { //skip one time to ensure that the svg is properly layouted
 
-              //var path:string = $scope.path;
-              //var attr = infrastructure.findAttr(path);
-              var $base = d3.select(element[0]);
+                //var path:string = $scope.path;
+                //var attr = infrastructure.findAttr(path);
+                var $base = d3.select(element[0]);
 
-              pvdDataSelection.infra = infrastructure;
+                pvdDataSelection.infra = infrastructure;
 
-              var $root: d3.Selection = $base.append('div')
-                .classed('hg-grid', true)
-                .attr('data-infra-id', attrs.infraId);
+                var $root: d3.Selection<any> = $base.append('div')
+                  .classed('hg-grid', true)
+                  .attr('data-infra-id', attrs.infraId);
 
-              if (!attrs.autoSize) {
-                $root.style({
-                  width: attrs.width + ((typeof attrs.width === "number") ? 'px' : ''),
-                  height: attrs.height + ((typeof attrs.width === "number") ? 'px' : '')
-                });
-              }
+                if (!attrs.autoSize) {
+                  $root.style({
+                    width: attrs.width + ((typeof attrs.width === "number") ? 'px' : ''),
+                    height: attrs.height + ((typeof attrs.width === "number") ? 'px' : '')
+                  });
+                }
 
-              var config = new PVDHierarchyConfig(pvdAnimator, pvdDataSelection, pvdLayoutManager, pvdInfrastructureMapper, pvdTargetHierarchy, pvdChangeBorder, pvdWindowResize);
-              config.datatype = attrs.datatype;
-              config.autoSize = attrs.autoSize;
-              config.nodeWidth = attrs.sliceWidth;
-              config.sliceHeight = attrs.sliceHeight;
-              //config.triggerActivity = true;
-              config.visConfigId = attrs.visConfig || '';
+                var config = new PVDHierarchyConfig(pvdAnimator, pvdDataSelection, pvdLayoutManager, pvdInfrastructureMapper, pvdTargetHierarchy, pvdChangeBorder, pvdWindowResize);
+                config.datatype = attrs.datatype;
+                config.autoSize = attrs.autoSize;
+                config.nodeWidth = attrs.sliceWidth;
+                config.sliceHeight = attrs.sliceHeight;
+                //config.triggerActivity = true;
+                config.visConfigId = attrs.visConfig || '';
 
-              modifyConfig(config, infrastructure);
+                modifyConfig(config, infrastructure);
 
-              new PVDHierarchyGrid($root, infrastructure, config, attrs.hierarchiesDown);
+                new PVDHierarchyGrid($root, infrastructure, config, attrs.hierarchiesDown);
+              });
             });
-          });
-        }
-      },
-      scope: {
-        'infraId': '@?', // id of infrastructure*.json
-        'datatype': '@?', // mode like 'static', 'stream' (default: 'stream')
-        'width': '@?', // svg width
-        'height': '@?', // svg individual height
-        'sliceWidth': '@?', // slice width
-        'sliceHeight': '@?', // slice height
-        'hierarchiesDown': '@?', //show multiple hierarchies at the same time
-        'visConfig': '@?' // infrastructure.visConfig[...]
-      },
-      restrict: 'E'
-    };
-  })
+          }
+        },
+        scope: {
+          'infraId': '@?', // id of infrastructure*.json
+          'datatype': '@?', // mode like 'static', 'stream' (default: 'stream')
+          'width': '@?', // svg width
+          'height': '@?', // svg individual height
+          'sliceWidth': '@?', // slice width
+          'sliceHeight': '@?', // slice height
+          'hierarchiesDown': '@?', //show multiple hierarchies at the same time
+          'visConfig': '@?' // infrastructure.visConfig[...]
+        },
+        restrict: 'E'
+      };
+    }])
   .name; // name for export default

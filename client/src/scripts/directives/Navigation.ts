@@ -2,9 +2,9 @@
  * Created by Samuel Gratzl on 07.10.2014.
  */
 
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
-import * as $ from '@bower_components/jquery';
+import * as angular from 'angular';
+import * as d3 from 'd3';
+import * as $ from 'jquery';
 import { nextID, onDelete } from './VisUtils';
 import Animator, { PVDAnimator } from '../services/Animator';
 import UseCaseConfig, { PVDUseCaseConfig } from '../services/UseCaseConfig';
@@ -20,7 +20,7 @@ export default angular.module('directives.pvdNavigation', [
   DataService,
   Animator
 ])
-  .directive('pvdNavigation', function () {
+  .directive('pvdNavigation', [function () {
     return {
       templateUrl: 'views/templates/Navigation.html',
       controller: function ($scope, $rootScope, $element, $http,
@@ -167,5 +167,5 @@ export default angular.module('directives.pvdNavigation', [
         project: '@'
       }
     }
-  })
+  }])
   .name; // name for export default

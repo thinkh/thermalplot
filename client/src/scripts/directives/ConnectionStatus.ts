@@ -2,8 +2,8 @@
  * Created by Holger Stitz on 23.04.2014.
  */
 
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 import { nextID, onDelete } from './VisUtils';
 import DataService, { PVDDataService } from '../services/DataService';
 
@@ -14,7 +14,7 @@ import DataService, { PVDDataService } from '../services/DataService';
  * if the application is connected to the data service and if the streaming is enabled.
  */
 export default angular.module('directives.pvdConnectionStatus', [DataService])
-  .directive('pvdConnectionStatus', function (pvdDataService: PVDDataService) {
+  .directive('pvdConnectionStatus', ['pvdDataService', function (pvdDataService: PVDDataService) {
     return {
       template: `<div class="btn-group">
                 <button class="btn btn-default" ng-click="toggleConnection()" title="{{getTitle()}}">
@@ -88,5 +88,5 @@ export default angular.module('directives.pvdConnectionStatus', [DataService])
         });
       }
     };
-  })
+  }])
   .name; // name for export default

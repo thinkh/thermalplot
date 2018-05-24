@@ -1,7 +1,7 @@
 /**
  * Created by Samuel Gratzl on 16.04.2014.
  */
-import * as d3 from '@bower_components/d3/d3';
+import * as d3 from 'd3';
 import { IStepper } from '../services/Animator';
 
 /**

@@ -1,8 +1,8 @@
 /**
  * Created by Holger Stitz on 06.08.2015.
  */
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 import { PVDHierarchyConfig } from '../HierarchyConfig';
 import { PVDElementParent } from '../HierarchyNode';
 import { PVDADataAttributeVis } from './AAttributeVis';
@@ -23,11 +23,11 @@ export class PVDTimeAxis extends PVDADataAttributeVis {
 
   private _defConfig;
 
-  private time: d3.Scale.TimeScale;
+  private time: d3.time.Scale<any, any>;
 
   private xAxis;
 
-  constructor($parent: d3.Selection,
+  constructor($parent: d3.Selection<any>,
     config: PVDHierarchyConfig,
     private parent: PVDElementParent,
     defConfig: any) {

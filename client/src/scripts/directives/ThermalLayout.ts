@@ -1,9 +1,9 @@
 /**
  * Created by Holger Stitz on 19.11.2014.
  */
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
-import * as Physics from '@bower_components/physicsjs';
+import * as angular from 'angular';
+import * as d3 from 'd3';
+import Physics from 'physicsjs';
 import { PVDElementParent, PVDHierarchyNode } from './HierarchyNode';
 import Animator, { IAnimateable, PVDAnimator } from '../services/Animator';
 import { PVDHierarchyConfig } from './HierarchyConfig';
@@ -1464,7 +1464,17 @@ export default angular.module('directives.pvdThermalLayout', [
   TargetHierarchy,
   ChangeBorder
 ])
-  .directive('pvdThermalLayout', function (
+  .directive('pvdThermalLayout', [
+    'pvdInfrastructureLoader',
+    'pvdWindowResize',
+    '$timeout',
+    'pvdAnimator',
+    'pvdDataSelection',
+    'pvdInfrastructureMapper',
+    'pvdLayoutManager',
+    'pvdTargetHierarchy',
+    'pvdChangeBorder',
+    function (
     pvdInfrastructureLoader: PVDInfrastructureLoader,
     pvdWindowResize: PVDWindowResize,
     $timeout,
@@ -1495,7 +1505,7 @@ export default angular.module('directives.pvdThermalLayout', [
 
               pvdDataSelection.infra = infrastructure;
 
-              var $root: d3.Selection = $base.append('div')
+              var $root: d3.Selection<any> = $base.append('div')
                 .classed('cg-thermal', true)
                 .attr('data-infra-id', attrs.infraId);
               //.append('div');
@@ -1532,5 +1542,5 @@ export default angular.module('directives.pvdThermalLayout', [
       },
       restrict: 'E'
     };
-  })
+  }])
   .name; // name for export default

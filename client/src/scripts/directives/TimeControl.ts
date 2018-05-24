@@ -1,8 +1,8 @@
 /**
  * Created by Samuel Gratzl on 28.08.2014.
  */
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 import Animator, { PVDAnimator } from '../services/Animator';
 import { nextID, onDelete } from './VisUtils';
 import DataSelection, { PVDDataSelection, PVDSelection } from '../services/DataSelection';
@@ -11,7 +11,7 @@ import DataSelection, { PVDDataSelection, PVDSelection } from '../services/DataS
  * a simple animation control directive for pausing / resuming the animator and showing the current time
  */
 
-function createIncDec($svg: d3.Selection, shift: number, label: string, labelWidth: number, f: (delta) => any) {
+function createIncDec($svg: d3.Selection<any>, shift: number, label: string, labelWidth: number, f: (delta) => any) {
   var $binedit = $svg.append('g').attr('class', 'binui').attr('transform', 'translate(' + shift + ',10)');
   $binedit.append('text').text('\uf068').data([-1]).attr({
     x: -labelWidth, 'class': 'fat'
@@ -118,7 +118,7 @@ var timescales = [
   }
 ];
 
-function timeControl($svg: d3.Selection, pvdAnimator: PVDAnimator, pvdDataSelection: PVDDataSelection) {
+function timeControl($svg: d3.Selection<any>, pvdAnimator: PVDAnimator, pvdDataSelection: PVDDataSelection) {
   var timescale = timescales[9],
     now = 0,
     interacting = false;
@@ -141,7 +141,7 @@ function timeControl($svg: d3.Selection, pvdAnimator: PVDAnimator, pvdDataSelect
       if (brush.empty()) {
         pvdDataSelection.resetSelection();
       } else {
-        var r: number[] = brush.extent();
+        var r: number[] = <any>brush.extent();
         if (pvdDataSelection.isPinned) {
           pvdDataSelection.setPinnedSelection(r[1], r[1] - r[0], 0);
         } else {
@@ -231,7 +231,11 @@ export default angular.module('directives.pvdTimeControl', [
   Animator,
   DataSelection
 ])
-  .directive('pvdTimeControl', function (
+  .directive('pvdTimeControl', [
+    '$timeout',
+    'pvdAnimator',
+    'pvdDataSelection',
+    function (
     $timeout,
     pvdAnimator: PVDAnimator,
     pvdDataSelection: PVDDataSelection
@@ -248,5 +252,5 @@ export default angular.module('directives.pvdTimeControl', [
         timeControl($svg, pvdAnimator, pvdDataSelection);
       }
     };
-  })
+  }])
   .name; // name for export default

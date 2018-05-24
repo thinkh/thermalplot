@@ -1,7 +1,7 @@
 /**
  * Created by Holger Stitz on 18.08.2014.
  */
-import * as d3 from '@bower_components/d3/d3';
+import * as d3 from 'd3';
 import { IAttribute } from '../../models/Models';
 import { PVDHierarchyConfig } from '../HierarchyConfig';
 import { PVDElementParent } from '../HierarchyNode';
@@ -14,7 +14,7 @@ export class PVDSingleStream extends PVDADataAttributeVis {
   private line = d3.svg.line(); // linear || basis
   private incoming = false;
 
-  constructor($parent: d3.Selection, attr: IAttribute<number>,
+  constructor($parent: d3.Selection<any>, attr: IAttribute<number>,
     normalizer: INormalizer<number>,
     config: PVDHierarchyConfig,
     parent: PVDElementParent,
@@ -27,11 +27,11 @@ export class PVDSingleStream extends PVDADataAttributeVis {
     this.$node.append('path');
 
     this.line.interpolate(interpolate);
-    this.line.x((d) => this.scale(d.index));
+    this.line.x((d: any) => this.scale(d.index));
     if (this.incoming) {
-      this.line.y((d) => d.normalized);
+      this.line.y((d: any) => d.normalized);
     } else {
-      this.line.y((d) => -d.normalized);
+      this.line.y((d: any) => -d.normalized);
     }
   }
 

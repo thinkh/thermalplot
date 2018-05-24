@@ -2,14 +2,16 @@
  * Created by Samuel Gratzl on 14.03.2015.
  */
 
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 import ChangeBorderService, { PVDChangeBorder } from '../services/ChangeBorderService';
 
 export default angular.module('directives.pvdColorLegend', [
   ChangeBorderService
 ])
-  .directive('pvdColorLegend', function (pvdChangeBorder: PVDChangeBorder) {
+  .directive('pvdColorLegend', [
+    'pvdChangeBorder',
+    function (pvdChangeBorder: PVDChangeBorder) {
     return {
       templateUrl: 'views/templates/Legend.html',
       link: function ($scope, $element) {
@@ -23,5 +25,6 @@ export default angular.module('directives.pvdColorLegend', [
         'infraId': '@?' // id of infrastructure*.json
       }
     }
-  })
+  }
+])
   .name; // name for export default

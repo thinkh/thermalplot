@@ -1,20 +1,14 @@
-import angular from '@bower_components/angular';
-import * as angularCookies from '@bower_components/angular-cookies';
-import * as angularResource from '@bower_components/angular-resource';
-import * as angularSanitize from '@bower_components/angular-sanitize';
-import * as angularRoute from '@bower_components/angular-route';
-import * as angularBootstrap from '@bower_components/angular-bootstrap';
-import * as angularBootstrapDateTimePicker from '@bower_components/angular-bootstrap-datetimepicker';
-
-// views
-import 'file-loader?name=views/default_usecase.html!../views/default_usecase.html';
-import 'file-loader?name=views/usecase_selector.html!../views/usecase_selector.html';
+import * as angular from 'angular';
+import * as angularCookies from 'angular-cookies';
+import * as angularResource from 'angular-resource';
+import * as angularSanitize from 'angular-sanitize';
+import * as angularRoute from 'angular-route';
+import * as angularBootstrap from 'angular-ui-bootstrap';
+import * as angularBootstrapDateTimePicker from 'angularjs-bootstrap-datetimepicker';
 
 // controller
 import UseCaseSelectorController from './controllers/UseCaseSelectorController';
 import UseCaseRouteController from './controllers/UseCaseRouteController';
-
-console.log(angularBootstrapDateTimePicker);
 
 'use strict';
 
@@ -24,16 +18,16 @@ export default angular.module('pipesVsDamsApp', [
   angularSanitize,
   angularRoute,
   angularBootstrap,
-  //angularBootstrapDateTimePicker
+  angularBootstrapDateTimePicker,
   UseCaseSelectorController,
   UseCaseRouteController
 ])
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
-      .when("/uc/:usecase", {
+      .when('/uc/:usecase', {
         title: 'Use Case',
-        templateUrl: "views/default_usecase.html",
-        controller: "UseCaseRouteCtrl"
+        templateUrl: 'views/default_usecase.html',
+        controller: 'UseCaseRouteCtrl'
       })
       /*.when('/heb', {
        title: 'Hierarchical Edge Bundling',

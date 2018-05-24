@@ -2,8 +2,8 @@
  * Created by Samuel Gratzl on 02.05.2014.
  */
 
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 import { onDelete, nextID } from './VisUtils';
 import { PVDAnimator } from '../services/Animator';
 import { PVDDataService } from '../services/DataService';
@@ -13,7 +13,7 @@ import { PVDBookmarkService } from '../services/BookmarkService';
  * create a simple time selector, which will send back to the service to jump in time
  */
 export default angular.module('directives.pvdNavigator', [])
-  .directive('pvdNavigator', function () {
+  .directive('pvdNavigator', [function () {
     return {
       templateUrl: 'views/templates/Navigator.html',
       controller: function (
@@ -51,5 +51,5 @@ export default angular.module('directives.pvdNavigator', [])
       },
       restrict: 'EA'
     }
-  })
+  }])
   .name; // name for export default

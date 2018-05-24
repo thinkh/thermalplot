@@ -1,7 +1,7 @@
 /**
  * Created by Holger Stitz on 18.08.2014.
  */
-import * as d3 from '@bower_components/d3/d3';
+import * as d3 from 'd3';
 import { PVDANodeLinkLayout } from './NodeLinkLayouts';
 import { IPVDLayout, PVDLayoutBundle } from './Layout';
 import { DiagonalPVDLayoutEdge } from '../HierarchyEdgeOverlay';
@@ -51,7 +51,7 @@ export class PVDForceLayout extends PVDANodeLinkLayout implements IPVDLayout {
       }
     });
     if (this.createMappingLinks) {
-      var lookup = d3.map();
+      var lookup = d3.map<any>();
       nodes.forEach((node) => { lookup.set(node.node.fqIname, node); });
       nodes.forEach((node) => {
         var next = that.targetHierarchy.next(node.node.infrastructure.id);
@@ -71,13 +71,12 @@ export class PVDForceLayout extends PVDANodeLinkLayout implements IPVDLayout {
       });
     }
 
-    var s = [gridWidth / 8, (800) / 8];
     var f = d3.layout.force()
       .nodes(nodes)
       .links(links)
       //.charge(-750)
       //.linkDistance((link) => link.distance*3.5)
-      .size(s);
+      .size([gridWidth / 8, (800) / 8]);
 
     if (this.d3Options !== undefined) {
       if (this.d3Options.size !== undefined) {

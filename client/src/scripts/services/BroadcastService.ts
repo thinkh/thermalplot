@@ -1,7 +1,7 @@
 /**
  * Created by Holger Stitz on 15.04.2016.
  */
-import * as angular from '@bower_components/angular';
+import * as angular from 'angular';
 import Animator, { PVDAnimator } from "./Animator";
 import { nextID } from "../directives/VisUtils";
 import { DOIComponent, DOIFormula } from '../models/DOI';
@@ -198,4 +198,9 @@ export default angular.module('services.pvdBroadcastService', [
   Animator,
   DataService,
   DataSelection
-]).service('pvdBroadcastService', PVDBroadcastService).name;
+]).service('pvdBroadcastService', [
+  'pvdDataSelection',
+  'pvdDataService',
+  'pvdAnimator',
+  PVDBroadcastService
+]).name;

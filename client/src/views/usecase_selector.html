@@ -1,18 +1,19 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <div class="alert" style="margin-top:20px;" ng-hide="loading.visible === false" ng-class="{'alert-danger': loading.error}" role="alert" ng-bind="loading.text">...</div>
 
-      <table class="table table-striped table-bordered table-hover" style="margin-top: 20px;" ng-hide="loading.visible === true" ng-show="loading.visible === false">
+      <table class="table table-striped table-bordered table-hover" style="margin-top: 20px;">
         <thead>
-        <tr>
-          <th width="100%">Use Case</th>
-        </tr>
+          <tr>
+            <th width="100%">Use Case</th>
+          </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="case in usecases">
-          <td><a href="#/uc/{{case.name}}">{{case.title}}</a></td>
-        </tr>
+          <tr ng-repeat="case in usecases">
+            <td>
+              <a href="#/uc/{{case.name}}">{{case.title}}</a>
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>

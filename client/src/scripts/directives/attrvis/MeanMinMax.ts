@@ -1,8 +1,8 @@
 /**
  * Created by Samuel Gratzl on 18.09.2015.
  */
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 import { IColorer, defaultColorer, INormalizer } from '../VisUtils';
 import { PVDADataAttributeVis } from './AAttributeVis';
 import { IAttribute } from '../../models/Models';
@@ -31,18 +31,18 @@ export class PVDMeanMinMax extends PVDADataAttributeVis {
 
   private line = d3.svg.line()
     .interpolate('step') // linear || basis
-    .x((d) => this.scale(d.ts))
-    .y((d) => this.scaleY(d.hist.mean));
-  private $line: d3.Selection;
+    .x((d: any) => this.scale(d.ts))
+    .y((d: any) => this.scaleY(d.hist.mean));
+  private $line: d3.Selection<any>;
 
   private area = d3.svg.area()
     .interpolate('step') // linear || basis
-    .x((d) => this.scale(d.ts))
-    .y0((d) => this.scaleY(d.hist.min))
-    .y1((d) => this.scaleY(d.hist.max));
-  private $area: d3.Selection;
+    .x((d: any) => this.scale(d.ts))
+    .y0((d: any) => this.scaleY(d.hist.min))
+    .y1((d: any) => this.scaleY(d.hist.max));
+  private $area: d3.Selection<any>;
 
-  constructor($parent: d3.Selection, attr: IAttribute<number>, normalizer: INormalizer<number>, config: PVDHierarchyConfig, parent: PVDElementParent, defConfig: any) {
+  constructor($parent: d3.Selection<any>, attr: IAttribute<number>, normalizer: INormalizer<number>, config: PVDHierarchyConfig, parent: PVDElementParent, defConfig: any) {
     super($parent, attr, normalizer, config, parent, 'streamgraph meanminmax', 'svg');
     this.defConfig = defConfig; // override default config
 
@@ -140,11 +140,11 @@ export class PVDCategoryStack extends PVDADataAttributeVis {
 
   private area = d3.svg.area()
     .interpolate('step') // linear || basis
-    .x((d) => this.scale(d.ts))
-    .y0((d) => this.scaleY(d.min))
-    .y1((d) => this.scaleY(d.max));
+    .x((d: any) => this.scale(d.ts))
+    .y0((d: any) => this.scaleY(d.min))
+    .y1((d: any) => this.scaleY(d.max));
 
-  constructor($parent: d3.Selection, attr: IAttribute<number>, normalizer: INormalizer<number>, config: PVDHierarchyConfig, parent: PVDElementParent, defConfig: any) {
+  constructor($parent: d3.Selection<any>, attr: IAttribute<number>, normalizer: INormalizer<number>, config: PVDHierarchyConfig, parent: PVDElementParent, defConfig: any) {
     super($parent, attr, normalizer, config, parent, 'streamgraph categorystack', 'svg');
     this.defConfig = defConfig; // override default config
 
@@ -234,7 +234,7 @@ export class PVDCategoryStack extends PVDADataAttributeVis {
     $paths.enter().append('path');
     $paths.attr({
       title: (d) => d.key,
-      d: (d) => this.area(d.value),
+      d: (d: any) => this.area(d.value),
       'class': (d, i) => 'cat' + i + ' ' + d.key
     });
     $paths.exit().remove();

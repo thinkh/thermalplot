@@ -1,8 +1,8 @@
 /**
  * Created by Holger Stitz on 19.08.2014.
  */
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 
 /**
  * the current selection everything in milliseconds [ms]
@@ -90,4 +90,7 @@ export class PVDWindowResize {
   }
 }
 
-export default angular.module('services.pvdWindowResize', []).service('pvdWindowResize', PVDWindowResize).name;
+export default angular.module('services.pvdWindowResize', [])
+  .service('pvdWindowResize', [
+    PVDWindowResize
+  ]).name;

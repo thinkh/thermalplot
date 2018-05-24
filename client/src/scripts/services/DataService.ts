@@ -1,6 +1,6 @@
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
-import * as $ from '@bower_components/jquery';
+import * as angular from 'angular';
+import * as d3 from 'd3';
+import * as $ from 'jquery';
 import { Infrastructure, parseNode, Node, AttributeContainer } from "../models/Infrastructure";
 import Animator, { PVDAnimator, createStepper } from './Animator';
 import DataSelection, { PVDDataSelection } from './DataSelection';
@@ -715,9 +715,20 @@ export class PVDDataService {
     }
   }
 }
+
+/*export default angular.module('services.pvdDataService', [
+  Animator,
+  DataSelection,
+  InfrastructureLoader
+]).service('pvdDataService', PVDDataService).name;*/
 export default angular.module('services.pvdDataService', [
   Animator,
   DataSelection,
   InfrastructureLoader
 ])
-  .service('pvdDataService', PVDDataService).name;
+  .service('pvdDataService', [
+    'pvdAnimator',
+    'pvdDataSelection',
+    'pvdInfrastructureLoader',
+    PVDDataService
+  ]).name;

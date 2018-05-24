@@ -1,13 +1,12 @@
 /**
  * Created by Holger Stitz on 03.02.2015.
  */
-import angular from '@bower_components/angular';
-import * as $ from '@bower_components/jquery';
+import * as angular from 'angular';
+import * as $ from 'jquery';
 import DataService, { PVDDataService } from '../services/DataService';
 import { PVDUseCaseConfig } from '../services/UseCaseConfig';
 import { PVDLayoutManager } from '../services/LayoutManager';
 import { PVDBroadcastService } from '../services/BroadcastService';
-
 
 'use strict';
 
@@ -15,6 +14,8 @@ export default angular.module('controllers.UseCaseSelectorCtrl', [DataService])
   .controller('UseCaseSelectorCtrl', [
     '$rootScope', '$scope', '$http', 'pvdDataService',
     function ($rootScope, $scope, $http, dataService: PVDDataService) {
+      $scope.usecases = [];
+
       // stop websocket connection
       dataService.reset();
 

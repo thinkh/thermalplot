@@ -2,8 +2,8 @@
  * Created by Holger Stitz on 23.10.2014.
  */
 
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 import { PVDHierarchyConfig } from './HierarchyConfig';
 import { PVDHierarchyAInlay, PVDHierarchyDownInlayStacked, PVDHierarchyUpInlayStacked, PVDHierarchyDownInlay, PVDHierarchyUpInlay } from './HierarchyInlay';
 import { PVDHierarchyOracle, PVDElementParent, PVDHierarchyNode } from './HierarchyNode';
@@ -30,10 +30,10 @@ class SelectionDetailView implements PVDElementParent {
 
   private lateInit = false;
 
-  constructor(public $root: d3.Selection, public config: PVDHierarchyConfig, public targetHierarchy: PVDTargetHierarchy) {
+  constructor(public $root: d3.Selection<any>, public config: PVDHierarchyConfig, public targetHierarchy: PVDTargetHierarchy) {
     this.attachListener();
 
-    this.config.gridWidth = this.$root[0][0].getBoundingClientRect()['width'];
+    this.config.gridWidth = (<Element>this.$root[0][0]).getBoundingClientRect()['width'];
   }
 
   private attachListener(): void {
@@ -69,7 +69,7 @@ class SelectionDetailView implements PVDElementParent {
     });
 
     this.config.windowResize.on('change' + id, () => {
-      this.config.gridWidth = this.$root[0][0].getBoundingClientRect()['width'];
+      this.config.gridWidth = (<Element>this.$root[0][0]).getBoundingClientRect()['width'];
       this.relayout();
     });
 
@@ -146,7 +146,17 @@ export default angular.module('directives.pvdSelectionDetailView', [
   TargetHierarchy,
   ChangeBorder
 ])
-  .directive('pvdSelectionDetailView', function (
+  .directive('pvdSelectionDetailView', [
+    'pvdInfrastructureLoader',
+    'pvdWindowResize',
+    '$timeout',
+    'pvdAnimator',
+    'pvdDataSelection',
+    'pvdInfrastructureMapper',
+    'pvdLayoutManager',
+    'pvdTargetHierarchy',
+    'pvdChangeBorder',
+    function (
     pvdInfrastructureLoader: PVDInfrastructureLoader,
     pvdWindowResize: PVDWindowResize,
     $timeout,
@@ -166,7 +176,7 @@ export default angular.module('directives.pvdSelectionDetailView', [
           $timeout(() => { //skip one time to ensure that the svg is properly layouted
             var $base = d3.select(element[0]);
 
-            var $root: d3.Selection = $base.append('div')
+            var $root: d3.Selection<any> = $base.append('div')
               .classed('hg-matchingviewer', true);
 
             var config = new PVDHierarchyConfig(pvdAnimator, pvdDataSelection, pvdLayoutManager, pvdInfrastructureMapper, pvdTargetHierarchy, pvdChangeBorder, pvdWindowResize);
@@ -185,6 +195,6 @@ export default angular.module('directives.pvdSelectionDetailView', [
       },
       restrict: 'EA'
     }
-  })
+  }])
   .name; // name for export default
 

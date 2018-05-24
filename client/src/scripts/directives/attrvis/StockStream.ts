@@ -1,8 +1,8 @@
 /**
  * Created by Samuel Gratzl on 11.03.2015.
  */
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 import { Node } from '../../models/Infrastructure';
 import { IAttribute } from '../../models/Models';
 import { PVDHierarchyConfig } from '../HierarchyConfig';
@@ -65,7 +65,7 @@ export class PVDStockStream extends PVDADataAttributeVis {
   private $stripePattern;
   private $stripeMask;
 
-  constructor($parent: d3.Selection, attr: IAttribute<number>,
+  constructor($parent: d3.Selection<any>, attr: IAttribute<number>,
     normalizer: INormalizer<number>,
     config: PVDHierarchyConfig,
     private parent: PVDElementParent,
@@ -171,8 +171,8 @@ export class PVDStockStream extends PVDADataAttributeVis {
 
     var node: Node = <Node>this.attr.parent;
     this.line.interpolate(this.defConfig.interpolate)
-      .x((d) => { return this.scale(d.index); })
-      .y((d) => { return this.scaleY(d.value); });
+      .x((d: any) => { return this.scale(d.index); })
+      .y((d: any) => { return this.scaleY(d.value); });
 
     this.gradientStops[0].color = this.gradientStops[1].color = this.defConfig.colorPos;
     this.gradientStops[2].color = this.gradientStops[3].color = this.defConfig.colorNeg;
@@ -198,7 +198,7 @@ export class PVDStockStream extends PVDADataAttributeVis {
 
     if (this.defConfig.selectable) {
       this.$node.on('click', () => {
-        d3.event.stopPropagation();
+        (<Event>d3.event).stopPropagation();
 
         // exclude external and intermediate nodes
         if (node.has() || node === node.infrastructure.external) { return; }

@@ -1,9 +1,9 @@
 /**
  * Created by Samuel Gratzl on 11.03.2015.
  */
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
-import * as $ from '@bower_components/jquery';
+import * as angular from 'angular';
+import * as d3 from 'd3';
+import * as $ from 'jquery';
 import { PVDAAttributeVis, resolveRaw } from './AAttributeVis';
 import { nextID, INormalizer } from '../VisUtils';
 import { DOIAttribute } from '../../models/DOI';
@@ -59,10 +59,10 @@ export class PVDDOIStreamGraph extends PVDAAttributeVis {
 
   private lastData = [];
   private lastDOIData = [];
-  private brightness: d3.Scale.LinearScale;
-  private weightShift: d3.Scale.LinearScale;
+  private brightness: d3.scale.Linear<any, any>;
+  private weightShift: d3.scale.Linear<any, any>;
 
-  constructor($parent: d3.Selection, attr: DOIAttribute,
+  constructor($parent: d3.Selection<any>, attr: DOIAttribute,
     normalizer: INormalizer<number>,
     config: PVDHierarchyConfig,
     private parent: PVDElementParent,
@@ -73,9 +73,9 @@ export class PVDDOIStreamGraph extends PVDAAttributeVis {
     this.scaleFactor[1] = this.defConfig.heightScaleFactor;
 
     this.line
-      .x((d) => { return this.scale(d.index); });
+      .x((d: any) => { return this.scale(d.index); });
     this.area
-      .x((d) => { return this.scale(d.index); });
+      .x((d: any) => { return this.scale(d.index); });
 
     this.$weightGradients = this.$node.append('defs');
 
@@ -156,7 +156,7 @@ export class PVDDOIStreamGraph extends PVDAAttributeVis {
 
     if (this.defConfig.selectable) {
       this.$node.on('click', () => {
-        d3.event.stopPropagation();
+        (<Event>d3.event).stopPropagation();
 
         // exclude external and intermediate nodes
         if (node.has() || node === node.infrastructure.external) { return; }
@@ -345,7 +345,7 @@ export class PVDDOIStreamGraph extends PVDAAttributeVis {
   private createWeightGradients(time: number[], dt: number) {
     var f = this.formula;
     //compute the number of different weights
-    var s = d3.set(f.components.map((d) => d3.round(d.weight, 2))).values().map((d) => +d);
+    var s = d3.set(f.components.map((d) => d3.round(d.weight, 2).toString())).values().map((d) => +d);
 
     var $gradients = this.$weightGradients.selectAll('.gradient').data(s);
     $gradients.exit().remove();
@@ -422,9 +422,9 @@ export class PVDDOIStreamGraph extends PVDAAttributeVis {
     var h = parseInt(this.$node.style('height'));
 
     var y = this.updateYScale(def, doi, h);
-    this.line.y((d) => y(d.value));
-    this.area.y0((d) => y(d.v_neg));
-    this.area.y1((d) => y(d.v_pos));
+    this.line.y((d: any) => y(d.value));
+    this.area.y0((d: any) => y(d.v_neg));
+    this.area.y1((d: any) => y(d.v_pos));
 
     //console.log(this.attr.name, data);
     var zeroValue = 0;

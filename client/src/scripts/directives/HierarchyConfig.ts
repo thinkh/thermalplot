@@ -2,8 +2,8 @@
  * Created by Samuel Gratzl on 11.03.2015.
  */
 
-import * as angular from '@bower_components/angular';
-import * as d3 from '@bower_components/d3/d3';
+import * as angular from 'angular';
+import * as d3 from 'd3';
 import { INormalizer } from './VisUtils';
 import { Node } from '../models/Infrastructure';
 import { createStepper, PVDAnimator } from '../services/Animator';

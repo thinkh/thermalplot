@@ -85,5 +85,16 @@ module.exports = {
   },
   devServer: {
     contentBase: path.resolve(__dirname, 'dist/')
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: "vendors",
+          chunks: "all"
+        }
+      }
+    }
   }
 };

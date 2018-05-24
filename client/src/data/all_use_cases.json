@@ -1,0 +1,14 @@
+[
+    {
+        "name": "thermal_ftse250",
+        "title": "Thermal FTSE 250 (since 2016)"
+    },
+    {
+        "name": "thermal_oecd",
+        "title": "Thermal OECD"
+    },
+    {
+        "name": "thermal_sp500",
+        "title": "Thermal S&P 500 (since 2016)"
+    }
+]

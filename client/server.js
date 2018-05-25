@@ -1,11 +1,13 @@
 /* eslint no-console: 0 */
 
 const path = require('path');
+const http = require('http');
 const express = require('express');
 const webpack = require('webpack');
 const webpackMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const config = require('./webpack.config.js');
+const socketio = require('socket.io');
 
 const isDeveloping = process.env.NODE_ENV !== 'production';
 const port = isDeveloping ? 3000 : process.env.PORT;
@@ -57,9 +59,21 @@ if (isDeveloping) {
     });
 }
 
-app.listen(port, (err) => {
+const server = app.listen(port, (err) => {
     if (err) {
         console.log(err);
     }
-    console.info('==> 🌎 Listening on port %s. Open up http://localhost:%s/ in your browser.', port, port);
+    console.info('==> Listening on port %s. Open up http://localhost:%s/ in your browser.', port, port);
+});
+
+const io = socketio(server);
+
+io.on('connection', function (socket) {
+    console.log('New socket connection with id', socket.id);
+
+    socket.emit('msg', { data: { internal: 'hello world' } }); // initial message
+
+    socket.on('msg', function (data) {
+        console.log(data);
+    });
 });

@@ -1,6 +1,8 @@
 import * as angular from 'angular';
 import * as d3 from 'd3';
 import * as $ from 'jquery';
+import * as io from 'socket.io-client';
+import { Socket } from 'socket.io-client';
 import { Infrastructure, parseNode, Node, AttributeContainer } from "../models/Infrastructure";
 import Animator, { PVDAnimator, createStepper } from './Animator';
 import DataSelection, { PVDDataSelection } from './DataSelection';
@@ -69,7 +71,9 @@ class TimeConverter {
  * connects to the websocket service, parses messages and pushes the values to the corresponding attributes
  */
 export class PVDDataService {
-  private ws: WebSocket = null;
+  private socket: SocketIOClient.Socket = io({
+    autoConnect: false
+  });
   private listeners = d3.dispatch('open', 'error', 'close', 'message', 'internalMessage', 'bulkSent', 'startedStream', 'stoppedStream');
 
   /**
@@ -81,8 +85,6 @@ export class PVDDataService {
   private _defaultInfra: Infrastructure;
 
   private _maxTimestamp = 0;
-
-  private _prevUri = (location.protocol === 'https:' ? 'wss' : 'ws') + '://' + document.location.host + '/vast/socket';
 
   private callbacks = {};
 
@@ -104,10 +106,6 @@ export class PVDDataService {
     this._cacheByInfra = d3.map();
     this._defaultInfra = null;
     this._maxTimestamp = 0;
-  }
-
-  set uri(value) {
-    this._prevUri = value;
   }
 
   /**
@@ -168,7 +166,7 @@ export class PVDDataService {
    * @returns {boolean}
    */
   get isConnected() {
-    return this.ws !== null;
+    return this.socket.connected;
   }
 
   /**
@@ -176,19 +174,20 @@ export class PVDDataService {
    * @param uri
    * @returns {boolean}
    */
-  connect(uri = this._prevUri): boolean {
+  connect(): boolean {
     if (this.isConnected) {
       return false;
     }
-    //store used uri
-    this._prevUri = uri;
-    this.ws = new WebSocket(uri);
     console.log('Connect to WebSocket');
 
-    this.ws.onopen = () => this.onopen();
-    this.ws.onclose = () => this.onclose();
-    this.ws.onerror = (error) => this.onerror((<ErrorEvent>error));
-    this.ws.onmessage = (msg) => this.onmessage(msg);
+    this.socket.on('connect', () => this.onopen());
+    this.socket.on('disconnect', () => this.onclose());
+    this.socket.on('connect_error', (error) => this.onerror((<ErrorEvent>error)));
+    this.socket.on('error', (error) => this.onerror((<ErrorEvent>error)));
+    this.socket.on('timeout', (error) => this.onerror((<ErrorEvent>error)));
+    this.socket.on('msg', (msg) => this.onmessage(msg));
+
+    this.socket.connect();
     return true;
   }
 
@@ -201,8 +200,7 @@ export class PVDDataService {
       return false;
     }
     console.log('Disconnect from WebSocket');
-    this.ws.close();
-    this.ws = null;
+    this.socket.disconnect();
     return true;
   }
 
@@ -219,10 +217,10 @@ export class PVDDataService {
       msg = JSON.stringify(msg);
     }
     console.debug('send message: ', msg);
-    if (this.ws.readyState != this.ws.OPEN) {
+    if (!this.isConnected) {
       this.initialMessages.push(msg);
     } else {
-      this.ws.send(msg);
+      this.socket.emit('msg', msg);
     }
     return true;
   }
@@ -233,7 +231,7 @@ export class PVDDataService {
   }
 
   private onopen() {
-    this.initialMessages.forEach((m) => this.ws.send(m));
+    this.initialMessages.forEach((m) => this.socket.emit('msg', m));
     this.initialMessages = [];
     this.fire('open');
   }

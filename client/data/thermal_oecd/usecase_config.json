@@ -2,7 +2,7 @@
   "title": "Thermal OECD",
   "controller": "InfrastructureCtrl",
   "templateUrl": "api/uc/thermal_oecd/static_data/thermal_oecd.tpl.html",
-  "socketStream": "api/thermal_oecd/socket",
+  "socketStream": "thermal_oecd",
   "bookmarksFile": "",
   "traitsFile": "api/uc/thermal_oecd/static_data/traits.json",
   "infrastructureFiles": [

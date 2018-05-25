@@ -71,9 +71,7 @@ class TimeConverter {
  * connects to the websocket service, parses messages and pushes the values to the corresponding attributes
  */
 export class PVDDataService {
-  private socket: SocketIOClient.Socket = io({
-    autoConnect: false
-  });
+  private socket: SocketIOClient.Socket = null;
   private listeners = d3.dispatch('open', 'error', 'close', 'message', 'internalMessage', 'bulkSent', 'startedStream', 'stoppedStream');
 
   /**
@@ -85,6 +83,8 @@ export class PVDDataService {
   private _defaultInfra: Infrastructure;
 
   private _maxTimestamp = 0;
+
+  private _prevUseCase = '';
 
   private callbacks = {};
 
@@ -106,6 +106,10 @@ export class PVDDataService {
     this._cacheByInfra = d3.map();
     this._defaultInfra = null;
     this._maxTimestamp = 0;
+  }
+
+  set useCase(value) {
+    this._prevUseCase = value;
   }
 
   /**
@@ -166,7 +170,7 @@ export class PVDDataService {
    * @returns {boolean}
    */
   get isConnected() {
-    return this.socket.connected;
+    return this.socket !== null && this.socket.connected;
   }
 
   /**
@@ -174,11 +178,18 @@ export class PVDDataService {
    * @param uri
    * @returns {boolean}
    */
-  connect(): boolean {
+  connect(useCase = this._prevUseCase): boolean {
     if (this.isConnected) {
       return false;
     }
     console.log('Connect to WebSocket');
+
+    this.socket = io({
+      autoConnect: false,
+      query: {
+        uc: useCase
+      }
+    });
 
     this.socket.on('connect', () => this.onopen());
     this.socket.on('disconnect', () => this.onclose());
@@ -188,6 +199,7 @@ export class PVDDataService {
     this.socket.on('msg', (msg) => this.onmessage(msg));
 
     this.socket.connect();
+
     return true;
   }
 
@@ -201,6 +213,7 @@ export class PVDDataService {
     }
     console.log('Disconnect from WebSocket');
     this.socket.disconnect();
+    this.socket = null;
     return true;
   }
 

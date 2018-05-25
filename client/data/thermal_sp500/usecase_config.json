@@ -2,7 +2,7 @@
   "title": "Thermal S&P 500 (since 2016)",
   "controller": "InfrastructureCtrl",
   "templateUrl": "api/uc/thermal_sp500/static_data/thermal_sp500.tpl.html",
-  "socketStream": "api/thermal_sp500/socket",
+  "socketStream": "thermal_sp500",
   "bookmarksFile": "",
   "infrastructureFiles": [
     "api/uc/thermal_sp500/static_data/sp500.json"

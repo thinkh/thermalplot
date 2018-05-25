@@ -8,7 +8,7 @@
     "treemap": "api/uc/thermal_ftse250/static_data/thermal_ftse250_treemap.tpl.html",
     "detail": "api/uc/thermal_ftse250/static_data/thermal_ftse250_detail.tpl.html"
   },
-  "socketStream": "api/thermal_ftse250/socket",
+  "socketStream": "thermal_ftse250",
   "bookmarksFile": "",
   "infrastructureFiles": [
     "api/uc/thermal_ftse250/static_data/ftse250.json"

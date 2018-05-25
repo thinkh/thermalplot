@@ -7,25 +7,3 @@ import './style.scss';
 import * as io from 'socket.io-client';
 
 import './scripts/app'
-
-
-/*const socket = io({
-    autoConnect: false
-});
-
-socket.on('connect', function () {
-    console.log('new socket connection with id', socket.id);
-    socket.emit('event', 'bla'); // initial message
-});
-socket.on('event', function (data) {
-    console.log('socket event', data);
-
-});
-socket.on('disconnect', function () {
-    console.log('socket disconnect');
-});
-
-setTimeout(() => {
-    socket.connect();
-}, 2000);
-*/

@@ -1,5 +1,5 @@
 /* eslint no-console: 0 */
-
+const fs = require('fs');
 const path = require('path');
 const http = require('http');
 const express = require('express');
@@ -8,6 +8,8 @@ const webpackMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const config = require('./webpack.config.js');
 const socketio = require('socket.io');
+
+const DATA_DIR = __dirname + '/data/';
 
 const isDeveloping = process.env.NODE_ENV !== 'production';
 const port = isDeveloping ? 3000 : process.env.PORT;
@@ -41,15 +43,15 @@ if (isDeveloping) {
     });
 
     app.get('/api/all_use_cases', function response(req, res) {
-        res.sendFile(__dirname + '/data/all_use_cases.json');
+        res.sendFile(DATA_DIR + '/all_use_cases.json');
     });
 
     app.get('/api/uc/:usecase/$', function response(req, res) {
-        res.sendFile(__dirname + '/data/' + req.params.usecase + '/usecase_config.json');
+        res.sendFile(DATA_DIR + req.params.usecase + '/usecase_config.json');
     });
 
     app.get('/api/uc/:usecase/static_data/:file', function response(req, res) {
-        res.sendFile(__dirname + '/data/' + req.params.usecase + '/' + req.params.file);
+        res.sendFile(DATA_DIR + req.params.usecase + '/' + req.params.file);
     });
 
 } else {
@@ -68,8 +70,19 @@ const server = app.listen(port, (err) => {
 
 const io = socketio(server);
 
+io.use((socket, next) => {
+    let useCaseName = socket.handshake.query.uc;
+    console.log('check if use case %s exists', useCaseName);
+
+    if (fs.existsSync(path.join(DATA_DIR, useCaseName))) {
+        return next();
+    }
+    return next(new Error('unknown use case error'));
+});
+
 io.on('connection', function (socket) {
-    console.log('New socket connection with id', socket.id);
+    let useCaseName = socket.handshake.query.uc;
+    console.log('New socket connection to %s with id %s', useCaseName, socket.id);
 
     socket.emit('msg', { data: { internal: 'hello world' } }); // initial message
 

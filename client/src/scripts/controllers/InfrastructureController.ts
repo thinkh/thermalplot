@@ -158,13 +158,14 @@ class InfrastructureController {
         that.pvdLayoutManager.initialized();
 
         if (that.socketStream !== "") {
-          // bind default infrastructure to data service and selection
+          // bind default infrastructure to data service and selection (special case for ThermalPlot)
+          // TODO make this default, when removing CloudGazer code
           that.pvdDataService.infrastructure = that.pvdInfrastructureLoader.getUnchecked(that.defaultInfraId);
           that.pvdDataSelection.infrastructure = that.pvdInfrastructureLoader.getUnchecked(that.defaultInfraId);
 
           // auto connect to data stream on websocket (replace regex: remove possible filneame URL and just use directories)
           //that.pvdDataService.uri = (location.protocol === 'https:' ? 'wss' : 'ws') + '://' + document.location.host + document.location.pathname.replace(/[^\/]*$/, '') + that.socketStream;
-          //that.pvdDataService.uri = that.socketStream;
+          that.pvdDataService.useCase = that.socketStream;
           that.pvdDataService.connect();
         }
 

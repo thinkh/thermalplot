@@ -38,8 +38,22 @@ if (isDeveloping) {
         res.end();
     });
 
+    app.get('/version', function response(req, res) {
+        const pjson = require('./package.json');
+        res.write(pjson.version);
+        res.end();
+    });
+
     app.get('/views/:file', function response(req, res) {
         res.sendFile(__dirname + '/src/views/' + req.params.file);
+    });
+
+    app.get('/views/templates/:file', function response(req, res) {
+        res.sendFile(__dirname + '/src/views/templates/' + req.params.file);
+    });
+
+    app.get('/images/:file', function response(req, res) {
+        res.sendFile(__dirname + '/src/images/' + req.params.file);
     });
 
     app.get('/api/all_use_cases', function response(req, res) {

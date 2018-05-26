@@ -436,8 +436,6 @@ export default angular.module('pipesVsDamsApp', [
       pvdChangeBorder: PVDChangeBorder
     ) {
       return {
-        controller: function ($scope) {
-        },
         compile: function (element, attrs: any) {
           attrs.datatype = angular.isDefined(attrs.datatype) ? attrs.datatype : 'stream';
           attrs.autoSize = (!angular.isDefined(attrs.width) && !angular.isDefined(attrs.height));

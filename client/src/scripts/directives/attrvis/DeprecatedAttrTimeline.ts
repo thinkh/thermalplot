@@ -256,7 +256,7 @@ export class PVDDeprecatedAttrTimeline<T> implements IAnimateable {
 angular.module('pipesVsDamsApp').directive('pvdDeprecatedAttrTimeline', function (pvdAnimator: PVDAnimator, pvdDataSelection: PVDDataSelection, pvdInfrastructureLoader: PVDInfrastructureLoader, $timeout) {
   return {
     templateUrl: 'views/templates/Timeline.html',
-    controller: function ($scope) {
+    controller: ['$scope', function ($scope) {
       $scope.id = nextID();
       var modeLookup = d3.map({
         "HEATMAP": ETimeLineMode.HEATMAP,
@@ -320,7 +320,7 @@ angular.module('pipesVsDamsApp').directive('pvdDeprecatedAttrTimeline', function
           $scope.$base.transition().attr("height", h);
         }
       }
-    },
+    }],
     compile: function (element, attrs: any) {
       attrs.frequencies = angular.isDefined(attrs.frequencies) ? attrs.frequencies : false;
       attrs.width = angular.isDefined(attrs.width) ? attrs.width : "100%";

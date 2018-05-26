@@ -400,37 +400,35 @@ export default angular.module('directives.pvdChangeBorderRuler', [
       pvdDataSelection: PVDDataSelection
     ) {
       return {
-        controller: function ($scope) {
-        },
         compile: function (element, attrs: any) {
           attrs.interactiveSegments = angular.isDefined(attrs.interactiveSegments) ? attrs.interactiveSegments : false;
+          return this.link;
+        },
+        link: function ($scope, element, attrs) {
+          $timeout(() => { //skip one time to ensure that the svg is properly layouted
+            var $base = d3.select(element[0]);
 
-          return function ($scope, element) {
-            $timeout(() => { //skip one time to ensure that the svg is properly layouted
-              var $base = d3.select(element[0]);
+            var $root: d3.Selection<any> = $base.append('div')
+              .classed('change-border-ruler', true)
+              .classed(attrs.orientation, true);
 
-              var $root: d3.Selection<any> = $base.append('div')
-                .classed('change-border-ruler', true)
-                .classed(attrs.orientation, true);
+            var config = new RulerConfiguration();
+            config.orientation = attrs.orientation;
+            config.interactiveSegments = attrs.interactiveSegments;
 
-              var config = new RulerConfiguration();
-              config.orientation = attrs.orientation;
-              config.interactiveSegments = attrs.interactiveSegments;
+            if (config.orientation === 'horizontal') {
+              config.width = parseInt(d3.select($root.node().parentNode).style('width'));
+              config.height = window.innerHeight;
+              config.changeBorder = pvdChangeBorder.vertical;
 
-              if (config.orientation === 'horizontal') {
-                config.width = parseInt(d3.select($root.node().parentNode).style('width'));
-                config.height = window.innerHeight;
-                config.changeBorder = pvdChangeBorder.vertical;
+            } else {
+              config.width = parseInt(d3.select($root.node().parentNode).style('width'));
+              config.height = window.innerHeight;
+              config.changeBorder = pvdChangeBorder.horizontal;
+            }
 
-              } else {
-                config.width = parseInt(d3.select($root.node().parentNode).style('width'));
-                config.height = window.innerHeight;
-                config.changeBorder = pvdChangeBorder.horizontal;
-              }
-
-              new ChangeBorderRuler($root, config, pvdChangeBorder, pvdWindowResize, pvdDataSelection);
-            });
-          }
+            new ChangeBorderRuler($root, config, pvdChangeBorder, pvdWindowResize, pvdDataSelection);
+          });
         },
         scope: {
           'interactiveSegments': '@?', // true || false (default)

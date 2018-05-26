@@ -157,44 +157,41 @@ export default angular.module('directives.pvdSelectionDetailView', [
     'pvdTargetHierarchy',
     'pvdChangeBorder',
     function (
-    pvdInfrastructureLoader: PVDInfrastructureLoader,
-    pvdWindowResize: PVDWindowResize,
-    $timeout,
-    pvdAnimator: PVDAnimator,
-    pvdDataSelection: PVDDataSelection,
-    pvdInfrastructureMapper: PVDInfrastructureMapper,
-    pvdLayoutManager: PVDLayoutManager,
-    pvdTargetHierarchy: PVDTargetHierarchy,
-    pvdChangeBorder: PVDChangeBorder
-  ) {
-    return {
-      controller: function ($scope) {
+      pvdInfrastructureLoader: PVDInfrastructureLoader,
+      pvdWindowResize: PVDWindowResize,
+      $timeout,
+      pvdAnimator: PVDAnimator,
+      pvdDataSelection: PVDDataSelection,
+      pvdInfrastructureMapper: PVDInfrastructureMapper,
+      pvdLayoutManager: PVDLayoutManager,
+      pvdTargetHierarchy: PVDTargetHierarchy,
+      pvdChangeBorder: PVDChangeBorder
+    ) {
+      return {
+        compile: function (element, attrs: any) {
+          return function ($scope, element) {
+            $timeout(() => { //skip one time to ensure that the svg is properly layouted
+              var $base = d3.select(element[0]);
 
-      },
-      compile: function (element, attrs: any) {
-        return function ($scope, element) {
-          $timeout(() => { //skip one time to ensure that the svg is properly layouted
-            var $base = d3.select(element[0]);
+              var $root: d3.Selection<any> = $base.append('div')
+                .classed('hg-matchingviewer', true);
 
-            var $root: d3.Selection<any> = $base.append('div')
-              .classed('hg-matchingviewer', true);
+              var config = new PVDHierarchyConfig(pvdAnimator, pvdDataSelection, pvdLayoutManager, pvdInfrastructureMapper, pvdTargetHierarchy, pvdChangeBorder, pvdWindowResize);
+              config.visConfigId = attrs.visConfig || 'detailView';
 
-            var config = new PVDHierarchyConfig(pvdAnimator, pvdDataSelection, pvdLayoutManager, pvdInfrastructureMapper, pvdTargetHierarchy, pvdChangeBorder, pvdWindowResize);
-            config.visConfigId = attrs.visConfig || 'detailView';
+              if (pvdDataSelection.infra !== null) {
+                modifyConfig(config, pvdDataSelection.infra);
+              }
 
-            if (pvdDataSelection.infra !== null) {
-              modifyConfig(config, pvdDataSelection.infra);
-            }
-
-            new SelectionDetailView($root, config, pvdTargetHierarchy);
-          });
-        }
-      },
-      scope: {
-        'visConfig': '@?' // modifier for infrastructure.visConfig[...]
-      },
-      restrict: 'EA'
-    }
-  }])
+              new SelectionDetailView($root, config, pvdTargetHierarchy);
+            });
+          }
+        },
+        scope: {
+          'visConfig': '@?' // modifier for infrastructure.visConfig[...]
+        },
+        restrict: 'EA'
+      }
+    }])
   .name; // name for export default
 

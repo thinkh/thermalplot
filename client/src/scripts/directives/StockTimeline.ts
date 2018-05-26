@@ -141,6 +141,10 @@ class StockTimeline implements IAnimateable {
 
     d3.csv(that.attrs.csvFile,
       function (err, data) {
+        if (err) {
+          throw new Error('Error loading csv data');
+        }
+
         that.data = data.map((d) => {
           return {
             date: that.parseDate(d.date),

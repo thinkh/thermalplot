@@ -1475,72 +1475,70 @@ export default angular.module('directives.pvdThermalLayout', [
     'pvdTargetHierarchy',
     'pvdChangeBorder',
     function (
-    pvdInfrastructureLoader: PVDInfrastructureLoader,
-    pvdWindowResize: PVDWindowResize,
-    $timeout,
-    pvdAnimator: PVDAnimator,
-    pvdDataSelection: PVDDataSelection,
-    pvdInfrastructureMapper: PVDInfrastructureMapper,
-    pvdLayoutManager: PVDLayoutManager,
-    pvdTargetHierarchy: PVDTargetHierarchy,
-    pvdChangeBorder: PVDChangeBorder
-  ) {
-    return {
-      controller: function ($scope) {
-      },
-      compile: function (element, attrs: any) {
-        attrs.datatype = angular.isDefined(attrs.datatype) ? attrs.datatype : 'stream';
-        attrs.sliceWidth = angular.isDefined(attrs.sliceWidth) ? +attrs.sliceWidth : 20;
-        attrs.sliceHeight = angular.isDefined(attrs.sliceHeight) ? +attrs.sliceHeight : 20;
-        attrs.initDirectiveOnly = (angular.isDefined(attrs.initDirectiveOnly) && attrs.initDirectiveOnly === 'true') ? true : false;
-        attrs.isStandalone = (angular.isDefined(attrs.isStandalone) && attrs.isStandalone === 'true') ? true : false;
+      pvdInfrastructureLoader: PVDInfrastructureLoader,
+      pvdWindowResize: PVDWindowResize,
+      $timeout,
+      pvdAnimator: PVDAnimator,
+      pvdDataSelection: PVDDataSelection,
+      pvdInfrastructureMapper: PVDInfrastructureMapper,
+      pvdLayoutManager: PVDLayoutManager,
+      pvdTargetHierarchy: PVDTargetHierarchy,
+      pvdChangeBorder: PVDChangeBorder
+    ) {
+      return {
+        compile: function (element, attrs: any) {
+          attrs.datatype = angular.isDefined(attrs.datatype) ? attrs.datatype : 'stream';
+          attrs.sliceWidth = angular.isDefined(attrs.sliceWidth) ? +attrs.sliceWidth : 20;
+          attrs.sliceHeight = angular.isDefined(attrs.sliceHeight) ? +attrs.sliceHeight : 20;
+          attrs.initDirectiveOnly = (angular.isDefined(attrs.initDirectiveOnly) && attrs.initDirectiveOnly === 'true') ? true : false;
+          attrs.isStandalone = (angular.isDefined(attrs.isStandalone) && attrs.isStandalone === 'true') ? true : false;
 
-        return function ($scope, element) {
-          pvdInfrastructureLoader.get(attrs.infraId).then((infrastructure: Infrastructure) => {
-            $timeout(() => { //skip one time to ensure that the svg is properly layouted
+          return function ($scope, element) {
+            pvdInfrastructureLoader.get(attrs.infraId).then((infrastructure: Infrastructure) => {
+              $timeout(() => { //skip one time to ensure that the svg is properly layouted
 
-              //var path:string = $scope.path;
-              //var attr = infrastructure.findAttr(path);
-              var $base = d3.select(element[0]);
+                //var path:string = $scope.path;
+                //var attr = infrastructure.findAttr(path);
+                var $base = d3.select(element[0]);
 
-              pvdDataSelection.infra = infrastructure;
+                pvdDataSelection.infra = infrastructure;
 
-              var $root: d3.Selection<any> = $base.append('div')
-                .classed('cg-thermal', true)
-                .attr('data-infra-id', attrs.infraId);
-              //.append('div');
+                var $root: d3.Selection<any> = $base.append('div')
+                  .classed('cg-thermal', true)
+                  .attr('data-infra-id', attrs.infraId);
+                //.append('div');
 
-              var config = new PVDHierarchyConfig(pvdAnimator, pvdDataSelection, pvdLayoutManager, pvdInfrastructureMapper, pvdTargetHierarchy, pvdChangeBorder, pvdWindowResize);
-              config.datatype = attrs.datatype;
-              config.autoSize = attrs.autoSize;
-              config.nodeWidth = attrs.sliceWidth;
-              config.sliceHeight = attrs.sliceHeight;
-              //config.triggerActivity = true;
+                var config = new PVDHierarchyConfig(pvdAnimator, pvdDataSelection, pvdLayoutManager, pvdInfrastructureMapper, pvdTargetHierarchy, pvdChangeBorder, pvdWindowResize);
+                config.datatype = attrs.datatype;
+                config.autoSize = attrs.autoSize;
+                config.nodeWidth = attrs.sliceWidth;
+                config.sliceHeight = attrs.sliceHeight;
+                //config.triggerActivity = true;
 
-              config.gridWidth = parseInt(d3.select($root.node().parentNode).style('width'));
-              config.gridHeight = window.innerHeight;
+                config.gridWidth = parseInt(d3.select($root.node().parentNode).style('width'));
+                config.gridHeight = window.innerHeight;
 
-              config.visConfigId = attrs.visConfig;
+                config.visConfigId = attrs.visConfig;
 
-              modifyConfig(config, infrastructure);
+                modifyConfig(config, infrastructure);
 
-              if (attrs.initDirectiveOnly === false) {
-                new PVDThermalLayout($root, infrastructure, config, attrs.isStandalone);
-              }
-            }, 10);
-          });
-        }
-      },
-      scope: {
-        'infraId': '@?', // id of infrastructure*.json
-        'datatype': '@?', // mode like 'static', 'stream' (default: 'stream')
-        'sliceWidth': '@?', // slice width
-        'sliceHeight': '@?', // slice height
-        'visConfig': '@?', // infrastructure.visConfig[...]
-        'isStandalone': '@?', // is the ThermalLayout used without the Treemap directive? (default: false)
-        'initDirectiveOnly': '@?' // init only the directive or also the TypeScript class (and functionality)? (default: 'false')
-      },
-      restrict: 'E'
-    };
-  }])
+                if (attrs.initDirectiveOnly === false) {
+                  new PVDThermalLayout($root, infrastructure, config, attrs.isStandalone);
+                }
+              }, 10);
+            });
+          }
+        },
+        scope: {
+          'infraId': '@?', // id of infrastructure*.json
+          'datatype': '@?', // mode like 'static', 'stream' (default: 'stream')
+          'sliceWidth': '@?', // slice width
+          'sliceHeight': '@?', // slice height
+          'visConfig': '@?', // infrastructure.visConfig[...]
+          'isStandalone': '@?', // is the ThermalLayout used without the Treemap directive? (default: false)
+          'initDirectiveOnly': '@?' // init only the directive or also the TypeScript class (and functionality)? (default: 'false')
+        },
+        restrict: 'E'
+      };
+    }])
   .name; // name for export default

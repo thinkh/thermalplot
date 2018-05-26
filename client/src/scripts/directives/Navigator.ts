@@ -16,39 +16,47 @@ export default angular.module('directives.pvdNavigator', [])
   .directive('pvdNavigator', [function () {
     return {
       templateUrl: 'views/templates/Navigator.html',
-      controller: function (
-        $scope,
-        $element,
-        $timeout,
-        $filter,
-        pvdAnimator: PVDAnimator,
-        pvdDataService: PVDDataService,
-        pvdBookmarkService: PVDBookmarkService
-      ) {
+      controller: [
+        '$scope',
+        '$element',
+        '$timeout',
+        '$filter',
+        'pvdAnimator',
+        'pvdDataService',
+        'pvdBookmarkService',
+        function (
+          $scope,
+          $element,
+          $timeout,
+          $filter,
+          pvdAnimator: PVDAnimator,
+          pvdDataService: PVDDataService,
+          pvdBookmarkService: PVDBookmarkService
+        ) {
 
-        $scope.preJumpTo = () => {
-          var t = pvdAnimator.now;
-          $scope.date = new Date();
-          $scope.date.setTime(t); //set in utc time
-        };
+          $scope.preJumpTo = () => {
+            var t = pvdAnimator.now;
+            $scope.date = new Date();
+            $scope.date.setTime(t); //set in utc time
+          };
 
-        $scope.jumpTo = (date: Date) => {
-          console.info("jump to " + date.toUTCString());
-          pvdDataService.jumpTo(date);
-        };
+          $scope.jumpTo = (date: Date) => {
+            console.info("jump to " + date.toUTCString());
+            pvdDataService.jumpTo(date);
+          };
 
-        var bookmarkId = ".navigator" + nextID();
-        pvdBookmarkService.on('set' + bookmarkId, (bookmarks: any) => {
-          $scope.bookmarks = bookmarks;
-        }
-        );
-        onDelete(d3.select($element[0]), () => {
-          pvdBookmarkService.on('set' + bookmarkId, null);
-        });
+          var bookmarkId = ".navigator" + nextID();
+          pvdBookmarkService.on('set' + bookmarkId, (bookmarks: any) => {
+            $scope.bookmarks = bookmarks;
+          }
+          );
+          onDelete(d3.select($element[0]), () => {
+            pvdBookmarkService.on('set' + bookmarkId, null);
+          });
 
-        // initial load
-        $scope.bookmarks = pvdBookmarkService.get();
-      },
+          // initial load
+          $scope.bookmarks = pvdBookmarkService.get();
+        }],
       restrict: 'EA'
     }
   }])

@@ -23,8 +23,6 @@ export default angular.module('directives.pvdGenerateAttribute', [
       pvdInfrastructureLoader: PVDInfrastructureLoader
     ) {
       return {
-        controller: function ($scope) {
-        },
         link: function ($scope, element) {
           pvdInfrastructureLoader.get().then((infrastructure: Infrastructure) => {
             var path: string = (<any>$scope).path;

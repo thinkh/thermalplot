@@ -684,49 +684,47 @@ export default angular.module('directives.pvdInfrastructure2', [
     'pvdInfrastructureLoader',
     '$timeout',
     function (
-    pvdAnimator: PVDAnimator,
-    pvdDataSelection: PVDDataSelection,
-    pvdInfrastructureLoader: PVDInfrastructureLoader,
-    $timeout
-  ) {
-    function initVis($base: d3.Selection<any>, nodes: Node[]) {
-      // size of the svg element
-      var margin = { top: 10, right: 10, bottom: 10, left: 10 },
-        width = angular.element('.container').width() - margin.left - margin.right,
-        height = 800 - margin.top - margin.bottom;
+      pvdAnimator: PVDAnimator,
+      pvdDataSelection: PVDDataSelection,
+      pvdInfrastructureLoader: PVDInfrastructureLoader,
+      $timeout
+    ) {
+      function initVis($base: d3.Selection<any>, nodes: Node[]) {
+        // size of the svg element
+        var margin = { top: 10, right: 10, bottom: 10, left: 10 },
+          width = angular.element('.container').width() - margin.left - margin.right,
+          height = 800 - margin.top - margin.bottom;
 
-      var $root = $base.append('svg')
-        .attr('width', width + margin.left + margin.right)
-        .attr('height', height + margin.top + margin.bottom)
-        .append('g')
-        .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
-        .append('g')
-        // the scale sets the svg behavior to a cartesian coordinate system
-        .attr('transform', 'translate(' + width * 0.5 + ',' + height * 0.5 + ') scale(1,-1)');
+        var $root = $base.append('svg')
+          .attr('width', width + margin.left + margin.right)
+          .attr('height', height + margin.top + margin.bottom)
+          .append('g')
+          .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
+          .append('g')
+          // the scale sets the svg behavior to a cartesian coordinate system
+          .attr('transform', 'translate(' + width * 0.5 + ',' + height * 0.5 + ') scale(1,-1)');
 
-      pvdAnimator.push(new PVDInfrastructure($root, nodes, pvdDataSelection));
-    }
+        pvdAnimator.push(new PVDInfrastructure($root, nodes, pvdDataSelection));
+      }
 
-    return {
-      controller: function ($scope) {
-      },
-      compile: function (element, attrs) {
-        return function ($scope, element) {
-          pvdInfrastructureLoader.get().then((infrastructure: Infrastructure) => {
-            $timeout(() => { //skip one time to ensure that the svg is properly layouted
-              //var path:string = $scope.path;
-              //var attr = infrastructure.findAttr(path);
-              var $base = d3.select(element[0]);
-              (<any>$scope).$base = $base;
-              initVis($base, infrastructure.nodes());
-            })
-          });
-        }
-      },
-      scope: {
-      },
-      restrict: 'E'
-    };
-  }])
+      return {
+        compile: function (element, attrs) {
+          return function ($scope, element) {
+            pvdInfrastructureLoader.get().then((infrastructure: Infrastructure) => {
+              $timeout(() => { //skip one time to ensure that the svg is properly layouted
+                //var path:string = $scope.path;
+                //var attr = infrastructure.findAttr(path);
+                var $base = d3.select(element[0]);
+                (<any>$scope).$base = $base;
+                initVis($base, infrastructure.nodes());
+              })
+            });
+          }
+        },
+        scope: {
+        },
+        restrict: 'E'
+      };
+    }])
   .name; // name for export default
 

@@ -4,7 +4,7 @@
 
 import * as angular from 'angular';
 import * as d3 from 'd3';
-import Datamap from 'datamaps/src/js/datamaps';
+import Datamap from 'datamaps';
 import { PVDHierarchyConfig } from './HierarchyConfig';
 import { compute } from '../models/DOI';
 import InfrastructureLoader, { PVDInfrastructureLoader } from '../services/InfrastructureLoader';
@@ -614,63 +614,63 @@ export default angular.module('directives.pvdMap', [
     'pvdChangeBorder',
     'pvdDataService',
     function (
-    pvdInfrastructureLoader: PVDInfrastructureLoader,
-    pvdWindowResize: PVDWindowResize,
-    $timeout,
-    pvdAnimator: PVDAnimator,
-    pvdDataSelection: PVDDataSelection,
-    pvdInfrastructureMapper: PVDInfrastructureMapper,
-    pvdLayoutManager: PVDLayoutManager,
-    pvdTargetHierarchy: PVDTargetHierarchy,
-    pvdChangeBorder: PVDChangeBorder,
-    pvdDataService: PVDDataService
-  ) {
-    return {
-      compile: function (element, attrs: any) {
-        attrs.width = angular.isDefined(attrs.width) ? +attrs.width : '100%';
-        attrs.height = angular.isDefined(attrs.height) ? +attrs.height : 500;
+      pvdInfrastructureLoader: PVDInfrastructureLoader,
+      pvdWindowResize: PVDWindowResize,
+      $timeout,
+      pvdAnimator: PVDAnimator,
+      pvdDataSelection: PVDDataSelection,
+      pvdInfrastructureMapper: PVDInfrastructureMapper,
+      pvdLayoutManager: PVDLayoutManager,
+      pvdTargetHierarchy: PVDTargetHierarchy,
+      pvdChangeBorder: PVDChangeBorder,
+      pvdDataService: PVDDataService
+    ) {
+      return {
+        compile: function (element, attrs: any) {
+          attrs.width = angular.isDefined(attrs.width) ? +attrs.width : '100%';
+          attrs.height = angular.isDefined(attrs.height) ? +attrs.height : 500;
 
-        return function ($scope, element) {
-          pvdInfrastructureLoader.get(attrs.infraId).then((infrastructure: Infrastructure) => {
-            $timeout(() => { //skip one time to ensure that the svg is properly layouted
-              //var path:string = $scope.path;
-              //var attr = infrastructure.findAttr(path);
-              var $base = d3.select(element[0]);
+          return function ($scope, element) {
+            pvdInfrastructureLoader.get(attrs.infraId).then((infrastructure: Infrastructure) => {
+              $timeout(() => { //skip one time to ensure that the svg is properly layouted
+                //var path:string = $scope.path;
+                //var attr = infrastructure.findAttr(path);
+                var $base = d3.select(element[0]);
 
-              var $root: d3.Selection<any> = $base.append('div')
-                .classed('pvd-map', true)
-                .attr('data-infra-id', attrs.infraId)
-                .style({
-                  'position': 'absolute',
-                  'width': 500,
-                  'height': 300
-                });
+                var $root: d3.Selection<any> = $base.append('div')
+                  .classed('pvd-map', true)
+                  .attr('data-infra-id', attrs.infraId)
+                  .style({
+                    'position': 'absolute',
+                    'width': 500,
+                    'height': 300
+                  });
 
-              var config = new PVDHierarchyConfig(pvdAnimator, pvdDataSelection, pvdLayoutManager, pvdInfrastructureMapper, pvdTargetHierarchy, pvdChangeBorder, pvdWindowResize);
-              config.visConfigId = attrs.visConfig || '';
+                var config = new PVDHierarchyConfig(pvdAnimator, pvdDataSelection, pvdLayoutManager, pvdInfrastructureMapper, pvdTargetHierarchy, pvdChangeBorder, pvdWindowResize);
+                config.visConfigId = attrs.visConfig || '';
 
-              modifyConfig(config, infrastructure);
+                modifyConfig(config, infrastructure);
 
-              new PVDMap($root, infrastructure, config, attrs, pvdDataService);
+                new PVDMap($root, infrastructure, config, attrs, pvdDataService);
+              });
             });
-          });
-        }
-      },
-      scope: {
-        'mapScope': '@?', // usa [default] || world
-        'nodesAre': '@?', // countries || cities (have "latitude" and "longitude" attribute) [default]
-        'infraId': '@?', // id of infrastructure*.json
-        'width': '@?', // svg width
-        'height': '@?', // svg individual height
-        'visConfig': '@?', // modifier for infrastructure.visConfig[...],
-        'showHeader': '@?', // true [default] || false
-        'switchColorLink': '@?', // true [default] || false
-        'initTranslate': '@?', // map translation for zoom behavior, e.g. '421.483,4891.294'; default: '0,0'
-        'initScale': '@?', // map scale for zoom behavior, e.g. '2.212'; default: '1',
-        'zoomable': '@?' // true || false
-      },
-      restrict: 'E'
-    };
-  }])
+          }
+        },
+        scope: {
+          'mapScope': '@?', // usa [default] || world
+          'nodesAre': '@?', // countries || cities (have "latitude" and "longitude" attribute) [default]
+          'infraId': '@?', // id of infrastructure*.json
+          'width': '@?', // svg width
+          'height': '@?', // svg individual height
+          'visConfig': '@?', // modifier for infrastructure.visConfig[...],
+          'showHeader': '@?', // true [default] || false
+          'switchColorLink': '@?', // true [default] || false
+          'initTranslate': '@?', // map translation for zoom behavior, e.g. '421.483,4891.294'; default: '0,0'
+          'initScale': '@?', // map scale for zoom behavior, e.g. '2.212'; default: '1',
+          'zoomable': '@?' // true || false
+        },
+        restrict: 'E'
+      };
+    }])
   .name; // name for export default
 

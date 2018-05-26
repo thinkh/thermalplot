@@ -17,7 +17,7 @@ export default angular.module('directives.pvdAttributeSelector', [
     ) {
       return {
         templateUrl: 'views/templates/AttributeSelector.html',
-        controller: function ($scope) {
+        controller: ['$scope', function ($scope) {
           $scope.onPathChange = function () {
             if (!$scope.mpath) {
               $scope.mattrs = [];
@@ -49,7 +49,7 @@ export default angular.module('directives.pvdAttributeSelector', [
             }
             return "nodes";
           };
-        },
+        }],
         link: function ($scope: any, element: JQuery) {
           $scope.pathSelector = element.find(".path-selector");
           $scope.attrSelector = element.find(".attr-selector");

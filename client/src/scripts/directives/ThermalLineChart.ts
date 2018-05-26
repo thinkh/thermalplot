@@ -411,8 +411,6 @@ export default angular.module('directives.pvdThermalLineChart', [
     pvdChangeBorder: PVDChangeBorder
   ) {
     return {
-      controller: function ($scope) {
-      },
       compile: function (element, attrs: any) {
         attrs.datatype = angular.isDefined(attrs.datatype) ? attrs.datatype : 'stream';
         attrs.sliceWidth = angular.isDefined(attrs.sliceWidth) ? +attrs.sliceWidth : 20;

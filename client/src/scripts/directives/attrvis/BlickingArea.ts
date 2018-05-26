@@ -73,8 +73,6 @@ export default angular.module('directives.pvdBlickingArea', [])
   .directive('pvdBlickingArea', function (pvdAnimator: PVDAnimator, pvdDataSelection: PVDDataSelection, pvdInfrastructureLoader: PVDInfrastructureLoader) {
     return {
       templateUrl: 'views/templates/BlickingArea.html',
-      controller: function ($scope) {
-      },
       compile: function (element, attrs: any) {
         //a place to define default attribute values
         attrs.frequencies = angular.isDefined(attrs.frequencies) ? attrs.frequencies : false;

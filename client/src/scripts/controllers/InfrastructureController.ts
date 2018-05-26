@@ -13,6 +13,25 @@ import DataSelection from '../services/DataSelection';
 import UseCaseConfig from '../services/UseCaseConfig';
 import ChangeBorder from '../services/ChangeBorderService';
 import TargetHierarchy from '../services/TargetHierarchy';
+import AnimationControl from '../directives/AnimationControl';
+import BrowserNotification from '../directives/BrowserNotification';
+import ChangeBorderRuler from '../directives/ChangeBorderRuler';
+import ConnectionStatus from '../directives/ConnectionStatus';
+import DOIEditor from '../directives/DOIEditor';
+import Legend from '../directives/Legend';
+import LoadingOverlay from '../directives/LoadingOverlay';
+import Map from '../directives/Map';
+import Navigation from '../directives/Navigation';
+import Navigator from '../directives/Navigator';
+import SelectionDetailView from '../directives/SelectionDetailView';
+import SelectionInfo from '../directives/SelectionInfo';
+import StockDetailView from '../directives/StockDetailView';
+import StockTimeline from '../directives/StockTimeline';
+import ThermalLayout from '../directives/ThermalLayout';
+import ThermalLineChart from '../directives/ThermalLineChart';
+import TimeControl from '../directives/TimeControl';
+import Treemap from '../directives/Treemap';
+import ViewSelector from '../directives/ViewSelector';
 
 'use strict';
 
@@ -199,7 +218,38 @@ export default angular.module('controllers.InfrastructureCtrl', [
   DataSelection,
   UseCaseConfig,
   ChangeBorder,
-  TargetHierarchy
+  TargetHierarchy,
+
+  // start:register directives
+  AnimationControl,
+  //AttributeSelector,
+  BrowserNotification,
+  ChangeBorderRuler,
+  ConnectionStatus,
+  DOIEditor,
+  //GenerateAttribute,
+  //HierarchyGrid,
+  //HierarchyNodeExplanation,
+  //HierarchySmallMultiple,
+  //HierarchySuperGrid,
+  //Infrastructure,
+  Legend,
+  //LineUp,
+  LoadingOverlay,
+  Map,
+  Navigation,
+  Navigator,
+  SelectionDetailView,
+  SelectionInfo,
+  StockDetailView,
+  StockTimeline,
+  ThermalLayout,
+  ThermalLineChart,
+  TimeControl,
+  //Timeline,
+  Treemap,
+  ViewSelector
+  // end:register directives
 ])
   .controller('InfrastructureCtrl', [
     'useCaseName', 'useCaseConfig', '$scope', '$http', '$q', 'pvdDataService', 'pvdAnimator', 'pvdInfrastructureLoader', 'pvdInfrastructureMapper', 'pvdLayoutManager', 'pvdBookmarkService', 'pvdDataSelection', 'pvdUseCaseConfig', 'pvdChangeBorder', 'pvdTargetHierarchy',

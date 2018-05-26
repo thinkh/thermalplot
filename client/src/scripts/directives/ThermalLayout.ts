@@ -3,7 +3,8 @@
  */
 import * as angular from 'angular';
 import * as d3 from 'd3';
-import Physics from 'physicsjs';
+import Physics from 'physicsjs/dist/physicsjs-full';
+import d3lasso from 'd3-lasso-plugin/lasso.js';
 import { PVDElementParent, PVDHierarchyNode } from './HierarchyNode';
 import Animator, { IAnimateable, PVDAnimator } from '../services/Animator';
 import { PVDHierarchyConfig } from './HierarchyConfig';
@@ -20,6 +21,8 @@ import TargetHierarchy, { PVDTargetHierarchy } from '../services/TargetHierarchy
 import ChangeBorder, { PVDChangeBorder } from '../services/ChangeBorderService';
 
 'use strict';
+
+d3lasso; // initialize import
 
 export class PVDThermalLayout implements PVDElementParent, IAnimateable {
 

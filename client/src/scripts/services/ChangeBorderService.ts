@@ -660,7 +660,7 @@ export class PVDChangeBorder {
 
 }
 
-export default angular.module('services.pvdDataGenerator', [])
+export default angular.module('services.pvdChangeBorder', [])
   .service('pvdChangeBorder', [
     PVDChangeBorder
   ]).name;

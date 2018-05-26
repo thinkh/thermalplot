@@ -20,6 +20,9 @@ module.exports = {
       inject: 'body',
       filename: 'index.html'
     }),
+    new webpack.ProvidePlugin({
+      "window.jQuery": "jquery"
+    }),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),

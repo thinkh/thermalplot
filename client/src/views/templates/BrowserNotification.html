@@ -1,4 +1,4 @@
-<div class="modal fade in" style="display:block;" ng-hide="chrome === true" ng-show="chrome === false">
+<div class="modal fade in" style="display:block;" ng-hide="isChrome === true" ng-show="isChrome === false">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -6,9 +6,15 @@
         <h4 class="modal-title" style="text-align: center;">Unsupported Browser</h4>
       </div>
       <div class="modal-body" style="text-align:center;">
-        <p>We do not support this browser.<br>
-          Please access this page again using <a href="https://www.google.com/chrome/browser/desktop/index.html">Google Chrome</a>.</p>
-        <p><a href="https://www.google.com/chrome/browser/desktop/index.html"><img style="width: 123px; height: 40px; margin-top:10px;" alt="Google Chrome" src="images/chrome_logo_2x.png"></a></p>
+        <p>This application was designed to be used in Google Chrome.
+          <br> Running the application in other browsers might result in performance issues or other misbehavior.
+          <br> Please access this page again using
+          <a href="https://www.google.com/chrome/browser/desktop/index.html">Google Chrome</a>.</p>
+        <p>
+          <a href="https://www.google.com/chrome/browser/desktop/index.html">
+            <img style="width: 123px; height: 40px; margin-top:10px;" alt="Google Chrome" src="images/chrome_logo_2x.png">
+          </a>
+        </p>
       </div>
       <!--<div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Let me try anyway</button>
@@ -16,4 +22,4 @@
     </div>
   </div>
 </div>
-<div class="modal-backdrop fade in" ng-hide="chrome === true" ng-show="chrome === false"></div>
+<div class="modal-backdrop fade in" ng-hide="isChrome === true" ng-show="isChrome === false"></div>

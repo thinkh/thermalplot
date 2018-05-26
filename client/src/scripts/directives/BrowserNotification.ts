@@ -9,20 +9,8 @@ export default angular.module('directives.pvdBrowserNotification', [])
   .directive('pvdBrowserNotification', [function () {
     return {
       templateUrl: 'views/templates/BrowserNotification.html',
-      controller: function ($scope) {
-        // @see: http://stackoverflow.com/questions/4565112/javascript-how-to-find-out-if-the-user-browser-is-chrome
-        // please note,
-        // that IE11 now returns undefined again for window.chrome
-        // and new Opera 30 outputs true for window.chrome
-        // so use the below updated condition
-        var isChromium = (<any>window).chrome,
-          vendorName = window.navigator.vendor,
-          isOpera = window.navigator.userAgent.indexOf("OPR") > -1;
-        if (isChromium !== null && isChromium !== undefined && vendorName === "Google Inc." && isOpera == false) {
-          $scope.chrome = true;
-        } else {
-          $scope.chrome = false;
-        }
+      link: function ($scope: any) {
+        $scope.isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
       },
       scope: {},
       restrict: 'EA'

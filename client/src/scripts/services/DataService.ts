@@ -239,22 +239,25 @@ export class PVDDataService {
   }
 
   private onclose() {
+    console.debug('onclose');
     this.disconnect(); // executed on disconnect from server
     this.fire('close');
   }
 
   private onopen() {
+    console.debug('onopen', this.initialMessages);
     this.initialMessages.forEach((m) => this.socket.emit('msg', m));
     this.initialMessages = [];
     this.fire('open');
   }
 
   private onerror(error: ErrorEvent) {
+    console.error('onerror', error);
     this.fire('error', error);
   }
 
   private onmessage(msg: any) {
-    msg = this.parse(msg.data);
+    msg = this.parse(msg);
     if (msg === null || msg === undefined) {
       return;
     }

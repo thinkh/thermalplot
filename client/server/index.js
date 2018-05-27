@@ -80,7 +80,7 @@ app.get('/api/uc/:usecase/static_data/:file$', function response(req, res) {
 
 app.get('/api/uc/:usecase/csv/:field/:startdate(\\d{4}-\\d{2}-\\d{2})/:enddate(\\d{4}-\\d{2}-\\d{2})/:order_by(asc|desc)$', function response(req, res) {
     const ucServerPath = path.join(DATA_DIR, req.params.usecase, 'server/index.js');
-    logger.info('Require usecase server part from %s', ucServerPath);
+    logger.info('require usecase server part from %s', ucServerPath);
     const ucServer = require(ucServerPath);
     const handler = new ucServer.CSVHandler(res);
     handler.get(req.params.field, req.params.startdate, req.params.enddate, req.params.order_by);
@@ -107,13 +107,19 @@ io.use((socket, next) => {
 
 io.on('connection', function (socket) {
     let useCaseName = socket.handshake.query.uc;
-    logger.info('New socket connection to %s with id %s', useCaseName, socket.id);
+    logger.info('new socket connection to %s with id %s', useCaseName, socket.id);
 
-    socket.emit('msg', { data: { internal: 'hello world' } }); // initial message
+    const ucServerPath = path.join(DATA_DIR, useCaseName, 'server/index.js');
+    logger.info('require usecase server part from %s', ucServerPath);
+    const ucServer = require(ucServerPath);
+    const handler = new ucServer.SocketHandler(socket);
 
-    socket.on('msg', function (data) {
-        logger.info(data);
+    handler.open();
+
+    //socket.emit('msg', { data: { internal: 'hello world' } }); // initial message
+
+    socket.on('disconnect', (reason) => {
+        logger.info('disconnect socket connection with reason: %s', reason);
+        handler.close();
     });
-
-    const handler = new UseCaseDBSocketHandler(socket);
 });

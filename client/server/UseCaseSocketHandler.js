@@ -1,3 +1,5 @@
+const logger = require('./logger');
+
 class UseCaseSocketHandler {
 
     constructor(socket/*: SocketIOClient.Socket*/) {
@@ -10,7 +12,7 @@ class UseCaseSocketHandler {
     }
 
     send_start_time(ts_start, time_unit = 's', step = 60000) {
-        log("send start time: {0} ms".format(ts_start));
+        logger.info("send start time: %d ms", ts_start);
         const msg = {
             internal: "startTime",
             startTime: ts_start,
@@ -21,7 +23,7 @@ class UseCaseSocketHandler {
     }
 
     send_time_selection(ts_from, ts_to, auto_load = true) {
-        log("send start time: {0} ms".format(ts_from))
+        logger.info("send start time: %d ms", ts_from)
         const msg = {
             internal: "selectTimeRange",
             tsFrom: ts_from,

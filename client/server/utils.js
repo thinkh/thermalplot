@@ -1,5 +1,7 @@
 exports.ms = function (ts) {
-    return 'utc ' + new Date(ts).toUTCString() + ' (' + ts + ' s)';
+    const d = new Date();
+    d.setTime(ts * 1000); // [sec -> ms]
+    return 'utc ' + d.toUTCString() + ' (' + ts + ' s)';
 }
 
 

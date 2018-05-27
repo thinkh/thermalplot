@@ -1,10 +1,16 @@
-var winston = require('winston');
+const winston = require('winston');
+const util = require('util');
 
 const logger = winston.createLogger({
     level: 'info',
     format: winston.format.combine(
-        winston.format.splat(),
-        winston.format.simple()
+        winston.format.timestamp(),
+        winston.format.printf(info => {
+            if (!info.splat) {
+                info.splat = [];
+            }
+            return `${info.timestamp} ${info.level}:\t${util.format(info.message, ...info.splat)}\t${JSON.stringify(info.splat)}`;
+        })
     ),
     transports: [
         //
@@ -12,8 +18,7 @@ const logger = winston.createLogger({
         // - Write all logs error (and below) to `error.log`.
         //
         new winston.transports.File({ filename: './logs/error.log', level: 'error' }),
-        new winston.transports.File({ filename: './logs/combined.log' }),
-        new winston.transports.Console()
+        new winston.transports.File({ filename: './logs/combined.log' })
     ]
 });
 
@@ -23,7 +28,16 @@ const logger = winston.createLogger({
 //  
 if (process.env.NODE_ENV !== 'production') {
     logger.add(new winston.transports.Console({
-        format: winston.format.simple()
+        format: winston.format.combine(
+            winston.format.colorize(),
+            winston.format.timestamp(),
+            winston.format.printf(info => {
+                if (!info.splat) {
+                    info.splat = [];
+                }
+                return `${info.timestamp} ${info.level}:\t${util.format(info.message, ...info.splat)}\t${JSON.stringify(info.splat)}`;
+            })
+        ),
     }));
 }
 

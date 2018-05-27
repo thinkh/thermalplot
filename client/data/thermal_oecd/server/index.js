@@ -10,7 +10,6 @@ const BASE_TABLE = 'oecd';
 
 const SQLITE_FIELDS = ['lt_interest_rate', 'st_interest_rate'];
 
-/*
 function open_db() {
     logger.debug('connecting to sqlite db at %s', SQLITE_DB_PATH);
     return new Database(SQLITE_DB_PATH, {
@@ -26,79 +25,46 @@ function close_db(db) {
 
 class SocketHandler extends UseCaseDBSocketHandler {
 
-    dateformat = '%Y-%m'
-
-    __init__(application, request):
-        super(SocketHandler, self).__init__(application, request, 30*24*60*60, 'month')  // TIME FACTOR in sec = 1 month (30.44 days)
-        // this.filter_in = ['46.99.8']
-
-    open_db(self):
-        return sqlite3.connect(sqlite_base_path)
-
-    datetime_to_utc_seconds(datetime):
-        return int(calendar.timegm(datetime.timetuple()))
-
-    find_first_ts(self):
-        r = this.db.execute('select min(s.ts) from ' + base_table + ' s where 1=1 '+this.filter('key')).fetchone()[0]
-        return this.datetime_to_utc_seconds(datetime.strptime(r, this.dateformat)) // .strftime('%s')
-
-    find_last_ts(self):
-        r = this.db.execute('select max(s.ts) from ' + base_table + ' s where 1=1 '+this.filter('key')).fetchone()[0]
-        return this.datetime_to_utc_seconds(datetime.strptime(r, this.dateformat)) // .strftime('%s')
-
-    """
-    read_constant_data(self):
-        import csv
-        with open(base_path+'stations_constants.csv','r') as f:
-            reader = csv.reader(f,delimiter='\t')
-            data = [r for r in reader]
-        header = data[0]
-        data = data[1:]
-
-        to_msg(r):
-            msg = dict(nip=r[0],ts=0)
-            msg['attrs'] = { h : float(r[i+1]) for i,h in enumerate(header[1:]) if r[i+1] != 'NA' }
-            return msg
-        return (to_msg(r) for r in data)
-        """
-
-    read_data(start, end, time_factor):
-        to_time(t):
-            d = datetime.utcfromtimestamp(t*time_factor)
-            r = str(d.year)+'-'
-            if(d.month < 10):
-                r += '0'
-            r += str(d.month)
-            return r
-
-        logger.info(str(time_factor),str(to_time(start)), str(to_time(end)))
-        q = ('select key, ts, ' + ', '.join(sqlite_fields) +
-             ' from ' + base_table + ' s where s.ts >= ? and s.ts < ?  '+ this.filter('key') +
-             ' order by s.ts asc')
-
-        it = this.db.execute(q,[to_time(start), to_time(end)])
-
-        convert_row(row):
-            r = dict(nip=row[0],ts=this.datetime_to_utc_seconds(datetime.strptime(row[1], this.dateformat))) // int(float(row[1])*time_factor))
-            for ri in row:
-                if(ri == null):
-                    ri = ''
-
-            // r['attrs'] = dict(co2_emissions=row[2],gdp=row[3],life_expectancy=row[4],population_growth=row[5],total_fertility=row[6],total_population=row[7],under5mortality=row[8])
-            r['attrs'] = dict()
-
-            i=2
-            for field in sqlite_fields:
-                if(row[i] != '' and row[i] != null):
-                    r['attrs'][field] = row[i]
-                i += 1
-
-            // print(r, row[1])
-            return r
-
-        return map(convert_row, it)
+    constructor(socket) {
+        super(socket, 30 * 24 * 60 * 60, 'month');  // TIME FACTOR in sec = 1 month (30.44 days)
+        this.dateformat = 'Y-m';
     }
-*/
+
+    open_db() {
+        return open_db();
+    }
+
+    find_first_ts() {
+        const row = this.db.prepare('select min(s.ts) as date from ' + BASE_TABLE + ' s where 1=1 ' + this.filter('key')).get();
+        return Date.parse(row.date) / 1000; // [ms -> sec]
+    }
+
+    find_last_ts() {
+        const row = this.db.prepare('select max(s.ts) from ' + BASE_TABLE + ' s where 1=1 ' + this.filter('key')).get();
+        return Date.parse(row.date) / 1000; // [ms -> sec]
+    }
+
+    read_data(start, end, time_factor) {
+        start *= time_factor;
+        end *= time_factor;
+
+        function to_time(t) {
+            const date = new Date();
+            date.setTime(t * 1000); // [sec -> ms]
+            let r = date.getFullYear() + '-'
+            if (date.getMonth() < 10) {
+                r += '0'
+            }
+            r += date.getMonth() + 1; // +1 because JS counts month form 0
+            return r;
+        }
+
+        logger.info('read data between [%s (%d s)] and [%s (%d s)] with timeFactor: %s', to_time(start), start, to_time(end), end, time_factor);
+        const sql = ('select key, ts, ' + SQLITE_FIELDS.join(',') +
+            ' from ' + BASE_TABLE + ' s where s.ts >= ? and s.ts < ?  ' + this.filter('key') +
+            ' order by s.ts asc')
+
+        const rows = this.db.prepare(sql).all(to_time(start), to_time(end));
 
         return rows.map((row) => {
             const r = {

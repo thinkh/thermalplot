@@ -1,6 +1,6 @@
 const UseCaseSocketHandler = require('./UseCaseSocketHandler');
 const utils = require('./utils');
-const logger = require('./logger')
+const logger = require('./logger');
 
 let closedTimestamp = 0;
 let closedSystemTimestamp = 0;
@@ -10,7 +10,7 @@ class UseCaseDBSocketHandler extends UseCaseSocketHandler {
 
     constructor(socket, timeFactor, step_unit = 'null') {
         super(socket);
-        logger.info('initiated');
+        logger.debug('UseCaseDBSocketHandler initialized');
         this.previous_time = 0;
         // the factor to group times stamp, one means no change
         this.timeFactor = timeFactor;  // TIME FACTOR in sec = 1 hour
@@ -26,7 +26,7 @@ class UseCaseDBSocketHandler extends UseCaseSocketHandler {
         this.filter_in = [];
         this.filter_ex = [];
 
-        this.socket.on('msg', function (data) {
+        this.socket.on('msg', (data) => {
             this.on_message(data);
         });
     }
@@ -34,11 +34,9 @@ class UseCaseDBSocketHandler extends UseCaseSocketHandler {
     open() {
         this.db = this.open_db();
 
-        const f = this.timeFactor.toString();
-
         if (closedSystemTimestamp <= 0) {
             this.previous_time = this.find_first_ts();
-            this.previous_time = utils.int(float(this.previous_time) / this.timeFactor); // [s]
+            this.previous_time = utils.int(this.previous_time / this.timeFactor); // [s]
 
         } else {
             // shift to the previous end timestamp + the real delta time in between
@@ -50,7 +48,7 @@ class UseCaseDBSocketHandler extends UseCaseSocketHandler {
 
         this.send_constant_data();
 
-        this.callback = new PeriodicCallback(this.send_data, this.dt * 1000); // [ms]
+        this.callback = new PeriodicCallback(() => this.send_data(), this.dt * 1000); // [ms]
         this.callback.start();
     }
 
@@ -75,7 +73,8 @@ class UseCaseDBSocketHandler extends UseCaseSocketHandler {
     }
 
     send_constant_data() {
-        this.send_messages(this.read_constant_data())
+        const msgs = this.read_constant_data();
+        this.send_messages(msgs);
         this.socket.emit('msg', { internal: 'constantsSent' });
     }
 
@@ -101,8 +100,8 @@ class UseCaseDBSocketHandler extends UseCaseSocketHandler {
         this.socket.emit('msg', bulk);
         this.socket.emit('msg', {
             'internal': 'dataBulkSent',
-            'from': bulk[0]['ts'],
-            'to': bulk[len(bulk) - 1]['ts']
+            'from': bulk[0].ts,
+            'to': bulk[bulk.length - 1].ts
         });
     }
 
@@ -118,13 +117,14 @@ class UseCaseDBSocketHandler extends UseCaseSocketHandler {
     }
 
     send_data_impl(previous_time, act_time) {
-        const count = this.send_messages(this.read_data(previous_time, act_time, this.timeFactor));
+        const msgs = this.read_data(previous_time, act_time, this.timeFactor);
+        const count = this.send_messages(msgs);
 
-        logger.info('send %s - %s = %d messages' % (utils.ms(previous_time * this.timeFactor), utils.ms(act_time * this.timeFactor), count));
+        logger.info('send %s - %s = %d messages', utils.ms(previous_time * this.timeFactor), utils.ms(act_time * this.timeFactor), count);
         // if len(messages) > 0:
         //     mini = min(messages, key=lambda msg: msg['ts'])['ts']
         //     maxi = max(messages, key=lambda msg: msg['ts'])['ts']
-        //     print >>sys.stderr,  '%s-%s = min %s max %s' % (this.previous_time, actTime, mini, maxi)
+        //     print >>sys.stderr,  '%s-%s = min %s max %s', (this.previous_time, actTime, mini, maxi)
     }
 
     send_data() {
@@ -134,7 +134,7 @@ class UseCaseDBSocketHandler extends UseCaseSocketHandler {
     }
 
     send_start_time(ts, time_unit = 's') {
-        logger.info('send start time: %s ms step %s ms' % (ts, this.timeFactor));
+        logger.info('send start time: %d ms step %d ms', ts, this.timeFactor);
         const msg = {
             internal: 'startTime',
             startTime: ts * this.timeFactor,
@@ -142,39 +142,44 @@ class UseCaseDBSocketHandler extends UseCaseSocketHandler {
             step: this.timeFactor,
             stepUnit: this.step_unit
         };
+        logger.info('', msg);
         this.socket.emit('msg', msg);
     }
 
     on_message(message) {
-        logger.info('got message ', JSON.stringify(message));
+        logger.debug('got message ' + message);
+        const parsed = JSON.parse(message);
 
-        if (!message.type) {
+        if (!parsed.type) {
+            logger.error('no message.type');
             return;
         }
 
-        const refid = message.refid || '';
+        const refid = parsed.refid || '';
 
         // create basic response message
         const msg = {
             refid
         };
 
-        switch (message.type) {
+        const running = this.callback.is_running();
+
+        switch (parsed.type) {
             case 'jumpTo':
                 msg.internal = 'jumpedTo';
-                this.previous_time = utils.int(message['time'] / this.timeFactor);
+                this.previous_time = utils.int(parsed.time / this.timeFactor);
 
-                logger.info('jump to ', utils.ms(this.previous_time * this.timeFactor));
+                logger.info('jump to %s', utils.ms(this.previous_time * this.timeFactor));
 
-                if (message.bulkTill) {
-                    let till = utils.int(message['bulkTill'] / this.timeFactor);
+                if (parsed.bulkTill) {
+                    let till = utils.int(parsed.bulkTill / this.timeFactor);
                     let end = this.previous_time;
 
                     while ((end + this.dt) < till) {
                         end += this.dt;
                     }
 
-                    logger.info('send bulk till ', utils.ms(end * this.timeFactor));
+                    logger.info('send bulk till %s', utils.ms(end * this.timeFactor));
 
                     if (end > this.previous_time) { // send a bulk of data
                         this.send_data_impl(this.previous_time, end);
@@ -187,13 +192,11 @@ class UseCaseDBSocketHandler extends UseCaseSocketHandler {
             case 'startStream':
                 msg.internal = 'startedStream';
 
-                if (message.time) {
-                    this.previous_time = utils.int(message['time'] / this.timeFactor);
+                if (parsed.time) {
+                    this.previous_time = utils.int(parsed.time / this.timeFactor);
                 }
 
-                running = this.callback.is_running();
-
-                logger.info('start streaming at ', utils.ms(this.previous_time * this.timeFactor), running);
+                logger.info('start streaming at %s %s', utils.ms(this.previous_time * this.timeFactor), running);
 
                 if (!running) {
                     this.callback.start()
@@ -205,8 +208,7 @@ class UseCaseDBSocketHandler extends UseCaseSocketHandler {
             case 'startStream':
                 msg.internal = 'stoppedStream';
 
-                running = this.callback.is_running();
-                logger.info('stop streaming at ', utils.ms(this.previous_time * this.timeFactor), running);
+                logger.info('stop streaming at %d %s', utils.ms(this.previous_time * this.timeFactor), running);
 
                 if (running) {
                     this.callback.stop();
@@ -216,9 +218,9 @@ class UseCaseDBSocketHandler extends UseCaseSocketHandler {
 
             case 'load':
                 msg.internal = 'loaded';
-                start = utils.int(message['start'] / this.timeFactor);
-                end = utils.int(message['end'] / this.timeFactor);
-                logger.info('load data between ', utils.ms(start * this.timeFactor), 'and', utils.ms(end * this.timeFactor));
+                const start = utils.int(parsed.start / this.timeFactor);
+                const end = utils.int(parsed.end / this.timeFactor);
+                logger.info('load data between %s and %s', utils.ms(start * this.timeFactor), utils.ms(end * this.timeFactor));
                 if (end > start) { // send a bulk of data
                     this.send_data_impl(start, end);
                 }
@@ -228,17 +230,17 @@ class UseCaseDBSocketHandler extends UseCaseSocketHandler {
 
             case 'speedup':
                 msg.internal = 'speededUp';
-                this.timeFactor = utils.int(message.factor);
-                logger.info('speedup factor to ', this.timeFactor);
+                this.timeFactor = utils.int(parsed.factor);
+                logger.info('speedup factor to %d', this.timeFactor);
                 msg.timeFactor = this.timeFactor;
                 break;
 
             case 'setNodeFilter':
                 msg.internal = 'currentNodeFilter';
-                this.filter_in = message.filter_in || [];
-                this.filter_ex = message.filter_ex || [];
+                this.filter_in = parsed.filter_in || [];
+                this.filter_ex = parsed.filter_ex || [];
 
-                logger.info('set node filter IN ', ','.this.filter_in.join(','), ' EX ', ','.this.filter_ex.join(','));
+                logger.info('set node filter IN %s EX %s', this.filter_in.join(','), this.filter_ex.join(','));
 
                 msg.filter_in = this.filter_in;
                 msg.filter_ex = this.filter_ex;
@@ -258,17 +260,18 @@ class UseCaseDBSocketHandler extends UseCaseSocketHandler {
 
             default:
                 msg.internal = 'unknown';
-                msg.error = 'Unknown Message: ' + message.type;
+                msg.error = 'Unknown Message: ' + parsed.type;
+                logger.warn(msg.error);
                 break;
         }
 
         this.socket.emit('msg', msg);
     }
 
-    on_close() {
-        closedTimestamp = this.previous_time;
-        closedSystemTimestamp = Date.now();
-        closedTimeFactor = this.timeFactor;
+    close() {
+        // closedTimestamp = this.previous_time;
+        // closedSystemTimestamp = Date.now();
+        // closedTimeFactor = this.timeFactor;
         if (this.callback !== null) {
             this.callback.stop();
         }

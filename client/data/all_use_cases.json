@@ -1,14 +1,18 @@
 [
     {
-        "name": "thermal_ftse250",
-        "title": "Thermal FTSE 250 (since 2016)"
+        "name": "thermal_crypto",
+        "title": "Cryptocurrencies (since 2016)"
     },
     {
         "name": "thermal_oecd",
-        "title": "Thermal OECD"
+        "title": "OECD data explaining the post-financial crisis"
+    },
+    {
+        "name": "thermal_ftse250",
+        "title": "Stock Market (FTSE 250 since 2016)"
     },
     {
         "name": "thermal_sp500",
-        "title": "Thermal S&P 500 (since 2016)"
+        "title": "Stock Market (S&P 500 since 2016)"
     }
 ]

@@ -1,0 +1,99 @@
+{
+    "s": {
+        "attributes": {
+            "doi": {
+                "alias": "DoI",
+                "type": "doi"
+            },
+            "opening_price": {
+                "description": "The first price at which the coin was exchanged that day",
+                "alias": "Open",
+                "type": "float",
+                "range": [
+                    0,
+                    0.07
+                ]
+            },
+            "opening_price_dip": {
+                "alias": "ΔOpen",
+                "type": "delta_index_percentage",
+                "attr": "opening_price"
+            },
+            "closing_price": {
+                "description": "The last price at which the coin was exchanged that day",
+                "alias": "Close",
+                "type": "float",
+                "range": [
+                    0,
+                    0.07
+                ]
+            },
+            "closing_price_di": {
+                "alias": "Close (di)",
+                "type": "delta_index",
+                "attr": "closing_price"
+            },
+            "closing_price_dip": {
+                "alias": "ΔClose",
+                "type": "delta_index_percentage",
+                "attr": "closing_price"
+            },
+            "lowest_price": {
+                "description": "The lowest price at which the coin was exchanged that day",
+                "alias": "Low",
+                "type": "float",
+                "range": [
+                    0,
+                    0.04
+                ]
+            },
+            "highest_price": {
+                "description": "The highest price at which the coin was exchanged that day",
+                "alias": "High",
+                "type": "float",
+                "range": [
+                    0,
+                    0.07
+                ]
+            },
+            "volume_crypto": {
+                "description": "The volume exchanged in the cryptocurrency value that day (quoted in that crypto)",
+                "alias": "Volume Crypto",
+                "type": "int",
+                "range": [
+                    0,
+                    202745000
+                ]
+            },
+            "volume_crypto_di": {
+                "alias": "Volume Crypto (di)",
+                "type": "delta_index",
+                "attr": "volume_crypto"
+            },
+            "volume_crypto_dip": {
+                "alias": "ΔVolume Crypto",
+                "type": "delta_index_percentage",
+                "attr": "volume_crypto"
+            },
+            "volume_btc": {
+                "description": "The volume exchanged in its converted value for that day (quoted in BTC)",
+                "alias": "Volume BTC",
+                "type": "int",
+                "range": [
+                    0,
+                    3691000
+                ]
+            },
+            "volume_btc_di": {
+                "alias": "Volume BTC (di)",
+                "type": "delta_index",
+                "attr": "volume_btc"
+            },
+            "volume_btc_dip": {
+                "alias": "ΔVolume BTC",
+                "type": "delta_index_percentage",
+                "attr": "volume_btc"
+            }
+        }
+    }
+}

@@ -464,7 +464,7 @@ export class PVDThermalLayout implements PVDElementParent, IAnimateable {
 
     // Define the lasso
     that.lasso = (<any>d3).lasso()
-      .itemOffset(angular.element(this.$root.node()).offset()) // max distance for the lasso loop to be closed
+      //.itemOffset(angular.element(this.$root.node()).offset()) // max distance for the lasso loop to be closed
       .closePathDistance(75) // max distance for the lasso loop to be closed
       .closePathSelect(true) // can items be selected by closing the path?
       .hoverSelect(true) // can items by selected by hovering over them?

@@ -1,17 +1,17 @@
 {
   "name": "thermalplot",
-  "main": "server.js",
+  "main": "server/index.js",
   "version": "1.0.0",
   "description": "",
   "scripts": {
     "test": "",
-    "start": "cross-env NODE_ENV=development nodemon server.js",
-    "dev": "cross-env NODE_ENV=development nodemon server.js",
+    "start": "cross-env NODE_ENV=development nodemon server/index.js",
+    "dev": "cross-env NODE_ENV=development nodemon server/index.js",
     "build": "rimraf dist && cross-env NODE_ENV=production webpack --config ./webpack.production.config.js --progress --profile --colors",
     "dev_webpack": "webpack --mode development",
     "build_webpack": "webpack --mode production",
     "start_webpack": "webpack-dev-server --watch --inline --host 0.0.0.0",
-    "express": "cross-env NODE_ENV=production PORT=3000 nodemon server.js"
+    "express": "cross-env NODE_ENV=production PORT=3000 nodemon server/index.js"
   },
   "keywords": [],
   "author": "",
@@ -68,7 +68,8 @@
     "socket.io": "~2.1.1",
     "socket.io-client": "~2.1.1",
     "raw-loader": "~0.5.1",
-    "express": "~4.16.3"
+    "express": "~4.16.3",
+    "winston": "winstonjs/winston/#3.0.0-rc5",
   },
   "engines": {
     "yarn": ">= 1.0.0"

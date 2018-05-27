@@ -70,7 +70,8 @@
     "raw-loader": "~0.5.1",
     "express": "~4.16.3",
     "winston": "winstonjs/winston/#3.0.0-rc5",
-    "sqlite3": "~4.0.0"
+    "sqlite3": "~4.0.0",
+    "better-sqlite3": "~4.1.1"
   },
   "engines": {
     "yarn": ">= 1.0.0"

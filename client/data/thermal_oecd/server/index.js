@@ -1,5 +1,5 @@
 const path = require('path');
-const sqlite3 = require('sqlite3').verbose();
+const Database = require('better-sqlite3');
 
 const UseCaseDBSocketHandler = require('../../../server/UseCaseDBSocketHandler');
 const logger = require('../../../server/logger');
@@ -11,6 +11,19 @@ const BASE_TABLE = 'oecd';
 const SQLITE_FIELDS = ['lt_interest_rate', 'st_interest_rate'];
 
 /*
+function open_db() {
+    logger.debug('connecting to sqlite db at %s', SQLITE_DB_PATH);
+    return new Database(SQLITE_DB_PATH, {
+        readonly: true,
+        fileMustExist: true
+    });
+}
+
+function close_db(db) {
+    logger.debug('close connection to sqlite db at %s', SQLITE_DB_PATH);
+    db.close();
+}
+
 class SocketHandler extends UseCaseDBSocketHandler {
 
     dateformat = '%Y-%m'
@@ -87,58 +100,57 @@ class SocketHandler extends UseCaseDBSocketHandler {
     }
 */
 
+        return rows.map((row) => {
+            const r = {
+                nip: row.key,
+                ts: Date.parse(row.ts) / 1000, // [ms -> sec] row.ts*time_factor
+                attrs: {}
+            };
+
+            SQLITE_FIELDS.forEach((field) => {
+                r.attrs[field] = row[field];
+            });
+
+            return r;
+        });
+    }
+}
+
+exports.SocketHandler = SocketHandler;
+
+
 class CSVHandler {
 
     constructor(res) {
         this.res = res;
-        this.open_db();
-    }
-
-    open_db() {
-        this.db = new sqlite3.Database(SQLITE_DB_PATH, sqlite3.OPEN_READONLY, (err) => {
-            if (err) {
-                logger.error(err.message);
-            }
-            logger.info('connected to the sqlite database %s', SQLITE_DB_PATH);
-        });
-    }
-
-    close_db() {
-        this.db.close((err) => {
-            if (err) {
-                logger.error(err.message);
-            }
-            logger.info('closed the sqlite database connection');
-        });
     }
 
     get(field, start, end, order_by) {
         if (order_by === null) {
-            order_by = 'asc'
+            order_by = 'asc';
         }
 
-        let sql = ('select ts, ' + SQLITE_FIELDS.join(', ') +
+        const db = open_db();
+
+        const sql = ('select ts, ' + SQLITE_FIELDS.join(', ') +
             ' from ' + BASE_TABLE + ' where ts >= ? and ts < ? and key = ?' +
-            ' order by ts ' + order_by)
+            ' order by ts ' + order_by);
 
-        logger.info('execute query with', { field, start, end })
-        this.db.all(sql, [start, end, field], (err, rows) => {
-            if (err) {
-                throw err;
-            }
-            this.handle_rows(rows);
-        });
-        this.close_db();
-    }
+        logger.info('execute query with', { field, start, end });
+        const rows = db.prepare(sql).all(start, end, field);
 
-    handle_rows(rows) {
-        const data = rows.map((row) => Object.values(row));
-        // this.set_header('Content-Type', 'text/csv')
-        this.res.write('date,')
-        this.res.write(SQLITE_FIELDS.join(',') + '\n')
-        data.forEach(line => {
-            this.res.write(line.join(',') + '\n')
-        });
+        close_db(db);
+
+        // write csv header
+        this.res.write('date,');
+        this.res.write(SQLITE_FIELDS.join(',') + '\n');
+
+        // write csv data
+        rows.map((row) => Object.values(row))
+            .forEach(line => {
+                this.res.write(line.join(',') + '\n');
+            });
+
         this.res.end();
     }
 }

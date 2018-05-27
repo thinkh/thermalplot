@@ -108,10 +108,10 @@ class UseCaseDBSocketHandler extends UseCaseSocketHandler {
     filter(prop) {
         let r = '';
         if (this.filter_in !== null && this.filter_in.length > 0) {
-            r += 'and ' + prop + ' in ("' + '","'.join(this.filter_in) + '") ';
+            r += 'and ' + prop + ' in ("' + this.filter_in.join('","') + '") ';
         }
         if (this.filter_ex !== null && this.filter_ex.length > 0) {
-            r += 'and ' + prop + ' not in ("' + '","'.join(this.filter_ex) + '") ';
+            r += 'and ' + prop + ' not in ("' + this.filter_ex.join('","') + '") ';
         }
         return r;
     }

@@ -1,13 +1,13 @@
 -- international bitcoin currency information 
-DROP TABLE IF EXISTS "currency_info";
-CREATE TABLE "currency_info"(
+--DROP TABLE IF EXISTS "currency_info";
+CREATE TABLE IF NOT EXISTS "currency_info"(
     currency_code	VARCHAR (10),
     currency 		TEXT
 );
 
-DROP TABLE IF EXISTS "btc_prices";
-CREATE TABLE "btc_prices"(
-    date            TEXT NOT NULL,
+--DROP TABLE IF EXISTS "btc_prices";
+CREATE TABLE IF NOT EXISTS "btc_prices"(
+    ts              REAL,
     opening_price   REAL,
     highest_price   REAL,
     lowest_price    REAL,
@@ -15,12 +15,12 @@ CREATE TABLE "btc_prices"(
     volume_btc      REAL,
     volume_currency REAL,
     currency_code   VARCHAR (10),
-	PRIMARY KEY (currency_code, date) ON CONFLICT IGNORE
+	PRIMARY KEY (currency_code, ts) ON CONFLICT IGNORE
 );
 
-DROP TABLE IF EXISTS "crypto_prices";
-CREATE TABLE "crypto_prices"(
-    date            TEXT NOT NULL,
+--DROP TABLE IF EXISTS "crypto_prices";
+CREATE TABLE IF NOT EXISTS "crypto_prices"(
+    ts              REAL,
     opening_price   REAL,
     highest_price   REAL,
     lowest_price    REAL,
@@ -28,5 +28,5 @@ CREATE TABLE "crypto_prices"(
     volume_crypto   REAL,
     volume_btc      REAL,
     currency_code   VARCHAR (10),
-	PRIMARY KEY (currency_code, date) ON CONFLICT IGNORE
+	PRIMARY KEY (currency_code, ts) ON CONFLICT IGNORE
 );

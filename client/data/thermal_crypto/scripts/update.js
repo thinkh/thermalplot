@@ -3,7 +3,9 @@ const path = require('path');
 const util = require('util');
 
 const fetch = require('node-fetch');
-const Database = require('better-sqlite3');
+
+const utils = require('./utils');
+const db = require('./db');
 
 
 const API_ENDPOINT = 'https://min-api.cryptocompare.com/data/';
@@ -11,27 +13,20 @@ const API_ENDPOINT = 'https://min-api.cryptocompare.com/data/';
 const BASE_PATH = path.join(__dirname, '..');
 
 const SQLITE_DB_PATH = path.join(BASE_PATH, 'sqlite', 'crypto.db');
+const SQLITE_SETUP_SCRIPT = path.join(BASE_PATH, 'sqlite', 'crypto_data.sql');
 
 const INFRA_JSON = path.join(BASE_PATH, 'crypto.json');
 
+const NUM_CONCURRENT_REQ = 1;
+
 /**
  * Update the top list of cryptocurrencies
- * @param {number} limit The number of data points to return 
- * @param {string} symbol The currency symbol to convert into [Max character length: 10]
+ * @param {number} limit The number of data points to return (default: 250)
+ * @param {string} tsym The currency symbol to convert into [Max character length: 10] (default: USD)
  * @param {boolean} replaceInfraJson Replace the items in the infra.json (true) or write to a separate file (default: false)
  */
-function updateTopList(limit = 250, symbol = 'USD', replaceInfraJson = false) {
-    const infraJson = new Promise(function (resolve, reject) {
-        fs.readFile(INFRA_JSON, 'utf8', function (err, data) {
-            if (err) {
-                reject(err);
-            } else {
-                resolve(data);
-            }
-        });
-    })
-        .then((data) => JSON.parse(data));
-
+async function updateTopList(limit = 250, tsym = 'USD', replaceInfraJson = false) {
+    const infraJson = await utils.getInfraJson();
 
     const newChildren = fetch(`${API_ENDPOINT}top/totalvol?limit=${limit}&tsym=${symbol}`)
         .then(res => res.json())
@@ -76,3 +71,69 @@ function updateTopList(limit = 250, symbol = 'USD', replaceInfraJson = false) {
 }
 
 //updateTopList(250, 'USD', true);
+
+
+async function _updateHistCoinData(fromSymbols, limit = 365, toSymbol = 'BTC', table = 'crypto_prices', swapFromTo = false) {
+    const dbHandler = db.open(SQLITE_DB_PATH);
+    await db.prepareTables(dbHandler, SQLITE_SETUP_SCRIPT);
+
+    const symbolsCopy = fromSymbols.slice(0);
+
+    function loadHistCoinData() {
+        if (symbolsCopy.length === 0) {
+            console.log('----------------');
+            console.log('finished loading');
+            clearInterval(timer);
+            db.close(dbHandler);
+            return;
+        }
+
+        symbolsCopy.splice(0, NUM_CONCURRENT_REQ).forEach((symbol) => {
+            let fsym = symbol;
+            let tsym = toSymbol;
+
+            if (swapFromTo) {
+                fsym = toSymbol;
+                tsym = symbol;
+            }
+
+            console.log(`${symbol} ... start loading`);
+            fetch(`${API_ENDPOINT}histoday?limit=${limit}&tsym=${tsym}&fsym=${fsym}`)
+                .then(res => res.json())
+                .then(json => {
+                    json.Data.forEach(item => {
+                        const statement = dbHandler.prepare(`INSERT INTO ${table} VALUES (?, ?, ?, ?, ?, ?, ?, ?)`)
+                        const info = statement.run(
+                            item.time, // ts,
+                            item.open, // opening_price,
+                            item.high, // highest_price,
+                            item.low, // lowest_price,
+                            item.close, // closing_price,
+                            item.volumefrom, // volume_crypto,
+                            item.volumeto, // volume_btc,
+                            symbol // currency_code
+                        );
+                        //console.log(info);
+                    });
+                    return json;
+                })
+                .then((json) => {
+                    console.log(`${symbol} ... done (${json.Data.length} rows)`);
+                });
+        });
+    }
+
+    const timer = setInterval(loadHistCoinData, 2000);
+}
+
+
+async function updateHistCoinData() {
+    const _symbols = await utils.getSymbols(INFRA_JSON);
+    const symbols = _symbols.filter((s) => s !== 'BTC'); // no BTC because we store them separately in btc_prices
+    _updateHistCoinData(symbols, 365, 'BTC', 'crypto_prices');
+
+    //_updateHistCoinData(['USD', 'EUR', 'GBP', 'JPY'], 365, 'BTC', 'btc_prices', true); // true -> swap from and to
+}
+
+
+updateHistCoinData();

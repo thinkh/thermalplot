@@ -25,28 +25,46 @@ const NUM_CONCURRENT_REQ = 1;
  * @param {string} tsym The currency symbol to convert into [Max character length: 10] (default: USD)
  * @param {boolean} replaceInfraJson Replace the items in the infra.json (true) or write to a separate file (default: false)
  */
-async function updateTopList(limit = 250, tsym = 'USD', replaceInfraJson = false) {
-    const infraJson = await utils.getInfraJson();
+async function updateTopList(limit = 50, pages = 5, tsym = 'USD', replaceInfraJson = false) {
+    const infraJson = await utils.getInfraJson(INFRA_JSON);
 
-    const newChildren = fetch(`${API_ENDPOINT}top/totalvol?limit=${limit}&tsym=${symbol}`)
-        .then(res => res.json())
-        .then(json => {
-            const r = {};
-            json.Data.forEach(item => {
-                // ThermalPlot infrastructure format
-                r[item.CoinInfo.Name] = {
-                    alias: item.CoinInfo.Name,
-                    title: item.CoinInfo.FullName,
-                    traits: ['s']
-                };
-            });
-            return r;
-        });
+    const promise = new Promise((resolve, reject) => {
+        let newChildren = [];
 
+        function loadTopList() {
+            if (pages === 0) {
+                clearInterval(timer);
+                resolve(newChildren);
+                return;
+            }
 
-    Promise.all([infraJson, newChildren])
+            console.log(`loading page ${pages}`);
+
+            fetch(`${API_ENDPOINT}top/totalvol?limit=${limit}&tsym=${tsym}&page=${pages}`)
+                .then(res => res.json())
+                .then(json => {
+                    const r = {};
+                    json.Data.forEach(item => {
+                        // ThermalPlot infrastructure format
+                        r[item.CoinInfo.Name] = {
+                            alias: item.CoinInfo.Name,
+                            title: item.CoinInfo.FullName,
+                            traits: ['s']
+                        };
+                    });
+                    console.log(`loaded ${json.Data.length} items`);
+                    newChildren = [r, ...newChildren];
+                });
+
+            pages--;
+        }
+
+        const timer = setInterval(loadTopList, 2000);
+    });
+
+    Promise.all([infraJson, promise])
         .then(jsons => {
-            jsons[0].root.children = jsons[1];
+            jsons[0].root.children = Object.assign({}, ...jsons[1]);
             return jsons[0];
         })
         .then(infraJson => {
@@ -70,7 +88,7 @@ async function updateTopList(limit = 250, tsym = 'USD', replaceInfraJson = false
         });
 }
 
-//updateTopList(250, 'USD', true);
+//updateTopList(50, 5, 'USD', true); // 5 * 50 = 250 items
 
 
 async function _updateHistCoinData(fromSymbols, limit = 365, toSymbol = 'BTC', table = 'crypto_prices', swapFromTo = false) {
@@ -119,6 +137,7 @@ async function _updateHistCoinData(fromSymbols, limit = 365, toSymbol = 'BTC', t
                 })
                 .then((json) => {
                     console.log(`${symbol} ... done (${json.Data.length} rows)`);
+                    console.log(`still ${symbolsCopy.length} coins to load ...`);
                 });
         });
     }
@@ -130,6 +149,7 @@ async function _updateHistCoinData(fromSymbols, limit = 365, toSymbol = 'BTC', t
 async function updateHistCoinData() {
     const _symbols = await utils.getSymbols(INFRA_JSON);
     const symbols = _symbols.filter((s) => s !== 'BTC'); // no BTC because we store them separately in btc_prices
+    console.log(symbols.length);
     _updateHistCoinData(symbols, 365, 'BTC', 'crypto_prices');
 
     //_updateHistCoinData(['USD', 'EUR', 'GBP', 'JPY'], 365, 'BTC', 'btc_prices', true); // true -> swap from and to

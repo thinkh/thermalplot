@@ -11,7 +11,7 @@
                 "type": "float",
                 "range": [
                     0,
-                    0.07
+                    9566.8937
                 ]
             },
             "opening_price_dip": {
@@ -25,7 +25,7 @@
                 "type": "float",
                 "range": [
                     0,
-                    0.07
+                    11384.48718
                 ]
             },
             "closing_price_di": {
@@ -44,7 +44,7 @@
                 "type": "float",
                 "range": [
                     0,
-                    0.04
+                    8420.274148
                 ]
             },
             "highest_price": {
@@ -53,7 +53,7 @@
                 "type": "float",
                 "range": [
                     0,
-                    0.07
+                    11914803.0
                 ]
             },
             "volume_crypto": {
@@ -62,7 +62,7 @@
                 "type": "int",
                 "range": [
                     0,
-                    202745000
+                    2.0e+24
                 ]
             },
             "volume_crypto_di": {
@@ -81,7 +81,7 @@
                 "type": "int",
                 "range": [
                     0,
-                    3691000
+                    2.6e+17
                 ]
             },
             "volume_btc_di": {

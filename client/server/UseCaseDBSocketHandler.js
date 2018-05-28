@@ -8,7 +8,7 @@ let closedTimeFactor = 0;
 
 class UseCaseDBSocketHandler extends UseCaseSocketHandler {
 
-    constructor(socket, timeFactor, step_unit = 'null') {
+    constructor(socket, timeFactor, step_unit = 'none') {
         super(socket);
         logger.debug('UseCaseDBSocketHandler initialized');
         this.previous_time = 0;

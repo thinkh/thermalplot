@@ -29,7 +29,7 @@ function close_db(db) {
 class SocketHandler extends UseCaseDBSocketHandler {
 
     constructor(socket) {
-        super(socket, 24 * 60 * 60, 'day');  // TIME FACTOR in sec = 1 day
+        super(socket, 24 * 60 * 60);  // TIME FACTOR in sec = 1 day
         this.dateformat = 'Y-m-d';
 
         this.filter_in = ['ETH', 'LTC', 'IOT', 'XLM'];

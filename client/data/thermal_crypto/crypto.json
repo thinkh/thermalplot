@@ -706,6 +706,1756 @@
 				"traits": [
 					"s"
 				]
+			},
+			"VEN": {
+				"alias": "VEN",
+				"title": "Vechain",
+				"traits": [
+					"s"
+				]
+			},
+			"LSK": {
+				"alias": "LSK",
+				"title": "Lisk",
+				"traits": [
+					"s"
+				]
+			},
+			"TNB": {
+				"alias": "TNB",
+				"title": "Time New Bank",
+				"traits": [
+					"s"
+				]
+			},
+			"MTC": {
+				"alias": "MTC",
+				"title": "DOCADEMIC",
+				"traits": [
+					"s"
+				]
+			},
+			"LUN": {
+				"alias": "LUN",
+				"title": "Lunyr",
+				"traits": [
+					"s"
+				]
+			},
+			"KNC": {
+				"alias": "KNC",
+				"title": "Kyber Network",
+				"traits": [
+					"s"
+				]
+			},
+			"ELA": {
+				"alias": "ELA",
+				"title": "Elastos",
+				"traits": [
+					"s"
+				]
+			},
+			"NANO": {
+				"alias": "NANO",
+				"title": "Nano",
+				"traits": [
+					"s"
+				]
+			},
+			"STRAT": {
+				"alias": "STRAT",
+				"title": "Stratis",
+				"traits": [
+					"s"
+				]
+			},
+			"NAV": {
+				"alias": "NAV",
+				"title": "NavCoin",
+				"traits": [
+					"s"
+				]
+			},
+			"RLC": {
+				"alias": "RLC",
+				"title": "iEx.ec",
+				"traits": [
+					"s"
+				]
+			},
+			"LYM": {
+				"alias": "LYM",
+				"title": "Lympo",
+				"traits": [
+					"s"
+				]
+			},
+			"PRO": {
+				"alias": "PRO",
+				"title": "Propy",
+				"traits": [
+					"s"
+				]
+			},
+			"WAN": {
+				"alias": "WAN",
+				"title": "Wanchain",
+				"traits": [
+					"s"
+				]
+			},
+			"INT": {
+				"alias": "INT",
+				"title": "Internet Node Token",
+				"traits": [
+					"s"
+				]
+			},
+			"INK": {
+				"alias": "INK",
+				"title": "Ink",
+				"traits": [
+					"s"
+				]
+			},
+			"RUFF": {
+				"alias": "RUFF",
+				"title": "Ruff",
+				"traits": [
+					"s"
+				]
+			},
+			"ABT": {
+				"alias": "ABT",
+				"title": "ArcBlock",
+				"traits": [
+					"s"
+				]
+			},
+			"GXS": {
+				"alias": "GXS",
+				"title": "GXChain",
+				"traits": [
+					"s"
+				]
+			},
+			"GRS": {
+				"alias": "GRS",
+				"title": "Groestlcoin ",
+				"traits": [
+					"s"
+				]
+			},
+			"WINGS": {
+				"alias": "WINGS",
+				"title": "Wings DAO",
+				"traits": [
+					"s"
+				]
+			},
+			"PAY": {
+				"alias": "PAY",
+				"title": "TenX",
+				"traits": [
+					"s"
+				]
+			},
+			"DAT": {
+				"alias": "DAT",
+				"title": "Datum",
+				"traits": [
+					"s"
+				]
+			},
+			"WTC": {
+				"alias": "WTC",
+				"title": "Waltonchain",
+				"traits": [
+					"s"
+				]
+			},
+			"PAT": {
+				"alias": "PAT",
+				"title": "PATRON",
+				"traits": [
+					"s"
+				]
+			},
+			"AE": {
+				"alias": "AE",
+				"title": "Aeternity",
+				"traits": [
+					"s"
+				]
+			},
+			"PNT": {
+				"alias": "PNT",
+				"title": "Penta",
+				"traits": [
+					"s"
+				]
+			},
+			"LRC": {
+				"alias": "LRC",
+				"title": "Loopring",
+				"traits": [
+					"s"
+				]
+			},
+			"REP": {
+				"alias": "REP",
+				"title": "Augur",
+				"traits": [
+					"s"
+				]
+			},
+			"MTN*": {
+				"alias": "MTN*",
+				"title": "Medicalchain",
+				"traits": [
+					"s"
+				]
+			},
+			"EDO": {
+				"alias": "EDO",
+				"title": "Eidoo",
+				"traits": [
+					"s"
+				]
+			},
+			"POLY": {
+				"alias": "POLY",
+				"title": "PolyBit",
+				"traits": [
+					"s"
+				]
+			},
+			"SRN": {
+				"alias": "SRN",
+				"title": "SirinLabs",
+				"traits": [
+					"s"
+				]
+			},
+			"SALT": {
+				"alias": "SALT",
+				"title": "Salt Lending",
+				"traits": [
+					"s"
+				]
+			},
+			"POWR": {
+				"alias": "POWR",
+				"title": "Power Ledger",
+				"traits": [
+					"s"
+				]
+			},
+			"GTO": {
+				"alias": "GTO",
+				"title": "GIFTO",
+				"traits": [
+					"s"
+				]
+			},
+			"STEEM": {
+				"alias": "STEEM",
+				"title": "Steem",
+				"traits": [
+					"s"
+				]
+			},
+			"VIB": {
+				"alias": "VIB",
+				"title": "Viberate",
+				"traits": [
+					"s"
+				]
+			},
+			"ENG": {
+				"alias": "ENG",
+				"title": "Enigma",
+				"traits": [
+					"s"
+				]
+			},
+			"RDD": {
+				"alias": "RDD",
+				"title": "Reddcoin",
+				"traits": [
+					"s"
+				]
+			},
+			"ADX": {
+				"alias": "ADX",
+				"title": "AdEx",
+				"traits": [
+					"s"
+				]
+			},
+			"STORM": {
+				"alias": "STORM",
+				"title": "Storm",
+				"traits": [
+					"s"
+				]
+			},
+			"GAS": {
+				"alias": "GAS",
+				"title": "Gas",
+				"traits": [
+					"s"
+				]
+			},
+			"1ST": {
+				"alias": "1ST",
+				"title": "FirstBlood",
+				"traits": [
+					"s"
+				]
+			},
+			"GVT": {
+				"alias": "GVT",
+				"title": "Genesis Vision",
+				"traits": [
+					"s"
+				]
+			},
+			"QLC": {
+				"alias": "QLC",
+				"title": "QLC Chain",
+				"traits": [
+					"s"
+				]
+			},
+			"SUB": {
+				"alias": "SUB",
+				"title": "Substratum Network",
+				"traits": [
+					"s"
+				]
+			},
+			"BRD": {
+				"alias": "BRD",
+				"title": "Bread token",
+				"traits": [
+					"s"
+				]
+			},
+			"MANA": {
+				"alias": "MANA",
+				"title": "Decentraland",
+				"traits": [
+					"s"
+				]
+			},
+			"DGB": {
+				"alias": "DGB",
+				"title": "DigiByte",
+				"traits": [
+					"s"
+				]
+			},
+			"BOT": {
+				"alias": "BOT",
+				"title": "Bodhi",
+				"traits": [
+					"s"
+				]
+			},
+			"DCR": {
+				"alias": "DCR",
+				"title": "Decred",
+				"traits": [
+					"s"
+				]
+			},
+			"GTC": {
+				"alias": "GTC",
+				"title": "Game",
+				"traits": [
+					"s"
+				]
+			},
+			"ETHOS": {
+				"alias": "ETHOS",
+				"title": "Ethos",
+				"traits": [
+					"s"
+				]
+			},
+			"RCN": {
+				"alias": "RCN",
+				"title": "Ripio",
+				"traits": [
+					"s"
+				]
+			},
+			"NXT": {
+				"alias": "NXT",
+				"title": "Nxt",
+				"traits": [
+					"s"
+				]
+			},
+			"PART": {
+				"alias": "PART",
+				"title": "Particl",
+				"traits": [
+					"s"
+				]
+			},
+			"BNT": {
+				"alias": "BNT",
+				"title": "Bancor Network Token",
+				"traits": [
+					"s"
+				]
+			},
+			"DOGE": {
+				"alias": "DOGE",
+				"title": "Dogecoin",
+				"traits": [
+					"s"
+				]
+			},
+			"MER": {
+				"alias": "MER",
+				"title": "Mercury",
+				"traits": [
+					"s"
+				]
+			},
+			"NCASH": {
+				"alias": "NCASH",
+				"title": "Nucleus Vision",
+				"traits": [
+					"s"
+				]
+			},
+			"SMT*": {
+				"alias": "SMT*",
+				"title": "SmartMesh",
+				"traits": [
+					"s"
+				]
+			},
+			"STQ": {
+				"alias": "STQ",
+				"title": "Storiqa Token",
+				"traits": [
+					"s"
+				]
+			},
+			"IHT": {
+				"alias": "IHT",
+				"title": "I-House Token",
+				"traits": [
+					"s"
+				]
+			},
+			"NULS": {
+				"alias": "NULS",
+				"title": "Nuls",
+				"traits": [
+					"s"
+				]
+			},
+			"ARDR": {
+				"alias": "ARDR",
+				"title": "Ardor",
+				"traits": [
+					"s"
+				]
+			},
+			"ITC": {
+				"alias": "ITC",
+				"title": "IoT Chain",
+				"traits": [
+					"s"
+				]
+			},
+			"XDN": {
+				"alias": "XDN",
+				"title": "DigitalNote ",
+				"traits": [
+					"s"
+				]
+			},
+			"YEE": {
+				"alias": "YEE",
+				"title": "Yee",
+				"traits": [
+					"s"
+				]
+			},
+			"MAID": {
+				"alias": "MAID",
+				"title": "MaidSafe Coin",
+				"traits": [
+					"s"
+				]
+			},
+			"INS": {
+				"alias": "INS",
+				"title": "INS Ecosystem",
+				"traits": [
+					"s"
+				]
+			},
+			"SNC": {
+				"alias": "SNC",
+				"title": "SunContract",
+				"traits": [
+					"s"
+				]
+			},
+			"XZC": {
+				"alias": "XZC",
+				"title": "ZCoin",
+				"traits": [
+					"s"
+				]
+			},
+			"NXS": {
+				"alias": "NXS",
+				"title": "Nexus",
+				"traits": [
+					"s"
+				]
+			},
+			"BBC": {
+				"alias": "BBC",
+				"title": "TraDove",
+				"traits": [
+					"s"
+				]
+			},
+			"BFT": {
+				"alias": "BFT",
+				"title": "BF Token",
+				"traits": [
+					"s"
+				]
+			},
+			"BTS": {
+				"alias": "BTS",
+				"title": "Bitshares",
+				"traits": [
+					"s"
+				]
+			},
+			"DNT": {
+				"alias": "DNT",
+				"title": "district0x",
+				"traits": [
+					"s"
+				]
+			},
+			"NPXS": {
+				"alias": "NPXS",
+				"title": "Pundi X",
+				"traits": [
+					"s"
+				]
+			},
+			"STORJ": {
+				"alias": "STORJ",
+				"title": "Storj",
+				"traits": [
+					"s"
+				]
+			},
+			"NKC": {
+				"alias": "NKC",
+				"title": "Nukecoinz",
+				"traits": [
+					"s"
+				]
+			},
+			"FUN": {
+				"alias": "FUN",
+				"title": "FunFair",
+				"traits": [
+					"s"
+				]
+			},
+			"BANCA": {
+				"alias": "BANCA",
+				"title": "BANCA",
+				"traits": [
+					"s"
+				]
+			},
+			"ABT*": {
+				"alias": "ABT*",
+				"title": "Advanced Browsing Token",
+				"traits": [
+					"s"
+				]
+			},
+			"BAT": {
+				"alias": "BAT",
+				"title": "Basic Attention Token",
+				"traits": [
+					"s"
+				]
+			},
+			"AION": {
+				"alias": "AION",
+				"title": "Aion",
+				"traits": [
+					"s"
+				]
+			},
+			"ZEN": {
+				"alias": "ZEN",
+				"title": "ZenCash",
+				"traits": [
+					"s"
+				]
+			},
+			"REBL": {
+				"alias": "REBL",
+				"title": "REBL",
+				"traits": [
+					"s"
+				]
+			},
+			"BCPT": {
+				"alias": "BCPT",
+				"title": "BlockMason Credit Protocol",
+				"traits": [
+					"s"
+				]
+			},
+			"MDS": {
+				"alias": "MDS",
+				"title": "MediShares",
+				"traits": [
+					"s"
+				]
+			},
+			"WPR": {
+				"alias": "WPR",
+				"title": "WePower",
+				"traits": [
+					"s"
+				]
+			},
+			"OC": {
+				"alias": "OC",
+				"title": "OrangeCoin",
+				"traits": [
+					"s"
+				]
+			},
+			"DGD": {
+				"alias": "DGD",
+				"title": "Digix DAO",
+				"traits": [
+					"s"
+				]
+			},
+			"CLOAK": {
+				"alias": "CLOAK",
+				"title": "CloakCoin",
+				"traits": [
+					"s"
+				]
+			},
+			"BTO": {
+				"alias": "BTO",
+				"title": "Bottos",
+				"traits": [
+					"s"
+				]
+			},
+			"XAS": {
+				"alias": "XAS",
+				"title": "Asch",
+				"traits": [
+					"s"
+				]
+			},
+			"TIX": {
+				"alias": "TIX",
+				"title": "Blocktix",
+				"traits": [
+					"s"
+				]
+			},
+			"STC": {
+				"alias": "STC",
+				"title": "StarChain",
+				"traits": [
+					"s"
+				]
+			},
+			"DIG": {
+				"alias": "DIG",
+				"title": "Dignity",
+				"traits": [
+					"s"
+				]
+			},
+			"LINK": {
+				"alias": "LINK",
+				"title": "ChainLink",
+				"traits": [
+					"s"
+				]
+			},
+			"STX": {
+				"alias": "STX",
+				"title": "Stox",
+				"traits": [
+					"s"
+				]
+			},
+			"ARK": {
+				"alias": "ARK",
+				"title": "ARK",
+				"traits": [
+					"s"
+				]
+			},
+			"NOAH": {
+				"alias": "NOAH",
+				"title": "NOAHCOIN",
+				"traits": [
+					"s"
+				]
+			},
+			"UGC": {
+				"alias": "UGC",
+				"title": "ugChain",
+				"traits": [
+					"s"
+				]
+			},
+			"POA": {
+				"alias": "POA",
+				"title": "Poa Network",
+				"traits": [
+					"s"
+				]
+			},
+			"DADI": {
+				"alias": "DADI",
+				"title": "DADI",
+				"traits": [
+					"s"
+				]
+			},
+			"EMC2": {
+				"alias": "EMC2",
+				"title": "Einsteinium",
+				"traits": [
+					"s"
+				]
+			},
+			"REQ": {
+				"alias": "REQ",
+				"title": "Request Network",
+				"traits": [
+					"s"
+				]
+			},
+			"NGC": {
+				"alias": "NGC",
+				"title": "NagaCoin",
+				"traits": [
+					"s"
+				]
+			},
+			"EDG": {
+				"alias": "EDG",
+				"title": "Edgeless",
+				"traits": [
+					"s"
+				]
+			},
+			"PIVX": {
+				"alias": "PIVX",
+				"title": "Private Instant Verified Transaction",
+				"traits": [
+					"s"
+				]
+			},
+			"WAX": {
+				"alias": "WAX",
+				"title": "Worldwide Asset eXchange",
+				"traits": [
+					"s"
+				]
+			},
+			"GUP": {
+				"alias": "GUP",
+				"title": "Guppy",
+				"traits": [
+					"s"
+				]
+			},
+			"SENC": {
+				"alias": "SENC",
+				"title": "Sentinel Chain",
+				"traits": [
+					"s"
+				]
+			},
+			"AST": {
+				"alias": "AST",
+				"title": "AirSwap",
+				"traits": [
+					"s"
+				]
+			},
+			"IGNIS": {
+				"alias": "IGNIS",
+				"title": "Ignis",
+				"traits": [
+					"s"
+				]
+			},
+			"POE": {
+				"alias": "POE",
+				"title": "Po.et",
+				"traits": [
+					"s"
+				]
+			},
+			"SYS": {
+				"alias": "SYS",
+				"title": "SysCoin",
+				"traits": [
+					"s"
+				]
+			},
+			"KMD": {
+				"alias": "KMD",
+				"title": "Komodo",
+				"traits": [
+					"s"
+				]
+			},
+			"DIVX": {
+				"alias": "DIVX",
+				"title": "Divi",
+				"traits": [
+					"s"
+				]
+			},
+			"PST": {
+				"alias": "PST",
+				"title": "Primas",
+				"traits": [
+					"s"
+				]
+			},
+			"TNT": {
+				"alias": "TNT",
+				"title": "Tierion",
+				"traits": [
+					"s"
+				]
+			},
+			"RCT": {
+				"alias": "RCT",
+				"title": "RealChain",
+				"traits": [
+					"s"
+				]
+			},
+			"CS*": {
+				"alias": "CS*",
+				"title": "Credits",
+				"traits": [
+					"s"
+				]
+			},
+			"SNM": {
+				"alias": "SNM",
+				"title": "SONM",
+				"traits": [
+					"s"
+				]
+			},
+			"BLZ": {
+				"alias": "BLZ",
+				"title": "Bluzelle",
+				"traits": [
+					"s"
+				]
+			},
+			"SBD*": {
+				"alias": "SBD*",
+				"title": "Steem Backed Dollars",
+				"traits": [
+					"s"
+				]
+			},
+			"YOYOW": {
+				"alias": "YOYOW",
+				"title": "Yoyow",
+				"traits": [
+					"s"
+				]
+			},
+			"RPX": {
+				"alias": "RPX",
+				"title": "Red Pulse",
+				"traits": [
+					"s"
+				]
+			},
+			"BCD": {
+				"alias": "BCD",
+				"title": "Bitcoin Diamond",
+				"traits": [
+					"s"
+				]
+			},
+			"QSP": {
+				"alias": "QSP",
+				"title": "Quantstamp",
+				"traits": [
+					"s"
+				]
+			},
+			"MEME": {
+				"alias": "MEME",
+				"title": "Pepe",
+				"traits": [
+					"s"
+				]
+			},
+			"ION": {
+				"alias": "ION",
+				"title": "Ionomy",
+				"traits": [
+					"s"
+				]
+			},
+			"ICN": {
+				"alias": "ICN",
+				"title": "Iconomi",
+				"traits": [
+					"s"
+				]
+			},
+			"GNX": {
+				"alias": "GNX",
+				"title": "Genaro Network",
+				"traits": [
+					"s"
+				]
+			},
+			"RDN*": {
+				"alias": "RDN*",
+				"title": "Raiden Network",
+				"traits": [
+					"s"
+				]
+			},
+			"NEBL": {
+				"alias": "NEBL",
+				"title": "Neblio",
+				"traits": [
+					"s"
+				]
+			},
+			"TUSD": {
+				"alias": "TUSD",
+				"title": "True USD",
+				"traits": [
+					"s"
+				]
+			},
+			"PUT*": {
+				"alias": "PUT*",
+				"title": "Robin8 Profile Utility Token",
+				"traits": [
+					"s"
+				]
+			},
+			"MAG**": {
+				"alias": "MAG**",
+				"title": "Maggie Token",
+				"traits": [
+					"s"
+				]
+			},
+			"REN": {
+				"alias": "REN",
+				"title": "Republic Token",
+				"traits": [
+					"s"
+				]
+			},
+			"UTN": {
+				"alias": "UTN",
+				"title": "Universa",
+				"traits": [
+					"s"
+				]
+			},
+			"VVI": {
+				"alias": "VVI",
+				"title": "VV Coin",
+				"traits": [
+					"s"
+				]
+			},
+			"DAI": {
+				"alias": "DAI",
+				"title": "Dai",
+				"traits": [
+					"s"
+				]
+			},
+			"QRL": {
+				"alias": "QRL",
+				"title": "Quantum Resistant Ledger",
+				"traits": [
+					"s"
+				]
+			},
+			"APPC": {
+				"alias": "APPC",
+				"title": "AppCoins",
+				"traits": [
+					"s"
+				]
+			},
+			"OST": {
+				"alias": "OST",
+				"title": "Simple Token",
+				"traits": [
+					"s"
+				]
+			},
+			"SHIFT": {
+				"alias": "SHIFT",
+				"title": "Shift",
+				"traits": [
+					"s"
+				]
+			},
+			"FCT": {
+				"alias": "FCT",
+				"title": "Factoids",
+				"traits": [
+					"s"
+				]
+			},
+			"STK": {
+				"alias": "STK",
+				"title": "STK Token",
+				"traits": [
+					"s"
+				]
+			},
+			"HMC": {
+				"alias": "HMC",
+				"title": "Hi Mutual Society",
+				"traits": [
+					"s"
+				]
+			},
+			"CHAT": {
+				"alias": "CHAT",
+				"title": "ChatCoin",
+				"traits": [
+					"s"
+				]
+			},
+			"MTX": {
+				"alias": "MTX",
+				"title": "Matryx",
+				"traits": [
+					"s"
+				]
+			},
+			"DCT": {
+				"alias": "DCT",
+				"title": "Decent",
+				"traits": [
+					"s"
+				]
+			},
+			"SYNX": {
+				"alias": "SYNX",
+				"title": "Syndicate",
+				"traits": [
+					"s"
+				]
+			},
+			"MONA": {
+				"alias": "MONA",
+				"title": "MonaCoin",
+				"traits": [
+					"s"
+				]
+			},
+			"GNO": {
+				"alias": "GNO",
+				"title": "Gnosis",
+				"traits": [
+					"s"
+				]
+			},
+			"QASH": {
+				"alias": "QASH",
+				"title": "Quoine Liquid",
+				"traits": [
+					"s"
+				]
+			},
+			"TRIG": {
+				"alias": "TRIG",
+				"title": "Trigger",
+				"traits": [
+					"s"
+				]
+			},
+			"EMC": {
+				"alias": "EMC",
+				"title": "Emercoin",
+				"traits": [
+					"s"
+				]
+			},
+			"EVX": {
+				"alias": "EVX",
+				"title": "Everex",
+				"traits": [
+					"s"
+				]
+			},
+			"DBC": {
+				"alias": "DBC",
+				"title": "DeepBrain Chain",
+				"traits": [
+					"s"
+				]
+			},
+			"SWT": {
+				"alias": "SWT",
+				"title": "Swarm City Token",
+				"traits": [
+					"s"
+				]
+			},
+			"HMQ": {
+				"alias": "HMQ",
+				"title": "Humaniq",
+				"traits": [
+					"s"
+				]
+			},
+			"DENT": {
+				"alias": "DENT",
+				"title": "Dent",
+				"traits": [
+					"s"
+				]
+			},
+			"VTC": {
+				"alias": "VTC",
+				"title": "Vertcoin",
+				"traits": [
+					"s"
+				]
+			},
+			"BKX": {
+				"alias": "BKX",
+				"title": "BANKEX",
+				"traits": [
+					"s"
+				]
+			},
+			"AIDOC": {
+				"alias": "AIDOC",
+				"title": "AI Doctor",
+				"traits": [
+					"s"
+				]
+			},
+			"DOCK": {
+				"alias": "DOCK",
+				"title": "Dock.io",
+				"traits": [
+					"s"
+				]
+			},
+			"CRPT": {
+				"alias": "CRPT",
+				"title": "Crypterium",
+				"traits": [
+					"s"
+				]
+			},
+			"ETN": {
+				"alias": "ETN",
+				"title": "Electroneum",
+				"traits": [
+					"s"
+				]
+			},
+			"HOT": {
+				"alias": "HOT",
+				"title": "Holo",
+				"traits": [
+					"s"
+				]
+			},
+			"NMR": {
+				"alias": "NMR",
+				"title": "Numerai",
+				"traits": [
+					"s"
+				]
+			},
+			"R": {
+				"alias": "R",
+				"title": "Revain",
+				"traits": [
+					"s"
+				]
+			},
+			"CAPP": {
+				"alias": "CAPP",
+				"title": "Cappasity",
+				"traits": [
+					"s"
+				]
+			},
+			"TSL": {
+				"alias": "TSL",
+				"title": "Energo",
+				"traits": [
+					"s"
+				]
+			},
+			"USDT": {
+				"alias": "USDT",
+				"title": "Tether",
+				"traits": [
+					"s"
+				]
+			},
+			"BEZ": {
+				"alias": "BEZ",
+				"title": "Bezop",
+				"traits": [
+					"s"
+				]
+			},
+			"BURST": {
+				"alias": "BURST",
+				"title": "BurstCoin",
+				"traits": [
+					"s"
+				]
+			},
+			"ACAT": {
+				"alias": "ACAT",
+				"title": "Alphacat",
+				"traits": [
+					"s"
+				]
+			},
+			"SLS": {
+				"alias": "SLS",
+				"title": "SaluS",
+				"traits": [
+					"s"
+				]
+			},
+			"VEE": {
+				"alias": "VEE",
+				"title": "BLOCKv",
+				"traits": [
+					"s"
+				]
+			},
+			"BLOCK": {
+				"alias": "BLOCK",
+				"title": "BlockNet",
+				"traits": [
+					"s"
+				]
+			},
+			"XTZ": {
+				"alias": "XTZ",
+				"title": "Tezos",
+				"traits": [
+					"s"
+				]
+			},
+			"SAN": {
+				"alias": "SAN",
+				"title": "Santiment",
+				"traits": [
+					"s"
+				]
+			},
+			"ENJ": {
+				"alias": "ENJ",
+				"title": "Enjin Coin",
+				"traits": [
+					"s"
+				]
+			},
+			"QBT*": {
+				"alias": "QBT*",
+				"title": "Qbao",
+				"traits": [
+					"s"
+				]
+			},
+			"AUTO": {
+				"alias": "AUTO",
+				"title": "Cube",
+				"traits": [
+					"s"
+				]
+			},
+			"BMC": {
+				"alias": "BMC",
+				"title": "Blackmoon Crypto",
+				"traits": [
+					"s"
+				]
+			},
+			"XEL": {
+				"alias": "XEL",
+				"title": "Elastic",
+				"traits": [
+					"s"
+				]
+			},
+			"FAIR*": {
+				"alias": "FAIR*",
+				"title": "FairGame",
+				"traits": [
+					"s"
+				]
+			},
+			"JNT": {
+				"alias": "JNT",
+				"title": "Jibrel Network Token",
+				"traits": [
+					"s"
+				]
+			},
+			"HAV": {
+				"alias": "HAV",
+				"title": "Havven",
+				"traits": [
+					"s"
+				]
+			},
+			"CFI": {
+				"alias": "CFI",
+				"title": "Cofound.it",
+				"traits": [
+					"s"
+				]
+			},
+			"FTO": {
+				"alias": "FTO",
+				"title": "FuturoCoin",
+				"traits": [
+					"s"
+				]
+			},
+			"EKO": {
+				"alias": "EKO",
+				"title": "EchoLink",
+				"traits": [
+					"s"
+				]
+			},
+			"POLY*": {
+				"alias": "POLY*",
+				"title": "Polymath Network",
+				"traits": [
+					"s"
+				]
+			},
+			"NEXO": {
+				"alias": "NEXO",
+				"title": "NEXO",
+				"traits": [
+					"s"
+				]
+			},
+			"QUN": {
+				"alias": "QUN",
+				"title": "QunQun",
+				"traits": [
+					"s"
+				]
+			},
+			"UTK": {
+				"alias": "UTK",
+				"title": "Utrust",
+				"traits": [
+					"s"
+				]
+			},
+			"SPF": {
+				"alias": "SPF",
+				"title": "SportyFi",
+				"traits": [
+					"s"
+				]
+			},
+			"DDD": {
+				"alias": "DDD",
+				"title": "Scry.info",
+				"traits": [
+					"s"
+				]
+			},
+			"TCT": {
+				"alias": "TCT",
+				"title": "TokenClub ",
+				"traits": [
+					"s"
+				]
+			},
+			"CND": {
+				"alias": "CND",
+				"title": "Cindicator",
+				"traits": [
+					"s"
+				]
+			},
+			"VIA": {
+				"alias": "VIA",
+				"title": "ViaCoin",
+				"traits": [
+					"s"
+				]
+			},
+			"ANT": {
+				"alias": "ANT",
+				"title": "Aragon",
+				"traits": [
+					"s"
+				]
+			},
+			"TNC": {
+				"alias": "TNC",
+				"title": "Trinity Network Credit",
+				"traits": [
+					"s"
+				]
+			},
+			"ADT": {
+				"alias": "ADT",
+				"title": "AdToken",
+				"traits": [
+					"s"
+				]
+			},
+			"AMB": {
+				"alias": "AMB",
+				"title": "Ambrosus",
+				"traits": [
+					"s"
+				]
+			},
+			"UKG": {
+				"alias": "UKG",
+				"title": "UnikoinGold",
+				"traits": [
+					"s"
+				]
+			},
+			"MDA": {
+				"alias": "MDA",
+				"title": "Moeda",
+				"traits": [
+					"s"
+				]
+			},
+			"SPHTX": {
+				"alias": "SPHTX",
+				"title": "SophiaTX",
+				"traits": [
+					"s"
+				]
+			},
+			"WABI": {
+				"alias": "WABI",
+				"title": "WaBi",
+				"traits": [
+					"s"
+				]
+			},
+			"DATA": {
+				"alias": "DATA",
+				"title": "Streamr DATAcoin",
+				"traits": [
+					"s"
+				]
+			},
+			"BAY": {
+				"alias": "BAY",
+				"title": "BitBay",
+				"traits": [
+					"s"
+				]
+			},
+			"NBT": {
+				"alias": "NBT",
+				"title": "NuBits",
+				"traits": [
+					"s"
+				]
+			},
+			"FTX": {
+				"alias": "FTX",
+				"title": "FintruX",
+				"traits": [
+					"s"
+				]
+			},
+			"APH": {
+				"alias": "APH",
+				"title": "Aphelion",
+				"traits": [
+					"s"
+				]
+			},
+			"LEND": {
+				"alias": "LEND",
+				"title": "EthLend",
+				"traits": [
+					"s"
+				]
+			},
+			"BITB": {
+				"alias": "BITB",
+				"title": "BitBean",
+				"traits": [
+					"s"
+				]
+			},
+			"ZCL": {
+				"alias": "ZCL",
+				"title": "ZClassic",
+				"traits": [
+					"s"
+				]
+			},
+			"LBC": {
+				"alias": "LBC",
+				"title": "LBRY Credits",
+				"traits": [
+					"s"
+				]
+			},
+			"DYN": {
+				"alias": "DYN",
+				"title": "Dynamic",
+				"traits": [
+					"s"
+				]
+			},
+			"AGI": {
+				"alias": "AGI",
+				"title": "SingularityNET",
+				"traits": [
+					"s"
+				]
+			},
+			"PTOY": {
+				"alias": "PTOY",
+				"title": "Patientory",
+				"traits": [
+					"s"
+				]
+			},
+			"CAS": {
+				"alias": "CAS",
+				"title": "Cashaa",
+				"traits": [
+					"s"
+				]
+			},
+			"HTML": {
+				"alias": "HTML",
+				"title": "HTML Coin",
+				"traits": [
+					"s"
+				]
+			},
+			"UBTC": {
+				"alias": "UBTC",
+				"title": "UnitedBitcoin",
+				"traits": [
+					"s"
+				]
+			},
+			"PCN": {
+				"alias": "PCN",
+				"title": "PeepCoin",
+				"traits": [
+					"s"
+				]
+			},
+			"SNGLS": {
+				"alias": "SNGLS",
+				"title": "SingularDTV",
+				"traits": [
+					"s"
+				]
+			},
+			"CDT": {
+				"alias": "CDT",
+				"title": "Blox",
+				"traits": [
+					"s"
+				]
+			},
+			"VIBE": {
+				"alias": "VIBE",
+				"title": "VIBEHub",
+				"traits": [
+					"s"
+				]
+			},
+			"RFR": {
+				"alias": "RFR",
+				"title": "Refereum",
+				"traits": [
+					"s"
+				]
+			},
+			"MUE": {
+				"alias": "MUE",
+				"title": "MonetaryUnit",
+				"traits": [
+					"s"
+				]
+			},
+			"IOP": {
+				"alias": "IOP",
+				"title": "Internet of People",
+				"traits": [
+					"s"
+				]
+			},
+			"XUC": {
+				"alias": "XUC",
+				"title": "Exchange Union",
+				"traits": [
+					"s"
+				]
+			},
+			"SHOW": {
+				"alias": "SHOW",
+				"title": "ShowCoin",
+				"traits": [
+					"s"
+				]
+			},
+			"ETP": {
+				"alias": "ETP",
+				"title": "Metaverse",
+				"traits": [
+					"s"
+				]
+			},
+			"PBT": {
+				"alias": "PBT",
+				"title": "Primalbase",
+				"traits": [
+					"s"
+				]
+			},
+			"KORE": {
+				"alias": "KORE",
+				"title": "Kore",
+				"traits": [
+					"s"
+				]
+			},
+			"DOT": {
+				"alias": "DOT",
+				"title": "Dotcoin",
+				"traits": [
+					"s"
+				]
+			},
+			"LA": {
+				"alias": "LA",
+				"title": "LATOKEN",
+				"traits": [
+					"s"
+				]
+			},
+			"UBQ": {
+				"alias": "UBQ",
+				"title": "Ubiq",
+				"traits": [
+					"s"
+				]
+			},
+			"TX": {
+				"alias": "TX",
+				"title": "Transfer",
+				"traits": [
+					"s"
+				]
+			},
+			"SENT": {
+				"alias": "SENT",
+				"title": "Sentinel",
+				"traits": [
+					"s"
+				]
+			},
+			"VIU": {
+				"alias": "VIU",
+				"title": "Viuly",
+				"traits": [
+					"s"
+				]
+			},
+			"FOTA": {
+				"alias": "FOTA",
+				"title": "Fortuna",
+				"traits": [
+					"s"
+				]
+			},
+			"IXT": {
+				"alias": "IXT",
+				"title": "iXledger",
+				"traits": [
+					"s"
+				]
+			},
+			"REM": {
+				"alias": "REM",
+				"title": "REMME",
+				"traits": [
+					"s"
+				]
+			},
+			"FUEL": {
+				"alias": "FUEL",
+				"title": "Etherparty",
+				"traits": [
+					"s"
+				]
 			}
 		}
 	},

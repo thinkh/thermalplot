@@ -93,6 +93,15 @@
                 "alias": "ΔVolume BTC",
                 "type": "delta_index_percentage",
                 "attr": "volume_btc"
+            },
+            "volume": {
+                "description": "Same as `volume_btc`; just available for fullscreen treemap",
+                "alias": "Volume Crypto",
+                "type": "int",
+                "range": [
+                    0,
+                    2.0e+24
+                ]
             }
         }
     }

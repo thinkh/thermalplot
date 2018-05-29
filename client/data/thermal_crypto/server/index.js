@@ -62,7 +62,8 @@ class SocketHandler extends UseCaseDBSocketHandler {
                 ${TABLE_CRYPTO_PRICES_FIELDS.slice(0, -2).map((field) => `cp.${field}*bp.${field} as ${field}`).join(',')},
                 cp.volume_crypto,
                 cp.volume_btc,
-                cp.volume_btc*bp.closing_price as volume_currency
+                cp.volume_btc*bp.closing_price as volume_currency,
+                cp.volume_btc as volume
             FROM ${TABLE_CRYPTO_PRICES} cp
             LEFT JOIN ${TABLE_BTC_PRICES} bp
             ON cp.ts = bp.ts
@@ -78,7 +79,9 @@ class SocketHandler extends UseCaseDBSocketHandler {
             const r = {
                 nip: row.currency_code,
                 ts: row.ts, // [sec] // row.ts*time_factor
-                attrs: {}
+                attrs: {
+                    volume: row.volume
+                }
             };
 
             TABLE_CRYPTO_PRICES_FIELDS.forEach((field) => {

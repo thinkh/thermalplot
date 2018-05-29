@@ -17,7 +17,7 @@
       {
         "hSeg": "2",
         "vSeg": "0",
-        "visConfigId": "thermal_medium",
+        "visConfigId": "thermal_small",
         "hideIn": [
           "Treemap"
         ]
@@ -25,7 +25,7 @@
       {
         "hSeg": "2",
         "vSeg": "1",
-        "visConfigId": "thermal_medium",
+        "visConfigId": "thermal_small",
         "hideIn": [
           "Treemap"
         ]
@@ -49,7 +49,7 @@
       {
         "hSeg": "*",
         "vSeg": "0",
-        "visConfigId": "thermal_large",
+        "visConfigId": "thermal_medium",
         "hideIn": [
           "Treemap"
         ]
@@ -57,7 +57,7 @@
       {
         "hSeg": "*",
         "vSeg": "1",
-        "visConfigId": "thermal_large",
+        "visConfigId": "thermal_medium",
         "hideIn": [
           "Treemap"
         ]

@@ -1,0 +1,17 @@
+{
+    "name": "thermal_crypto",
+    "version": "1.0.0",
+    "description": "Crypto currencies dataset for ThermalPlot",
+    "main": "scripts/update.js",
+    "author": "Holger Stitz",
+    "license": "MIT",
+    "private": true,
+    "scripts": {
+        "update-time-series": "node scripts/update-time-series.js",
+        "update-items": "node scripts/update-items.js"
+    },
+    "devDependencies": {
+        "sqlite3": "~4.0.2",
+        "better-sqlite3": "~4.1.1"
+    }
+}

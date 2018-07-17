@@ -1,0 +1,17 @@
+{
+  "name": "thermal_ftse250",
+  "version": "1.0.0",
+  "description": "FTSE250 dataset for ThermalPlot",
+  "main": "scripts/update.js",
+  "author": "Holger Stitz",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node scripts/update.js"
+  },
+  "devDependencies": {
+    "dotenv": "~6.0.0",
+    "sqlite3": "~4.0.2",
+    "alphavantage": "~1.1.1"
+  }
+}

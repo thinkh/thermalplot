@@ -98,8 +98,8 @@ exports.SocketHandler = SocketHandler;
 
 class CSVHandler {
 
-    constructor(res) {
-        this.res = res;
+    constructor(response) {
+        this.response = response;
     }
 
     get(field, start, end, order_by) {
@@ -122,15 +122,15 @@ class CSVHandler {
         close_db(db);
 
         // write csv header
-        this.res.write('date,' + TABLE_BTC_PRICES_FIELDS.join(',') + '\n');
+        this.response.write('date,' + TABLE_BTC_PRICES_FIELDS.join(',') + '\n');
 
         // write csv data
         rows.map((row) => Object.values(row))
             .forEach(line => {
-                this.res.write(line.join(',') + '\n');
+                this.response.write(line.join(',') + '\n');
             });
 
-        this.res.end();
+        this.response.end();
     }
 }
 

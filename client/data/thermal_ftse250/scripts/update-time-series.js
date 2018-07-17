@@ -36,9 +36,10 @@ async function updateSQLiteData() {
 
     for (const stock of stocks.reverse()) {
         const symbol = stock.symbol;
+        // TODO check if symbol already in database
         try {
             console.log(`[${symbol}] requesting data...`);
-            const data = await alpha.data.daily_adjusted(symbol, 'full');
+            const data = await alpha.data.daily_adjusted(symbol, 'full'); // TODO 'full' for initialization, 'compact' for daily updates
             const item = alpha.util.polish(data);
             const timepoints = Object.entries(item.data);
             console.log(`[${symbol}] inserting data...`);

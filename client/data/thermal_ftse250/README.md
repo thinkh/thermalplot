@@ -2,7 +2,10 @@
 
 ## Installation
 
-Run `npm install`
+1. Run `npm install`
+2. Get an API key at https://www.alphavantage.co/support/#api-key
+3. Rename `default.env` into `.env`
+4. Add the key `ALPHAVANTAGE_API_KEY=xxxxxxxx`
 
 
 ## Update list of items

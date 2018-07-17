@@ -7,11 +7,13 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "node scripts/update.js"
+    "update-time-series": "node scripts/update-time-series.js",
+    "update-items": ""
   },
   "devDependencies": {
     "dotenv": "~6.0.0",
     "sqlite3": "~4.0.2",
-    "alphavantage": "~1.1.1"
+    "alphavantage": "~1.1.1",
+    "better-sqlite3": "~4.1.1"
   }
 }

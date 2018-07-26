@@ -72,7 +72,7 @@
     "socket.io-client": "~2.1.1",
     "sqlite3": "~4.0.0",
     "topojson": "1.6.27",
-    "winston": "github:winstonjs/winston#3.0.0-rc5"
+    "winston": "^3.0.0"
   },
   "engines": {
     "yarn": ">= 1.0.0"

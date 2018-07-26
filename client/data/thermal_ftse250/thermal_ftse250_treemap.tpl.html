@@ -11,7 +11,8 @@
         <pvd-thermal-layout infra-id="ts" vis-config="thermal_small" init-directive-only="true"></pvd-thermal-layout>
     </div>
     <div style="position: relative;">
-        <pvd-stock-timeline csv-file="thermal_ftse250/csv/^FTMC/2015-01-01/2016-12-31/desc" parse-date="%Y-%m-%d" default-date-range="2m" show="close" use-parent-width="true"></pvd-stock-timeline>
+        <pvd-stock-timeline csv-file="/api/uc/thermal_ftse250/csv/^FTMC/2015-01-01/2016-12-31/desc" parse-date="%Y-%m-%d" default-date-range="2m"
+            show="close" use-parent-width="true"></pvd-stock-timeline>
     </div>
     <div id="mainview" style="position: relative;">
         <!-- Activate standalone mode, to run the treemap without ThermalLayout -->

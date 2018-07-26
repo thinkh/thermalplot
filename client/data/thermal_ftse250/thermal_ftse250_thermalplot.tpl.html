@@ -1,15 +1,16 @@
 <pvd-navigation project="thermalplot"></pvd-navigation>
 <div class="container">
   <pvd-browser-notification></pvd-browser-notification>
-    <div class="hg-hidden">
-        <!--
+  <div class="hg-hidden">
+    <!--
             It's necessary to initialize the timeline, DOI editor and treemap directives to initialize the variables,
             even though we don't show the directive content.
         -->
-        <pvd-stock-timeline disable-drawing="true" csv-file="thermal_ftse250/csv/^FTMC/2015-01-01/2016-12-31/desc" parse-date="%Y-%m-%d" default-date-range="2m" show="close" use-parent-width="true"></pvd-stock-timeline>
-        <pvd-doi-editor></pvd-doi-editor>
-        <pvd-treemap infra-id="ts" vis-config="thermal_small"></pvd-treemap>
-    </div>
+    <pvd-stock-timeline disable-drawing="true" csv-file="/api/uc/thermal_ftse250/csv/^FTMC/2015-01-01/2016-12-31/desc" parse-date="%Y-%m-%d"
+      default-date-range="2m" show="close" use-parent-width="true"></pvd-stock-timeline>
+    <pvd-doi-editor></pvd-doi-editor>
+    <pvd-treemap infra-id="ts" vis-config="thermal_small"></pvd-treemap>
+  </div>
   <div class="row">
     <div class="col-md-12" id="maincontainer">
       <pvd-view-selector></pvd-view-selector>

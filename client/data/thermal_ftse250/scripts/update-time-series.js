@@ -36,10 +36,16 @@ async function updateSQLiteData() {
 
     for (const stock of stocks.reverse()) {
         const symbol = stock.symbol;
-        // TODO check if symbol already in database
+        // check if symbol already in database
+        let sql = `SELECT ts FROM stocks WHERE ticker = ? ORDER BY ts desc LIMIT 1,1`;
+        const lastTimestamp = dbHandler.prepare(sql).get(symbol);
+
+        // 'full' for initialization, 'compact' for daily updates
+        const requestMode = (lastTimestamp === undefined) ? 'full' : 'compact';
+
         try {
-            console.log(`[${symbol}] requesting data...`);
-            const data = await alpha.data.daily_adjusted(symbol, 'full'); // TODO 'full' for initialization, 'compact' for daily updates
+            console.log(`[${symbol}] requesting ${requestMode} data...`);
+            const data = await alpha.data.daily_adjusted(symbol, requestMode);
             const item = alpha.util.polish(data);
             const timepoints = Object.entries(item.data);
             console.log(`[${symbol}] inserting data...`);
@@ -47,7 +53,7 @@ async function updateSQLiteData() {
                 const statement = dbHandler.prepare(`INSERT INTO ${table} VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`)
                 const info = statement.run(
                     symbol, // ticker
-                    timepoint[0].split('T')[0], // ts
+                    timepoint[0].split('T')[0], // date
                     timepoint[1].volume, // volume
                     timepoint[1].open, // open
                     timepoint[1].close, // close

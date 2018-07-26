@@ -5,9 +5,9 @@ const UseCaseDBSocketHandler = require('../../../server/UseCaseDBSocketHandler')
 const logger = require('../../../server/logger');
 
 const BASE_PATH = path.join(__dirname, '..');
-const SQLITE_DB_PATH = path.join(BASE_PATH, 'sqlite', 'yql.db');
-const TABLE_PRICES = 'prices';
-const TABLE_PRICES_FIELDS = ['date', 'open', 'high', 'low', 'close', 'volume', 'adj_close'];
+const SQLITE_DB_PATH = path.join(BASE_PATH, 'sqlite', 'data.db');
+const TABLE_PRICES = 'stocks';
+const TABLE_PRICES_FIELDS = ['open', 'high', 'low', 'close', 'volume', 'adj_close'];
 
 function open_db() {
     logger.debug('connecting to sqlite db at %s', SQLITE_DB_PATH);
@@ -28,7 +28,7 @@ class SocketHandler extends UseCaseDBSocketHandler {
         super(socket, 24 * 60 * 60);  // TIME FACTOR in sec = 1 day
         this.dateformat = 'Y-m-d';
 
-        //this.filter_in = ['ETH', 'LTC', 'IOT', 'XLM'];
+        //this.filter_in = ['AA.L', '^FTMC'];
     }
 
     open_db() {
@@ -36,15 +36,46 @@ class SocketHandler extends UseCaseDBSocketHandler {
     }
 
     find_first_ts() {
-
+        const row = this.db.prepare(`select min(CAST(strftime('%s', s.date) AS INT)) as ts from ${TABLE_PRICES} s where 1=1 ${this.filter('ticker')}`).get();
+        return row.ts; // [sec]
     }
 
     find_last_ts() {
-
+        const row = this.db.prepare(`select max(CAST(strftime('%s', s.date) AS INT)) as ts from ${TABLE_PRICES} s where 1=1 ${this.filter('ticker')}`).get();
+        return row.ts; // [sec]
     }
 
     read_data(start, end, time_factor) {
-        
+        start *= time_factor;
+        end *= time_factor;
+
+        logger.info('read data between [%s (%d s)] and [%s (%d s)] with timeFactor: %s', new Date(start * 1000).toUTCString(), start, new Date(end * 1000).toUTCString(), end, time_factor);
+        const sql = `
+            SELECT
+                ticker,
+                CAST(strftime('%s', s.date) AS INT) as ts,
+                ${TABLE_PRICES_FIELDS.map((field) => `s.${field} as ${field}`).join(',')} 
+            FROM ${TABLE_PRICES} s 
+            WHERE
+                s.date >= date(?, 'unixepoch') AND s.date < date(?, 'unixepoch') 
+                ${this.filter('ticker')}
+            ORDER BY ts ASC`;
+
+        const rows = this.db.prepare(sql).all(start, end);
+
+        return rows.map((row) => {
+            const r = {
+                nip: row.ticker,
+                ts: row.ts, // [sec] // row.ts*time_factor
+                attrs: {}
+            };
+
+            TABLE_PRICES_FIELDS.forEach((field) => {
+                r.attrs[field] = row[field];
+            });
+
+            return r;
+        });
     }
 }
 
@@ -53,8 +84,8 @@ exports.SocketHandler = SocketHandler;
 
 class CSVHandler {
 
-    constructor(res) {
-        this.res = res;
+    constructor(response) {
+        this.response = response;
     }
 
     get(field, start, end, order_by) {
@@ -67,10 +98,12 @@ class CSVHandler {
 
         const db = open_db();
 
-        const sql = (`select date(ts,'unixepoch')` + TABLE_PRICES_FIELDS.join(', ') +
-            ' from ' + TABLE_PRICES + ' where ts >= ? and ts < ? and currency_code = ?' +
-            ' order by ts ' + order_by);
+        const sql = (`SELECT date, ${TABLE_PRICES_FIELDS.join(', ')} 
+            FROM ${TABLE_PRICES} 
+            WHERE date >= date(?, 'unixepoch') AND date < date(?, 'unixepoch') AND ticker = ? 
+            ORDER BY date ${order_by}`);
 
+        logger.info(sql);
         logger.info('execute query with %s %s %s', field, start, end);
         const rows = db.prepare(sql).all(start, end, field);
 

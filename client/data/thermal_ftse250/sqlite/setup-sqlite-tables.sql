@@ -1,7 +1,7 @@
 --DROP TABLE IF EXISTS "stocks";
 CREATE TABLE IF NOT EXISTS "stocks"(
     ticker text,
-    ts text,
+    date text,
     volume int,
     open real,
     close real,

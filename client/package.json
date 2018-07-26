@@ -5,7 +5,7 @@
   "description": "",
   "scripts": {
     "test": "",
-    "start": "cross-env NODE_ENV=development nodemon server/index.js",
+    "start": "cross-env NODE_ENV=production nodemon server/index.js",
     "dev": "cross-env NODE_ENV=development nodemon server/index.js",
     "build": "rimraf dist && cross-env NODE_ENV=production webpack --config ./webpack.production.config.js --progress --profile --colors",
     "dev_webpack": "webpack --mode development",

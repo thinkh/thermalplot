@@ -1,3 +1,0 @@
-include data/example/*
-graft logs
-graft html

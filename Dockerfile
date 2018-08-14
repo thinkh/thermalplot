@@ -1,18 +1,24 @@
-FROM python:2.7
+FROM node:8
 
-MAINTAINER Samuel Gratzl <samuel.gratzl@datavisyn.io>
+MAINTAINER Holger Stitz <holger.stitz@jku.at>
 
-RUN pip install --upgrade pip
+# Create app directory
+WORKDIR /usr/src/app
 
-RUN (curl -sL https://deb.nodesource.com/setup_6.x | bash - ) \
-  && apt-get install -y nodejs
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
 
-COPY ./server /var/server
-COPY ./client /var/client
-COPY ./vagrant /vagrant
+RUN npm install --only=production
+# If you are building your code for production
+# RUN npm install --only=production
 
-RUN sh /vagrant/provision.sh false nostart
+# Bundle app source
+COPY . .
 
-WORKDIR /var/server
-CMD python main.py -config=env.docker.conf
-EXPOSE 8888
+ENV PORT=3000
+ENV NODE_ENV=production
+
+EXPOSE 3000
+CMD [ "npm", "start" ]

@@ -1,1 +1,0 @@
-Licence is not yet defined.

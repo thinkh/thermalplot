@@ -9,7 +9,6 @@ const webpackHotMiddleware = require('webpack-hot-middleware');
 const config = require('../webpack.config.js');
 const socketio = require('socket.io');
 const logger = require('./logger');
-const UseCaseDBSocketHandler = require('./UseCaseDBSocketHandler');
 
 const PROJECT_ROOT = path.join(__dirname, '../');
 const DATA_DIR = path.join(PROJECT_ROOT, 'data');

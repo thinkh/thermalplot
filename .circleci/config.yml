@@ -3,6 +3,7 @@ jobs:
   build:
     working_directory: ~/phovea
     docker:
+      - image: circleci/node:4.8.2
       - image: docker:17.05.0-ce-git
     tags:
       - /v\d+.\d+.\d+.*/

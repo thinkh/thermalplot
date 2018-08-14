@@ -32,7 +32,7 @@ export default angular.module('controllers.UseCaseSelectorCtrl', [DataService])
       $rootScope.title = "[" + $scope.loading.text + "]";
 
       $http.get('api/all_use_cases').then(function (data) {
-        $scope.usecases = data.data;
+        $scope.usecases = data.data.filter((d) => !d.ignore);
 
         $rootScope.title = 'Select a use case';
         $scope.loading.visible = false;

@@ -1,5 +1,6 @@
 [
     {
+        "ignore": true,
         "name": "thermal_crypto",
         "title": "Cryptocurrencies (since 2016)"
     },
@@ -8,6 +9,7 @@
         "title": "OECD data explaining the post-financial crisis"
     },
     {
+        "ignore": true,
         "name": "thermal_ftse250",
         "title": "Stock Market: FTSE 250 (since 2016)"
     },

@@ -1,0 +1,17 @@
+{
+  "name": "thermal_oecd",
+  "version": "1.0.0",
+  "description": "OCED dataset for ThermalPlot",
+  "main": "",
+  "author": "Holger Stitz",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "update-time-series": "echo \"Error: update-time-series is not configured\" && exit 0",
+    "update-items": "echo \"Error: update-items is not configured\" && exit 0"
+  },
+  "devDependencies": {
+    "sqlite3": "~4.0.2",
+    "better-sqlite3": "~4.1.1"
+  }
+}

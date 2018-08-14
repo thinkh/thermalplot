@@ -1,15 +1,14 @@
 const winston = require('winston');
 const util = require('util');
+const { MESSAGE, SPLAT } = require('triple-beam');
 
 const logger = winston.createLogger({
     level: 'info',
     format: winston.format.combine(
         winston.format.timestamp(),
         winston.format.printf(info => {
-            if (!info.splat) {
-                info.splat = [];
-            }
-            return `${info.timestamp} ${info.level}:\t${util.format(info.message, ...info.splat)}\t${JSON.stringify(info.splat)}`;
+            const splat = (info[SPLAT] !== undefined) ? info[SPLAT] : [];
+            return `${info.timestamp} ${info.level}:\t${util.format(info.message, ...splat)}\t${JSON.stringify(splat)}`;
         })
     ),
     transports: [
@@ -32,10 +31,8 @@ if (process.env.NODE_ENV !== 'production') {
             winston.format.colorize(),
             winston.format.timestamp(),
             winston.format.printf(info => {
-                if (!info.splat) {
-                    info.splat = [];
-                }
-                return `${info.timestamp} ${info.level}:\t${util.format(info.message, ...info.splat)}\t${JSON.stringify(info.splat)}`;
+                const splat = (info[SPLAT]) ? info[SPLAT] : [];
+                return `${info.timestamp} ${info.level}:\t${util.format(info.message, ...splat)}\t${JSON.stringify(splat)}`;
             })
         ),
     }));

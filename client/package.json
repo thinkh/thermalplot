@@ -5,7 +5,7 @@
   "description": "",
   "scripts": {
     "test": "",
-    "start": "cross-env NODE_ENV=development nodemon server/index.js",
+    "start": "cross-env NODE_ENV=production nodemon server/index.js",
     "dev": "cross-env NODE_ENV=development nodemon server/index.js",
     "build": "rimraf dist && cross-env NODE_ENV=production webpack --config ./webpack.production.config.js --progress --profile --colors",
     "dev_webpack": "webpack --mode development",
@@ -72,7 +72,7 @@
     "socket.io-client": "~2.1.1",
     "sqlite3": "~4.0.0",
     "topojson": "1.6.27",
-    "winston": "github:winstonjs/winston#3.0.0-rc5"
+    "winston": "^3.0.0"
   },
   "engines": {
     "yarn": ">= 1.0.0"

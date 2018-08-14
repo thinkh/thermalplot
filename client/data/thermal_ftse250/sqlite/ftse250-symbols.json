@@ -1,0 +1,1257 @@
+[
+    {
+        "symbol": "^FTMC",
+        "title": "FTSE 250 Index",
+        "sector": ""
+    },
+    {
+        "symbol": "3IN.L",
+        "title": "3i Infrastructure PLC",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "AA.L",
+        "title": "AA",
+        "sector": "Support Services"
+    },
+    {
+        "symbol": "ACA.L",
+        "title": "ACACIA MINING",
+        "sector": "Mining"
+    },
+    {
+        "symbol": "ADN.L",
+        "title": "Aberdeen Asset Management PLC",
+        "sector": "Financial Services"
+    },
+    {
+        "symbol": "AGK.L",
+        "title": "Aggreko PLC",
+        "sector": "Support Services"
+    },
+    {
+        "symbol": "AGR.L",
+        "title": "Assura Group Ltd",
+        "sector": "Real Estate Investment Trusts"
+    },
+    {
+        "symbol": "ALD.L",
+        "title": "Aldermore Group PLC",
+        "sector": "Banks"
+    },
+    {
+        "symbol": "ALM.L",
+        "title": "Allied Minds PLC",
+        "sector": "Financial Services"
+    },
+    {
+        "symbol": "AMFW.L",
+        "title": "AMEC FOSTER WHEELER",
+        "sector": "Oil Equipment & Services"
+    },
+    {
+        "symbol": "AO.L",
+        "title": "AO WORLD",
+        "sector": "General Retailers"
+    },
+    {
+        "symbol": "ASHM.L",
+        "title": "Ashmore Group PLC",
+        "sector": "Financial Services"
+    },
+    {
+        "symbol": "ASL.L",
+        "title": "Aberforth Smaller Companies Trust PLC",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "ATK.L",
+        "title": "Atkins (WS) PLC",
+        "sector": "Support Services"
+    },
+    {
+        "symbol": "ATST.L",
+        "title": "Alliance Trust PLC",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "AUTO.L",
+        "title": "Auto Trader Group plc",
+        "sector": "Media"
+    },
+    {
+        "symbol": "AVV.L",
+        "title": "AVEVA Group PLC",
+        "sector": "Software & Computer Services"
+    },
+    {
+        "symbol": "BAG.L",
+        "title": "Barr (A G) PLC",
+        "sector": "Beverages"
+    },
+    {
+        "symbol": "BBA.L",
+        "title": "BBA Aviation PLC",
+        "sector": "Industrial Transportation"
+    },
+    {
+        "symbol": "BBOX.L",
+        "title": "Tritax Big Box",
+        "sector": "Real Estate Investment Trusts"
+    },
+    {
+        "symbol": "BBY.L",
+        "title": "Balfour Beatty PLC",
+        "sector": "Construction & Materials"
+    },
+    {
+        "symbol": "BEZ.L",
+        "title": "Beazley PLC",
+        "sector": "Nonlife Insurance"
+    },
+    {
+        "symbol": "BGEO.L",
+        "title": "Bank of Georgia Holdings PLC",
+        "sector": "Banks"
+    },
+    {
+        "symbol": "BHMG.L",
+        "title": "BH Macro Ltd",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "BME.L",
+        "title": "B&M European Value Retail SA",
+        "sector": "General Retailers"
+    },
+    {
+        "symbol": "BNKR.L",
+        "title": "Bankers Investment Trust PLC",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "BOK.L",
+        "title": "Booker Group PLC",
+        "sector": "Food & Drug Retailers"
+    },
+    {
+        "symbol": "BOY.L",
+        "title": "Bodycote PLC",
+        "sector": "Industrial Engineering"
+    },
+    {
+        "symbol": "BRSN.L",
+        "title": "Berendsen plc",
+        "sector": "Support Services"
+    },
+    {
+        "symbol": "BRW.L",
+        "title": "Brewin Dolphin Holdings Plc",
+        "sector": "Financial Services"
+    },
+    {
+        "symbol": "BTEM.L",
+        "title": "British Empire Securities & General Trust PLC",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "BTG.L",
+        "title": "BTG plc",
+        "sector": "Pharmaceuticals & Biotechnology"
+    },
+    {
+        "symbol": "BVIC.L",
+        "title": "Britvic PLC",
+        "sector": "Beverages"
+    },
+    {
+        "symbol": "BVS.L",
+        "title": "Bovis Homes Group PLC",
+        "sector": "Household Goods & Home Construction"
+    },
+    {
+        "symbol": "BWNG.L",
+        "title": "Brown (N) Group PLC",
+        "sector": "General Retailers"
+    },
+    {
+        "symbol": "BWY.L",
+        "title": "Bellway PLC",
+        "sector": "Household Goods & Home Construction"
+    },
+    {
+        "symbol": "BYG.L",
+        "title": "Big Yellow Group PLC",
+        "sector": "Real Estate Investment Trusts"
+    },
+    {
+        "symbol": "CAPC.L",
+        "title": "Capital & Counties Properties PLC",
+        "sector": "Real Estate Investment & Services"
+    },
+    {
+        "symbol": "CARD.L",
+        "title": "Card Factory PLC",
+        "sector": "General Retailers"
+    },
+    {
+        "symbol": "CBG.L",
+        "title": "Close Brothers Group PLC",
+        "sector": "Financial Services"
+    },
+    {
+        "symbol": "CCC.L",
+        "title": "Computacenter PLC",
+        "sector": "Software & Computer Services"
+    },
+    {
+        "symbol": "CEY.L",
+        "title": "Centamin PLC",
+        "sector": "Mining"
+    },
+    {
+        "symbol": "CHOO.L",
+        "title": "Jimmy Choo PLC",
+        "sector": "Personal Goods"
+    },
+    {
+        "symbol": "CINE.L",
+        "title": "Travel & Leisure",
+        "sector": "Travel & Leisure"
+    },
+    {
+        "symbol": "CIR.L",
+        "title": "Circassia Pharmaceuticals PLC",
+        "sector": "Pharmaceuticals & Biotechnology"
+    },
+    {
+        "symbol": "CKN.L",
+        "title": "Clarkson PLC",
+        "sector": "Industrial Transportation"
+    },
+    {
+        "symbol": "CLDN.L",
+        "title": "Caledonia Investments PLC",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "CLI.L",
+        "title": "CLS Holdings PLC",
+        "sector": "Real Estate Investment & Services"
+    },
+    {
+        "symbol": "CLLN.L",
+        "title": "Carillion PLC",
+        "sector": "Support Services"
+    },
+    {
+        "symbol": "CNE.L",
+        "title": "Cairn Energy PLC",
+        "sector": "Oil & Gas Producers"
+    },
+    {
+        "symbol": "COB.L",
+        "title": "Cobham PLC",
+        "sector": "Aerospace & Defense"
+    },
+    {
+        "symbol": "CRDA.L",
+        "title": "Croda International PLC",
+        "sector": "Chemicals"
+    },
+    {
+        "symbol": "CRST.L",
+        "title": "CREST NICHOLSON",
+        "sector": "Household Goods & Home Construction"
+    },
+    {
+        "symbol": "CTY.L",
+        "title": "City of London Investment Trust (The) PLC",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "CWC.L",
+        "title": "Cable & Wireless Communications PLC",
+        "sector": "Fixed Line Telecommunications"
+    },
+    {
+        "symbol": "CWD.L",
+        "title": "Countrywide PLC",
+        "sector": "Real Estate Investment & Services"
+    },
+    {
+        "symbol": "CWK.L",
+        "title": "Cranswick PLC",
+        "sector": "Food Producers"
+    },
+    {
+        "symbol": "DCG.L",
+        "title": "Dairy Crest Group PLC",
+        "sector": "Food Producers"
+    },
+    {
+        "symbol": "DEB.L",
+        "title": "Debenhams PLC",
+        "sector": "General Retailers"
+    },
+    {
+        "symbol": "DFS.L",
+        "title": "DFS FURNITURE",
+        "sector": "General Retailers"
+    },
+    {
+        "symbol": "DJAN.L",
+        "title": "Daejan Holdings PLC",
+        "sector": "Real Estate Investment & Services"
+    },
+    {
+        "symbol": "DLN.L",
+        "title": "Derwent London PLC",
+        "sector": "Real Estate Investment Trusts"
+    },
+    {
+        "symbol": "DNLM.L",
+        "title": "Dunelm Group PLC",
+        "sector": "General Retailers"
+    },
+    {
+        "symbol": "DOM.L",
+        "title": "Domino's Pizza Group PLC",
+        "sector": "Travel & Leisure"
+    },
+    {
+        "symbol": "DPH.L",
+        "title": "Dechra Pharmaceuticals PLC",
+        "sector": "Pharmaceuticals & Biotechnology"
+    },
+    {
+        "symbol": "DPLM.L",
+        "title": "Diploma PLC",
+        "sector": "Support Services"
+    },
+    {
+        "symbol": "DRX.L",
+        "title": "Drax Group PLC",
+        "sector": "Electricity"
+    },
+    {
+        "symbol": "DTY.L",
+        "title": "Dignity plc",
+        "sector": "General Retailers"
+    },
+    {
+        "symbol": "ECM.L",
+        "title": "Electrocomponents PLC",
+        "sector": "Support Services"
+    },
+    {
+        "symbol": "EDIN.L",
+        "title": "Edinburgh Investment Trust (The) PLC",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "ELM.L",
+        "title": "Elementis PLC",
+        "sector": "Chemicals"
+    },
+    {
+        "symbol": "ELTA.L",
+        "title": "Electra Private Equity PLC",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "EMG.L",
+        "title": "Man Group PLC",
+        "sector": "Financial Services"
+    },
+    {
+        "symbol": "ERM.L",
+        "title": "Euromoney Institutional Investor PLC",
+        "sector": "Media"
+    },
+    {
+        "symbol": "ESNT.L",
+        "title": "ESSENTRA",
+        "sector": "Support Services"
+    },
+    {
+        "symbol": "ESUR.L",
+        "title": "Esure Group PLC",
+        "sector": "Nonlife Insurance"
+    },
+    {
+        "symbol": "ETO.L",
+        "title": "Entertainment One Ltd",
+        "sector": "Media"
+    },
+    {
+        "symbol": "EVR.L",
+        "title": "EVRAZ PLC",
+        "sector": "Industrial Metals & Mining"
+    },
+    {
+        "symbol": "FCPT.L",
+        "title": "F&C Asset Management PLC",
+        "sector": "Real Estate Investment & Services"
+    },
+    {
+        "symbol": "FCSS.L",
+        "title": "Fidelity China Special Situations PLC",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "FDSA.L",
+        "title": "Fidessa Group PLC",
+        "sector": "Software & Computer Services"
+    },
+    {
+        "symbol": "FEV.L",
+        "title": "Fidelity European Values Ord",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "FGP.L",
+        "title": "FirstGroup PLC",
+        "sector": "Travel & Leisure"
+    },
+    {
+        "symbol": "FGT.L",
+        "title": "Finsbury Growth & Income Trust PLC",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "FRCL.L",
+        "title": "Foreign & Colonial Investment Trust PLC",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "GCP.L",
+        "title": "GCP Infrastructure Investments Ltd",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "GFRD.L",
+        "title": "Galliford Try PLC",
+        "sector": "Household Goods & Home Construction"
+    },
+    {
+        "symbol": "GFS.L",
+        "title": "G4S PLC",
+        "sector": "Support Services"
+    },
+    {
+        "symbol": "GFTU.L",
+        "title": "Grafton Group PLC",
+        "sector": "Support Services"
+    },
+    {
+        "symbol": "GNC.L",
+        "title": "Greencore Group PLC",
+        "sector": "Food Producers"
+    },
+    {
+        "symbol": "GNK.L",
+        "title": "Greene King PLC",
+        "sector": "Travel & Leisure"
+    },
+    {
+        "symbol": "GNS.L",
+        "title": "Genus PLC",
+        "sector": "Pharmaceuticals & Biotechnology"
+    },
+    {
+        "symbol": "GOG.L",
+        "title": "Go-Ahead Group (The) PLC",
+        "sector": "Travel & Leisure"
+    },
+    {
+        "symbol": "GPOR.L",
+        "title": "Great Portland Estates PLC",
+        "sector": "Real Estate Investment Trusts"
+    },
+    {
+        "symbol": "GRG.L",
+        "title": "Greggs PLC",
+        "sector": "Food & Drug Retailers"
+    },
+    {
+        "symbol": "GRI.L",
+        "title": "Grainger PLC",
+        "sector": "Real Estate Investment & Services"
+    },
+    {
+        "symbol": "GSS.L",
+        "title": "Genesis Emerging Markets Fund Ltd",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "HAS.L",
+        "title": "Hays PLC",
+        "sector": "Support Services"
+    },
+    {
+        "symbol": "HFD.L",
+        "title": "Halfords Group PLC",
+        "sector": "General Retailers"
+    },
+    {
+        "symbol": "HGG.L",
+        "title": "Henderson Group PLC",
+        "sector": "Financial Services"
+    },
+    {
+        "symbol": "HICL.L",
+        "title": "HICL Infrastructure Co Ltd",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "HIK.L",
+        "title": "Hikma Pharmaceuticals PLC",
+        "sector": "Pharmaceuticals & Biotechnology"
+    },
+    {
+        "symbol": "HLMA.L",
+        "title": "Halma PLC",
+        "sector": "Electronic & Electrical Equipment"
+    },
+    {
+        "symbol": "HMSF.L",
+        "title": "HIGH MULT STR GBP",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "HOME.L",
+        "title": "Home Retail Group PLC",
+        "sector": "General Retailers"
+    },
+    {
+        "symbol": "HSTG.L",
+        "title": "Hastings Group Holdings plc",
+        "sector": "Nonlife Insurance"
+    },
+    {
+        "symbol": "HSTN.L",
+        "title": "Hansteen Holdings PLC",
+        "sector": "Real Estate Investment Trusts"
+    },
+    {
+        "symbol": "HSV.L",
+        "title": "Homeserve PLC",
+        "sector": "Support Services"
+    },
+    {
+        "symbol": "HSX.L",
+        "title": "Hiscox Ltd",
+        "sector": "Nonlife Insurance"
+    },
+    {
+        "symbol": "HVPE.L",
+        "title": "Harbourvest Global Private Equity Ltd.",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "HWDN.L",
+        "title": "HOWDEN JOIN GRP",
+        "sector": "Support Services"
+    },
+    {
+        "symbol": "IAP.L",
+        "title": "ICAP PLC",
+        "sector": "Financial Services"
+    },
+    {
+        "symbol": "IBST.L",
+        "title": "Ibstock plc",
+        "sector": "Construction & Materials"
+    },
+    {
+        "symbol": "ICP.L",
+        "title": "Intermediate Capital Group PLC",
+        "sector": "Financial Services"
+    },
+    {
+        "symbol": "IGG.L",
+        "title": "IG Group Holdings PLC",
+        "sector": "Financial Services"
+    },
+    {
+        "symbol": "IMI.L",
+        "title": "IMI PLC",
+        "sector": "Industrial Engineering"
+    },
+    {
+        "symbol": "INCH.L",
+        "title": "Inchcape PLC",
+        "sector": "General Retailers"
+    },
+    {
+        "symbol": "INDV.L",
+        "title": "Indivior PLC",
+        "sector": "Pharmaceuticals & Biotechnology"
+    },
+    {
+        "symbol": "INPP.L",
+        "title": "International Public Partnerships Ltd",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "INVP.L",
+        "title": "Investec PLC",
+        "sector": "Financial Services"
+    },
+    {
+        "symbol": "IPF.L",
+        "title": "International Personal Finance PLC",
+        "sector": "Financial Services"
+    },
+    {
+        "symbol": "IPO.L",
+        "title": "IP Group PLC",
+        "sector": "Financial Services"
+    },
+    {
+        "symbol": "IRV.L",
+        "title": "Interserve PLC",
+        "sector": "Support Services"
+    },
+    {
+        "symbol": "JAM.L",
+        "title": "JPMorgan American Investment Trust PLC",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "JD.L",
+        "title": "JD Sports Fashion PLC",
+        "sector": "General Retailers"
+    },
+    {
+        "symbol": "JDW.L",
+        "title": "Wetherspoon (J D) PLC",
+        "sector": "Travel & Leisure"
+    },
+    {
+        "symbol": "JE.L",
+        "title": "JUST EAT",
+        "sector": "General Retailers"
+    },
+    {
+        "symbol": "JLG.L",
+        "title": "John Laing Group plc",
+        "sector": "Financial Services"
+    },
+    {
+        "symbol": "JLIF.L",
+        "title": "JOHN LAING INFR GBP",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "JLT.L",
+        "title": "Jardine Lloyd Thompson Group PLC",
+        "sector": "Nonlife Insurance"
+    },
+    {
+        "symbol": "JMG.L",
+        "title": "JPMorgan Emerging Markets Inv Trust PLC",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "JRG.L",
+        "title": "Just Retirement Group PLC",
+        "sector": "Life Insurance"
+    },
+    {
+        "symbol": "JUP.L",
+        "title": "Jupiter Fund Management PLC",
+        "sector": "Financial Services"
+    },
+    {
+        "symbol": "KAZ.L",
+        "title": "KAZ Minerals PLC",
+        "sector": "Mining"
+    },
+    {
+        "symbol": "KIE.L",
+        "title": "Kier Group PLC",
+        "sector": "Construction & Materials"
+    },
+    {
+        "symbol": "KLR.L",
+        "title": "Keller Group PLC",
+        "sector": "Construction & Materials"
+    },
+    {
+        "symbol": "KWE.L",
+        "title": "Kennedy Wilson Europe Real Estate PLC",
+        "sector": "Real Estate Investment & Services"
+    },
+    {
+        "symbol": "LAD.L",
+        "title": "Ladbrokes PLC",
+        "sector": "Travel & Leisure"
+    },
+    {
+        "symbol": "LMP.L",
+        "title": "London & Stamford Property PLC",
+        "sector": "Real Estate Investment Trusts"
+    },
+    {
+        "symbol": "LOOK.L",
+        "title": "Lookers PLC",
+        "sector": "General Retailers"
+    },
+    {
+        "symbol": "LRD.L",
+        "title": "Laird PLC",
+        "sector": "Technology Hardware & Equipment"
+    },
+    {
+        "symbol": "LRE.L",
+        "title": "Lancashire Holdings Ltd",
+        "sector": "Nonlife Insurance"
+    },
+    {
+        "symbol": "MAB.L",
+        "title": "Mitchells & Butlers PLC",
+        "sector": "Travel & Leisure"
+    },
+    {
+        "symbol": "MARS.L",
+        "title": "Marston's PLC",
+        "sector": "Travel & Leisure"
+    },
+    {
+        "symbol": "MCRO.L",
+        "title": "Micro Focus International PLC",
+        "sector": "Software & Computer Services"
+    },
+    {
+        "symbol": "MCS.L",
+        "title": "McCarthy & Stone Plc",
+        "sector": "Household Goods & Home Construction"
+    },
+    {
+        "symbol": "MGAM.L",
+        "title": "MORGAN ADV",
+        "sector": "Electronic & Electrical Equipment"
+    },
+    {
+        "symbol": "MGGT.L",
+        "title": "Meggitt PLC",
+        "sector": "Aerospace & Defense"
+    },
+    {
+        "symbol": "MLC.L",
+        "title": "Millennium & Copthorne Hotels PLC",
+        "sector": "Travel & Leisure"
+    },
+    {
+        "symbol": "MNKS.L",
+        "title": "Monks Investment Trust (The) PLC",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "MONY.L",
+        "title": "Moneysupermarket.com Group PLC",
+        "sector": "Media"
+    },
+    {
+        "symbol": "MPI.L",
+        "title": "Michael Page International PLC",
+        "sector": "Support Services"
+    },
+    {
+        "symbol": "MRC.L",
+        "title": "Mercantile Investment Trust (The) PLC",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "MRO.L",
+        "title": "Melrose PLC",
+        "sector": "Industrial Engineering"
+    },
+    {
+        "symbol": "MSLH.L",
+        "title": "Marshalls PLC",
+        "sector": "Construction & Materials"
+    },
+    {
+        "symbol": "MTO.L",
+        "title": "MITIE Group PLC",
+        "sector": "Support Services"
+    },
+    {
+        "symbol": "MYI.L",
+        "title": "Murray International Trust PLC",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "NBLS.L",
+        "title": "NB GLB FLOTING GBP",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "NCC.L",
+        "title": "NCC Group PLC",
+        "sector": "Software & Computer Services"
+    },
+    {
+        "symbol": "NEX.L",
+        "title": "National Express Group PLC",
+        "sector": "Travel & Leisure"
+    },
+    {
+        "symbol": "NMC.L",
+        "title": "NMC Health PLC",
+        "sector": "Health Care Equipment & Services"
+    },
+    {
+        "symbol": "NTG.L",
+        "title": "Northgate plc",
+        "sector": "Support Services"
+    },
+    {
+        "symbol": "OCDO.L",
+        "title": "Ocado Group PLC",
+        "sector": "Food & Drug Retailers"
+    },
+    {
+        "symbol": "OPHR.L",
+        "title": "Ophir Energy PLC",
+        "sector": "Oil & Gas Producers"
+    },
+    {
+        "symbol": "OSB.L",
+        "title": "Onesavings Bank PLC",
+        "sector": "Financial Services"
+    },
+    {
+        "symbol": "P2P.L",
+        "title": "P2P Global Investments PLC",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "PAG.L",
+        "title": "Paragon Group of Companies (The) PLC",
+        "sector": "Financial Services"
+    },
+    {
+        "symbol": "PAY.L",
+        "title": "PayPoint PLC",
+        "sector": "Support Services"
+    },
+    {
+        "symbol": "PAYS.L",
+        "title": "PAYSAFE GROUP",
+        "sector": "Support Services"
+    },
+    {
+        "symbol": "PCT.L",
+        "title": "Polar Capital Technology Trust PLC",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "PDG.L",
+        "title": "Pendragon PLC",
+        "sector": "General Retailers"
+    },
+    {
+        "symbol": "PETS.L",
+        "title": "Pets at Home Group PLC",
+        "sector": "General Retailers"
+    },
+    {
+        "symbol": "PFC.L",
+        "title": "Petrofac Limited",
+        "sector": "Oil Equipment & Services"
+    },
+    {
+        "symbol": "PHNX.L",
+        "title": "Phoenix Group Holdings",
+        "sector": "Life Insurance"
+    },
+    {
+        "symbol": "PLI.L",
+        "title": "Perpetual Income & Growth Investment Trust PLC",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "PLP.L",
+        "title": "Polypipe Group PLC",
+        "sector": "Construction & Materials"
+    },
+    {
+        "symbol": "PNL.L",
+        "title": "Personal Assets Trust PLC",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "PNN.L",
+        "title": "Pennon Group PLC",
+        "sector": "Gas, Water & Multiutilities"
+    },
+    {
+        "symbol": "POLY.L",
+        "title": "Polymetal International PLC",
+        "sector": "Mining"
+    },
+    {
+        "symbol": "PTEC.L",
+        "title": "Playtech Ltd.",
+        "sector": "Travel & Leisure"
+    },
+    {
+        "symbol": "PZC.L",
+        "title": "PZ Cussons PLC",
+        "sector": "Personal Goods"
+    },
+    {
+        "symbol": "QQ.L",
+        "title": "QinetiQ Group PLC",
+        "sector": "Aerospace & Defense"
+    },
+    {
+        "symbol": "RAT.L",
+        "title": "Rathbone Brothers PLC",
+        "sector": "Financial Services"
+    },
+    {
+        "symbol": "RCP.L",
+        "title": "RIT Capital Partners PLC",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "RDI.L",
+        "title": "Redefine International PLC",
+        "sector": "Real Estate Investment Trusts"
+    },
+    {
+        "symbol": "RDW.L",
+        "title": "Redrow PLC",
+        "sector": "Household Goods & Home Construction"
+    },
+    {
+        "symbol": "RGU.L",
+        "title": "Regus PLC",
+        "sector": "Support Services"
+    },
+    {
+        "symbol": "RMV.L",
+        "title": "Rightmove PLC",
+        "sector": "Media"
+    },
+    {
+        "symbol": "RNK.L",
+        "title": "Rank Group (The) PLC",
+        "sector": "Travel & Leisure"
+    },
+    {
+        "symbol": "ROR.L",
+        "title": "Rotork PLC",
+        "sector": "Industrial Engineering"
+    },
+    {
+        "symbol": "RPC.L",
+        "title": "RPC Group PLC",
+        "sector": "General Industrials"
+    },
+    {
+        "symbol": "RSE.L",
+        "title": "RIVER ENER GBP-ACC",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "RSW.L",
+        "title": "Renishaw plc",
+        "sector": "Electronic & Electrical Equipment"
+    },
+    {
+        "symbol": "RTN.L",
+        "title": "Restaurant Group (The) PLC",
+        "sector": "Travel & Leisure"
+    },
+    {
+        "symbol": "RTO.L",
+        "title": "Rentokil Initial PLC",
+        "sector": "Support Services"
+    },
+    {
+        "symbol": "SAFE.L",
+        "title": "Safestore Holdings PLC",
+        "sector": "Real Estate Investment Trusts"
+    },
+    {
+        "symbol": "SAGA.L",
+        "title": "Saga PLC",
+        "sector": "General Retailers"
+    },
+    {
+        "symbol": "SCIN.L",
+        "title": "Scottish Investment Trust (The) PLC",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "SCT.L",
+        "title": "Softcat Plc",
+        "sector": "Software & Computer Services"
+    },
+    {
+        "symbol": "SGC.L",
+        "title": "Stagecoach Group PLC",
+        "sector": "Travel & Leisure"
+    },
+    {
+        "symbol": "SGP.L",
+        "title": "SuperGroup PLC",
+        "sector": "Personal Goods"
+    },
+    {
+        "symbol": "SGRO.L",
+        "title": "Segro PLC",
+        "sector": "Real Estate Investment Trusts"
+    },
+    {
+        "symbol": "SHAW.L",
+        "title": "Shawbrook Group plc",
+        "sector": "Banks"
+    },
+    {
+        "symbol": "SHB.L",
+        "title": "Shaftesbury PLC",
+        "sector": "Real Estate Investment Trusts"
+    },
+    {
+        "symbol": "SHI.L",
+        "title": "SIG PLC",
+        "sector": "Support Services"
+    },
+    {
+        "symbol": "SMDS.L",
+        "title": "Smith (DS) PLC",
+        "sector": "General Industrials"
+    },
+    {
+        "symbol": "SMIN.L",
+        "title": "Smiths Group PLC",
+        "sector": "General Industrials"
+    },
+    {
+        "symbol": "SMP.L",
+        "title": "St Modwen Properties PLC",
+        "sector": "Real Estate Investment & Services"
+    },
+    {
+        "symbol": "SMT.L",
+        "title": "Scottish Mortgage Investment Trust PLC",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "SMWH.L",
+        "title": "WH Smith PLC",
+        "sector": "General Retailers"
+    },
+    {
+        "symbol": "SNR.L",
+        "title": "Senior PLC",
+        "sector": "Aerospace & Defense"
+    },
+    {
+        "symbol": "SOPH.L",
+        "title": "Sophos Group plc",
+        "sector": "Software & Computer Services"
+    },
+    {
+        "symbol": "SPD.L",
+        "title": "Sports Direct International PLC",
+        "sector": "General Retailers"
+    },
+    {
+        "symbol": "SPI.L",
+        "title": "Spice PLC",
+        "sector": "Health Care Equipment & Services"
+    },
+    {
+        "symbol": "SPX.L",
+        "title": "Spirax-Sarco Engineering PLC",
+        "sector": "Industrial Engineering"
+    },
+    {
+        "symbol": "SRP.L",
+        "title": "Serco Group PLC",
+        "sector": "Support Services"
+    },
+    {
+        "symbol": "SSPG.L",
+        "title": "SSP Group PLC",
+        "sector": "Travel & Leisure"
+    },
+    {
+        "symbol": "SVI.L",
+        "title": "SVG Capital PLC",
+        "sector": "Financial Services"
+    },
+    {
+        "symbol": "SVS.L",
+        "title": "Savills PLC",
+        "sector": "Real Estate Investment & Services"
+    },
+    {
+        "symbol": "SXS.L",
+        "title": "Spectris PLC",
+        "sector": "Electronic & Electrical Equipment"
+    },
+    {
+        "symbol": "SYNT.L",
+        "title": "SYNTHOMER",
+        "sector": "Chemicals"
+    },
+    {
+        "symbol": "TALK.L",
+        "title": "TalkTalk Telecom Group PLC",
+        "sector": "Fixed Line Telecommunications"
+    },
+    {
+        "symbol": "TATE.L",
+        "title": "Tate & Lyle PLC",
+        "sector": "Food Producers"
+    },
+    {
+        "symbol": "TCG.L",
+        "title": "Thomas Cook Group PLC",
+        "sector": "Travel & Leisure"
+    },
+    {
+        "symbol": "TED.L",
+        "title": "TED BAKER",
+        "sector": "Personal Goods"
+    },
+    {
+        "symbol": "TEM.L",
+        "title": "Templeton Emerging Markets Inv Tr PLC",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "TEP.L",
+        "title": "Telecom plus PLC",
+        "sector": "Fixed Line Telecommunications"
+    },
+    {
+        "symbol": "TLPR.L",
+        "title": "Tullett Prebon PLC",
+        "sector": "Financial Services"
+    },
+    {
+        "symbol": "TLW.L",
+        "title": "Tullow Oil PLC",
+        "sector": "Oil & Gas Producers"
+    },
+    {
+        "symbol": "TMPL.L",
+        "title": "Temple Bar Investment Trust PLC",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "TRIG.L",
+        "title": "RENEW INF GR GBP",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "TRY.L",
+        "title": "TR Property Investment Trust PLC",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "UBM.L",
+        "title": "UBM PLC",
+        "sector": "Media"
+    },
+    {
+        "symbol": "UDG.L",
+        "title": "UDG Healthcare PLC",
+        "sector": "Health Care Equipment & Services"
+    },
+    {
+        "symbol": "UKCM.L",
+        "title": "UK Commercial Property Trust Ltd.",
+        "sector": "Real Estate Investment & Services"
+    },
+    {
+        "symbol": "ULE.L",
+        "title": "Ultra Electronics Holdings PLC",
+        "sector": "Aerospace & Defense"
+    },
+    {
+        "symbol": "UTG.L",
+        "title": "UNITE Group PLC",
+        "sector": "Real Estate Investment & Services"
+    },
+    {
+        "symbol": "VCT.L",
+        "title": "Victrex PLC",
+        "sector": "Chemicals"
+    },
+    {
+        "symbol": "VEC.L",
+        "title": "Vectura Group PLC",
+        "sector": "Pharmaceuticals & Biotechnology"
+    },
+    {
+        "symbol": "VED.L",
+        "title": "Vedanta Resources PLC",
+        "sector": "Mining"
+    },
+    {
+        "symbol": "VM.L",
+        "title": "VIRGIN MON HLDG",
+        "sector": "Banks"
+    },
+    {
+        "symbol": "VSVS.L",
+        "title": "Vesuvius PLC",
+        "sector": "General Industrials"
+    },
+    {
+        "symbol": "WEIR.L",
+        "title": "Weir Group PLC",
+        "sector": "Industrial Engineering"
+    },
+    {
+        "symbol": "WG.L",
+        "title": "Wood Group (John) PLC",
+        "sector": "Oil Equipment & Services"
+    },
+    {
+        "symbol": "WIZZ.L",
+        "title": "Wizz Air Holdings Plc",
+        "sector": "Travel & Leisure"
+    },
+    {
+        "symbol": "WKP.L",
+        "title": "Workspace Group PLC",
+        "sector": "Real Estate Investment Trusts"
+    },
+    {
+        "symbol": "WMH.L",
+        "title": "William Hill PLC",
+        "sector": "Travel & Leisure"
+    },
+    {
+        "symbol": "WPCT.L",
+        "title": "Woodford Patient Capital Trust",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "WTAN.L",
+        "title": "Witan Investment Trust PLC",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "WWH.L",
+        "title": "Worldwide Healthcare Trust PLC",
+        "sector": "Equity Investment Instruments"
+    },
+    {
+        "symbol": "ZPLA.L",
+        "title": "Zoopla Property Group PLC",
+        "sector": "Media"
+    }
+]

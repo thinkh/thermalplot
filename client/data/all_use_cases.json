@@ -9,10 +9,10 @@
     },
     {
         "name": "thermal_ftse250",
-        "title": "Stock Market (FTSE 250 since 2016)"
+        "title": "Stock Market: FTSE 250 (since 2016)"
     },
     {
         "name": "thermal_sp500",
-        "title": "Stock Market (S&P 500 since 2016)"
+        "title": "Stock Market: S&P 500 (2014-2015)"
     }
 ]

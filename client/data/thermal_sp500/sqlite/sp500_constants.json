@@ -1,0 +1,4325 @@
+[
+	{
+		"Ticker": "A",
+		"P_E": "34.39",
+		"P_Free_Cash_Flow": "42.7",
+		"Dividend_Yield": "0.95",
+		"EPS_growth_this_year": "-29",
+		"Return_on_Equity": "9.2",
+		"LT_Debt_Equity": "0.52"
+	},
+	{
+		"Ticker": "AA",
+		"P_E": "78.95",
+		"P_Free_Cash_Flow": "65.64",
+		"Dividend_Yield": "0.76",
+		"EPS_growth_this_year": "109.8",
+		"Return_on_Equity": "0.6",
+		"LT_Debt_Equity": "0.72"
+	},
+	{
+		"Ticker": "AAPL",
+		"P_E": "17.45",
+		"P_Free_Cash_Flow": "15.53",
+		"Dividend_Yield": "1.45",
+		"EPS_growth_this_year": "13.6",
+		"Return_on_Equity": "37.4",
+		"LT_Debt_Equity": "0.26"
+	},
+	{
+		"Ticker": "ABBV",
+		"P_E": "55.73",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.2",
+		"EPS_growth_this_year": "-57.2",
+		"Return_on_Equity": "37.2",
+		"LT_Debt_Equity": "3.11"
+	},
+	{
+		"Ticker": "ABC",
+		"P_E": "1274.75",
+		"P_Free_Cash_Flow": "7.77",
+		"Dividend_Yield": "1.14",
+		"EPS_growth_this_year": "-42.4",
+		"Return_on_Equity": "1.8",
+		"LT_Debt_Equity": "1.13"
+	},
+	{
+		"Ticker": "ABT",
+		"P_E": "42.02",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2.02",
+		"EPS_growth_this_year": "-10.3",
+		"Return_on_Equity": "14.7",
+		"LT_Debt_Equity": "0.16"
+	},
+	{
+		"Ticker": "ACE",
+		"P_E": "11.87",
+		"P_Free_Cash_Flow": "10.3",
+		"Dividend_Yield": "2.27",
+		"EPS_growth_this_year": "38.2",
+		"Return_on_Equity": "11.1",
+		"LT_Debt_Equity": "0.15"
+	},
+	{
+		"Ticker": "ACN",
+		"P_E": "20.29",
+		"P_Free_Cash_Flow": "23.49",
+		"Dividend_Yield": "2.25",
+		"EPS_growth_this_year": "-8.3",
+		"Return_on_Equity": "54.7",
+		"LT_Debt_Equity": "0"
+	},
+	{
+		"Ticker": "ADBE",
+		"P_E": "148.21",
+		"P_Free_Cash_Flow": "34.36",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "-5.4",
+		"Return_on_Equity": "4",
+		"LT_Debt_Equity": "0.13"
+	},
+	{
+		"Ticker": "ADI",
+		"P_E": "28.57",
+		"P_Free_Cash_Flow": "69.3",
+		"Dividend_Yield": "2.5",
+		"EPS_growth_this_year": "-7.5",
+		"Return_on_Equity": "16.6",
+		"LT_Debt_Equity": "0.18"
+	},
+	{
+		"Ticker": "ADM",
+		"P_E": "14",
+		"P_Free_Cash_Flow": "8.7",
+		"Dividend_Yield": "2.33",
+		"EPS_growth_this_year": "69.8",
+		"Return_on_Equity": "11.2",
+		"LT_Debt_Equity": "0.28"
+	},
+	{
+		"Ticker": "ADP",
+		"P_E": "29.86",
+		"P_Free_Cash_Flow": "65.93",
+		"Dividend_Yield": "2.21",
+		"EPS_growth_this_year": "11.5",
+		"Return_on_Equity": "24.6",
+		"LT_Debt_Equity": "0"
+	},
+	{
+		"Ticker": "ADS",
+		"P_E": "34.78",
+		"P_Free_Cash_Flow": "14.15",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "9.3",
+		"Return_on_Equity": "37.7",
+		"LT_Debt_Equity": "3.92"
+	},
+	{
+		"Ticker": "ADSK",
+		"P_E": "115.5",
+		"P_Free_Cash_Flow": "25.11",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "-6.5",
+		"Return_on_Equity": "5.5",
+		"LT_Debt_Equity": "0.33"
+	},
+	{
+		"Ticker": "ADT",
+		"P_E": "23.3",
+		"P_Free_Cash_Flow": "10.72",
+		"Dividend_Yield": "2.13",
+		"EPS_growth_this_year": "-11.7",
+		"Return_on_Equity": "9.6",
+		"LT_Debt_Equity": "1.7"
+	},
+	{
+		"Ticker": "AEE",
+		"P_E": "17.76",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.82",
+		"EPS_growth_this_year": "-1.4",
+		"Return_on_Equity": "8.7",
+		"LT_Debt_Equity": "0.86"
+	},
+	{
+		"Ticker": "AEP",
+		"P_E": "16.04",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.61",
+		"EPS_growth_this_year": "16.9",
+		"Return_on_Equity": "10.9",
+		"LT_Debt_Equity": "0.93"
+	},
+	{
+		"Ticker": "AES",
+		"P_E": "19.18",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.36",
+		"EPS_growth_this_year": "129.9",
+		"Return_on_Equity": "8.3",
+		"LT_Debt_Equity": "4.26"
+	},
+	{
+		"Ticker": "AET",
+		"P_E": "17.27",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.02",
+		"EPS_growth_this_year": "6.6",
+		"Return_on_Equity": "14.1",
+		"LT_Debt_Equity": "0.51"
+	},
+	{
+		"Ticker": "AFL",
+		"P_E": "9.56",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2.51",
+		"EPS_growth_this_year": "-3.8",
+		"Return_on_Equity": "16.9",
+		"LT_Debt_Equity": "0.28"
+	},
+	{
+		"Ticker": "AGN",
+		"P_E": "46.61",
+		"P_Free_Cash_Flow": "44.18",
+		"Dividend_Yield": "0.09",
+		"EPS_growth_this_year": "19.8",
+		"Return_on_Equity": "21.6",
+		"LT_Debt_Equity": "0.27"
+	},
+	{
+		"Ticker": "AIG",
+		"P_E": "9.02",
+		"P_Free_Cash_Flow": "13.42",
+		"Dividend_Yield": "0.91",
+		"EPS_growth_this_year": "198",
+		"Return_on_Equity": "8.4",
+		"LT_Debt_Equity": "0.33"
+	},
+	{
+		"Ticker": "AIV",
+		"P_E": "478",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2.93",
+		"EPS_growth_this_year": "-72.4",
+		"Return_on_Equity": "51.2",
+		"LT_Debt_Equity": "3.86"
+	},
+	{
+		"Ticker": "AIZ",
+		"P_E": "9.45",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.78",
+		"EPS_growth_this_year": "2.2",
+		"Return_on_Equity": "9",
+		"LT_Debt_Equity": "0.23"
+	},
+	{
+		"Ticker": "AKAM",
+		"P_E": "38.92",
+		"P_Free_Cash_Flow": "49.89",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "14.3",
+		"Return_on_Equity": "11.8",
+		"LT_Debt_Equity": "0.21"
+	},
+	{
+		"Ticker": "ALL",
+		"P_E": "11.57",
+		"P_Free_Cash_Flow": "10.02",
+		"Dividend_Yield": "1.68",
+		"EPS_growth_this_year": "2.8",
+		"Return_on_Equity": "13.3",
+		"LT_Debt_Equity": "0.25"
+	},
+	{
+		"Ticker": "ALLE",
+		"P_E": "35.52",
+		"P_Free_Cash_Flow": "33.45",
+		"Dividend_Yield": "0.68",
+		"EPS_growth_this_year": "-85.7",
+		"Return_on_Equity": "-270.8",
+		"LT_Debt_Equity": "NA"
+	},
+	{
+		"Ticker": "ALTR",
+		"P_E": "23.78",
+		"P_Free_Cash_Flow": "25.92",
+		"Dividend_Yield": "1.99",
+		"EPS_growth_this_year": "11.8",
+		"Return_on_Equity": "14",
+		"LT_Debt_Equity": "0.45"
+	},
+	{
+		"Ticker": "ALXN",
+		"P_E": "57.06",
+		"P_Free_Cash_Flow": "74.7",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "156.7",
+		"Return_on_Equity": "21.9",
+		"LT_Debt_Equity": "0"
+	},
+	{
+		"Ticker": "AMAT",
+		"P_E": "26.45",
+		"P_Free_Cash_Flow": "40.68",
+		"Dividend_Yield": "1.59",
+		"EPS_growth_this_year": "314.3",
+		"Return_on_Equity": "15",
+		"LT_Debt_Equity": "0.24"
+	},
+	{
+		"Ticker": "AME",
+		"P_E": "22.44",
+		"P_Free_Cash_Flow": "22.06",
+		"Dividend_Yield": "0.7",
+		"EPS_growth_this_year": "12.9",
+		"Return_on_Equity": "17",
+		"LT_Debt_Equity": "0.44"
+	},
+	{
+		"Ticker": "AMG",
+		"P_E": "28.24",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "21.7",
+		"Return_on_Equity": "27.4",
+		"LT_Debt_Equity": "0.72"
+	},
+	{
+		"Ticker": "AMGN",
+		"P_E": "23.53",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2",
+		"EPS_growth_this_year": "0.9",
+		"Return_on_Equity": "21",
+		"LT_Debt_Equity": "1.17"
+	},
+	{
+		"Ticker": "AMP",
+		"P_E": "16.37",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.7",
+		"EPS_growth_this_year": "28.6",
+		"Return_on_Equity": "19.5",
+		"LT_Debt_Equity": "1.22"
+	},
+	{
+		"Ticker": "AMT",
+		"P_E": "52.75",
+		"P_Free_Cash_Flow": "71.19",
+		"Dividend_Yield": "1.57",
+		"EPS_growth_this_year": "-13.8",
+		"Return_on_Equity": "18.5",
+		"LT_Debt_Equity": "3.09"
+	},
+	{
+		"Ticker": "AN",
+		"P_E": "17.69",
+		"P_Free_Cash_Flow": "25.78",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "15.7",
+		"Return_on_Equity": "20.3",
+		"LT_Debt_Equity": "0.95"
+	},
+	{
+		"Ticker": "ANTM",
+		"P_E": "16.17",
+		"P_Free_Cash_Flow": "17.25",
+		"Dividend_Yield": "1.73",
+		"EPS_growth_this_year": "3.2",
+		"Return_on_Equity": "10.6",
+		"LT_Debt_Equity": "0.58"
+	},
+	{
+		"Ticker": "AON",
+		"P_E": "21.49",
+		"P_Free_Cash_Flow": "25.71",
+		"Dividend_Yield": "1",
+		"EPS_growth_this_year": "32",
+		"Return_on_Equity": "19",
+		"LT_Debt_Equity": "0.73"
+	},
+	{
+		"Ticker": "APD",
+		"P_E": "33.12",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.95",
+		"EPS_growth_this_year": "-3",
+		"Return_on_Equity": "13.8",
+		"LT_Debt_Equity": "0.65"
+	},
+	{
+		"Ticker": "APH",
+		"P_E": "25.52",
+		"P_Free_Cash_Flow": "30.9",
+		"Dividend_Yield": "0.88",
+		"EPS_growth_this_year": "12.8",
+		"Return_on_Equity": "35.5",
+		"LT_Debt_Equity": "0.92"
+	},
+	{
+		"Ticker": "ARG",
+		"P_E": "24.07",
+		"P_Free_Cash_Flow": "79.36",
+		"Dividend_Yield": "1.87",
+		"EPS_growth_this_year": "7.6",
+		"Return_on_Equity": "18.8",
+		"LT_Debt_Equity": "0.84"
+	},
+	{
+		"Ticker": "AVB",
+		"P_E": "35.04",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2.92",
+		"EPS_growth_this_year": "-82.4",
+		"Return_on_Equity": "10.6",
+		"LT_Debt_Equity": "0.69"
+	},
+	{
+		"Ticker": "AVGO",
+		"P_E": "96.6",
+		"P_Free_Cash_Flow": "59.36",
+		"Dividend_Yield": "1.25",
+		"EPS_growth_this_year": "-47",
+		"Return_on_Equity": "8.4",
+		"LT_Debt_Equity": "1.4"
+	},
+	{
+		"Ticker": "AVY",
+		"P_E": "20.56",
+		"P_Free_Cash_Flow": "66.49",
+		"Dividend_Yield": "2.59",
+		"EPS_growth_this_year": "7.4",
+		"Return_on_Equity": "18.8",
+		"LT_Debt_Equity": "0.89"
+	},
+	{
+		"Ticker": "AXP",
+		"P_E": "14.38",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.3",
+		"EPS_growth_this_year": "13.9",
+		"Return_on_Equity": "28.7",
+		"LT_Debt_Equity": "2.76"
+	},
+	{
+		"Ticker": "AZO",
+		"P_E": "19.04",
+		"P_Free_Cash_Flow": "22.32",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "13.6",
+		"Return_on_Equity": "-64.1",
+		"LT_Debt_Equity": "NA"
+	},
+	{
+		"Ticker": "BA",
+		"P_E": "21.39",
+		"P_Free_Cash_Flow": "24.74",
+		"Dividend_Yield": "2.3",
+		"EPS_growth_this_year": "23.6",
+		"Return_on_Equity": "42",
+		"LT_Debt_Equity": "0.94"
+	},
+	{
+		"Ticker": "BAC",
+		"P_E": "48.18",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.22",
+		"EPS_growth_this_year": "-60",
+		"Return_on_Equity": "1.7",
+		"LT_Debt_Equity": "1.08"
+	},
+	{
+		"Ticker": "BAX",
+		"P_E": "19.07",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.06",
+		"EPS_growth_this_year": "-2.7",
+		"Return_on_Equity": "35.7",
+		"LT_Debt_Equity": "0.92"
+	},
+	{
+		"Ticker": "BBBY",
+		"P_E": "15.63",
+		"P_Free_Cash_Flow": "14.77",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "5",
+		"Return_on_Equity": "27.8",
+		"LT_Debt_Equity": "0.47"
+	},
+	{
+		"Ticker": "BBT",
+		"P_E": "13.89",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2.51",
+		"EPS_growth_this_year": "25.6",
+		"Return_on_Equity": "9.4",
+		"LT_Debt_Equity": "1.07"
+	},
+	{
+		"Ticker": "BBY",
+		"P_E": "13.5",
+		"P_Free_Cash_Flow": "18.37",
+		"Dividend_Yield": "1.93",
+		"EPS_growth_this_year": "242.4",
+		"Return_on_Equity": "23",
+		"LT_Debt_Equity": "0.35"
+	},
+	{
+		"Ticker": "BCR",
+		"P_E": "47.08",
+		"P_Free_Cash_Flow": "28.96",
+		"Dividend_Yield": "0.5",
+		"EPS_growth_this_year": "-55.2",
+		"Return_on_Equity": "15.7",
+		"LT_Debt_Equity": "0.78"
+	},
+	{
+		"Ticker": "BDX",
+		"P_E": "24.96",
+		"P_Free_Cash_Flow": "47.03",
+		"Dividend_Yield": "1.65",
+		"EPS_growth_this_year": "28.5",
+		"Return_on_Equity": "22.1",
+		"LT_Debt_Equity": "1.96"
+	},
+	{
+		"Ticker": "BEN",
+		"P_E": "14.48",
+		"P_Free_Cash_Flow": "16.6",
+		"Dividend_Yield": "1.11",
+		"EPS_growth_this_year": "12.5",
+		"Return_on_Equity": "20.6",
+		"LT_Debt_Equity": "0.18"
+	},
+	{
+		"Ticker": "BHI",
+		"P_E": "16.2",
+		"P_Free_Cash_Flow": "40.51",
+		"Dividend_Yield": "1.07",
+		"EPS_growth_this_year": "58.7",
+		"Return_on_Equity": "9.5",
+		"LT_Debt_Equity": "0.21"
+	},
+	{
+		"Ticker": "BIIB",
+		"P_E": "32.96",
+		"P_Free_Cash_Flow": "36.07",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "58.4",
+		"Return_on_Equity": "29.4",
+		"LT_Debt_Equity": "0.05"
+	},
+	{
+		"Ticker": "BK",
+		"P_E": "14.72",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.72",
+		"EPS_growth_this_year": "53.4",
+		"Return_on_Equity": "11.5",
+		"LT_Debt_Equity": "0.56"
+	},
+	{
+		"Ticker": "BLK",
+		"P_E": "19.52",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2.32",
+		"EPS_growth_this_year": "14.1",
+		"Return_on_Equity": "18.2",
+		"LT_Debt_Equity": "0.22"
+	},
+	{
+		"Ticker": "BLL",
+		"P_E": "22.18",
+		"P_Free_Cash_Flow": "18.25",
+		"Dividend_Yield": "0.71",
+		"EPS_growth_this_year": "21.3",
+		"Return_on_Equity": "39.7",
+		"LT_Debt_Equity": "2.42"
+	},
+	{
+		"Ticker": "BMY",
+		"P_E": "50.43",
+		"P_Free_Cash_Flow": "449.07",
+		"Dividend_Yield": "2.45",
+		"EPS_growth_this_year": "-22.1",
+		"Return_on_Equity": "13.2",
+		"LT_Debt_Equity": "0.49"
+	},
+	{
+		"Ticker": "BRCM",
+		"P_E": "41.37",
+		"P_Free_Cash_Flow": "19.39",
+		"Dividend_Yield": "1.25",
+		"EPS_growth_this_year": "47.9",
+		"Return_on_Equity": "7.5",
+		"LT_Debt_Equity": "0.18"
+	},
+	{
+		"Ticker": "BSX",
+		"P_E": "82.35",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "322.2",
+		"Return_on_Equity": "4",
+		"LT_Debt_Equity": "0.56"
+	},
+	{
+		"Ticker": "BWA",
+		"P_E": "21.43",
+		"P_Free_Cash_Flow": "113.13",
+		"Dividend_Yield": "0.85",
+		"EPS_growth_this_year": "5.9",
+		"Return_on_Equity": "17.7",
+		"LT_Debt_Equity": "0.2"
+	},
+	{
+		"Ticker": "BXP",
+		"P_E": "49.42",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.87",
+		"EPS_growth_this_year": "-30.1",
+		"Return_on_Equity": "7.9",
+		"LT_Debt_Equity": "1.83"
+	},
+	{
+		"Ticker": "C",
+		"P_E": "23.54",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "0.08",
+		"EPS_growth_this_year": "-48.4",
+		"Return_on_Equity": "3.3",
+		"LT_Debt_Equity": "1.12"
+	},
+	{
+		"Ticker": "CA",
+		"P_E": "19.31",
+		"P_Free_Cash_Flow": "29.27",
+		"Dividend_Yield": "3.05",
+		"EPS_growth_this_year": "-2",
+		"Return_on_Equity": "14",
+		"LT_Debt_Equity": "0.22"
+	},
+	{
+		"Ticker": "CAG",
+		"P_E": "287.67",
+		"P_Free_Cash_Flow": "29.7",
+		"Dividend_Yield": "2.9",
+		"EPS_growth_this_year": "-62.2",
+		"Return_on_Equity": "7.2",
+		"LT_Debt_Equity": "1.38"
+	},
+	{
+		"Ticker": "CAH",
+		"P_E": "26.87",
+		"P_Free_Cash_Flow": "15.39",
+		"Dividend_Yield": "1.57",
+		"EPS_growth_this_year": "247.4",
+		"Return_on_Equity": "17.5",
+		"LT_Debt_Equity": "0.61"
+	},
+	{
+		"Ticker": "CAM",
+		"P_E": "12.01",
+		"P_Free_Cash_Flow": "11.51",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "47.3",
+		"Return_on_Equity": "25.8",
+		"LT_Debt_Equity": "0.62"
+	},
+	{
+		"Ticker": "CAT",
+		"P_E": "14.39",
+		"P_Free_Cash_Flow": "16.74",
+		"Dividend_Yield": "3.32",
+		"EPS_growth_this_year": "2.3",
+		"Return_on_Equity": "19.3",
+		"LT_Debt_Equity": "1.66"
+	},
+	{
+		"Ticker": "CB",
+		"P_E": "11.59",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2",
+		"EPS_growth_this_year": "-4.6",
+		"Return_on_Equity": "12.9",
+		"LT_Debt_Equity": "0.2"
+	},
+	{
+		"Ticker": "CBG",
+		"P_E": "23.97",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "66.7",
+		"Return_on_Equity": "22.7",
+		"LT_Debt_Equity": "0.85"
+	},
+	{
+		"Ticker": "CBS",
+		"P_E": "24.69",
+		"P_Free_Cash_Flow": "38.14",
+		"Dividend_Yield": "1.01",
+		"EPS_growth_this_year": "-13.6",
+		"Return_on_Equity": "37",
+		"LT_Debt_Equity": "0.93"
+	},
+	{
+		"Ticker": "CCE",
+		"P_E": "16.94",
+		"P_Free_Cash_Flow": "26.1",
+		"Dividend_Yield": "2.51",
+		"EPS_growth_this_year": "7.8",
+		"Return_on_Equity": "37.2",
+		"LT_Debt_Equity": "2.32"
+	},
+	{
+		"Ticker": "CCI",
+		"P_E": "170.6",
+		"P_Free_Cash_Flow": "54.37",
+		"Dividend_Yield": "3.7",
+		"EPS_growth_this_year": "-59.4",
+		"Return_on_Equity": "2.5",
+		"LT_Debt_Equity": "1.68"
+	},
+	{
+		"Ticker": "CCL",
+		"P_E": "27.21",
+		"P_Free_Cash_Flow": "476.12",
+		"Dividend_Yield": "2.31",
+		"EPS_growth_this_year": "14.4",
+		"Return_on_Equity": "5",
+		"LT_Debt_Equity": "0.3"
+	},
+	{
+		"Ticker": "CELG",
+		"P_E": "51.43",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "42.3",
+		"Return_on_Equity": "38.7",
+		"LT_Debt_Equity": "1.17"
+	},
+	{
+		"Ticker": "CERN",
+		"P_E": "48.05",
+		"P_Free_Cash_Flow": "65.12",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "32.7",
+		"Return_on_Equity": "15.6",
+		"LT_Debt_Equity": "0.02"
+	},
+	{
+		"Ticker": "CF",
+		"P_E": "11.65",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.95",
+		"EPS_growth_this_year": "9.5",
+		"Return_on_Equity": "30.7",
+		"LT_Debt_Equity": "1.09"
+	},
+	{
+		"Ticker": "CFN",
+		"P_E": "25.51",
+		"P_Free_Cash_Flow": "25.2",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "12.6",
+		"Return_on_Equity": "9.1",
+		"LT_Debt_Equity": "0.36"
+	},
+	{
+		"Ticker": "CHK",
+		"P_E": "26.71",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.72",
+		"EPS_growth_this_year": "150",
+		"Return_on_Equity": "4",
+		"LT_Debt_Equity": "0.87"
+	},
+	{
+		"Ticker": "CHRW",
+		"P_E": "23.77",
+		"P_Free_Cash_Flow": "39.4",
+		"Dividend_Yield": "2.1",
+		"EPS_growth_this_year": "15.1",
+		"Return_on_Equity": "44.3",
+		"LT_Debt_Equity": "0"
+	},
+	{
+		"Ticker": "CI",
+		"P_E": "16.19",
+		"P_Free_Cash_Flow": "19.46",
+		"Dividend_Yield": "0.03",
+		"EPS_growth_this_year": "-7.7",
+		"Return_on_Equity": "18.5",
+		"LT_Debt_Equity": "0.45"
+	},
+	{
+		"Ticker": "CINF",
+		"P_E": "16.53",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.5",
+		"EPS_growth_this_year": "1.6",
+		"Return_on_Equity": "8.2",
+		"LT_Debt_Equity": "0.13"
+	},
+	{
+		"Ticker": "CL",
+		"P_E": "29.76",
+		"P_Free_Cash_Flow": "58.19",
+		"Dividend_Yield": "2.05",
+		"EPS_growth_this_year": "-0.8",
+		"Return_on_Equity": "146",
+		"LT_Debt_Equity": "4.93"
+	},
+	{
+		"Ticker": "CLX",
+		"P_E": "24.7",
+		"P_Free_Cash_Flow": "44.11",
+		"Dividend_Yield": "2.72",
+		"EPS_growth_this_year": "-1.2",
+		"Return_on_Equity": "317.8",
+		"LT_Debt_Equity": "6.39"
+	},
+	{
+		"Ticker": "CMA",
+		"P_E": "14.46",
+		"P_Free_Cash_Flow": "18.92",
+		"Dividend_Yield": "1.75",
+		"EPS_growth_this_year": "11.2",
+		"Return_on_Equity": "7.9",
+		"LT_Debt_Equity": "0.36"
+	},
+	{
+		"Ticker": "CMCSA",
+		"P_E": "18.4",
+		"P_Free_Cash_Flow": "34.63",
+		"Dividend_Yield": "1.54",
+		"EPS_growth_this_year": "10.3",
+		"Return_on_Equity": "16.2",
+		"LT_Debt_Equity": "0.84"
+	},
+	{
+		"Ticker": "CME",
+		"P_E": "28.13",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2.12",
+		"EPS_growth_this_year": "14.7",
+		"Return_on_Equity": "5.3",
+		"LT_Debt_Equity": "0.1"
+	},
+	{
+		"Ticker": "CMG",
+		"P_E": "47.7",
+		"P_Free_Cash_Flow": "48.68",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "35",
+		"Return_on_Equity": "24.4",
+		"LT_Debt_Equity": "0"
+	},
+	{
+		"Ticker": "CMI",
+		"P_E": "15.8",
+		"P_Free_Cash_Flow": "27.13",
+		"Dividend_Yield": "2.19",
+		"EPS_growth_this_year": "14",
+		"Return_on_Equity": "21.6",
+		"LT_Debt_Equity": "0.21"
+	},
+	{
+		"Ticker": "CMS",
+		"P_E": "20.45",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.26",
+		"EPS_growth_this_year": "4.8",
+		"Return_on_Equity": "13.1",
+		"LT_Debt_Equity": "2.22"
+	},
+	{
+		"Ticker": "CNP",
+		"P_E": "17.11",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "4.56",
+		"EPS_growth_this_year": "-25.8",
+		"Return_on_Equity": "12.4",
+		"LT_Debt_Equity": "1.74"
+	},
+	{
+		"Ticker": "CNX",
+		"P_E": "46.34",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "0.74",
+		"EPS_growth_this_year": "108.6",
+		"Return_on_Equity": "3.1",
+		"LT_Debt_Equity": "0.61"
+	},
+	{
+		"Ticker": "COF",
+		"P_E": "10.61",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.49",
+		"EPS_growth_this_year": "3",
+		"Return_on_Equity": "9.9",
+		"LT_Debt_Equity": "0.67"
+	},
+	{
+		"Ticker": "COG",
+		"P_E": "116.92",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "0.29",
+		"EPS_growth_this_year": "-62.1",
+		"Return_on_Equity": "4.5",
+		"LT_Debt_Equity": "0.82"
+	},
+	{
+		"Ticker": "COH",
+		"P_E": "20.26",
+		"P_Free_Cash_Flow": "26.05",
+		"Dividend_Yield": "3.25",
+		"EPS_growth_this_year": "-22.7",
+		"Return_on_Equity": "23.3",
+		"LT_Debt_Equity": "0"
+	},
+	{
+		"Ticker": "COL",
+		"P_E": "18.93",
+		"P_Free_Cash_Flow": "44.19",
+		"Dividend_Yield": "1.32",
+		"EPS_growth_this_year": "-1.1",
+		"Return_on_Equity": "40.9",
+		"LT_Debt_Equity": "0.9"
+	},
+	{
+		"Ticker": "COP",
+		"P_E": "14.62",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "4.33",
+		"EPS_growth_this_year": "-28.3",
+		"Return_on_Equity": "12.7",
+		"LT_Debt_Equity": "0.35"
+	},
+	{
+		"Ticker": "COST",
+		"P_E": "30.67",
+		"P_Free_Cash_Flow": "40.24",
+		"Dividend_Yield": "0.96",
+		"EPS_growth_this_year": "0.4",
+		"Return_on_Equity": "17.7",
+		"LT_Debt_Equity": "0.41"
+	},
+	{
+		"Ticker": "CPB",
+		"P_E": "18.66",
+		"P_Free_Cash_Flow": "46.99",
+		"Dividend_Yield": "2.68",
+		"EPS_growth_this_year": "7.4",
+		"Return_on_Equity": "56.4",
+		"LT_Debt_Equity": "1.39"
+	},
+	{
+		"Ticker": "CSC",
+		"P_E": "57.21",
+		"P_Free_Cash_Flow": "10.6",
+		"Dividend_Yield": "1.37",
+		"EPS_growth_this_year": "29.8",
+		"Return_on_Equity": "4.2",
+		"LT_Debt_Equity": "0.65"
+	},
+	{
+		"Ticker": "CSCO",
+		"P_E": "17.73",
+		"P_Free_Cash_Flow": "21.47",
+		"Dividend_Yield": "2.84",
+		"EPS_growth_this_year": "-19.9",
+		"Return_on_Equity": "15.3",
+		"LT_Debt_Equity": "0.34"
+	},
+	{
+		"Ticker": "CSX",
+		"P_E": "18.42",
+		"P_Free_Cash_Flow": "132.89",
+		"Dividend_Yield": "1.8",
+		"EPS_growth_this_year": "4.9",
+		"Return_on_Equity": "21.2",
+		"LT_Debt_Equity": "0.85"
+	},
+	{
+		"Ticker": "CTAS",
+		"P_E": "23.36",
+		"P_Free_Cash_Flow": "24",
+		"Dividend_Yield": "1.03",
+		"EPS_growth_this_year": "21",
+		"Return_on_Equity": "27",
+		"LT_Debt_Equity": "0.59"
+	},
+	{
+		"Ticker": "CTL",
+		"P_E": "27.42",
+		"P_Free_Cash_Flow": "23.14",
+		"Dividend_Yield": "5.83",
+		"EPS_growth_this_year": "440",
+		"Return_on_Equity": "4.8",
+		"LT_Debt_Equity": "1.34"
+	},
+	{
+		"Ticker": "CTSH",
+		"P_E": "26.83",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "16.3",
+		"Return_on_Equity": "30.1",
+		"LT_Debt_Equity": "0.12"
+	},
+	{
+		"Ticker": "CTXS",
+		"P_E": "43.86",
+		"P_Free_Cash_Flow": "15.56",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "-18.3",
+		"Return_on_Equity": "10.3",
+		"LT_Debt_Equity": "0.59"
+	},
+	{
+		"Ticker": "CVC",
+		"P_E": "17.89",
+		"P_Free_Cash_Flow": "15.62",
+		"Dividend_Yield": "3.02",
+		"EPS_growth_this_year": "71.4",
+		"Return_on_Equity": "-5.9",
+		"LT_Debt_Equity": "NA"
+	},
+	{
+		"Ticker": "CVS",
+		"P_E": "25.87",
+		"P_Free_Cash_Flow": "24.52",
+		"Dividend_Yield": "1.36",
+		"EPS_growth_this_year": "5.9",
+		"Return_on_Equity": "12.2",
+		"LT_Debt_Equity": "0.31"
+	},
+	{
+		"Ticker": "CVX",
+		"P_E": "10.72",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.94",
+		"EPS_growth_this_year": "-8.6",
+		"Return_on_Equity": "12.6",
+		"LT_Debt_Equity": "0.13"
+	},
+	{
+		"Ticker": "D",
+		"P_E": "28.79",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.5",
+		"EPS_growth_this_year": "24.1",
+		"Return_on_Equity": "12.9",
+		"LT_Debt_Equity": "1.8"
+	},
+	{
+		"Ticker": "DAL",
+		"P_E": "62.42",
+		"P_Free_Cash_Flow": "15.98",
+		"Dividend_Yield": "0.76",
+		"EPS_growth_this_year": "-93.6",
+		"Return_on_Equity": "5.9",
+		"LT_Debt_Equity": "0.97"
+	},
+	{
+		"Ticker": "DD",
+		"P_E": "19.71",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2.45",
+		"EPS_growth_this_year": "28.6",
+		"Return_on_Equity": "23.4",
+		"LT_Debt_Equity": "0.71"
+	},
+	{
+		"Ticker": "DE",
+		"P_E": "11.02",
+		"P_Free_Cash_Flow": "392.69",
+		"Dividend_Yield": "2.6",
+		"EPS_growth_this_year": "-5.1",
+		"Return_on_Equity": "37.7",
+		"LT_Debt_Equity": "2.69"
+	},
+	{
+		"Ticker": "DFS",
+		"P_E": "12.38",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.59",
+		"EPS_growth_this_year": "-1.2",
+		"Return_on_Equity": "21",
+		"LT_Debt_Equity": "2.03"
+	},
+	{
+		"Ticker": "DG",
+		"P_E": "21.53",
+		"P_Free_Cash_Flow": "23.9",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "11.2",
+		"Return_on_Equity": "20",
+		"LT_Debt_Equity": "0.5"
+	},
+	{
+		"Ticker": "DGX",
+		"P_E": "18.99",
+		"P_Free_Cash_Flow": "23.42",
+		"Dividend_Yield": "2.12",
+		"EPS_growth_this_year": "-28.5",
+		"Return_on_Equity": "13.4",
+		"LT_Debt_Equity": "0.75"
+	},
+	{
+		"Ticker": "DHI",
+		"P_E": "17.86",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "0.92",
+		"EPS_growth_this_year": "15",
+		"Return_on_Equity": "13.7",
+		"LT_Debt_Equity": "0.71"
+	},
+	{
+		"Ticker": "DHR",
+		"P_E": "24.15",
+		"P_Free_Cash_Flow": "21.05",
+		"Dividend_Yield": "0.46",
+		"EPS_growth_this_year": "-4.2",
+		"Return_on_Equity": "11.1",
+		"LT_Debt_Equity": "0.15"
+	},
+	{
+		"Ticker": "DIS",
+		"P_E": "23.23",
+		"P_Free_Cash_Flow": "33.76",
+		"Dividend_Yield": "1.1",
+		"EPS_growth_this_year": "26",
+		"Return_on_Equity": "17.5",
+		"LT_Debt_Equity": "0.28"
+	},
+	{
+		"Ticker": "DISCA",
+		"P_E": "14.66",
+		"P_Free_Cash_Flow": "11.75",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "18.7",
+		"Return_on_Equity": "23.2",
+		"LT_Debt_Equity": "1.05"
+	},
+	{
+		"Ticker": "DISCK",
+		"P_E": "17.46",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "16.9",
+		"Return_on_Equity": "NA",
+		"LT_Debt_Equity": "NA"
+	},
+	{
+		"Ticker": "DLPH",
+		"P_E": "17.69",
+		"P_Free_Cash_Flow": "23.5",
+		"Dividend_Yield": "1.26",
+		"EPS_growth_this_year": "15.2",
+		"Return_on_Equity": "47",
+		"LT_Debt_Equity": "0.96"
+	},
+	{
+		"Ticker": "DLTR",
+		"P_E": "26.61",
+		"P_Free_Cash_Flow": "31.05",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "1.5",
+		"Return_on_Equity": "43.9",
+		"LT_Debt_Equity": "0.48"
+	},
+	{
+		"Ticker": "DNB",
+		"P_E": "16.95",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.37",
+		"EPS_growth_this_year": "22",
+		"Return_on_Equity": "-27.4",
+		"LT_Debt_Equity": "NA"
+	},
+	{
+		"Ticker": "DNR",
+		"P_E": "4.92",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2.81",
+		"EPS_growth_this_year": "63.1",
+		"Return_on_Equity": "12.2",
+		"LT_Debt_Equity": "0.67"
+	},
+	{
+		"Ticker": "DO",
+		"P_E": "12.15",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.46",
+		"EPS_growth_this_year": "-28.9",
+		"Return_on_Equity": "8.6",
+		"LT_Debt_Equity": "0.45"
+	},
+	{
+		"Ticker": "DOV",
+		"P_E": "16.02",
+		"P_Free_Cash_Flow": "22.03",
+		"Dividend_Yield": "2.15",
+		"EPS_growth_this_year": "0.2",
+		"Return_on_Equity": "30.1",
+		"LT_Debt_Equity": "0.61"
+	},
+	{
+		"Ticker": "DOW",
+		"P_E": "17.26",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.39",
+		"EPS_growth_this_year": "-15.5",
+		"Return_on_Equity": "15.9",
+		"LT_Debt_Equity": "1.02"
+	},
+	{
+		"Ticker": "DPS",
+		"P_E": "22.14",
+		"P_Free_Cash_Flow": "28.48",
+		"Dividend_Yield": "2.44",
+		"EPS_growth_this_year": "16.7",
+		"Return_on_Equity": "30.7",
+		"LT_Debt_Equity": "1.13"
+	},
+	{
+		"Ticker": "DRI",
+		"P_E": "100.34",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.54",
+		"EPS_growth_this_year": "-23.3",
+		"Return_on_Equity": "40.7",
+		"LT_Debt_Equity": "0.72"
+	},
+	{
+		"Ticker": "DTE",
+		"P_E": "16.28",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.32",
+		"EPS_growth_this_year": "35.2",
+		"Return_on_Equity": "11.1",
+		"LT_Debt_Equity": "1"
+	},
+	{
+		"Ticker": "DTV",
+		"P_E": "16.1",
+		"P_Free_Cash_Flow": "13.94",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "4.4",
+		"Return_on_Equity": "-45.6",
+		"LT_Debt_Equity": "NA"
+	},
+	{
+		"Ticker": "DUK",
+		"P_E": "22.62",
+		"P_Free_Cash_Flow": "47.93",
+		"Dividend_Yield": "4.04",
+		"EPS_growth_this_year": "-4.7",
+		"Return_on_Equity": "4.3",
+		"LT_Debt_Equity": "0.93"
+	},
+	{
+		"Ticker": "DVA",
+		"P_E": "22.15",
+		"P_Free_Cash_Flow": "19.22",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "15.2",
+		"Return_on_Equity": "14.8",
+		"LT_Debt_Equity": "1.62"
+	},
+	{
+		"Ticker": "DVN",
+		"P_E": "16.32",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.5",
+		"EPS_growth_this_year": "-48.3",
+		"Return_on_Equity": "8.9",
+		"LT_Debt_Equity": "0.46"
+	},
+	{
+		"Ticker": "EA",
+		"P_E": "22.53",
+		"P_Free_Cash_Flow": "16.69",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "-90.3",
+		"Return_on_Equity": "32.3",
+		"LT_Debt_Equity": "0.01"
+	},
+	{
+		"Ticker": "EBAY",
+		"P_E": "1160.4",
+		"P_Free_Cash_Flow": "15.93",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "-98.2",
+		"Return_on_Equity": "0.2",
+		"LT_Debt_Equity": "0.34"
+	},
+	{
+		"Ticker": "ECL",
+		"P_E": "29.85",
+		"P_Free_Cash_Flow": "47.67",
+		"Dividend_Yield": "1.17",
+		"EPS_growth_this_year": "34.5",
+		"Return_on_Equity": "15.6",
+		"LT_Debt_Equity": "0.63"
+	},
+	{
+		"Ticker": "ED",
+		"P_E": "15.07",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "4.08",
+		"EPS_growth_this_year": "-6.5",
+		"Return_on_Equity": "10",
+		"LT_Debt_Equity": "0.86"
+	},
+	{
+		"Ticker": "EFX",
+		"P_E": "43.14",
+		"P_Free_Cash_Flow": "28.03",
+		"Dividend_Yield": "1.24",
+		"EPS_growth_this_year": "23.9",
+		"Return_on_Equity": "14.7",
+		"LT_Debt_Equity": "0.49"
+	},
+	{
+		"Ticker": "EIX",
+		"P_E": "16.1",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2.61",
+		"EPS_growth_this_year": "-41.3",
+		"Return_on_Equity": "14.6",
+		"LT_Debt_Equity": "0.94"
+	},
+	{
+		"Ticker": "EL",
+		"P_E": "28.01",
+		"P_Free_Cash_Flow": "32.78",
+		"Dividend_Yield": "1.17",
+		"EPS_growth_this_year": "18.6",
+		"Return_on_Equity": "30",
+		"LT_Debt_Equity": "0.35"
+	},
+	{
+		"Ticker": "EMC",
+		"P_E": "21.83",
+		"P_Free_Cash_Flow": "14.22",
+		"Dividend_Yield": "1.58",
+		"EPS_growth_this_year": "-1.5",
+		"Return_on_Equity": "18.3",
+		"LT_Debt_Equity": "0.25"
+	},
+	{
+		"Ticker": "EMN",
+		"P_E": "10.7",
+		"P_Free_Cash_Flow": "16.86",
+		"Dividend_Yield": "2.12",
+		"EPS_growth_this_year": "154.8",
+		"Return_on_Equity": "28.2",
+		"LT_Debt_Equity": "1.17"
+	},
+	{
+		"Ticker": "EMR",
+		"P_E": "18.63",
+		"P_Free_Cash_Flow": "25.09",
+		"Dividend_Yield": "3.2",
+		"EPS_growth_this_year": "10.1",
+		"Return_on_Equity": "21.6",
+		"LT_Debt_Equity": "0.35"
+	},
+	{
+		"Ticker": "EOG",
+		"P_E": "16.38",
+		"P_Free_Cash_Flow": "140.55",
+		"Dividend_Yield": "0.74",
+		"EPS_growth_this_year": "282.9",
+		"Return_on_Equity": "18.5",
+		"LT_Debt_Equity": "0.33"
+	},
+	{
+		"Ticker": "EQR",
+		"P_E": "47.67",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2.54",
+		"EPS_growth_this_year": "337.1",
+		"Return_on_Equity": "7.9",
+		"LT_Debt_Equity": "1.05"
+	},
+	{
+		"Ticker": "EQT",
+		"P_E": "32.07",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "0.15",
+		"EPS_growth_this_year": "28.4",
+		"Return_on_Equity": "8.9",
+		"LT_Debt_Equity": "0.62"
+	},
+	{
+		"Ticker": "ES",
+		"P_E": "20.36",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.18",
+		"EPS_growth_this_year": "31.7",
+		"Return_on_Equity": "10.4",
+		"LT_Debt_Equity": "0.83"
+	},
+	{
+		"Ticker": "ESRX",
+		"P_E": "34.16",
+		"P_Free_Cash_Flow": "15.51",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "28.3",
+		"Return_on_Equity": "9.1",
+		"LT_Debt_Equity": "0.57"
+	},
+	{
+		"Ticker": "ESS",
+		"P_E": "140.72",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2.3",
+		"EPS_growth_this_year": "4.2",
+		"Return_on_Equity": "3.4",
+		"LT_Debt_Equity": "0.88"
+	},
+	{
+		"Ticker": "ESV",
+		"P_E": "13.78",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "10.08",
+		"EPS_growth_this_year": "16.2",
+		"Return_on_Equity": "1.6",
+		"LT_Debt_Equity": "0.5"
+	},
+	{
+		"Ticker": "ETFC",
+		"P_E": "26.15",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "244.8",
+		"Return_on_Equity": "5.6",
+		"LT_Debt_Equity": "0.58"
+	},
+	{
+		"Ticker": "ETN",
+		"P_E": "19.23",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2.7",
+		"EPS_growth_this_year": "-3.6",
+		"Return_on_Equity": "10.8",
+		"LT_Debt_Equity": "0.51"
+	},
+	{
+		"Ticker": "ETR",
+		"P_E": "15.17",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "4.19",
+		"EPS_growth_this_year": "30.8",
+		"Return_on_Equity": "9.5",
+		"LT_Debt_Equity": "1.15"
+	},
+	{
+		"Ticker": "EW",
+		"P_E": "17.88",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "118.7",
+		"Return_on_Equity": "43.3",
+		"LT_Debt_Equity": "0.27"
+	},
+	{
+		"Ticker": "EXC",
+		"P_E": "17.76",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.71",
+		"EPS_growth_this_year": "-6",
+		"Return_on_Equity": "7.5",
+		"LT_Debt_Equity": "0.89"
+	},
+	{
+		"Ticker": "EXPD",
+		"P_E": "25.14",
+		"P_Free_Cash_Flow": "42.66",
+		"Dividend_Yield": "1.41",
+		"EPS_growth_this_year": "7",
+		"Return_on_Equity": "18.4",
+		"LT_Debt_Equity": "0"
+	},
+	{
+		"Ticker": "EXPE",
+		"P_E": "30.77",
+		"P_Free_Cash_Flow": "12.26",
+		"Dividend_Yield": "0.78",
+		"EPS_growth_this_year": "79",
+		"Return_on_Equity": "21.1",
+		"LT_Debt_Equity": "0.98"
+	},
+	{
+		"Ticker": "F",
+		"P_E": "20.76",
+		"P_Free_Cash_Flow": "12.74",
+		"Dividend_Yield": "3.66",
+		"EPS_growth_this_year": "-54.8",
+		"Return_on_Equity": "12.2",
+		"LT_Debt_Equity": "3.38"
+	},
+	{
+		"Ticker": "FAST",
+		"P_E": "25.76",
+		"P_Free_Cash_Flow": "951.38",
+		"Dividend_Yield": "2.62",
+		"EPS_growth_this_year": "9.9",
+		"Return_on_Equity": "26.4",
+		"LT_Debt_Equity": "0"
+	},
+	{
+		"Ticker": "FB",
+		"P_E": "74.67",
+		"P_Free_Cash_Flow": "61.67",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "83.3",
+		"Return_on_Equity": "18.8",
+		"LT_Debt_Equity": "0"
+	},
+	{
+		"Ticker": "FDO",
+		"P_E": "36.07",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.58",
+		"EPS_growth_this_year": "-35",
+		"Return_on_Equity": "15",
+		"LT_Debt_Equity": "0.18"
+	},
+	{
+		"Ticker": "FDX",
+		"P_E": "22.51",
+		"P_Free_Cash_Flow": "58.33",
+		"Dividend_Yield": "0.45",
+		"EPS_growth_this_year": "37.2",
+		"Return_on_Equity": "15.2",
+		"LT_Debt_Equity": "0.3"
+	},
+	{
+		"Ticker": "FE",
+		"P_E": "70.29",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "4.02",
+		"EPS_growth_this_year": "-42.7",
+		"Return_on_Equity": "2.4",
+		"LT_Debt_Equity": "1.54"
+	},
+	{
+		"Ticker": "FFIV",
+		"P_E": "26.94",
+		"P_Free_Cash_Flow": "15.73",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "16.9",
+		"Return_on_Equity": "24",
+		"LT_Debt_Equity": "0"
+	},
+	{
+		"Ticker": "FIS",
+		"P_E": "28.62",
+		"P_Free_Cash_Flow": "37.58",
+		"Dividend_Yield": "1.51",
+		"EPS_growth_this_year": "43.1",
+		"Return_on_Equity": "10.4",
+		"LT_Debt_Equity": "0.77"
+	},
+	{
+		"Ticker": "FISV",
+		"P_E": "26.44",
+		"P_Free_Cash_Flow": "19.02",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "22.1",
+		"Return_on_Equity": "22.1",
+		"LT_Debt_Equity": "1.13"
+	},
+	{
+		"Ticker": "FITB",
+		"P_E": "11.47",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2.68",
+		"EPS_growth_this_year": "-16.8",
+		"Return_on_Equity": "12.2",
+		"LT_Debt_Equity": "1.05"
+	},
+	{
+		"Ticker": "FLIR",
+		"P_E": "22.94",
+		"P_Free_Cash_Flow": "41.75",
+		"Dividend_Yield": "1.37",
+		"EPS_growth_this_year": "13",
+		"Return_on_Equity": "12.3",
+		"LT_Debt_Equity": "0.22"
+	},
+	{
+		"Ticker": "FLR",
+		"P_E": "14.47",
+		"P_Free_Cash_Flow": "197.04",
+		"Dividend_Yield": "1.42",
+		"EPS_growth_this_year": "49.8",
+		"Return_on_Equity": "12.6",
+		"LT_Debt_Equity": "0.14"
+	},
+	{
+		"Ticker": "FLS",
+		"P_E": "16.59",
+		"P_Free_Cash_Flow": "23.85",
+		"Dividend_Yield": "1.02",
+		"EPS_growth_this_year": "10.3",
+		"Return_on_Equity": "32.8",
+		"LT_Debt_Equity": "0.57"
+	},
+	{
+		"Ticker": "FMC",
+		"P_E": "21.7",
+		"P_Free_Cash_Flow": "69.35",
+		"Dividend_Yield": "0.94",
+		"EPS_growth_this_year": "-10.8",
+		"Return_on_Equity": "22.5",
+		"LT_Debt_Equity": "0.74"
+	},
+	{
+		"Ticker": "FOSL",
+		"P_E": "11.71",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "8.1",
+		"Return_on_Equity": "50",
+		"LT_Debt_Equity": "0.62"
+	},
+	{
+		"Ticker": "FOXA",
+		"P_E": "8.27",
+		"P_Free_Cash_Flow": "39.59",
+		"Dividend_Yield": "0.85",
+		"EPS_growth_this_year": "-42.6",
+		"Return_on_Equity": "52.4",
+		"LT_Debt_Equity": "0.95"
+	},
+	{
+		"Ticker": "FSLR",
+		"P_E": "18.43",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "433.3",
+		"Return_on_Equity": "5.8",
+		"LT_Debt_Equity": "0.03"
+	},
+	{
+		"Ticker": "FTI",
+		"P_E": "13.89",
+		"P_Free_Cash_Flow": "19.63",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "40.5",
+		"Return_on_Equity": "27.5",
+		"LT_Debt_Equity": "0.53"
+	},
+	{
+		"Ticker": "FTR",
+		"P_E": "63.85",
+		"P_Free_Cash_Flow": "45.9",
+		"Dividend_Yield": "4.82",
+		"EPS_growth_this_year": "-15.4",
+		"Return_on_Equity": "3.3",
+		"LT_Debt_Equity": "2.36"
+	},
+	{
+		"Ticker": "GAS",
+		"P_E": "10.63",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "4.07",
+		"EPS_growth_this_year": "92.2",
+		"Return_on_Equity": "20.2",
+		"LT_Debt_Equity": "0.95"
+	},
+	{
+		"Ticker": "GCI",
+		"P_E": "7.55",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2.31",
+		"EPS_growth_this_year": "175.9",
+		"Return_on_Equity": "37.9",
+		"LT_Debt_Equity": "1.4"
+	},
+	{
+		"Ticker": "GD",
+		"P_E": "18.1",
+		"P_Free_Cash_Flow": "19.49",
+		"Dividend_Yield": "1.74",
+		"EPS_growth_this_year": "11.4",
+		"Return_on_Equity": "19.3",
+		"LT_Debt_Equity": "0.29"
+	},
+	{
+		"Ticker": "GE",
+		"P_E": "16.7",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.65",
+		"EPS_growth_this_year": "3.4",
+		"Return_on_Equity": "13.8",
+		"LT_Debt_Equity": "2.85"
+	},
+	{
+		"Ticker": "GGP",
+		"P_E": "75.74",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2.3",
+		"EPS_growth_this_year": "21.9",
+		"Return_on_Equity": "14.6",
+		"LT_Debt_Equity": "2.17"
+	},
+	{
+		"Ticker": "GILD",
+		"P_E": "13.7",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "306.1",
+		"Return_on_Equity": "122.2",
+		"LT_Debt_Equity": "0"
+	},
+	{
+		"Ticker": "GIS",
+		"P_E": "22.37",
+		"P_Free_Cash_Flow": "47.04",
+		"Dividend_Yield": "3.07",
+		"EPS_growth_this_year": "1.4",
+		"Return_on_Equity": "24.4",
+		"LT_Debt_Equity": "1.36"
+	},
+	{
+		"Ticker": "GLW",
+		"P_E": "14.77",
+		"P_Free_Cash_Flow": "10.43",
+		"Dividend_Yield": "1.92",
+		"EPS_growth_this_year": "29.1",
+		"Return_on_Equity": "13.7",
+		"LT_Debt_Equity": "0.17"
+	},
+	{
+		"Ticker": "GM",
+		"P_E": "22.54",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.19",
+		"EPS_growth_this_year": "-30.3",
+		"Return_on_Equity": "7.3",
+		"LT_Debt_Equity": "0.9"
+	},
+	{
+		"Ticker": "GMCR",
+		"P_E": "33.66",
+		"P_Free_Cash_Flow": "376.93",
+		"Dividend_Yield": "0.94",
+		"EPS_growth_this_year": "18.4",
+		"Return_on_Equity": "17.4",
+		"LT_Debt_Equity": "0.07"
+	},
+	{
+		"Ticker": "GME",
+		"P_E": "11.75",
+		"P_Free_Cash_Flow": "514.94",
+		"Dividend_Yield": "3.52",
+		"EPS_growth_this_year": "240.4",
+		"Return_on_Equity": "17",
+		"LT_Debt_Equity": "0.17"
+	},
+	{
+		"Ticker": "GOOG",
+		"P_E": "25.68",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "NA",
+		"Return_on_Equity": "NA",
+		"LT_Debt_Equity": "NA"
+	},
+	{
+		"Ticker": "GOOGL",
+		"P_E": "26.73",
+		"P_Free_Cash_Flow": "32.21",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "2.9",
+		"Return_on_Equity": "14.8",
+		"LT_Debt_Equity": "0.03"
+	},
+	{
+		"Ticker": "GPC",
+		"P_E": "21.4",
+		"P_Free_Cash_Flow": "41.76",
+		"Dividend_Yield": "2.39",
+		"EPS_growth_this_year": "6.3",
+		"Return_on_Equity": "20.2",
+		"LT_Debt_Equity": "0.14"
+	},
+	{
+		"Ticker": "GPS",
+		"P_E": "14.64",
+		"P_Free_Cash_Flow": "21.82",
+		"Dividend_Yield": "2.15",
+		"EPS_growth_this_year": "17.6",
+		"Return_on_Equity": "42",
+		"LT_Debt_Equity": "0.48"
+	},
+	{
+		"Ticker": "GRMN",
+		"P_E": "26.43",
+		"P_Free_Cash_Flow": "111.71",
+		"Dividend_Yield": "3.89",
+		"EPS_growth_this_year": "-39.7",
+		"Return_on_Equity": "10.5",
+		"LT_Debt_Equity": "0"
+	},
+	{
+		"Ticker": "GS",
+		"P_E": "11.21",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.25",
+		"EPS_growth_this_year": "10.4",
+		"Return_on_Equity": "11.2",
+		"LT_Debt_Equity": "2.87"
+	},
+	{
+		"Ticker": "GT",
+		"P_E": "3.13",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "0.87",
+		"EPS_growth_this_year": "287.2",
+		"Return_on_Equity": "116.6",
+		"LT_Debt_Equity": "1.72"
+	},
+	{
+		"Ticker": "GWW",
+		"P_E": "20.78",
+		"P_Free_Cash_Flow": "57.15",
+		"Dividend_Yield": "1.81",
+		"EPS_growth_this_year": "2.9",
+		"Return_on_Equity": "30.3",
+		"LT_Debt_Equity": "0.12"
+	},
+	{
+		"Ticker": "HAL",
+		"P_E": "10.76",
+		"P_Free_Cash_Flow": "149.76",
+		"Dividend_Yield": "1.66",
+		"EPS_growth_this_year": "73",
+		"Return_on_Equity": "23.3",
+		"LT_Debt_Equity": "0.48"
+	},
+	{
+		"Ticker": "HAR",
+		"P_E": "30.46",
+		"P_Free_Cash_Flow": "28.05",
+		"Dividend_Yield": "0.96",
+		"EPS_growth_this_year": "64.7",
+		"Return_on_Equity": "17.2",
+		"LT_Debt_Equity": "0.19"
+	},
+	{
+		"Ticker": "HAS",
+		"P_E": "19.08",
+		"P_Free_Cash_Flow": "62.57",
+		"Dividend_Yield": "2.98",
+		"EPS_growth_this_year": "47.5",
+		"Return_on_Equity": "27.7",
+		"LT_Debt_Equity": "1.06"
+	},
+	{
+		"Ticker": "HBAN",
+		"P_E": "14.89",
+		"P_Free_Cash_Flow": "13.1",
+		"Dividend_Yield": "2.24",
+		"EPS_growth_this_year": "0",
+		"Return_on_Equity": "10.2",
+		"LT_Debt_Equity": "0.73"
+	},
+	{
+		"Ticker": "HCA",
+		"P_E": "16.74",
+		"P_Free_Cash_Flow": "12.96",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "23.4",
+		"Return_on_Equity": "-24.1",
+		"LT_Debt_Equity": "NA"
+	},
+	{
+		"Ticker": "HCBK",
+		"P_E": "30.22",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.65",
+		"EPS_growth_this_year": "-13.5",
+		"Return_on_Equity": "3.3",
+		"LT_Debt_Equity": "0"
+	},
+	{
+		"Ticker": "HCN",
+		"P_E": "102.7",
+		"P_Free_Cash_Flow": "8.62",
+		"Dividend_Yield": "4.23",
+		"EPS_growth_this_year": "-79.2",
+		"Return_on_Equity": "2.9",
+		"LT_Debt_Equity": "0.84"
+	},
+	{
+		"Ticker": "HCP",
+		"P_E": "22.4",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "5.2",
+		"EPS_growth_this_year": "-1",
+		"Return_on_Equity": "10.9",
+		"LT_Debt_Equity": "0.83"
+	},
+	{
+		"Ticker": "HD",
+		"P_E": "25.51",
+		"P_Free_Cash_Flow": "36.85",
+		"Dividend_Yield": "1.67",
+		"EPS_growth_this_year": "25.3",
+		"Return_on_Equity": "51.7",
+		"LT_Debt_Equity": "1.65"
+	},
+	{
+		"Ticker": "HES",
+		"P_E": "13.92",
+		"P_Free_Cash_Flow": "43.7",
+		"Dividend_Yield": "1.31",
+		"EPS_growth_this_year": "-53.2",
+		"Return_on_Equity": "15.3",
+		"LT_Debt_Equity": "0.27"
+	},
+	{
+		"Ticker": "HIG",
+		"P_E": "13.82",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.74",
+		"EPS_growth_this_year": "15.8",
+		"Return_on_Equity": "4.4",
+		"LT_Debt_Equity": "0.31"
+	},
+	{
+		"Ticker": "HOG",
+		"P_E": "16.45",
+		"P_Free_Cash_Flow": "19.86",
+		"Dividend_Yield": "1.95",
+		"EPS_growth_this_year": "18.3",
+		"Return_on_Equity": "26.6",
+		"LT_Debt_Equity": "1.29"
+	},
+	{
+		"Ticker": "HON",
+		"P_E": "19.77",
+		"P_Free_Cash_Flow": "34.07",
+		"Dividend_Yield": "1.96",
+		"EPS_growth_this_year": "8.3",
+		"Return_on_Equity": "23.2",
+		"LT_Debt_Equity": "0.34"
+	},
+	{
+		"Ticker": "HOT",
+		"P_E": "23",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.87",
+		"EPS_growth_this_year": "18.1",
+		"Return_on_Equity": "25",
+		"LT_Debt_Equity": "1.69"
+	},
+	{
+		"Ticker": "HP",
+		"P_E": "10.38",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.94",
+		"EPS_growth_this_year": "-3",
+		"Return_on_Equity": "18.8",
+		"LT_Debt_Equity": "0.01"
+	},
+	{
+		"Ticker": "HPQ",
+		"P_E": "14.65",
+		"P_Free_Cash_Flow": "9.62",
+		"Dividend_Yield": "1.67",
+		"EPS_growth_this_year": "0",
+		"Return_on_Equity": "18",
+		"LT_Debt_Equity": "0.6"
+	},
+	{
+		"Ticker": "HRB",
+		"P_E": "19.63",
+		"P_Free_Cash_Flow": "29.51",
+		"Dividend_Yield": "2.3",
+		"EPS_growth_this_year": "7.1",
+		"Return_on_Equity": "38.2",
+		"LT_Debt_Equity": "0.41"
+	},
+	{
+		"Ticker": "HRL",
+		"P_E": "25.18",
+		"P_Free_Cash_Flow": "46.55",
+		"Dividend_Yield": "1.73",
+		"EPS_growth_this_year": "14.4",
+		"Return_on_Equity": "17.6",
+		"LT_Debt_Equity": "0.07"
+	},
+	{
+		"Ticker": "HRS",
+		"P_E": "15.51",
+		"P_Free_Cash_Flow": "20.61",
+		"Dividend_Yield": "2.4",
+		"EPS_growth_this_year": "20.2",
+		"Return_on_Equity": "29.6",
+		"LT_Debt_Equity": "0.87"
+	},
+	{
+		"Ticker": "HSP",
+		"P_E": "44.89",
+		"P_Free_Cash_Flow": "64.01",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "-4.6",
+		"Return_on_Equity": "10.2",
+		"LT_Debt_Equity": "0.52"
+	},
+	{
+		"Ticker": "HST",
+		"P_E": "22.92",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.67",
+		"EPS_growth_this_year": "244.4",
+		"Return_on_Equity": "10",
+		"LT_Debt_Equity": "0.55"
+	},
+	{
+		"Ticker": "HSY",
+		"P_E": "28.52",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2",
+		"EPS_growth_this_year": "4.4",
+		"Return_on_Equity": "54.5",
+		"LT_Debt_Equity": "1.02"
+	},
+	{
+		"Ticker": "HUM",
+		"P_E": "21.27",
+		"P_Free_Cash_Flow": "25.44",
+		"Dividend_Yield": "0.72",
+		"EPS_growth_this_year": "-4.8",
+		"Return_on_Equity": "11.6",
+		"LT_Debt_Equity": "0.4"
+	},
+	{
+		"Ticker": "IBM",
+		"P_E": "10.39",
+		"P_Free_Cash_Flow": "18.94",
+		"Dividend_Yield": "2.69",
+		"EPS_growth_this_year": "2",
+		"Return_on_Equity": "139.3",
+		"LT_Debt_Equity": "2.96"
+	},
+	{
+		"Ticker": "ICE",
+		"P_E": "27.91",
+		"P_Free_Cash_Flow": "27.28",
+		"Dividend_Yield": "1.11",
+		"EPS_growth_this_year": "119",
+		"Return_on_Equity": "7.7",
+		"LT_Debt_Equity": "0.18"
+	},
+	{
+		"Ticker": "IFF",
+		"P_E": "23.99",
+		"P_Free_Cash_Flow": "50.33",
+		"Dividend_Yield": "1.55",
+		"EPS_growth_this_year": "38.8",
+		"Return_on_Equity": "31.5",
+		"LT_Debt_Equity": "0.57"
+	},
+	{
+		"Ticker": "INTC",
+		"P_E": "14.83",
+		"P_Free_Cash_Flow": "28.04",
+		"Dividend_Yield": "2.79",
+		"EPS_growth_this_year": "22.2",
+		"Return_on_Equity": "20.4",
+		"LT_Debt_Equity": "0.22"
+	},
+	{
+		"Ticker": "INTU",
+		"P_E": "34.92",
+		"P_Free_Cash_Flow": "24.9",
+		"Dividend_Yield": "1.03",
+		"EPS_growth_this_year": "8.8",
+		"Return_on_Equity": "27.8",
+		"LT_Debt_Equity": "0.21"
+	},
+	{
+		"Ticker": "IP",
+		"P_E": "29.38",
+		"P_Free_Cash_Flow": "25.28",
+		"Dividend_Yield": "2.78",
+		"EPS_growth_this_year": "77.1",
+		"Return_on_Equity": "10.2",
+		"LT_Debt_Equity": "1.32"
+	},
+	{
+		"Ticker": "IPG",
+		"P_E": "27.02",
+		"P_Free_Cash_Flow": "29.81",
+		"Dividend_Yield": "1.69",
+		"EPS_growth_this_year": "-35.1",
+		"Return_on_Equity": "16.8",
+		"LT_Debt_Equity": "0.78"
+	},
+	{
+		"Ticker": "IR",
+		"P_E": "20.85",
+		"P_Free_Cash_Flow": "38.15",
+		"Dividend_Yield": "1.69",
+		"EPS_growth_this_year": "57.2",
+		"Return_on_Equity": "16.2",
+		"LT_Debt_Equity": "0.62"
+	},
+	{
+		"Ticker": "IRM",
+		"P_E": "19.84",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "5.18",
+		"EPS_growth_this_year": "-51.5",
+		"Return_on_Equity": "42",
+		"LT_Debt_Equity": "9.5"
+	},
+	{
+		"Ticker": "ISRG",
+		"P_E": "45.87",
+		"P_Free_Cash_Flow": "33.58",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "-33.6",
+		"Return_on_Equity": "12.9",
+		"LT_Debt_Equity": "0"
+	},
+	{
+		"Ticker": "ITW",
+		"P_E": "21.26",
+		"P_Free_Cash_Flow": "69.4",
+		"Dividend_Yield": "1.95",
+		"EPS_growth_this_year": "28.7",
+		"Return_on_Equity": "37.3",
+		"LT_Debt_Equity": "0.88"
+	},
+	{
+		"Ticker": "IVZ",
+		"P_E": "17.56",
+		"P_Free_Cash_Flow": "26.81",
+		"Dividend_Yield": "2.5",
+		"EPS_growth_this_year": "16.9",
+		"Return_on_Equity": "11.8",
+		"LT_Debt_Equity": "0.19"
+	},
+	{
+		"Ticker": "JCI",
+		"P_E": "22.78",
+		"P_Free_Cash_Flow": "41.45",
+		"Dividend_Yield": "2.06",
+		"EPS_growth_this_year": "35.9",
+		"Return_on_Equity": "11",
+		"LT_Debt_Equity": "0.43"
+	},
+	{
+		"Ticker": "JEC",
+		"P_E": "17.5",
+		"P_Free_Cash_Flow": "14.03",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "-23.2",
+		"Return_on_Equity": "7.5",
+		"LT_Debt_Equity": "0.16"
+	},
+	{
+		"Ticker": "JNJ",
+		"P_E": "17.59",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2.79",
+		"EPS_growth_this_year": "18.5",
+		"Return_on_Equity": "27.6",
+		"LT_Debt_Equity": "0.17"
+	},
+	{
+		"Ticker": "JOY",
+		"P_E": "13.58",
+		"P_Free_Cash_Flow": "22.11",
+		"Dividend_Yield": "1.79",
+		"EPS_growth_this_year": "-34.3",
+		"Return_on_Equity": "11.8",
+		"LT_Debt_Equity": "0.45"
+	},
+	{
+		"Ticker": "JPM",
+		"P_E": "11.3",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2.68",
+		"EPS_growth_this_year": "21.6",
+		"Return_on_Equity": "9.6",
+		"LT_Debt_Equity": "1.31"
+	},
+	{
+		"Ticker": "JWN",
+		"P_E": "21.68",
+		"P_Free_Cash_Flow": "213.02",
+		"Dividend_Yield": "1.61",
+		"EPS_growth_this_year": "4.2",
+		"Return_on_Equity": "34.5",
+		"LT_Debt_Equity": "1.37"
+	},
+	{
+		"Ticker": "K",
+		"P_E": "37.05",
+		"P_Free_Cash_Flow": "42.85",
+		"Dividend_Yield": "3.06",
+		"EPS_growth_this_year": "-64.4",
+		"Return_on_Equity": "18.8",
+		"LT_Debt_Equity": "2.13"
+	},
+	{
+		"Ticker": "KEY",
+		"P_E": "13.61",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.85",
+		"EPS_growth_this_year": "11.8",
+		"Return_on_Equity": "8.6",
+		"LT_Debt_Equity": "0.77"
+	},
+	{
+		"Ticker": "KIM",
+		"P_E": "34.94",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.57",
+		"EPS_growth_this_year": "40",
+		"Return_on_Equity": "12.5",
+		"LT_Debt_Equity": "0.97"
+	},
+	{
+		"Ticker": "KLAC",
+		"P_E": "25.58",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.08",
+		"EPS_growth_this_year": "8.1",
+		"Return_on_Equity": "14.9",
+		"LT_Debt_Equity": "5.33"
+	},
+	{
+		"Ticker": "KMB",
+		"P_E": "28.23",
+		"P_Free_Cash_Flow": "73.73",
+		"Dividend_Yield": "3.03",
+		"EPS_growth_this_year": "-22",
+		"Return_on_Equity": "72.1",
+		"LT_Debt_Equity": "7.82"
+	},
+	{
+		"Ticker": "KMI",
+		"P_E": "44.07",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "4.3",
+		"EPS_growth_this_year": "-22.4",
+		"Return_on_Equity": "5.7",
+		"LT_Debt_Equity": "1.18"
+	},
+	{
+		"Ticker": "KMX",
+		"P_E": "27.25",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "15.5",
+		"Return_on_Equity": "16.8",
+		"LT_Debt_Equity": "2.69"
+	},
+	{
+		"Ticker": "KO",
+		"P_E": "26.4",
+		"P_Free_Cash_Flow": "64.3",
+		"Dividend_Yield": "2.91",
+		"EPS_growth_this_year": "-15.8",
+		"Return_on_Equity": "21.8",
+		"LT_Debt_Equity": "0.63"
+	},
+	{
+		"Ticker": "KORS",
+		"P_E": "16.58",
+		"P_Free_Cash_Flow": "28.83",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "63.5",
+		"Return_on_Equity": "41.8",
+		"LT_Debt_Equity": "0"
+	},
+	{
+		"Ticker": "KR",
+		"P_E": "22.47",
+		"P_Free_Cash_Flow": "36.31",
+		"Dividend_Yield": "1.02",
+		"EPS_growth_this_year": "4.7",
+		"Return_on_Equity": "31.8",
+		"LT_Debt_Equity": "1.83"
+	},
+	{
+		"Ticker": "KRFT",
+		"P_E": "37.24",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.42",
+		"EPS_growth_this_year": "-61.4",
+		"Return_on_Equity": "20",
+		"LT_Debt_Equity": "1.98"
+	},
+	{
+		"Ticker": "KSS",
+		"P_E": "17.51",
+		"P_Free_Cash_Flow": "18.74",
+		"Dividend_Yield": "2.24",
+		"EPS_growth_this_year": "-3.1",
+		"Return_on_Equity": "14.2",
+		"LT_Debt_Equity": "0.81"
+	},
+	{
+		"Ticker": "KSU",
+		"P_E": "25.63",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.13",
+		"EPS_growth_this_year": "43.1",
+		"Return_on_Equity": "14",
+		"LT_Debt_Equity": "0.49"
+	},
+	{
+		"Ticker": "L",
+		"P_E": "29.62",
+		"P_Free_Cash_Flow": "21.25",
+		"Dividend_Yield": "0.59",
+		"EPS_growth_this_year": "7",
+		"Return_on_Equity": "0.9",
+		"LT_Debt_Equity": "0.51"
+	},
+	{
+		"Ticker": "LB",
+		"P_E": "27.71",
+		"P_Free_Cash_Flow": "90.55",
+		"Dividend_Yield": "2.21",
+		"EPS_growth_this_year": "20.1",
+		"Return_on_Equity": "-201.8",
+		"LT_Debt_Equity": "NA"
+	},
+	{
+		"Ticker": "LEG",
+		"P_E": "28.89",
+		"P_Free_Cash_Flow": "51.29",
+		"Dividend_Yield": "2.77",
+		"EPS_growth_this_year": "24",
+		"Return_on_Equity": "12.1",
+		"LT_Debt_Equity": "0.66"
+	},
+	{
+		"Ticker": "LEN",
+		"P_E": "17.97",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "0.32",
+		"EPS_growth_this_year": "30.2",
+		"Return_on_Equity": "15.7",
+		"LT_Debt_Equity": "1.27"
+	},
+	{
+		"Ticker": "LH",
+		"P_E": "20.32",
+		"P_Free_Cash_Flow": "21.69",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "4.3",
+		"Return_on_Equity": "19.9",
+		"LT_Debt_Equity": "1.05"
+	},
+	{
+		"Ticker": "LLL",
+		"P_E": "17.55",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.96",
+		"EPS_growth_this_year": "-8.3",
+		"Return_on_Equity": "11.1",
+		"LT_Debt_Equity": "0.67"
+	},
+	{
+		"Ticker": "LLTC",
+		"P_E": "23.54",
+		"P_Free_Cash_Flow": "45.69",
+		"Dividend_Yield": "2.49",
+		"EPS_growth_this_year": "11.1",
+		"Return_on_Equity": "37.2",
+		"LT_Debt_Equity": "0"
+	},
+	{
+		"Ticker": "LLY",
+		"P_E": "32.38",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2.78",
+		"EPS_growth_this_year": "-48.4",
+		"Return_on_Equity": "13.4",
+		"LT_Debt_Equity": "0.3"
+	},
+	{
+		"Ticker": "LM",
+		"P_E": "31.17",
+		"P_Free_Cash_Flow": "32.27",
+		"Dividend_Yield": "1.09",
+		"EPS_growth_this_year": "187.9",
+		"Return_on_Equity": "4.8",
+		"LT_Debt_Equity": "0.23"
+	},
+	{
+		"Ticker": "LMT",
+		"P_E": "18.2",
+		"P_Free_Cash_Flow": "51.05",
+		"Dividend_Yield": "2.94",
+		"EPS_growth_this_year": "24",
+		"Return_on_Equity": "84.6",
+		"LT_Debt_Equity": "1.81"
+	},
+	{
+		"Ticker": "LNC",
+		"P_E": "10.25",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.37",
+		"EPS_growth_this_year": "25",
+		"Return_on_Equity": "14.7",
+		"LT_Debt_Equity": "0.33"
+	},
+	{
+		"Ticker": "LO",
+		"P_E": "20.88",
+		"P_Free_Cash_Flow": "61.99",
+		"Dividend_Yield": "3.58",
+		"EPS_growth_this_year": "4.1",
+		"Return_on_Equity": "-66.6",
+		"LT_Debt_Equity": "NA"
+	},
+	{
+		"Ticker": "LOW",
+		"P_E": "29.08",
+		"P_Free_Cash_Flow": "22.14",
+		"Dividend_Yield": "1.25",
+		"EPS_growth_this_year": "26.6",
+		"Return_on_Equity": "22.4",
+		"LT_Debt_Equity": "1.01"
+	},
+	{
+		"Ticker": "LRCX",
+		"P_E": "20.86",
+		"P_Free_Cash_Flow": "22.52",
+		"Dividend_Yield": "0.86",
+		"EPS_growth_this_year": "448.5",
+		"Return_on_Equity": "14.5",
+		"LT_Debt_Equity": "0.2"
+	},
+	{
+		"Ticker": "LUK",
+		"P_E": "46.37",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.04",
+		"EPS_growth_this_year": "-70.2",
+		"Return_on_Equity": "6.5",
+		"LT_Debt_Equity": "0.91"
+	},
+	{
+		"Ticker": "LUV",
+		"P_E": "27.3",
+		"P_Free_Cash_Flow": "29.82",
+		"Dividend_Yield": "0.54",
+		"EPS_growth_this_year": "56.2",
+		"Return_on_Equity": "15.8",
+		"LT_Debt_Equity": "0.39"
+	},
+	{
+		"Ticker": "LVLT",
+		"P_E": "43.61",
+		"P_Free_Cash_Flow": "72.39",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "346.9",
+		"Return_on_Equity": "11.1",
+		"LT_Debt_Equity": "1.73"
+	},
+	{
+		"Ticker": "LYB",
+		"P_E": "11.31",
+		"P_Free_Cash_Flow": "13.72",
+		"Dividend_Yield": "3.09",
+		"EPS_growth_this_year": "18.3",
+		"Return_on_Equity": "40.9",
+		"LT_Debt_Equity": "0.81"
+	},
+	{
+		"Ticker": "M",
+		"P_E": "15.28",
+		"P_Free_Cash_Flow": "19.53",
+		"Dividend_Yield": "1.96",
+		"EPS_growth_this_year": "19.1",
+		"Return_on_Equity": "26.3",
+		"LT_Debt_Equity": "1.33"
+	},
+	{
+		"Ticker": "MA",
+		"P_E": "29.38",
+		"P_Free_Cash_Flow": "40.76",
+		"Dividend_Yield": "0.7",
+		"EPS_growth_this_year": "20.7",
+		"Return_on_Equity": "55.4",
+		"LT_Debt_Equity": "0.22"
+	},
+	{
+		"Ticker": "MAC",
+		"P_E": "8.36",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.1",
+		"EPS_growth_this_year": "9",
+		"Return_on_Equity": "46.3",
+		"LT_Debt_Equity": "1.55"
+	},
+	{
+		"Ticker": "MAR",
+		"P_E": "32.3",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "0.96",
+		"EPS_growth_this_year": "27",
+		"Return_on_Equity": "-45.6",
+		"LT_Debt_Equity": "NA"
+	},
+	{
+		"Ticker": "MAS",
+		"P_E": "11.19",
+		"P_Free_Cash_Flow": "26.19",
+		"Dividend_Yield": "1.35",
+		"EPS_growth_this_year": "189.2",
+		"Return_on_Equity": "101.1",
+		"LT_Debt_Equity": "3.16"
+	},
+	{
+		"Ticker": "MAT",
+		"P_E": "17.53",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "5.9",
+		"EPS_growth_this_year": "-43.4",
+		"Return_on_Equity": "16.7",
+		"LT_Debt_Equity": "0.71"
+	},
+	{
+		"Ticker": "MCD",
+		"P_E": "19.54",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.61",
+		"EPS_growth_this_year": "-13.2",
+		"Return_on_Equity": "30.7",
+		"LT_Debt_Equity": "1.07"
+	},
+	{
+		"Ticker": "MCHP",
+		"P_E": "29.96",
+		"P_Free_Cash_Flow": "33.39",
+		"Dividend_Yield": "2.81",
+		"EPS_growth_this_year": "193.5",
+		"Return_on_Equity": "17.4",
+		"LT_Debt_Equity": "0.59"
+	},
+	{
+		"Ticker": "MCK",
+		"P_E": "30.93",
+		"P_Free_Cash_Flow": "17",
+		"Dividend_Yield": "0.42",
+		"EPS_growth_this_year": "3.4",
+		"Return_on_Equity": "19.3",
+		"LT_Debt_Equity": "0.99"
+	},
+	{
+		"Ticker": "MCO",
+		"P_E": "21.12",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.4",
+		"EPS_growth_this_year": "28.1",
+		"Return_on_Equity": "278.8",
+		"LT_Debt_Equity": "10.12"
+	},
+	{
+		"Ticker": "MDLZ",
+		"P_E": "28.88",
+		"P_Free_Cash_Flow": "64.97",
+		"Dividend_Yield": "1.62",
+		"EPS_growth_this_year": "-0.8",
+		"Return_on_Equity": "7.1",
+		"LT_Debt_Equity": "0.5"
+	},
+	{
+		"Ticker": "MDT",
+		"P_E": "27.17",
+		"P_Free_Cash_Flow": "43.08",
+		"Dividend_Yield": "1.55",
+		"EPS_growth_this_year": "-10.4",
+		"Return_on_Equity": "15",
+		"LT_Debt_Equity": "0.5"
+	},
+	{
+		"Ticker": "MET",
+		"P_E": "10.55",
+		"P_Free_Cash_Flow": "4.35",
+		"Dividend_Yield": "2.71",
+		"EPS_growth_this_year": "172",
+		"Return_on_Equity": "8.3",
+		"LT_Debt_Equity": "0.28"
+	},
+	{
+		"Ticker": "MHK",
+		"P_E": "25.42",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "43",
+		"Return_on_Equity": "11.7",
+		"LT_Debt_Equity": "0.32"
+	},
+	{
+		"Ticker": "MJN",
+		"P_E": "29.58",
+		"P_Free_Cash_Flow": "68.39",
+		"Dividend_Yield": "1.43",
+		"EPS_growth_this_year": "5.3",
+		"Return_on_Equity": "154.3",
+		"LT_Debt_Equity": "2.62"
+	},
+	{
+		"Ticker": "MKC",
+		"P_E": "22.64",
+		"P_Free_Cash_Flow": "54.5",
+		"Dividend_Yield": "2.11",
+		"EPS_growth_this_year": "14.8",
+		"Return_on_Equity": "22.8",
+		"LT_Debt_Equity": "0.57"
+	},
+	{
+		"Ticker": "MLM",
+		"P_E": "60.44",
+		"P_Free_Cash_Flow": "165",
+		"Dividend_Yield": "1.12",
+		"EPS_growth_this_year": "3.8",
+		"Return_on_Equity": "4.5",
+		"LT_Debt_Equity": "0.36"
+	},
+	{
+		"Ticker": "MMC",
+		"P_E": "21.97",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.96",
+		"EPS_growth_this_year": "7.4",
+		"Return_on_Equity": "18.9",
+		"LT_Debt_Equity": "0.47"
+	},
+	{
+		"Ticker": "MMM",
+		"P_E": "22.51",
+		"P_Free_Cash_Flow": "36.58",
+		"Dividend_Yield": "2.44",
+		"EPS_growth_this_year": "11.5",
+		"Return_on_Equity": "30.9",
+		"LT_Debt_Equity": "0.51"
+	},
+	{
+		"Ticker": "MNST",
+		"P_E": "48.5",
+		"P_Free_Cash_Flow": "45.62",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "4.8",
+		"Return_on_Equity": "36.6",
+		"LT_Debt_Equity": "0"
+	},
+	{
+		"Ticker": "MO",
+		"P_E": "21.72",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.74",
+		"EPS_growth_this_year": "13.3",
+		"Return_on_Equity": "128",
+		"LT_Debt_Equity": "4.55"
+	},
+	{
+		"Ticker": "MON",
+		"P_E": "25.39",
+		"P_Free_Cash_Flow": "170.05",
+		"Dividend_Yield": "1.57",
+		"EPS_growth_this_year": "12.3",
+		"Return_on_Equity": "24.1",
+		"LT_Debt_Equity": "1.02"
+	},
+	{
+		"Ticker": "MOS",
+		"P_E": "19.73",
+		"P_Free_Cash_Flow": "19.77",
+		"Dividend_Yield": "1.88",
+		"EPS_growth_this_year": "235",
+		"Return_on_Equity": "11.1",
+		"LT_Debt_Equity": "0.35"
+	},
+	{
+		"Ticker": "MPC",
+		"P_E": "13.07",
+		"P_Free_Cash_Flow": "13.52",
+		"Dividend_Yield": "1.89",
+		"EPS_growth_this_year": "-32.8",
+		"Return_on_Equity": "22",
+		"LT_Debt_Equity": "0.57"
+	},
+	{
+		"Ticker": "MRK",
+		"P_E": "14.23",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.08",
+		"EPS_growth_this_year": "176.9",
+		"Return_on_Equity": "24.7",
+		"LT_Debt_Equity": "0.41"
+	},
+	{
+		"Ticker": "MRO",
+		"P_E": "20.05",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2.95",
+		"EPS_growth_this_year": "8.4",
+		"Return_on_Equity": "15.4",
+		"LT_Debt_Equity": "0.31"
+	},
+	{
+		"Ticker": "MS",
+		"P_E": "12.41",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.09",
+		"EPS_growth_this_year": "114.5",
+		"Return_on_Equity": "11.2",
+		"LT_Debt_Equity": "2.46"
+	},
+	{
+		"Ticker": "MSFT",
+		"P_E": "17.68",
+		"P_Free_Cash_Flow": "20.53",
+		"Dividend_Yield": "2.83",
+		"EPS_growth_this_year": "1.9",
+		"Return_on_Equity": "23",
+		"LT_Debt_Equity": "0.2"
+	},
+	{
+		"Ticker": "MTB",
+		"P_E": "16.35",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2.31",
+		"EPS_growth_this_year": "-9.5",
+		"Return_on_Equity": "8.9",
+		"LT_Debt_Equity": "0.81"
+	},
+	{
+		"Ticker": "MU",
+		"P_E": "10.4",
+		"P_Free_Cash_Flow": "11.04",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "124.8",
+		"Return_on_Equity": "35.4",
+		"LT_Debt_Equity": "0.4"
+	},
+	{
+		"Ticker": "MUR",
+		"P_E": "11.91",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2.78",
+		"EPS_growth_this_year": "10.3",
+		"Return_on_Equity": "9",
+		"LT_Debt_Equity": "0.47"
+	},
+	{
+		"Ticker": "MWV",
+		"P_E": "35.9",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.82",
+		"EPS_growth_this_year": "-14",
+		"Return_on_Equity": "7.6",
+		"LT_Debt_Equity": "0.55"
+	},
+	{
+		"Ticker": "MYL",
+		"P_E": "24.94",
+		"P_Free_Cash_Flow": "21.88",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "3.9",
+		"Return_on_Equity": "28.7",
+		"LT_Debt_Equity": "1.28"
+	},
+	{
+		"Ticker": "NAVI",
+		"P_E": "7.93",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2.95",
+		"EPS_growth_this_year": "-6.6",
+		"Return_on_Equity": "38.2",
+		"LT_Debt_Equity": "32.6"
+	},
+	{
+		"Ticker": "NBL",
+		"P_E": "19.25",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.47",
+		"EPS_growth_this_year": "-6.7",
+		"Return_on_Equity": "9.9",
+		"LT_Debt_Equity": "0.55"
+	},
+	{
+		"Ticker": "NBR",
+		"P_E": "11.96",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.78",
+		"EPS_growth_this_year": "-35.4",
+		"Return_on_Equity": "6.1",
+		"LT_Debt_Equity": "0.73"
+	},
+	{
+		"Ticker": "NDAQ",
+		"P_E": "21.31",
+		"P_Free_Cash_Flow": "19.15",
+		"Dividend_Yield": "1.18",
+		"EPS_growth_this_year": "6.2",
+		"Return_on_Equity": "6.8",
+		"LT_Debt_Equity": "0.4"
+	},
+	{
+		"Ticker": "NEE",
+		"P_E": "18.89",
+		"P_Free_Cash_Flow": "63.76",
+		"Dividend_Yield": "2.75",
+		"EPS_growth_this_year": "42.5",
+		"Return_on_Equity": "13.1",
+		"LT_Debt_Equity": "1.22"
+	},
+	{
+		"Ticker": "NFLX",
+		"P_E": "110.69",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "133.5",
+		"Return_on_Equity": "16",
+		"LT_Debt_Equity": "0.48"
+	},
+	{
+		"Ticker": "NFX",
+		"P_E": "14.2",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "109.7",
+		"Return_on_Equity": "17.2",
+		"LT_Debt_Equity": "0.86"
+	},
+	{
+		"Ticker": "NI",
+		"P_E": "25.96",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2.38",
+		"EPS_growth_this_year": "15.4",
+		"Return_on_Equity": "8.8",
+		"LT_Debt_Equity": "1.4"
+	},
+	{
+		"Ticker": "NKE",
+		"P_E": "28.25",
+		"P_Free_Cash_Flow": "53.53",
+		"Dividend_Yield": "1.18",
+		"EPS_growth_this_year": "11.2",
+		"Return_on_Equity": "26.7",
+		"LT_Debt_Equity": "0.09"
+	},
+	{
+		"Ticker": "NLSN",
+		"P_E": "45.74",
+		"P_Free_Cash_Flow": "60.33",
+		"Dividend_Yield": "2.21",
+		"EPS_growth_this_year": "72.7",
+		"Return_on_Equity": "6.4",
+		"LT_Debt_Equity": "1.16"
+	},
+	{
+		"Ticker": "NOC",
+		"P_E": "17.68",
+		"P_Free_Cash_Flow": "23.26",
+		"Dividend_Yield": "1.63",
+		"EPS_growth_this_year": "16.8",
+		"Return_on_Equity": "21.8",
+		"LT_Debt_Equity": "0.82"
+	},
+	{
+		"Ticker": "NOV",
+		"P_E": "9.57",
+		"P_Free_Cash_Flow": "18.42",
+		"Dividend_Yield": "3.38",
+		"EPS_growth_this_year": "12",
+		"Return_on_Equity": "11.6",
+		"LT_Debt_Equity": "0.15"
+	},
+	{
+		"Ticker": "NSC",
+		"P_E": "17.43",
+		"P_Free_Cash_Flow": "730.79",
+		"Dividend_Yield": "2.11",
+		"EPS_growth_this_year": "5.6",
+		"Return_on_Equity": "16.4",
+		"LT_Debt_Equity": "0.72"
+	},
+	{
+		"Ticker": "NTAP",
+		"P_E": "20",
+		"P_Free_Cash_Flow": "14.16",
+		"Dividend_Yield": "1.73",
+		"EPS_growth_this_year": "33.6",
+		"Return_on_Equity": "17",
+		"LT_Debt_Equity": "0.43"
+	},
+	{
+		"Ticker": "NTRS",
+		"P_E": "21.11",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.88",
+		"EPS_growth_this_year": "11",
+		"Return_on_Equity": "9.8",
+		"LT_Debt_Equity": "0.42"
+	},
+	{
+		"Ticker": "NUE",
+		"P_E": "21.84",
+		"P_Free_Cash_Flow": "77.48",
+		"Dividend_Yield": "3.07",
+		"EPS_growth_this_year": "46.7",
+		"Return_on_Equity": "9.3",
+		"LT_Debt_Equity": "0.56"
+	},
+	{
+		"Ticker": "NVDA",
+		"P_E": "19.94",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.52",
+		"EPS_growth_this_year": "51.4",
+		"Return_on_Equity": "14.8",
+		"LT_Debt_Equity": "0.32"
+	},
+	{
+		"Ticker": "NWL",
+		"P_E": "29.72",
+		"P_Free_Cash_Flow": "37.54",
+		"Dividend_Yield": "1.89",
+		"EPS_growth_this_year": "-6.3",
+		"Return_on_Equity": "21.4",
+		"LT_Debt_Equity": "1.13"
+	},
+	{
+		"Ticker": "NWSA",
+		"P_E": "37.26",
+		"P_Free_Cash_Flow": "19.88",
+		"Dividend_Yield": "0.99",
+		"EPS_growth_this_year": "-52.9",
+		"Return_on_Equity": "2.1",
+		"LT_Debt_Equity": "0"
+	},
+	{
+		"Ticker": "OI",
+		"P_E": "47.09",
+		"P_Free_Cash_Flow": "13.9",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "-51.6",
+		"Return_on_Equity": "4.8",
+		"LT_Debt_Equity": "2.57"
+	},
+	{
+		"Ticker": "OKE",
+		"P_E": "31.78",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "5.08",
+		"EPS_growth_this_year": "-22.6",
+		"Return_on_Equity": "29.5",
+		"LT_Debt_Equity": "11.55"
+	},
+	{
+		"Ticker": "OMC",
+		"P_E": "17.84",
+		"P_Free_Cash_Flow": "24.17",
+		"Dividend_Yield": "2.57",
+		"EPS_growth_this_year": "16.4",
+		"Return_on_Equity": "40",
+		"LT_Debt_Equity": "1.6"
+	},
+	{
+		"Ticker": "ORCL",
+		"P_E": "18.31",
+		"P_Free_Cash_Flow": "15.5",
+		"Dividend_Yield": "1.1",
+		"EPS_growth_this_year": "5.3",
+		"Return_on_Equity": "23.4",
+		"LT_Debt_Equity": "0.68"
+	},
+	{
+		"Ticker": "ORLY",
+		"P_E": "28.04",
+		"P_Free_Cash_Flow": "27.46",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "21.7",
+		"Return_on_Equity": "37.6",
+		"LT_Debt_Equity": "0.69"
+	},
+	{
+		"Ticker": "OXY",
+		"P_E": "11.09",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.6",
+		"EPS_growth_this_year": "28.9",
+		"Return_on_Equity": "16.3",
+		"LT_Debt_Equity": "0.16"
+	},
+	{
+		"Ticker": "PAYX",
+		"P_E": "27.84",
+		"P_Free_Cash_Flow": "66.28",
+		"Dividend_Yield": "3.07",
+		"EPS_growth_this_year": "9.6",
+		"Return_on_Equity": "36.2",
+		"LT_Debt_Equity": "0"
+	},
+	{
+		"Ticker": "PBCT",
+		"P_E": "17.82",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "4.41",
+		"EPS_growth_this_year": "12",
+		"Return_on_Equity": "5.4",
+		"LT_Debt_Equity": "0.22"
+	},
+	{
+		"Ticker": "PBI",
+		"P_E": "15.65",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.26",
+		"EPS_growth_this_year": "3.5",
+		"Return_on_Equity": "229.2",
+		"LT_Debt_Equity": "38.11"
+	},
+	{
+		"Ticker": "PCAR",
+		"P_E": "16.91",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.36",
+		"EPS_growth_this_year": "15.8",
+		"Return_on_Equity": "19.5",
+		"LT_Debt_Equity": "0"
+	},
+	{
+		"Ticker": "PCG",
+		"P_E": "18.03",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.31",
+		"EPS_growth_this_year": "67.2",
+		"Return_on_Equity": "9.4",
+		"LT_Debt_Equity": "0.96"
+	},
+	{
+		"Ticker": "PCL",
+		"P_E": "35.64",
+		"P_Free_Cash_Flow": "135.47",
+		"Dividend_Yield": "4.08",
+		"EPS_growth_this_year": "-6.9",
+		"Return_on_Equity": "12.4",
+		"LT_Debt_Equity": "1.65"
+	},
+	{
+		"Ticker": "PCLN",
+		"P_E": "27.45",
+		"P_Free_Cash_Flow": "24.34",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "30.5",
+		"Return_on_Equity": "30.6",
+		"LT_Debt_Equity": "0.45"
+	},
+	{
+		"Ticker": "PCP",
+		"P_E": "17",
+		"P_Free_Cash_Flow": "23.91",
+		"Dividend_Yield": "0.05",
+		"EPS_growth_this_year": "23.2",
+		"Return_on_Equity": "16.1",
+		"LT_Debt_Equity": "0.3"
+	},
+	{
+		"Ticker": "PDCO",
+		"P_E": "22.93",
+		"P_Free_Cash_Flow": "73.77",
+		"Dividend_Yield": "1.62",
+		"EPS_growth_this_year": "-3",
+		"Return_on_Equity": "14.6",
+		"LT_Debt_Equity": "0.5"
+	},
+	{
+		"Ticker": "PEG",
+		"P_E": "16.99",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.56",
+		"EPS_growth_this_year": "-2.4",
+		"Return_on_Equity": "10.5",
+		"LT_Debt_Equity": "0.69"
+	},
+	{
+		"Ticker": "PEP",
+		"P_E": "23.25",
+		"P_Free_Cash_Flow": "37.49",
+		"Dividend_Yield": "2.64",
+		"EPS_growth_this_year": "-1.2",
+		"Return_on_Equity": "30",
+		"LT_Debt_Equity": "1.37"
+	},
+	{
+		"Ticker": "PETM",
+		"P_E": "19.65",
+		"P_Free_Cash_Flow": "20.14",
+		"Dividend_Yield": "0.94",
+		"EPS_growth_this_year": "13.2",
+		"Return_on_Equity": "37.3",
+		"LT_Debt_Equity": "0.36"
+	},
+	{
+		"Ticker": "PFE",
+		"P_E": "24.34",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.24",
+		"EPS_growth_this_year": "-14.5",
+		"Return_on_Equity": "14.9",
+		"LT_Debt_Equity": "0.41"
+	},
+	{
+		"Ticker": "PFG",
+		"P_E": "14.01",
+		"P_Free_Cash_Flow": "5.92",
+		"Dividend_Yield": "2.76",
+		"EPS_growth_this_year": "26.1",
+		"Return_on_Equity": "10.9",
+		"LT_Debt_Equity": "0.25"
+	},
+	{
+		"Ticker": "PG",
+		"P_E": "24.96",
+		"P_Free_Cash_Flow": "48.35",
+		"Dividend_Yield": "3.03",
+		"EPS_growth_this_year": "4",
+		"Return_on_Equity": "14.1",
+		"LT_Debt_Equity": "0.29"
+	},
+	{
+		"Ticker": "PGR",
+		"P_E": "12.38",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2.59",
+		"EPS_growth_this_year": "11.4",
+		"Return_on_Equity": "18.9",
+		"LT_Debt_Equity": "0.31"
+	},
+	{
+		"Ticker": "PH",
+		"P_E": "17.06",
+		"P_Free_Cash_Flow": "20.4",
+		"Dividend_Yield": "2.04",
+		"EPS_growth_this_year": "9.7",
+		"Return_on_Equity": "17.1",
+		"LT_Debt_Equity": "0.47"
+	},
+	{
+		"Ticker": "PHM",
+		"P_E": "17.77",
+		"P_Free_Cash_Flow": "45.35",
+		"Dividend_Yield": "1.41",
+		"EPS_growth_this_year": "-81.3",
+		"Return_on_Equity": "11.6",
+		"LT_Debt_Equity": "0.38"
+	},
+	{
+		"Ticker": "PKI",
+		"P_E": "32.8",
+		"P_Free_Cash_Flow": "23.81",
+		"Dividend_Yield": "0.6",
+		"EPS_growth_this_year": "-7.8",
+		"Return_on_Equity": "7.6",
+		"LT_Debt_Equity": "0.52"
+	},
+	{
+		"Ticker": "PLD",
+		"P_E": "34.98",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.07",
+		"EPS_growth_this_year": "210",
+		"Return_on_Equity": "5.4",
+		"LT_Debt_Equity": "0.67"
+	},
+	{
+		"Ticker": "PLL",
+		"P_E": "30.62",
+		"P_Free_Cash_Flow": "32.4",
+		"Dividend_Yield": "1.16",
+		"EPS_growth_this_year": "12.5",
+		"Return_on_Equity": "21.6",
+		"LT_Debt_Equity": "0.24"
+	},
+	{
+		"Ticker": "PM",
+		"P_E": "17.34",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "4.82",
+		"EPS_growth_this_year": "-9.1",
+		"Return_on_Equity": "-92.1",
+		"LT_Debt_Equity": "NA"
+	},
+	{
+		"Ticker": "PNC",
+		"P_E": "12.57",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2.08",
+		"EPS_growth_this_year": "-0.5",
+		"Return_on_Equity": "9",
+		"LT_Debt_Equity": "0.62"
+	},
+	{
+		"Ticker": "PNR",
+		"P_E": "20.87",
+		"P_Free_Cash_Flow": "20.43",
+		"Dividend_Yield": "1.88",
+		"EPS_growth_this_year": "411.9",
+		"Return_on_Equity": "6.5",
+		"LT_Debt_Equity": "0.6"
+	},
+	{
+		"Ticker": "PNW",
+		"P_E": "17.54",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.62",
+		"EPS_growth_this_year": "4.6",
+		"Return_on_Equity": "9.7",
+		"LT_Debt_Equity": "0.68"
+	},
+	{
+		"Ticker": "POM",
+		"P_E": "25.94",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.96",
+		"EPS_growth_this_year": "-52.6",
+		"Return_on_Equity": "6.1",
+		"LT_Debt_Equity": "1.13"
+	},
+	{
+		"Ticker": "PPG",
+		"P_E": "30.15",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.13",
+		"EPS_growth_this_year": "34.3",
+		"Return_on_Equity": "36.1",
+		"LT_Debt_Equity": "0.48"
+	},
+	{
+		"Ticker": "PPL",
+		"P_E": "14.76",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "4.26",
+		"EPS_growth_this_year": "39.2",
+		"Return_on_Equity": "15.2",
+		"LT_Debt_Equity": "1.38"
+	},
+	{
+		"Ticker": "PRGO",
+		"P_E": "58.9",
+		"P_Free_Cash_Flow": "28.72",
+		"Dividend_Yield": "0.33",
+		"EPS_growth_this_year": "-62",
+		"Return_on_Equity": "3.9",
+		"LT_Debt_Equity": "0.46"
+	},
+	{
+		"Ticker": "PRU",
+		"P_E": "28.55",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2.87",
+		"EPS_growth_this_year": "300.7",
+		"Return_on_Equity": "3.5",
+		"LT_Debt_Equity": "0.54"
+	},
+	{
+		"Ticker": "PSA",
+		"P_E": "39.88",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2.8",
+		"EPS_growth_this_year": "27.7",
+		"Return_on_Equity": "16.8",
+		"LT_Debt_Equity": "0.01"
+	},
+	{
+		"Ticker": "PSX",
+		"P_E": "12.05",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2.59",
+		"EPS_growth_this_year": "-7.7",
+		"Return_on_Equity": "33.9",
+		"LT_Debt_Equity": "0.28"
+	},
+	{
+		"Ticker": "PVH",
+		"P_E": "24.77",
+		"P_Free_Cash_Flow": "20.45",
+		"Dividend_Yield": "0.14",
+		"EPS_growth_this_year": "-70.4",
+		"Return_on_Equity": "8.3",
+		"LT_Debt_Equity": "0.79"
+	},
+	{
+		"Ticker": "PWR",
+		"P_E": "21.86",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "-27.8",
+		"Return_on_Equity": "6.8",
+		"LT_Debt_Equity": "0.02"
+	},
+	{
+		"Ticker": "PX",
+		"P_E": "22.57",
+		"P_Free_Cash_Flow": "89.71",
+		"Dividend_Yield": "2.21",
+		"EPS_growth_this_year": "-2.4",
+		"Return_on_Equity": "26.4",
+		"LT_Debt_Equity": "1.54"
+	},
+	{
+		"Ticker": "PXD",
+		"P_E": "37.09",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "0.05",
+		"EPS_growth_this_year": "343.5",
+		"Return_on_Equity": "14.3",
+		"LT_Debt_Equity": "0.31"
+	},
+	{
+		"Ticker": "QCOM",
+		"P_E": "15.12",
+		"P_Free_Cash_Flow": "25.91",
+		"Dividend_Yield": "2.35",
+		"EPS_growth_this_year": "12.5",
+		"Return_on_Equity": "20.8",
+		"LT_Debt_Equity": "0"
+	},
+	{
+		"Ticker": "QEP",
+		"P_E": "571.5",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "0.35",
+		"EPS_growth_this_year": "23.6",
+		"Return_on_Equity": "3.1",
+		"LT_Debt_Equity": "0.89"
+	},
+	{
+		"Ticker": "R",
+		"P_E": "22.89",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.56",
+		"EPS_growth_this_year": "-10.6",
+		"Return_on_Equity": "13.9",
+		"LT_Debt_Equity": "2.47"
+	},
+	{
+		"Ticker": "RAI",
+		"P_E": "27.37",
+		"P_Free_Cash_Flow": "4907.7",
+		"Dividend_Yield": "3.63",
+		"EPS_growth_this_year": "-14",
+		"Return_on_Equity": "30.3",
+		"LT_Debt_Equity": "1.02"
+	},
+	{
+		"Ticker": "RCL",
+		"P_E": "22.21",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.58",
+		"EPS_growth_this_year": "60.3",
+		"Return_on_Equity": "10.6",
+		"LT_Debt_Equity": "0.92"
+	},
+	{
+		"Ticker": "REGN",
+		"P_E": "138.04",
+		"P_Free_Cash_Flow": "106.02",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "-19.4",
+		"Return_on_Equity": "14.4",
+		"LT_Debt_Equity": "0.18"
+	},
+	{
+		"Ticker": "RF",
+		"P_E": "12.23",
+		"P_Free_Cash_Flow": "8.18",
+		"Dividend_Yield": "2.07",
+		"EPS_growth_this_year": "1.3",
+		"Return_on_Equity": "6.9",
+		"LT_Debt_Equity": "0.21"
+	},
+	{
+		"Ticker": "RHI",
+		"P_E": "27.13",
+		"P_Free_Cash_Flow": "45.95",
+		"Dividend_Yield": "1.3",
+		"EPS_growth_this_year": "23.5",
+		"Return_on_Equity": "31.7",
+		"LT_Debt_Equity": "0"
+	},
+	{
+		"Ticker": "RHT",
+		"P_E": "75.76",
+		"P_Free_Cash_Flow": "24.45",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "20.8",
+		"Return_on_Equity": "12.2",
+		"LT_Debt_Equity": "0.58"
+	},
+	{
+		"Ticker": "RL",
+		"P_E": "17.11",
+		"P_Free_Cash_Flow": "25.18",
+		"Dividend_Yield": "1.44",
+		"EPS_growth_this_year": "5.4",
+		"Return_on_Equity": "18.2",
+		"LT_Debt_Equity": "0.13"
+	},
+	{
+		"Ticker": "ROK",
+		"P_E": "19.47",
+		"P_Free_Cash_Flow": "31.38",
+		"Dividend_Yield": "2.2",
+		"EPS_growth_this_year": "10.3",
+		"Return_on_Equity": "31.5",
+		"LT_Debt_Equity": "0.35"
+	},
+	{
+		"Ticker": "ROP",
+		"P_E": "26.3",
+		"P_Free_Cash_Flow": "23.78",
+		"Dividend_Yield": "0.59",
+		"EPS_growth_this_year": "19.2",
+		"Return_on_Equity": "14.1",
+		"LT_Debt_Equity": "0.46"
+	},
+	{
+		"Ticker": "ROST",
+		"P_E": "23.09",
+		"P_Free_Cash_Flow": "42.48",
+		"Dividend_Yield": "0.82",
+		"EPS_growth_this_year": "9.9",
+		"Return_on_Equity": "42.5",
+		"LT_Debt_Equity": "0.18"
+	},
+	{
+		"Ticker": "RRC",
+		"P_E": "23.04",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "0.31",
+		"EPS_growth_this_year": "775",
+		"Return_on_Equity": "14.6",
+		"LT_Debt_Equity": "0.95"
+	},
+	{
+		"Ticker": "RSG",
+		"P_E": "26.57",
+		"P_Free_Cash_Flow": "48.87",
+		"Dividend_Yield": "2.76",
+		"EPS_growth_this_year": "-5.6",
+		"Return_on_Equity": "7",
+		"LT_Debt_Equity": "0.91"
+	},
+	{
+		"Ticker": "RTN",
+		"P_E": "15.62",
+		"P_Free_Cash_Flow": "31.3",
+		"Dividend_Yield": "2.22",
+		"EPS_growth_this_year": "16.9",
+		"Return_on_Equity": "20.2",
+		"LT_Debt_Equity": "0.56"
+	},
+	{
+		"Ticker": "SBUX",
+		"P_E": "28.25",
+		"P_Free_Cash_Flow": "49.67",
+		"Dividend_Yield": "1.37",
+		"EPS_growth_this_year": "16.8",
+		"Return_on_Equity": "57.9",
+		"LT_Debt_Equity": "0.35"
+	},
+	{
+		"Ticker": "SCG",
+		"P_E": "15.38",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.6",
+		"EPS_growth_this_year": "7.6",
+		"Return_on_Equity": "11.1",
+		"LT_Debt_Equity": "1.15"
+	},
+	{
+		"Ticker": "SCHW",
+		"P_E": "30.89",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "0.81",
+		"EPS_growth_this_year": "23.1",
+		"Return_on_Equity": "12.5",
+		"LT_Debt_Equity": "0.18"
+	},
+	{
+		"Ticker": "SE",
+		"P_E": "22.52",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "4.08",
+		"EPS_growth_this_year": "3.9",
+		"Return_on_Equity": "12.1",
+		"LT_Debt_Equity": "1.23"
+	},
+	{
+		"Ticker": "SEE",
+		"P_E": "39.82",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.08",
+		"EPS_growth_this_year": "175",
+		"Return_on_Equity": "34.2",
+		"LT_Debt_Equity": "3.68"
+	},
+	{
+		"Ticker": "SHW",
+		"P_E": "32.89",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "0.76",
+		"EPS_growth_this_year": "19.2",
+		"Return_on_Equity": "55.3",
+		"LT_Debt_Equity": "0.83"
+	},
+	{
+		"Ticker": "SIAL",
+		"P_E": "33.27",
+		"P_Free_Cash_Flow": "40.12",
+		"Dividend_Yield": "0.66",
+		"EPS_growth_this_year": "2.7",
+		"Return_on_Equity": "16.3",
+		"LT_Debt_Equity": "0.1"
+	},
+	{
+		"Ticker": "SJM",
+		"P_E": "20.81",
+		"P_Free_Cash_Flow": "53.33",
+		"Dividend_Yield": "2.26",
+		"EPS_growth_this_year": "8.4",
+		"Return_on_Equity": "10.8",
+		"LT_Debt_Equity": "0.37"
+	},
+	{
+		"Ticker": "SLB",
+		"P_E": "19.97",
+		"P_Free_Cash_Flow": "20.81",
+		"Dividend_Yield": "2.33",
+		"EPS_growth_this_year": "-15.5",
+		"Return_on_Equity": "13.7",
+		"LT_Debt_Equity": "0.28"
+	},
+	{
+		"Ticker": "SNA",
+		"P_E": "20.46",
+		"P_Free_Cash_Flow": "40.48",
+		"Dividend_Yield": "1.45",
+		"EPS_growth_this_year": "20.4",
+		"Return_on_Equity": "18.9",
+		"LT_Debt_Equity": "0.39"
+	},
+	{
+		"Ticker": "SNDK",
+		"P_E": "19.53",
+		"P_Free_Cash_Flow": "14.29",
+		"Dividend_Yield": "1.45",
+		"EPS_growth_this_year": "-2.5",
+		"Return_on_Equity": "14.6",
+		"LT_Debt_Equity": "0.2"
+	},
+	{
+		"Ticker": "SNI",
+		"P_E": "19.21",
+		"P_Free_Cash_Flow": "15.91",
+		"Dividend_Yield": "1.09",
+		"EPS_growth_this_year": "12.6",
+		"Return_on_Equity": "31.7",
+		"LT_Debt_Equity": "1.08"
+	},
+	{
+		"Ticker": "SO",
+		"P_E": "20.97",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "4.55",
+		"EPS_growth_this_year": "18.2",
+		"Return_on_Equity": "10.2",
+		"LT_Debt_Equity": "1.09"
+	},
+	{
+		"Ticker": "SPG",
+		"P_E": "44.09",
+		"P_Free_Cash_Flow": "29.77",
+		"Dividend_Yield": "2.92",
+		"EPS_growth_this_year": "-10.2",
+		"Return_on_Equity": "25.4",
+		"LT_Debt_Equity": "4.26"
+	},
+	{
+		"Ticker": "SPLS",
+		"P_E": "17.86",
+		"P_Free_Cash_Flow": "23.12",
+		"Dividend_Yield": "2.86",
+		"EPS_growth_this_year": "545.8",
+		"Return_on_Equity": "10",
+		"LT_Debt_Equity": "0.17"
+	},
+	{
+		"Ticker": "SRCL",
+		"P_E": "35.52",
+		"P_Free_Cash_Flow": "31.57",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "6.5",
+		"Return_on_Equity": "17.8",
+		"LT_Debt_Equity": "0.81"
+	},
+	{
+		"Ticker": "SRE",
+		"P_E": "24",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2.4",
+		"EPS_growth_this_year": "15.2",
+		"Return_on_Equity": "10.3",
+		"LT_Debt_Equity": "1.1"
+	},
+	{
+		"Ticker": "STI",
+		"P_E": "12.64",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.95",
+		"EPS_growth_this_year": "34",
+		"Return_on_Equity": "11.7",
+		"LT_Debt_Equity": "0.6"
+	},
+	{
+		"Ticker": "STJ",
+		"P_E": "19.79",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.58",
+		"EPS_growth_this_year": "39",
+		"Return_on_Equity": "37.1",
+		"LT_Debt_Equity": "0.54"
+	},
+	{
+		"Ticker": "STT",
+		"P_E": "16.55",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.55",
+		"EPS_growth_this_year": "1.5",
+		"Return_on_Equity": "10.1",
+		"LT_Debt_Equity": "0.51"
+	},
+	{
+		"Ticker": "STX",
+		"P_E": "10.31",
+		"P_Free_Cash_Flow": "11.18",
+		"Dividend_Yield": "3.47",
+		"EPS_growth_this_year": "-6",
+		"Return_on_Equity": "66.9",
+		"LT_Debt_Equity": "1.06"
+	},
+	{
+		"Ticker": "STZ",
+		"P_E": "32.24",
+		"P_Free_Cash_Flow": "83.45",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "385.6",
+		"Return_on_Equity": "14.6",
+		"LT_Debt_Equity": "1.26"
+	},
+	{
+		"Ticker": "SWK",
+		"P_E": "22.85",
+		"P_Free_Cash_Flow": "24.03",
+		"Dividend_Yield": "2.1",
+		"EPS_growth_this_year": "17.2",
+		"Return_on_Equity": "9.7",
+		"LT_Debt_Equity": "0.55"
+	},
+	{
+		"Ticker": "SWN",
+		"P_E": "12.81",
+		"P_Free_Cash_Flow": "158.34",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "198.5",
+		"Return_on_Equity": "19.2",
+		"LT_Debt_Equity": "0.42"
+	},
+	{
+		"Ticker": "SYK",
+		"P_E": "70.56",
+		"P_Free_Cash_Flow": "33.19",
+		"Dividend_Yield": "1.45",
+		"EPS_growth_this_year": "-48.7",
+		"Return_on_Equity": "6.6",
+		"LT_Debt_Equity": "0.38"
+	},
+	{
+		"Ticker": "SYMC",
+		"P_E": "19.46",
+		"P_Free_Cash_Flow": "36.44",
+		"Dividend_Yield": "2.34",
+		"EPS_growth_this_year": "20.8",
+		"Return_on_Equity": "15.7",
+		"LT_Debt_Equity": "0.3"
+	},
+	{
+		"Ticker": "SYY",
+		"P_E": "26.98",
+		"P_Free_Cash_Flow": "91.48",
+		"Dividend_Yield": "3.03",
+		"EPS_growth_this_year": "-5.4",
+		"Return_on_Equity": "16.5",
+		"LT_Debt_Equity": "1.36"
+	},
+	{
+		"Ticker": "T",
+		"P_E": "28.64",
+		"P_Free_Cash_Flow": "301.15",
+		"Dividend_Yield": "5.52",
+		"EPS_growth_this_year": "-64.9",
+		"Return_on_Equity": "6.9",
+		"LT_Debt_Equity": "0.88"
+	},
+	{
+		"Ticker": "TAP",
+		"P_E": "27.76",
+		"P_Free_Cash_Flow": "19.3",
+		"Dividend_Yield": "2.14",
+		"EPS_growth_this_year": "-10.1",
+		"Return_on_Equity": "6.1",
+		"LT_Debt_Equity": "0.3"
+	},
+	{
+		"Ticker": "TDC",
+		"P_E": "19.44",
+		"P_Free_Cash_Flow": "12.58",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "2.6",
+		"Return_on_Equity": "20.2",
+		"LT_Debt_Equity": "0.11"
+	},
+	{
+		"Ticker": "TE",
+		"P_E": "20.4",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "4.5",
+		"EPS_growth_this_year": "-19.3",
+		"Return_on_Equity": "8.7",
+		"LT_Debt_Equity": "1.29"
+	},
+	{
+		"Ticker": "TEG",
+		"P_E": "16.67",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.52",
+		"EPS_growth_this_year": "18",
+		"Return_on_Equity": "11.3",
+		"LT_Debt_Equity": "0.88"
+	},
+	{
+		"Ticker": "TEL",
+		"P_E": "15.6",
+		"P_Free_Cash_Flow": "34.02",
+		"Dividend_Yield": "1.62",
+		"EPS_growth_this_year": "42.1",
+		"Return_on_Equity": "21.4",
+		"LT_Debt_Equity": "0.36"
+	},
+	{
+		"Ticker": "TGT",
+		"P_E": "32.16",
+		"P_Free_Cash_Flow": "100.54",
+		"Dividend_Yield": "2.71",
+		"EPS_growth_this_year": "-32.1",
+		"Return_on_Equity": "9.3",
+		"LT_Debt_Equity": "0.84"
+	},
+	{
+		"Ticker": "TIF",
+		"P_E": "63.52",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.69",
+		"EPS_growth_this_year": "-56.6",
+		"Return_on_Equity": "6.5",
+		"LT_Debt_Equity": "0.31"
+	},
+	{
+		"Ticker": "TJX",
+		"P_E": "22.68",
+		"P_Free_Cash_Flow": "33.17",
+		"Dividend_Yield": "1.02",
+		"EPS_growth_this_year": "15.3",
+		"Return_on_Equity": "50.1",
+		"LT_Debt_Equity": "0.37"
+	},
+	{
+		"Ticker": "TMK",
+		"P_E": "13.51",
+		"P_Free_Cash_Flow": "7.68",
+		"Dividend_Yield": "0.94",
+		"EPS_growth_this_year": "5.3",
+		"Return_on_Equity": "12.7",
+		"LT_Debt_Equity": "0.22"
+	},
+	{
+		"Ticker": "TMO",
+		"P_E": "27.79",
+		"P_Free_Cash_Flow": "26.81",
+		"Dividend_Yield": "0.46",
+		"EPS_growth_this_year": "34.6",
+		"Return_on_Equity": "9.2",
+		"LT_Debt_Equity": "0.6"
+	},
+	{
+		"Ticker": "TRIP",
+		"P_E": "57.28",
+		"P_Free_Cash_Flow": "41.47",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "9.9",
+		"Return_on_Equity": "21.6",
+		"LT_Debt_Equity": "0.23"
+	},
+	{
+		"Ticker": "TROW",
+		"P_E": "18.77",
+		"P_Free_Cash_Flow": "30.98",
+		"Dividend_Yield": "2.11",
+		"EPS_growth_this_year": "16.7",
+		"Return_on_Equity": "23.2",
+		"LT_Debt_Equity": "0"
+	},
+	{
+		"Ticker": "TRV",
+		"P_E": "10.07",
+		"P_Free_Cash_Flow": "11.69",
+		"Dividend_Yield": "2.04",
+		"EPS_growth_this_year": "9.9",
+		"Return_on_Equity": "14.5",
+		"LT_Debt_Equity": "0.24"
+	},
+	{
+		"Ticker": "TSCO",
+		"P_E": "33",
+		"P_Free_Cash_Flow": "73",
+		"Dividend_Yield": "0.73",
+		"EPS_growth_this_year": "14.7",
+		"Return_on_Equity": "29.7",
+		"LT_Debt_Equity": "0"
+	},
+	{
+		"Ticker": "TSN",
+		"P_E": "17.22",
+		"P_Free_Cash_Flow": "19.76",
+		"Dividend_Yield": "0.96",
+		"EPS_growth_this_year": "2.6",
+		"Return_on_Equity": "11.8",
+		"LT_Debt_Equity": "0.76"
+	},
+	{
+		"Ticker": "TSO",
+		"P_E": "17.03",
+		"P_Free_Cash_Flow": "22.92",
+		"Dividend_Yield": "1.32",
+		"EPS_growth_this_year": "-53.8",
+		"Return_on_Equity": "15.8",
+		"LT_Debt_Equity": "0.64"
+	},
+	{
+		"Ticker": "TSS",
+		"P_E": "25.87",
+		"P_Free_Cash_Flow": "28.22",
+		"Dividend_Yield": "1.05",
+		"EPS_growth_this_year": "13.3",
+		"Return_on_Equity": "29.1",
+		"LT_Debt_Equity": "0.83"
+	},
+	{
+		"Ticker": "TWC",
+		"P_E": "20.93",
+		"P_Free_Cash_Flow": "30.76",
+		"Dividend_Yield": "2.02",
+		"EPS_growth_this_year": "6.8",
+		"Return_on_Equity": "32.7",
+		"LT_Debt_Equity": "2.83"
+	},
+	{
+		"Ticker": "TWX",
+		"P_E": "19.21",
+		"P_Free_Cash_Flow": "35.25",
+		"Dividend_Yield": "1.66",
+		"EPS_growth_this_year": "23.9",
+		"Return_on_Equity": "14.5",
+		"LT_Debt_Equity": "0.87"
+	},
+	{
+		"Ticker": "TXN",
+		"P_E": "22.51",
+		"P_Free_Cash_Flow": "28.3",
+		"Dividend_Yield": "2.32",
+		"EPS_growth_this_year": "34.6",
+		"Return_on_Equity": "37.5",
+		"LT_Debt_Equity": "0.35"
+	},
+	{
+		"Ticker": "TXT",
+		"P_E": "22.61",
+		"P_Free_Cash_Flow": "11.69",
+		"Dividend_Yield": "0.18",
+		"EPS_growth_this_year": "-11.2",
+		"Return_on_Equity": "12.4",
+		"LT_Debt_Equity": "0.78"
+	},
+	{
+		"Ticker": "TYC",
+		"P_E": "27.55",
+		"P_Free_Cash_Flow": "67.94",
+		"Dividend_Yield": "1.69",
+		"EPS_growth_this_year": "81.9",
+		"Return_on_Equity": "40.2",
+		"LT_Debt_Equity": "0.28"
+	},
+	{
+		"Ticker": "UA",
+		"P_E": "78.98",
+		"P_Free_Cash_Flow": "203.99",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "26.7",
+		"Return_on_Equity": "17.1",
+		"LT_Debt_Equity": "0.19"
+	},
+	{
+		"Ticker": "UHS",
+		"P_E": "21.79",
+		"P_Free_Cash_Flow": "18.86",
+		"Dividend_Yield": "0.37",
+		"EPS_growth_this_year": "13.5",
+		"Return_on_Equity": "14.4",
+		"LT_Debt_Equity": "0.94"
+	},
+	{
+		"Ticker": "UNH",
+		"P_E": "19.9",
+		"P_Free_Cash_Flow": "20.8",
+		"Dividend_Yield": "1.33",
+		"EPS_growth_this_year": "3.6",
+		"Return_on_Equity": "17.2",
+		"LT_Debt_Equity": "0.49"
+	},
+	{
+		"Ticker": "UNM",
+		"P_E": "21.51",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.94",
+		"EPS_growth_this_year": "-50.2",
+		"Return_on_Equity": "4.6",
+		"LT_Debt_Equity": "0.31"
+	},
+	{
+		"Ticker": "UNP",
+		"P_E": "21.51",
+		"P_Free_Cash_Flow": "77.45",
+		"Dividend_Yield": "1.78",
+		"EPS_growth_this_year": "22.1",
+		"Return_on_Equity": "24.2",
+		"LT_Debt_Equity": "0.52"
+	},
+	{
+		"Ticker": "UPS",
+		"P_E": "31.09",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2.86",
+		"EPS_growth_this_year": "-28.9",
+		"Return_on_Equity": "50.7",
+		"LT_Debt_Equity": "1.75"
+	},
+	{
+		"Ticker": "URBN",
+		"P_E": "22.69",
+		"P_Free_Cash_Flow": "46.13",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "16.7",
+		"Return_on_Equity": "16.6",
+		"LT_Debt_Equity": "0"
+	},
+	{
+		"Ticker": "URI",
+		"P_E": "18.56",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "41.5",
+		"Return_on_Equity": "29.8",
+		"LT_Debt_Equity": "4.13"
+	},
+	{
+		"Ticker": "USB",
+		"P_E": "14.49",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2.2",
+		"EPS_growth_this_year": "2.7",
+		"Return_on_Equity": "14.7",
+		"LT_Debt_Equity": "0.83"
+	},
+	{
+		"Ticker": "UTX",
+		"P_E": "18.2",
+		"P_Free_Cash_Flow": "37.73",
+		"Dividend_Yield": "2.06",
+		"EPS_growth_this_year": "9.8",
+		"Return_on_Equity": "18.9",
+		"LT_Debt_Equity": "0.57"
+	},
+	{
+		"Ticker": "V",
+		"P_E": "30.4",
+		"P_Free_Cash_Flow": "28.7",
+		"Dividend_Yield": "0.7",
+		"EPS_growth_this_year": "13.6",
+		"Return_on_Equity": "25.4",
+		"LT_Debt_Equity": "0"
+	},
+	{
+		"Ticker": "VAR",
+		"P_E": "24.19",
+		"P_Free_Cash_Flow": "23.36",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "-3.8",
+		"Return_on_Equity": "24.1",
+		"LT_Debt_Equity": "0.23"
+	},
+	{
+		"Ticker": "VFC",
+		"P_E": "31.85",
+		"P_Free_Cash_Flow": "33.24",
+		"Dividend_Yield": "1.69",
+		"EPS_growth_this_year": "-12.2",
+		"Return_on_Equity": "17.9",
+		"LT_Debt_Equity": "0.24"
+	},
+	{
+		"Ticker": "VIAB",
+		"P_E": "12.79",
+		"P_Free_Cash_Flow": "15.58",
+		"Dividend_Yield": "1.89",
+		"EPS_growth_this_year": "11.7",
+		"Return_on_Equity": "59.9",
+		"LT_Debt_Equity": "3.92"
+	},
+	{
+		"Ticker": "VLO",
+		"P_E": "8.76",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2.64",
+		"EPS_growth_this_year": "40.8",
+		"Return_on_Equity": "25.2",
+		"LT_Debt_Equity": "0.28"
+	},
+	{
+		"Ticker": "VMC",
+		"P_E": "51.91",
+		"P_Free_Cash_Flow": "1591.8",
+		"Dividend_Yield": "0.3",
+		"EPS_growth_this_year": "875",
+		"Return_on_Equity": "4.9",
+		"LT_Debt_Equity": "0.44"
+	},
+	{
+		"Ticker": "VNO",
+		"P_E": "79.22",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2.24",
+		"EPS_growth_this_year": "-102.1",
+		"Return_on_Equity": "5",
+		"LT_Debt_Equity": "2.13"
+	},
+	{
+		"Ticker": "VRSN",
+		"P_E": "25.35",
+		"P_Free_Cash_Flow": "13.29",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "-27.8",
+		"Return_on_Equity": "-52.2",
+		"LT_Debt_Equity": "NA"
+	},
+	{
+		"Ticker": "VTR",
+		"P_E": "50.28",
+		"P_Free_Cash_Flow": "104.25",
+		"Dividend_Yield": "1.08",
+		"EPS_growth_this_year": "58.1",
+		"Return_on_Equity": "5.4",
+		"LT_Debt_Equity": "1.2"
+	},
+	{
+		"Ticker": "VZ",
+		"P_E": "19.43",
+		"P_Free_Cash_Flow": "37.75",
+		"Dividend_Yield": "4.49",
+		"EPS_growth_this_year": "-39.5",
+		"Return_on_Equity": "68.2",
+		"LT_Debt_Equity": "8.99"
+	},
+	{
+		"Ticker": "WAT",
+		"P_E": "23.73",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "-2.5",
+		"Return_on_Equity": "23.3",
+		"LT_Debt_Equity": "0.65"
+	},
+	{
+		"Ticker": "WBA",
+		"P_E": "36.38",
+		"P_Free_Cash_Flow": "33.75",
+		"Dividend_Yield": "1.75",
+		"EPS_growth_this_year": "-21.9",
+		"Return_on_Equity": "9.8",
+		"LT_Debt_Equity": "0.67"
+	},
+	{
+		"Ticker": "WDC",
+		"P_E": "17.23",
+		"P_Free_Cash_Flow": "16.87",
+		"Dividend_Yield": "1.8",
+		"EPS_growth_this_year": "67.8",
+		"Return_on_Equity": "17.4",
+		"LT_Debt_Equity": "0.25"
+	},
+	{
+		"Ticker": "WEC",
+		"P_E": "20.05",
+		"P_Free_Cash_Flow": "106.85",
+		"Dividend_Yield": "3.25",
+		"EPS_growth_this_year": "3.2",
+		"Return_on_Equity": "13.4",
+		"LT_Debt_Equity": "0.95"
+	},
+	{
+		"Ticker": "WFC",
+		"P_E": "13.37",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "2.55",
+		"EPS_growth_this_year": "5.4",
+		"Return_on_Equity": "13.5",
+		"LT_Debt_Equity": "1.11"
+	},
+	{
+		"Ticker": "WFM",
+		"P_E": "35.45",
+		"P_Free_Cash_Flow": "102.69",
+		"Dividend_Yield": "0.92",
+		"EPS_growth_this_year": "6.1",
+		"Return_on_Equity": "15.1",
+		"LT_Debt_Equity": "0.02"
+	},
+	{
+		"Ticker": "WHR",
+		"P_E": "26.1",
+		"P_Free_Cash_Flow": "31.09",
+		"Dividend_Yield": "1.41",
+		"EPS_growth_this_year": "-20.2",
+		"Return_on_Equity": "12.7",
+		"LT_Debt_Equity": "0.73"
+	},
+	{
+		"Ticker": "WIN",
+		"P_E": "34.52",
+		"P_Free_Cash_Flow": "41.92",
+		"Dividend_Yield": "11.59",
+		"EPS_growth_this_year": "39.3",
+		"Return_on_Equity": "23.2",
+		"LT_Debt_Equity": "18.67"
+	},
+	{
+		"Ticker": "WM",
+		"P_E": "237",
+		"P_Free_Cash_Flow": "51.29",
+		"Dividend_Yield": "2.75",
+		"EPS_growth_this_year": "-88.1",
+		"Return_on_Equity": "1.8",
+		"LT_Debt_Equity": "1.68"
+	},
+	{
+		"Ticker": "WMB",
+		"P_E": "17.3",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "4.74",
+		"EPS_growth_this_year": "356.3",
+		"Return_on_Equity": "31.9",
+		"LT_Debt_Equity": "2.18"
+	},
+	{
+		"Ticker": "WMT",
+		"P_E": "16.89",
+		"P_Free_Cash_Flow": "26.63",
+		"Dividend_Yield": "2.28",
+		"EPS_growth_this_year": "2.5",
+		"Return_on_Equity": "21.4",
+		"LT_Debt_Equity": "0.56"
+	},
+	{
+		"Ticker": "WU",
+		"P_E": "12.23",
+		"P_Free_Cash_Flow": "15.06",
+		"Dividend_Yield": "3.19",
+		"EPS_growth_this_year": "11.2",
+		"Return_on_Equity": "73.8",
+		"LT_Debt_Equity": "2.86"
+	},
+	{
+		"Ticker": "WY",
+		"P_E": "25.53",
+		"P_Free_Cash_Flow": "143.33",
+		"Dividend_Yield": "3.27",
+		"EPS_growth_this_year": "70.7",
+		"Return_on_Equity": "28.4",
+		"LT_Debt_Equity": "1.02"
+	},
+	{
+		"Ticker": "WYN",
+		"P_E": "21.75",
+		"P_Free_Cash_Flow": "19.41",
+		"Dividend_Yield": "1.53",
+		"EPS_growth_this_year": "30.3",
+		"Return_on_Equity": "60.8",
+		"LT_Debt_Equity": "3.82"
+	},
+	{
+		"Ticker": "WYNN",
+		"P_E": "22.1",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.79",
+		"EPS_growth_this_year": "0.1",
+		"Return_on_Equity": "NA",
+		"LT_Debt_Equity": "77.52"
+	},
+	{
+		"Ticker": "XEC",
+		"P_E": "19.95",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "0.55",
+		"EPS_growth_this_year": "-10.8",
+		"Return_on_Equity": "14.7",
+		"LT_Debt_Equity": "0.33"
+	},
+	{
+		"Ticker": "XEL",
+		"P_E": "17.69",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.34",
+		"EPS_growth_this_year": "6.3",
+		"Return_on_Equity": "10.4",
+		"LT_Debt_Equity": "1.13"
+	},
+	{
+		"Ticker": "XL",
+		"P_E": "49.1",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "1.81",
+		"EPS_growth_this_year": "-81",
+		"Return_on_Equity": "1.6",
+		"LT_Debt_Equity": "0.17"
+	},
+	{
+		"Ticker": "XLNX",
+		"P_E": "17.44",
+		"P_Free_Cash_Flow": "22.76",
+		"Dividend_Yield": "2.78",
+		"EPS_growth_this_year": "22.3",
+		"Return_on_Equity": "24.2",
+		"LT_Debt_Equity": "0.37"
+	},
+	{
+		"Ticker": "XOM",
+		"P_E": "11.75",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "3.07",
+		"EPS_growth_this_year": "3",
+		"Return_on_Equity": "28.3",
+		"LT_Debt_Equity": "0.06"
+	},
+	{
+		"Ticker": "XRAY",
+		"P_E": "24.32",
+		"P_Free_Cash_Flow": "19.1",
+		"Dividend_Yield": "0.51",
+		"EPS_growth_this_year": "-0.9",
+		"Return_on_Equity": "12.3",
+		"LT_Debt_Equity": "0.47"
+	},
+	{
+		"Ticker": "XRX",
+		"P_E": "15.56",
+		"P_Free_Cash_Flow": "11.83",
+		"Dividend_Yield": "2",
+		"EPS_growth_this_year": "0",
+		"Return_on_Equity": "12.6",
+		"LT_Debt_Equity": "0.59"
+	},
+	{
+		"Ticker": "XYL",
+		"P_E": "19.58",
+		"P_Free_Cash_Flow": "32.28",
+		"Dividend_Yield": "1.55",
+		"EPS_growth_this_year": "48.8",
+		"Return_on_Equity": "15.3",
+		"LT_Debt_Equity": "0.56"
+	},
+	{
+		"Ticker": "YHOO",
+		"P_E": "5.77",
+		"P_Free_Cash_Flow": "80.07",
+		"Dividend_Yield": "NA",
+		"EPS_growth_this_year": "494.4",
+		"Return_on_Equity": "32.1",
+		"LT_Debt_Equity": "0.03"
+	},
+	{
+		"Ticker": "YUM",
+		"P_E": "33.56",
+		"P_Free_Cash_Flow": "96.77",
+		"Dividend_Yield": "2.12",
+		"EPS_growth_this_year": "-2.1",
+		"Return_on_Equity": "48.9",
+		"LT_Debt_Equity": "1.99"
+	},
+	{
+		"Ticker": "ZION",
+		"P_E": "15.13",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "0.61",
+		"EPS_growth_this_year": "8.1",
+		"Return_on_Equity": "5.6",
+		"LT_Debt_Equity": "0.17"
+	},
+	{
+		"Ticker": "ZMH",
+		"P_E": "29.02",
+		"P_Free_Cash_Flow": "27.01",
+		"Dividend_Yield": "0.72",
+		"EPS_growth_this_year": "-5.4",
+		"Return_on_Equity": "11.2",
+		"LT_Debt_Equity": "0.22"
+	},
+	{
+		"Ticker": "ZTS",
+		"P_E": "39.31",
+		"P_Free_Cash_Flow": "NA",
+		"Dividend_Yield": "0.72",
+		"EPS_growth_this_year": "14.9",
+		"Return_on_Equity": "50.2",
+		"LT_Debt_Equity": "2.67"
+	},
+	{
+		"Ticker": ""
+	}
+]

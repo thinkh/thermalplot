@@ -1,12 +1,7 @@
 /* eslint no-console: 0 */
 const fs = require('fs');
 const path = require('path');
-const http = require('http');
 const express = require('express');
-const webpack = require('webpack');
-const webpackMiddleware = require('webpack-dev-middleware');
-const webpackHotMiddleware = require('webpack-hot-middleware');
-const config = require('../webpack.config.js');
 const socketio = require('socket.io');
 const logger = require('./logger');
 
@@ -18,6 +13,11 @@ const port = isDeveloping ? 3000 : process.env.PORT;
 const app = express();
 
 if (isDeveloping) {
+    const webpack = require('webpack');
+    const webpackMiddleware = require('webpack-dev-middleware');
+    const webpackHotMiddleware = require('webpack-hot-middleware');
+    const config = require('../webpack.config.js');
+
     const compiler = webpack(config);
     const middleware = webpackMiddleware(compiler, {
         publicPath: config.output.publicPath,
@@ -62,6 +62,24 @@ if (isDeveloping) {
     app.use(express.static(PROJECT_ROOT + '/dist'));
     app.get('/', function response(req, res) {
         res.sendFile(path.join(PROJECT_ROOT, 'dist/index.html'));
+    });
+
+    app.get('/version', function response(req, res) {
+        const pjson = require(path.join(PROJECT_ROOT, 'package.json'));
+        res.write(pjson.version);
+        res.end();
+    });
+
+    app.get('/views/:file', function response(req, res) {
+        res.sendFile(path.join(PROJECT_ROOT, '/dist/views/', req.params.file));
+    });
+
+    app.get('/views/templates/:file', function response(req, res) {
+        res.sendFile(path.join(PROJECT_ROOT, '/dist/views/templates/', req.params.file));
+    });
+
+    app.get('/images/:file', function response(req, res) {
+        res.sendFile(path.join(PROJECT_ROOT, '/dist/images/', req.params.file));
     });
 }
 

@@ -1,2 +1,5 @@
 .vscode/
+dist/
 .git/
+node_modules/
+bower_components/

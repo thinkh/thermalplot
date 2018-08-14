@@ -52,7 +52,7 @@ class SocketHandler extends UseCaseDBSocketHandler {
         // map JSON to message format
         return constants.map((row) => {
             const attrs = Object.entries(row)
-                .filter((d) => d[0] !== 'Ticker' && d[1] !== 'NA')
+                .filter((d) => d[0] !== 'Ticker' && d[1] !== 'NA' && d[1] !== '')
                 .reduce((result, item) => {
                     result[item[0]] = parseFloat(item[1]); // cast to float value
                     return result;

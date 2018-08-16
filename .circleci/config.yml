@@ -28,6 +28,7 @@ jobs:
       - save_cache:
           key: v1-{{ .Branch }}-{{ checksum ".db-manifest" }}
           paths:
+            # add your *.db file here
             - ./data/thermal_crypto/sqlite/data.db
             - ./data/thermal_ftse250/sqlite/data.db
             - ./data/thermal_oecd/sqlite/data.db
@@ -38,7 +39,7 @@ jobs:
             find . -type f -name '*.db' -printf "%p\t%k KB\n"
       - setup_remote_docker
       - restore_cache:
-          key:
+          keys:
             - node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
             - node-v1-{{ .Branch }}-
             - node-v1-

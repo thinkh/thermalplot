@@ -79,6 +79,9 @@ jobs:
             image="922145058410.dkr.ecr.eu-central-1.amazonaws.com/thermalplot:${awsTag}"
             docker build -t ${image} .
             docker push ${image}
+      - store_artifacts:
+          path: dist
+          prefix: dist
       - deploy:
           name: cleanup untagged aws repo
           command: |

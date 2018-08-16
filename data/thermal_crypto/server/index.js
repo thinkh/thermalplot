@@ -5,7 +5,7 @@ const UseCaseDBSocketHandler = require('../../../server/UseCaseDBSocketHandler')
 const logger = require('../../../server/logger');
 
 const BASE_PATH = path.join(__dirname, '..');
-const SQLITE_DB_PATH = path.join(BASE_PATH, 'sqlite', 'crypto.db');
+const SQLITE_DB_PATH = path.join(BASE_PATH, 'sqlite', 'data.db');
 const TABLE_CRYPTO_PRICES = 'crypto_prices';
 const TABLE_CRYPTO_PRICES_FIELDS = ['opening_price', 'highest_price', 'lowest_price', 'closing_price', 'volume_crypto', 'volume_btc'];
 

@@ -6,7 +6,7 @@ const UseCaseDBSocketHandler = require('../../../server/UseCaseDBSocketHandler')
 const logger = require('../../../server/logger');
 
 const BASE_PATH = path.join(__dirname, '..');
-const SQLITE_DB_PATH = path.join(BASE_PATH, 'sqlite', 'yql.db');
+const SQLITE_DB_PATH = path.join(BASE_PATH, 'sqlite', 'data.db');
 const TABLE_PRICES = 'stocks';
 const TABLE_PRICES_FIELDS = ['open', 'high', 'low', 'close', 'volume', 'adj_close'];
 const CONSTANTS_JSON = path.join(BASE_PATH, 'sqlite', 'sp500_constants.json');

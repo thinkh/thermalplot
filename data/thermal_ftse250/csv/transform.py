@@ -6,7 +6,7 @@ import argparse
 import sqlite3
 
 parser = argparse.ArgumentParser(description='DOT Importer')
-parser.add_argument('--db', default="yql.db")
+parser.add_argument('--db', default="data.db")
 parser.add_argument('--stock', default="sp500.csv")
 parser.add_argument('--just', nargs='+', default=None)
 

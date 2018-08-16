@@ -12,7 +12,7 @@
 	...
 	```
 
-4. An SQLite oecd.db file is created
+4. An SQLite data.db file is created
 
 5. Open the file on the CMD or SQLite Browser
 
@@ -23,4 +23,4 @@
 	GROUP BY ts ORDER BY ts ASC
 	```
 
-7. Copy and rename the oecd.db file to @usecase/sqlite/oecd.db@
+7. Copy and rename the data.db file to @usecase/sqlite/data.db@

@@ -7,7 +7,7 @@ import sqlite3
 
 parser = argparse.ArgumentParser(description='')
 parser.add_argument('--basedir', default='./')
-parser.add_argument('--db', default='oecd.db')
+parser.add_argument('--db', default='data.db')
 parser.add_argument('--file', default="myfile.csv")
 parser.add_argument('--column', default="col_name")
 parser.add_argument('--clear', action='store_true')

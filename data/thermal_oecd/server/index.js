@@ -5,7 +5,7 @@ const UseCaseDBSocketHandler = require('../../../server/UseCaseDBSocketHandler')
 const logger = require('../../../server/logger');
 
 const BASE_PATH = path.join(__dirname, '..');
-const SQLITE_DB_PATH = path.join(BASE_PATH, 'sqlite', 'oecd.db');
+const SQLITE_DB_PATH = path.join(BASE_PATH, 'sqlite', 'data.db');
 const BASE_TABLE = 'oecd';
 
 const SQLITE_FIELDS = ['lt_interest_rate', 'st_interest_rate'];

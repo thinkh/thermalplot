@@ -2,7 +2,7 @@
 
 ThermalPlot is a technique to visualize multi-attribute time-series data using a thermal metaphor.
 
-![ThermalPlot screenshot](http://thermalplot.pipes-vs-dams.at/images/card_image.png)
+![ThermalPlot screenshot](https://thinkh.github.io/thermalplot/images/card_image.png)
 
 
 ## Installation

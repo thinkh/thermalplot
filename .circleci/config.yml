@@ -19,7 +19,7 @@ jobs:
             ssh git@github.com git-lfs-authenticate "${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}" download
             git lfs pull
       - run:
-          name: Check db files pulled from git-lfs
+          name: Check *.db files pulled from Git LFS
           command: |
             find . -type f -name '*.db' -printf "%p\t%k KB\n"
       - setup_remote_docker

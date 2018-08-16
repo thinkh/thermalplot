@@ -66,6 +66,7 @@ jobs:
       - deploy:
           name: build and deploy
           command: |
+            . ~/venv/bin/activate
             case $CIRCLE_BRANCH in
             master)
               awsTag="latest"
@@ -81,12 +82,14 @@ jobs:
       - deploy:
           name: cleanup untagged aws repo
           command: |
+            . ~/venv/bin/activate
             export AWS_DEFAULT_REGION=eu-central-1
             # list repos filter to just the one of this product and delete untagged ones
             aws ecr list-images --repository-name thermalplot --filter tagStatus=UNTAGGED --query 'imageIds[*]' --output text | while read imageId; do aws ecr batch-delete-image --output text --repository-name thermalplot --image-ids imageDigest=$imageId; done
       - deploy:
           name: restart aws #assumes the task definition is called <reponame>-<branch>
           command: |
+            . ~/venv/bin/activate
             export AWS_DEFAULT_REGION=eu-central-1
             # cleanup name by removing the _product suffix
             baseName=${CIRCLE_PROJECT_REPONAME%_product}

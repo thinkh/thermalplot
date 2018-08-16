@@ -5,10 +5,23 @@ jobs:
     docker:
       - image: caleydo/phovea_circleci_python:v1.0
       - image: docker:17.05.0-ce-git
-    tags:
-      - /v\d+.\d+.\d+.*/
     steps:
       - checkout
+      - run:
+          name: Install Git LFS
+          command: |
+            curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+            sudo apt-get update
+            sudo apt-get install -y git-lfs openssh-client
+            git lfs install
+            mkdir -p ~/.ssh
+            ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+            ssh git@github.com git-lfs-authenticate "${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}" download
+            git lfs pull
+      - run:
+          name: Check *.db files pulled from Git LFS
+          command: |
+            find . -type f -name '*.db' -printf "%p\t%k KB\n"
       - setup_remote_docker
       - restore_cache:
           key: deps2-{{ .Branch }}-{{ checksum "package.json" }}
@@ -42,7 +55,8 @@ jobs:
             cat > ~/.dockercfg << EOF
             {
               "https://index.docker.io/v1/": {
-                "auth": "$DOCKER_AUTH"
+                "auth": "$DOCKER_AUTH",
+                "email": "$DOCKER_EMAIL"
               }
             }
             EOF
@@ -52,6 +66,7 @@ jobs:
       - deploy:
           name: build and deploy
           command: |
+            . ~/venv/bin/activate
             case $CIRCLE_BRANCH in
             master)
               awsTag="latest"
@@ -64,15 +79,20 @@ jobs:
             image="922145058410.dkr.ecr.eu-central-1.amazonaws.com/thermalplot:${awsTag}"
             docker build -t ${image} .
             docker push ${image}
+      - store_artifacts:
+          path: dist
+          prefix: dist
       - deploy:
           name: cleanup untagged aws repo
           command: |
+            . ~/venv/bin/activate
             export AWS_DEFAULT_REGION=eu-central-1
             # list repos filter to just the one of this product and delete untagged ones
             aws ecr list-images --repository-name thermalplot --filter tagStatus=UNTAGGED --query 'imageIds[*]' --output text | while read imageId; do aws ecr batch-delete-image --output text --repository-name thermalplot --image-ids imageDigest=$imageId; done
       - deploy:
           name: restart aws #assumes the task definition is called <reponame>-<branch>
           command: |
+            . ~/venv/bin/activate
             export AWS_DEFAULT_REGION=eu-central-1
             # cleanup name by removing the _product suffix
             baseName=${CIRCLE_PROJECT_REPONAME%_product}

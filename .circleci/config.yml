@@ -8,6 +8,13 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Prepare .db-manifest file
+          command: |
+            find . -type f -name '*.db' -printf "%p\t%k KB\n"
+            find . -type f -name '*.db' -exec cat {} \; > .db-manifest
+      - restore_cache:
+          key: v1-{{ .Branch }}-{{ checksum ".db-manifest" }}
+      - run:
           name: Install Git LFS
           command: |
             curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
@@ -18,24 +25,34 @@ jobs:
             ssh-keyscan -H github.com >> ~/.ssh/known_hosts
             ssh git@github.com git-lfs-authenticate "${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}" download
             git lfs pull
+      - save_cache:
+          key: v1-{{ .Branch }}-{{ checksum ".db-manifest" }}
+          paths:
+            - ./data/thermal_crypto/sqlite/data.db
+            - ./data/thermal_ftse250/sqlite/data.db
+            - ./data/thermal_oecd/sqlite/data.db
+            - ./data/thermal_sp500/sqlite/data.db
       - run:
-          name: Check *.db files pulled from Git LFS
+          name: Check *.db files
           command: |
             find . -type f -name '*.db' -printf "%p\t%k KB\n"
       - setup_remote_docker
       - restore_cache:
-          key: deps2-{{ .Branch }}-{{ checksum "package.json" }}
+          key:
+            - node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - node-v1-{{ .Branch }}-
+            - node-v1-
       - run:
-          name: install-npm-wee
+          name: Run npm install
           command: npm install
       - save_cache:
-          key: deps2-{{ .Branch }}-{{ checksum "package.json" }}
+          key: node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
           paths:
             - ./node_modules
       - restore_cache:
           key: awscli-1.11.113
       - run:
-          name: install-aws-cli
+          name: Install awscli
           command: |
             virtualenv ~/venv
             . ~/venv/bin/activate
@@ -43,13 +60,13 @@ jobs:
       - save_cache:
           key: awscli-1.11.113
           paths:
-          - ~/venv
+            - ~/venv
       - run:
-          name: build-application
+          name: Build application
           command: |
             npm run build
       - run:
-          name: login ecr and docker hub
+          name: Login to AWS ECR and docker hub
           command: |
             . ~/venv/bin/activate
             cat > ~/.dockercfg << EOF
@@ -64,7 +81,7 @@ jobs:
             login="$(aws ecr get-login --no-include-email)"
             ${login}
       - deploy:
-          name: build and deploy
+          name: Build and deploy
           command: |
             . ~/venv/bin/activate
             case $CIRCLE_BRANCH in
@@ -83,14 +100,14 @@ jobs:
           path: dist
           prefix: dist
       - deploy:
-          name: cleanup untagged aws repo
+          name: Cleanup untagged aws repo
           command: |
             . ~/venv/bin/activate
             export AWS_DEFAULT_REGION=eu-central-1
             # list repos filter to just the one of this product and delete untagged ones
             aws ecr list-images --repository-name thermalplot --filter tagStatus=UNTAGGED --query 'imageIds[*]' --output text | while read imageId; do aws ecr batch-delete-image --output text --repository-name thermalplot --image-ids imageDigest=$imageId; done
       - deploy:
-          name: restart aws #assumes the task definition is called <reponame>-<branch>
+          name: Restart aws #assumes the task definition is called <reponame>-<branch>
           command: |
             . ~/venv/bin/activate
             export AWS_DEFAULT_REGION=eu-central-1

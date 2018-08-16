@@ -5,10 +5,23 @@ jobs:
     docker:
       - image: caleydo/phovea_circleci_python:v1.0
       - image: docker:17.05.0-ce-git
-    tags:
-      - /v\d+.\d+.\d+.*/
     steps:
       - checkout
+      - run:
+          name: Install Git LFS
+          command: |
+            curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+            sudo apt-get update
+            sudo apt-get install -y git-lfs openssh-client
+            git lfs install
+            mkdir -p ~/.ssh
+            ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+            ssh git@github.com git-lfs-authenticate "${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}" download
+            git lfs pull
+      - run:
+          name: Check db files pulled from git-lfs
+          command: |
+            find . -type f -name '*.db' -printf "%p\t%k KB\n"
       - setup_remote_docker
       - restore_cache:
           key: deps2-{{ .Branch }}-{{ checksum "package.json" }}
